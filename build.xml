@@ -1,0 +1,8 @@
+<project name="Algocraft" default="dist" basedir=".">
+
+<targer name="compilar">
+<javac *.java />
+</target>
+
+<target name="dist" depends="compilar">
+</target>
