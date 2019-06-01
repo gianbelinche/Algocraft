@@ -1,11 +1,10 @@
 <project name="Algocraft" default="dist" basedir=".">
 
-<property name="src" location="Prueba"/>
 <property name="build" location="."/>
 <property name="dist"  location="."/>
 
 <target name="compilar">
-<javac srcdir="${src}" destdir="${build}"/>
+<javac  srcdir="." destdir="${build}" includes="**/*.java" />
 </target>
 
 <target name="dist" depends="compilar">
