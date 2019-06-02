@@ -1,18 +1,62 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Algocraft" default="dist" basedir=".">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Algocraft" default="test" basedir=".">
 
-    <property name="build" location="."/>
-    <property name="dist" location="."/>
+    <property name="build" location="build"/>
+    <property name="libs" location="libs" />
 
-    <target name="compilar">
+    <property name="ivy.install.version" value="2.2.0" />
+    <property name="ivy.jar.dir" value="${libs}/" />
+    <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
+
+    <path id="classpath">
+        <fileset dir="${libs}">
+            <include name="*.jar" />
+            <include name="lib/*.jar"/>
+        </fileset>
+        <pathelement location="${build}" />
+        <pathelement location="${build}/tests" />
+    </path>
+
+    <target name="setup">
+        <delete dir="${build}" />
+        <mkdir dir="${build}" />
+        <mkdir dir="${build}/classes" />
+        <mkdir dir="${build}/tests" />
+        <mkdir dir="${libs}" />
+    </target>
+
+    <target name="compilar" depends="setup">
         <javac srcdir="." destdir="${build}" includes="**/*.java"/>
     </target>
 
     <target name="test" depends="compilar">
-        <junit printsummary="on" haltonerror="yes" fork="true">
-            <fileset dir="." includes="**/*Test.java"/>
+        <junit printsummary="on" haltonerror="yes" fork="no" failureProperty="test.failure" showoutput="true">
+            <classpath location="${build}" />
+            <classpath refid="classpath" />
+            <classpath location="lib/junit-4.11.jar" />
+            <classpath location="lib/hamcrest-core-1.3.jar" />
+            <batchtest>
+                <fileset dir="${build}/tests" includes="**/*Test.class" />
+                <formatter type="plain" usefile="false"/>
+            </batchtest>
         </junit>
     </target>
 
-    <target name="dist" depends="test">
+    <target name="download-ivy" unless="skip.download">
+        <mkdir dir="${ivy.jar.dir}" />
+        <echo message="installing ivy..." />
+        <get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" dest="${ivy.jar.file}" usetimestamp="true" />
     </target>
+
+    <target name="install-ivy" depends="download-ivy" description="--> install ivy">
+        <path id="ivy.lib.path">
+            <fileset dir="${ivy.jar.dir}" includes="*.jar" />
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
+    </target>
+
+    <target name="resolve" depends="install-ivy" description="--> retrieve dependencies with ivy">
+        <ivy:retrieve conf="build" pattern="${libs}/[artifact]-[type]-[revision].[ext]" />
+        <ivy:retrieve conf="analysis" pattern="${libs}/analysis/[artifact](-[classifier]).[ext]"/>
+    </target>
+
 </project>

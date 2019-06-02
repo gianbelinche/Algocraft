@@ -1,4 +1,10 @@
 <ivy-module version="2.0">
+    <info organisation="org.apache" module="tp-final-algo3"/>
+
+    <configurations>
+        <conf name="analysis"  description="analysis jars"/>
+        <conf name="build" description="binary jars"/>
+    </configurations>
 
     <dependencies>
 
