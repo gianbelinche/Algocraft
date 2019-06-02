@@ -1,12 +1,18 @@
-<project name="Algocraft" default="dist" basedir=".">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Algocraft" default="dist" basedir=".">
 
-<property name="build" location="."/>
-<property name="dist"  location="."/>
+    <property name="build" location="."/>
+    <property name="dist" location="."/>
 
-<target name="compilar">
-<javac  srcdir="." destdir="${build}" includes="**/*.java" />
-</target>
+    <target name="compilar">
+        <javac srcdir="." destdir="${build}" includes="**/*.java"/>
+    </target>
 
-<target name="dist" depends="compilar">
-</target>
+    <target name="test" depends="compilar">
+        <junit printsummary="on" haltonerror="yes" fork="true">
+            <fileset dir="." includes="**/*Test.java"/>
+        </junit>
+    </target>
+
+    <target name="dist" depends="test">
+    </target>
 </project>
