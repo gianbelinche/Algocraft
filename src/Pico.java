@@ -6,15 +6,23 @@ public class Pico extends Herramienta {
         fuerza      = nuevaFuerza;
     }
 
+    public void setearDesgaste(Madera madera){
+        desgaste = new Lineal();
+    }
+
+    public void setearDesgaste(Piedra piedra){
+        desgaste =  new SemiLineal();
+    }
+
     public Material recoger(Madera material){
 
-        durabilidad -= fuerza;
+        durabilidad -= desgaste.desgastar(fuerza);
         return null;
     }
 
     public Material recoger(Material material){
 
-        durabilidad -= fuerza;
+        durabilidad -= desgaste.desgastar(fuerza);
         return miMaterial.recoger(material,fuerza);
     }
 }

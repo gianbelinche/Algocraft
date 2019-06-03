@@ -14,12 +14,14 @@ public class Jugador {
     public Pico crearPicoDeMadera(){
         Madera madera = new Madera();
         Pico pico = new Pico(100,madera,2);
+        pico.setearDesgaste(madera);
         return pico;
     }
 
     public Pico crearPicoDePiedra(){
         Piedra piedra = new Piedra();
         Pico pico = new Pico(200,piedra,4);
+        pico.setearDesgaste(piedra);
         return pico;
     }
 }

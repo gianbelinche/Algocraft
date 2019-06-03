@@ -7,17 +7,19 @@ public class PiedraTest {
     @Test
     public void testUsoPicoDePiedraEnPiedraYSeDesgastaLaPiedra(){
         Piedra piedra = new Piedra();
-        Pico pico = new Pico(100,new Piedra(),5);
+        Jugador jugador = new Jugador();
+        Pico pico = jugador.crearPicoDePiedra();
         int durabilidadInicial = piedra.durabilidad();
 
         pico.recoger(piedra);
-       assertEquals(durabilidadInicial - 5,piedra.durabilidad());
+       assertEquals(durabilidadInicial - 4,piedra.durabilidad());
     }
 
     @Test
     public void testUsoPicoDeMaderaEnPiedraYNoSeDesgastaLaPiedra(){
         Piedra piedra = new Piedra();
-        Pico pico = new Pico(100,new Madera(),5);
+        Jugador jugador = new Jugador();
+        Pico pico = jugador.crearPicoDeMadera();
         int durabilidadInicial = piedra.durabilidad();
 
         pico.recoger(piedra);
