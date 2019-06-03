@@ -10,4 +10,16 @@ public class Jugador {
         Hacha hacha = new Hacha(200,piedra,5);
         return hacha;
     }
+
+    public Pico crearPicoDeMadera(){
+        Madera madera = new Madera();
+        Pico pico = new Pico(100,madera,2);
+        return pico;
+    }
+
+    public Pico crearPicoDePiedra(){
+        Piedra piedra = new Piedra();
+        Pico pico = new Pico(200,piedra,4);
+        return pico;
+    }
 }
