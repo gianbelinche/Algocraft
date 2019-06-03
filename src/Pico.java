@@ -7,10 +7,14 @@ public class Pico extends Herramienta {
     }
 
     public Material recoger(Madera material){
+
+        durabilidad -= fuerza;
         return null;
     }
 
     public Material recoger(Material material){
+
+        durabilidad -= fuerza;
         return miMaterial.recoger(material,fuerza);
     }
 }

@@ -75,4 +75,14 @@ public class HachaTest {
 
     }
 
+    @Test
+    public void usarHachadePiedraContraPiedraDisminuyeLaDurabilidadCorrectamente(){
+        Jugador jugador = new Jugador();
+        Hacha hachaDePiedra = jugador.crearHachaDePiedra();
+        int durabilidad = hachaDePiedra.durabilidad();
+        hachaDePiedra.recoger(new Piedra());
+        assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
+
+    }
+
 }

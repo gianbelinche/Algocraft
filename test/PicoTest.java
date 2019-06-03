@@ -44,4 +44,31 @@ public class PicoTest {
         int fuerza = picoDePiedra.fuerza();
         assertEquals(4,fuerza);
     }
+
+    @Test
+    public void usarPicoDeMaderaContraMaderaDisminuyeDurabilidadCorrectamente(){
+        Jugador jugador = new Jugador();
+        Pico picoDeMadera = jugador.crearPicoDeMadera();
+        int durabilidad = picoDeMadera.durabilidad();
+        picoDeMadera.recoger(new Madera());
+        assertEquals(durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
+    }
+
+    @Test
+    public void usarPicoDeMaderaContraPiedraDisminuyeDurabilidadCorrectamente(){
+        Jugador jugador = new Jugador();
+        Pico picoDeMadera = jugador.crearPicoDeMadera();
+        int durabilidad = picoDeMadera.durabilidad();
+        picoDeMadera.recoger(new Piedra());
+        assertEquals(durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
+    }
+
+    @Test
+    public void usarPicoDePiedraContraMaderaDisminuyeDurabilidadCorrectamente(){
+        Jugador jugador = new Jugador();
+        Pico picoDePiedra = jugador.crearPicoDePiedra();
+        int durabilidad = picoDePiedra.durabilidad();
+        picoDePiedra.recoger(new Madera());
+        assertEquals(durabilidad - picoDePiedra.fuerza()/1.5,picoDePiedra.durabilidad());
+    }
 }
