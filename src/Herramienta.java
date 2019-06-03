@@ -7,6 +7,7 @@ public class Herramienta {
     public int durabilidad(){
         return durabilidad;
     }
+
     public int fuerza() {return fuerza;}
 
 }
