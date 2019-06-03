@@ -71,4 +71,13 @@ public class PicoTest {
         picoDePiedra.recoger(new Madera());
         assert(durabilidad - picoDePiedra.fuerza()/1.5 == picoDePiedra.durabilidad());
     }
+
+    @Test
+    public void usarPicoDePiedraContraPiedraDisminuyeDurabilidadCorrectamente(){
+        Jugador jugador = new Jugador();
+        Pico picoDePiedra = jugador.crearPicoDePiedra();
+        int durabilidad = picoDePiedra.durabilidad();
+        picoDePiedra.recoger(new Piedra());
+        assert(durabilidad - picoDePiedra.fuerza()/1.5 == picoDePiedra.durabilidad());
+    }
 }
