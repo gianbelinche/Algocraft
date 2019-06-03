@@ -7,11 +7,7 @@ public class Hacha extends Herramienta {
         fuerza      = nuevaFuerza;
     }
 
-    public Material recoger(Piedra material){
-        return null;
-    }
-
-    public Material recoger(Material material){
-        return miMaterial.recoger(material,fuerza);
+    public Material recoger(Madera material){
+        return _recoger(material);
     }
 }

@@ -17,4 +17,6 @@ abstract class Material {
     abstract Material recoger(Piedra   material, int desgaste);
 
     abstract Material recoger(Madera   material, int desgaste);
+
+
 }
