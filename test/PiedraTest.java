@@ -7,8 +7,8 @@ public class PiedraTest {
     @Test
     public void testUsoPicoDePiedraEnPiedraYSeDesgastaLaPiedra(){
         Piedra piedra = new Piedra();
-        Jugador jugador = new Jugador();
-        Pico pico = jugador.crearPicoDePiedra();
+        Constructor constructor = new Constructor();
+        Pico pico = constructor.crearPicoDePiedra();
         int durabilidadInicial = piedra.durabilidad();
 
         pico.recoger(piedra);
@@ -16,15 +16,15 @@ public class PiedraTest {
     }
 
     @Test
-    public void testUsoPicoDeMaderaEnPiedraYNoSeDesgastaLaPiedra(){
+    public void testUsoPicoDeMaderaEnPiedraYSeDesgastaLaPiedra(){
         Piedra piedra = new Piedra();
-        Jugador jugador = new Jugador();
-        Pico pico = jugador.crearPicoDeMadera();
+        Constructor constructor = new Constructor();
+        Pico pico = constructor.crearPicoDeMadera();
         int durabilidadInicial = piedra.durabilidad();
 
         pico.recoger(piedra);
 
-        assertEquals(durabilidadInicial,piedra.durabilidad());
+        assertEquals(durabilidadInicial - pico.fuerza(),piedra.durabilidad());
     }
 
     @Test

@@ -27,8 +27,8 @@ public class MaderaTest {
     @Test
     public void testUsoPicoDeMaderaEnMaderaYNoSeDesgastaLaMadera(){
         Madera madera = new Madera();
-        Jugador jugador = new Jugador();
-        Pico pico = jugador.crearPicoDeMadera();
+        Constructor constructor = new Constructor();
+        Pico pico = constructor.crearPicoDeMadera();
         int durabilidadInicial = madera.durabilidad();
 
         pico.recoger(madera);
@@ -38,8 +38,8 @@ public class MaderaTest {
     @Test
     public void testUsoPicoDePiedraEnMaderaYNoSeDesgastaLaMadera(){
         Madera madera = new Madera();
-        Jugador jugador = new Jugador();
-        Pico pico = jugador.crearPicoDePiedra();
+        Constructor constructor = new Constructor();
+        Pico pico = constructor.crearPicoDePiedra();
         int durabilidadInicial = madera.durabilidad();
 
         pico.recoger(madera);

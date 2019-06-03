@@ -1,12 +1,7 @@
-public class Madera implements Material {
-    int durabilidad;
+public class Madera extends Material {
 
     public Madera() {
         durabilidad = 100;
-    }
-
-    public int durabilidad(){
-        return durabilidad;
     }
 
     public Material recoger(Material material, int desgaste){
@@ -14,14 +9,10 @@ public class Madera implements Material {
     }
 
     public Material recoger(Piedra   material, int desgaste){
-        durabilidad -= desgaste;
-        if(durabilidad > 0) return null;
-        return this; //Debe eliminarse del mapa
+        return desgastar(desgaste);
     }
 
     public Material recoger(Madera   material, int desgaste){
-        durabilidad -= desgaste;
-        if(durabilidad > 0) return null;
-        return this; //Debe eliminarse del mapa
+        return desgastar(desgaste);
     }
 }

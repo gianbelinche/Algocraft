@@ -1,4 +1,4 @@
-public class Jugador {
+public class Constructor {
     public Hacha crearHachaDeMadera(){
         Madera madera = new Madera();
         Hacha hacha = new Hacha(100,madera,2);

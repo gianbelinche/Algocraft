@@ -1,8 +1,20 @@
-public interface Material {
+abstract class Material {
 
-    public Material recoger(Material material, int desgaste);
+    int durabilidad;
 
-    public Material recoger(Piedra   material, int desgaste);
+    public int durabilidad(){
+        return durabilidad;
+    }
 
-    public Material recoger(Madera   material, int desgaste);
+    public Material desgastar(int desgaste){
+        durabilidad -= desgaste;
+        return this;
+    }
+
+
+    abstract Material recoger(Material material, int desgaste);
+
+    abstract Material recoger(Piedra   material, int desgaste);
+
+    abstract Material recoger(Madera   material, int desgaste);
 }
