@@ -1,18 +1,12 @@
 public class Pico extends Herramienta {
 
-    public Pico(int nuevaDurabilidad, Material nuevoMaterial, int nuevaFuerza){
+    public Pico(int nuevaDurabilidad, Desgaste nuevoDesgaste, Material nuevoMaterial, int nuevaFuerza){
         durabilidad = nuevaDurabilidad;
+        desgaste = nuevoDesgaste;
         miMaterial  = nuevoMaterial;
         fuerza      = nuevaFuerza;
     }
 
-    public void setearDesgaste(Madera madera){
-        desgaste = new Lineal();
-    }
-
-    public void setearDesgaste(Piedra piedra){
-        desgaste =  new SemiLineal();
-    }
 
     public Material recoger(Madera material){
 

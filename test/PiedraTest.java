@@ -1,27 +1,32 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PiedraTest {
+    int durabilidadInicial;
+    Constructor constructor;
+    Piedra piedra;
 
+    @Before
+    public void setUp(){
+        constructor = new Constructor();
+        piedra = new Piedra();
+        durabilidadInicial = piedra.durabilidad();
+
+    }
     @Test
     public void testUsoPicoDePiedraEnPiedraYSeDesgastaLaPiedra(){
-        Piedra piedra = new Piedra();
-        Constructor constructor = new Constructor();
-        Pico pico = constructor.crearPicoDePiedra();
-        int durabilidadInicial = piedra.durabilidad();
 
+        Pico pico = constructor.crearPicoDePiedra();
         pico.recoger(piedra);
-       assertEquals(durabilidadInicial - 4,piedra.durabilidad());
+
+       assertEquals(durabilidadInicial - pico.fuerza(),piedra.durabilidad());
     }
 
     @Test
     public void testUsoPicoDeMaderaEnPiedraYSeDesgastaLaPiedra(){
-        Piedra piedra = new Piedra();
-        Constructor constructor = new Constructor();
         Pico pico = constructor.crearPicoDeMadera();
-        int durabilidadInicial = piedra.durabilidad();
-
         pico.recoger(piedra);
 
         assertEquals(durabilidadInicial - pico.fuerza(),piedra.durabilidad());
@@ -29,10 +34,7 @@ public class PiedraTest {
 
     @Test
     public void testUsoHachaDeMaderaEnPiedraYNoSeDesgastaLaPiedra(){
-        Piedra piedra = new Piedra();
-        Hacha hacha = new Hacha(100,new Piedra(),5);
-        int durabilidadInicial = piedra.durabilidad();
-
+        Hacha hacha = constructor.crearHachaDeMadera();
         hacha.recoger(piedra);
 
         assertEquals(durabilidadInicial,piedra.durabilidad());
@@ -40,10 +42,7 @@ public class PiedraTest {
 
     @Test
     public void testUsoHachaDePiedraEnPiedraYNoSeDesgastaLaPiedra(){
-        Piedra piedra = new Piedra();
-        Hacha hacha = new Hacha(100,new Madera(),5);
-        int durabilidadInicial = piedra.durabilidad();
-
+        Hacha hacha = constructor.crearHachaDePiedra();
         hacha.recoger(piedra);
 
         assertEquals(durabilidadInicial,piedra.durabilidad());

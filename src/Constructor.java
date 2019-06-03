@@ -1,27 +1,17 @@
 public class Constructor {
     public Hacha crearHachaDeMadera(){
-        Madera madera = new Madera();
-        Hacha hacha = new Hacha(100,madera,2);
-        return hacha;
+        return new Hacha(100,new Lineal(),new Madera(),2);
     }
 
     public Hacha crearHachaDePiedra(){
-        Piedra piedra = new Piedra();
-        Hacha hacha = new Hacha(200,piedra,5);
-        return hacha;
+        return new Hacha(200,new Lineal(),new Piedra(),5);
     }
 
     public Pico crearPicoDeMadera(){
-        Madera madera = new Madera();
-        Pico pico = new Pico(100,madera,2);
-        pico.setearDesgaste(madera);
-        return pico;
+        return new Pico(100,new Lineal(),new Madera(),2);
     }
 
     public Pico crearPicoDePiedra(){
-        Piedra piedra = new Piedra();
-        Pico pico = new Pico(200,piedra,4);
-        pico.setearDesgaste(piedra);
-        return pico;
+        return new Pico(200,new Lineal(),new Piedra(),4);
     }
 }

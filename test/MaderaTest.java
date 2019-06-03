@@ -1,48 +1,53 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class MaderaTest {
 
-    @Test
-    public void testUsoHachaDePiedraEnMaderaYSeDesgastaLaMadera(){
-        Madera madera = new Madera();
-        Hacha hacha = new Hacha(100,new Piedra(),5);
-        int durabilidadInicial = madera.durabilidad();
+        int durabilidadInicial;
+        Constructor constructor;
+        Madera madera;
 
-        hacha.recoger(madera);
-        assertEquals(durabilidadInicial - 5,madera.durabilidad());
-    }
+        @Before
+        public void setUp(){
+            constructor = new Constructor();
+            madera = new Madera();
+            durabilidadInicial = madera.durabilidad();
 
-    @Test
-    public void testUsoHachaDeMaderaEnMaderaYSeDesgastaLaMadera(){
-        Madera madera = new Madera();
-        Hacha hacha = new Hacha(100,new Madera(),5);
-        int durabilidadInicial = madera.durabilidad();
+        }
+        @Test
+        public void testUsoPicoDePiedraEnMaderaYNoSeDesgastaLaMadera(){
 
-        hacha.recoger(madera);
-        assertEquals(durabilidadInicial - 5,madera.durabilidad());
-    }
+            Pico pico = constructor.crearPicoDePiedra();
+            pico.recoger(madera);
 
-    @Test
-    public void testUsoPicoDeMaderaEnMaderaYNoSeDesgastaLaMadera(){
-        Madera madera = new Madera();
-        Constructor constructor = new Constructor();
+            assertEquals(durabilidadInicial , madera.durabilidad());
+        }
+
+        @Test
+        public void testUsoPicoDeMaderaEnMaderaYNoSeDesgastaLaMadera(){
+
         Pico pico = constructor.crearPicoDeMadera();
-        int durabilidadInicial = madera.durabilidad();
-
         pico.recoger(madera);
-        assertEquals(durabilidadInicial,madera.durabilidad());
-    }
 
-    @Test
-    public void testUsoPicoDePiedraEnMaderaYNoSeDesgastaLaMadera(){
-        Madera madera = new Madera();
-        Constructor constructor = new Constructor();
-        Pico pico = constructor.crearPicoDePiedra();
-        int durabilidadInicial = madera.durabilidad();
+        assertEquals(durabilidadInicial , madera.durabilidad());
+        }
 
-        pico.recoger(madera);
-        assertEquals(durabilidadInicial,madera.durabilidad());
+        @Test
+        public void testUsoHachaDeMaderaEnMaderaYSeDesgastaLaMadera(){
+            Hacha hacha = constructor.crearHachaDeMadera();
+            hacha.recoger(madera);
+
+            assertEquals(durabilidadInicial - hacha.fuerza(), madera.durabilidad());
+        }
+
+        @Test
+        public void testUsoHachaDePiedraEnMaderaYSeDesgastaLaMadera(){
+            Hacha hacha = constructor.crearHachaDePiedra();
+            hacha.recoger(madera);
+
+            assertEquals(durabilidadInicial - hacha.fuerza(), madera.durabilidad());
+        }
+
     }
-}
