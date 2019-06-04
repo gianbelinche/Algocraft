@@ -1,7 +1,7 @@
 public class DesgasteLineal extends Desgaste {
-    int factorDeReduccion;
+    double factorDeReduccion;
 
-    public DesgasteLineal(int nuevoFactorDeReduccion){
+    public DesgasteLineal(double nuevoFactorDeReduccion){
         factorDeReduccion = nuevoFactorDeReduccion;
     }
             
