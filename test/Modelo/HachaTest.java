@@ -89,6 +89,4 @@ public class HachaTest {
         assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
 
     }
-    
-
 }

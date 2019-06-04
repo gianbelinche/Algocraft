@@ -17,9 +17,9 @@
 Tests de Herramienta:
 - [X] Se crea hacha de madera con con su durabilidad y fuerza correspondiente
 - [X] Se crea pico de madera con con su durabilidad y fuerza correspondiente
-- [] Se crea hacha de metal con con su durabilidad y fuerza correspondiente
-- [] Se crea Pico de metal con con su durabilidad y fuerza correspondiente
-- [] Se crea Pico Fino con con su durabilidad y fuerza correspondiente
+- [X] Se crea hacha de metal con con su durabilidad y fuerza correspondiente
+- [X] Se crea Pico de metal con con su durabilidad y fuerza correspondiente
+- [X] Se crea Pico Fino con con su durabilidad y fuerza correspondiente
 - [] Hacha se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Hacha
 - [] Pico se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Pico
 - [] Pico Fino se usa contra Diamante y se reduce su durabilidad correspondiente

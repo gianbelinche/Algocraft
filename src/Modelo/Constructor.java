@@ -10,7 +10,7 @@ public class Constructor {
     }
 
     public Hacha crearHachaDeMetal(){
-        return new Hacha(400,new DesgasteLineal(1),new Metal(),5);
+        return new Hacha(400,new DesgasteLineal(1),new Metal(),10);
     }
 
     public Hacha crearHachaDePiedraRefinada(){
@@ -30,11 +30,11 @@ public class Constructor {
     }
 
     public Pico crearPicoDeMetal(){
-        return new Pico(100,new DesgasteLineal(1),new Metal(),2);
+        return new Pico(400,new DesgasteLineal(1),new Metal(),12);
     }
 
     public Pico crearPicoDePiedraRefinada(){
-        return new Pico(100,new DesgasteLineal(1),new PiedraRefinada(),2);
+        return new Pico(1000,new DesgasteLineal(1),new PiedraRefinada(),20);
     }
 
     public Pico crearPicoDeDiamante(){
