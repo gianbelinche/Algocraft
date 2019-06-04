@@ -15,8 +15,8 @@
 **Entrega 1:** Jueves 6 de Junio
 
 Tests de Herramienta:
-- [] Se crea hacha de madera con con su durabilidad y fuerza correspondiente
-- [] Se crea pico de madera con con su durabilidad y fuerza correspondiente
+- [X] Se crea hacha de madera con con su durabilidad y fuerza correspondiente
+- [X] Se crea pico de madera con con su durabilidad y fuerza correspondiente
 - [] Se crea hacha de metal con con su durabilidad y fuerza correspondiente
 - [] Se crea Pico de metal con con su durabilidad y fuerza correspondiente
 - [] Se crea Pico Fino con con su durabilidad y fuerza correspondiente
@@ -29,9 +29,9 @@ Tests de Jugador:
 - [] Correcta creación e inicialización del jugador
 
 Test de Material:
-- [] Madera se golpea con un Hacha de Madera y se verifica que se reduce la durabilidad del material.
-- [] Piedra se golpea con un Hacha y se verifica que no se reduce la durabilidad del material.
-- [] Metal se golpea con un Pico de madera y se verifica que no se reduce la durabilidad del material.
+- [X] Madera se golpea con un Hacha de Madera y se verifica que se reduce la durabilidad del material.
+- [X] Piedra se golpea con un Hacha y se verifica que no se reduce la durabilidad del material.
+- [X] Metal se golpea con un Pico de madera y se verifica que no se reduce la durabilidad del material.
 
 
 **Entrega 2:** Jueves 13 de Junio
