@@ -1,3 +1,5 @@
+package Modelo;
+
 public abstract class Material {
 
     int durabilidad;

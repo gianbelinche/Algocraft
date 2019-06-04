@@ -1,3 +1,5 @@
+package Modelo;
+
 public class Piedra extends Material {
 
     public Piedra() {

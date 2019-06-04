@@ -1,5 +1,6 @@
-import org.junit.Test;
+package Modelo;
 
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class HachaTest {

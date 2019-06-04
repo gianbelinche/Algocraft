@@ -1,3 +1,5 @@
+package Modelo;
+
 public class Pico extends Herramienta {
 
     public Pico(int nuevaDurabilidad, Desgaste nuevoDesgaste, Material nuevoMaterial, int nuevaFuerza){

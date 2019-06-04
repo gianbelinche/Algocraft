@@ -1,3 +1,5 @@
+package Modelo;
+
 public class Hacha extends Herramienta {
 
     public Hacha(int nuevaDurabilidad, Desgaste nuevoDesgaste, Material nuevoMaterial, int nuevaFuerza){

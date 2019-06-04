@@ -1,3 +1,5 @@
+package Modelo;
+
 public class Constructor {
     public Hacha crearHachaDeMadera(){
         return new Hacha(100,new DesgasteLineal(1),new Madera(),2);
