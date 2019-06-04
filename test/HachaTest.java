@@ -36,7 +36,7 @@ public class HachaTest {
         int fuerza = hachaDePiedra.fuerza();
         assertEquals(5,fuerza);
     }
-/*
+
     @Test
     public void usarHachadeMaderaContraPiedraDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
@@ -76,6 +76,6 @@ public class HachaTest {
         assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
 
     }
-    */
+    
 
 }
