@@ -1,6 +1,6 @@
 package Modelo;
 
-public abstract class Material {
+public class Material {
 
     int durabilidad;
 
@@ -13,12 +13,11 @@ public abstract class Material {
         return this;
     }
 
+    public Material recoger(Material material, int desgaste){
+        return material._recoger(this, desgaste);
+    }
 
-    abstract Material recoger(Material material, int desgaste);
-
-    abstract Material recoger(Piedra   material, int desgaste);
-
-    abstract Material recoger(Madera   material, int desgaste);
-
-
+    public Material _recoger(Material material, int desgaste){
+        return desgastar(desgaste);
+    }
 }
