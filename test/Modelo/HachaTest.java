@@ -5,7 +5,20 @@ import static org.junit.Assert.*;
 
 public class HachaTest {
 
-
+    @Test
+    public void crearHachaDeMetalPoseeDurabilidadCorrecta(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        int durabilidad = hachaDeMetal.durabilidad();
+        assertEquals(400,durabilidad);
+    }
+    @Test
+    public void crearHachaDeMetalPoseeFuerzaCorrecta() {
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        int fuerza = hachaDeMetal.fuerza();
+        assertEquals(10, fuerza);
+    }
     @Test
     public void crearHachaDeMaderaPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
@@ -13,7 +26,6 @@ public class HachaTest {
         int durabilidad = hachaDeMadera.durabilidad();
         assertEquals(100,durabilidad);
     }
-
     @Test
     public void crearHachaDeMaderaPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
