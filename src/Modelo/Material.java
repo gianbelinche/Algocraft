@@ -10,6 +10,8 @@ abstract class Material {
 
     public Material desgastar(int desgaste){
         durabilidad -= desgaste;
+        if(durabilidad > 0) return null;
+        //Elminar material del mapa.
         return this;
     }
 
