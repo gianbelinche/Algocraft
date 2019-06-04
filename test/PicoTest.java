@@ -51,17 +51,18 @@ public class PicoTest {
         Pico picoDeMadera = constructor.crearPicoDeMadera();
         int durabilidad = picoDeMadera.durabilidad();
         picoDeMadera.recoger(new Piedra());
-        assertEquals(durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
+        assertEquals( durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
     }
 
-    /*
+
     @Test
     public void usarPicoDePiedraContraMaderaDisminuyeDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Pico picoDePiedra = constructor.crearPicoDePiedra();
         int durabilidad = picoDePiedra.durabilidad();
         picoDePiedra.recoger(new Madera());
-        assert(durabilidad - picoDePiedra.fuerza()/1.5 == picoDePiedra.durabilidad());
+
+        assert((int) (durabilidad - picoDePiedra.fuerza()/1.5) == picoDePiedra.durabilidad());
     }
 
     @Test
@@ -70,8 +71,8 @@ public class PicoTest {
         Pico picoDePiedra = constructor.crearPicoDePiedra();
         int durabilidad = picoDePiedra.durabilidad();
         picoDePiedra.recoger(new Piedra());
-        assert(durabilidad - picoDePiedra.fuerza()/1.5 == picoDePiedra.durabilidad());
+        assert((int)(durabilidad - picoDePiedra.fuerza()/1.5) == picoDePiedra.durabilidad());
     }
 
-     */
+
 }
