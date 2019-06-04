@@ -1,13 +1,15 @@
 package Modelo;
 
 public class DesgasteLineal extends Desgaste {
-    double factorDeReduccion;
+    double modificador;
 
-    public DesgasteLineal(double nuevoFactorDeReduccion){
-        factorDeReduccion = nuevoFactorDeReduccion;
+    public DesgasteLineal(double nuevoModificador){
+
+        modificador = nuevoModificador;
     }
-            
-    public double desgastar(int fuerza){
-        return fuerza/factorDeReduccion;
+
+    @Override
+    public double desgastar(int durabilidad, int fuerza){
+        return durabilidad - fuerza * modificador;
     }
 }

@@ -2,5 +2,5 @@ package Modelo;
 
 public abstract class Desgaste {
 
-    public abstract double desgastar(int fuerza);
+    abstract double desgastar(int durabilidad, int fuerza);
 }

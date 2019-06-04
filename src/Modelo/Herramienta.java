@@ -15,13 +15,13 @@ public class Herramienta {
 
     public Material recoger(Material material){
 
-        durabilidad -= desgaste.desgastar(fuerza);
+        durabilidad = (int) desgaste.desgastar(durabilidad, fuerza);
         return null;
     }
 
     public Material _recoger(Material material){
 
-        durabilidad -= desgaste.desgastar(fuerza);
+        durabilidad = (int) desgaste.desgastar(durabilidad, fuerza);
         return miMaterial.recoger(material,fuerza);
     }
 }
