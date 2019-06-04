@@ -8,7 +8,7 @@
 
 ## Informe
 
-[Link al informe](https://es.overleaf.com/2558865771kxnzwmbdymcy)
+[Link al informe](https://www.overleaf.com/project/5cf6af2635635035da5d1104)
 
 ## Entregas
 
