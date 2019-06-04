@@ -14,6 +14,8 @@ public class Pico extends Herramienta {
 
     public Material recoger(Metal material)  { return _recoger(material); }
 
+    public Material recoger(PiedraRefinada material)  { return _recoger(material); }
+
     public Material recoger(Diamante material)  { return _recoger(material); }
 
 

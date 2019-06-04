@@ -18,7 +18,6 @@ public class MetalTest {
 
     }
 
-    /*
     @Test
     public void testUsoPicoDeMaderaEnMetalYNoSeDesgastaElMetal(){
 
@@ -27,7 +26,6 @@ public class MetalTest {
 
         assertEquals(durabilidadInicial, metal.durabilidad());
     }
-    */
 
     @Test
     public void testUsoHachaDeMaderaEnMetalYNoSeDesgastaElMetal(){
