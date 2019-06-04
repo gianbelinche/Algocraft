@@ -12,6 +12,6 @@ public class Constructor {
     }
 
     public Pico crearPicoDePiedra(){
-        return new Pico(200,new DesgasteLineal(1),new Piedra(),4);
+        return new Pico(200,new DesgasteLineal(1.5),new Piedra(),4);
     }
 }
