@@ -1,4 +1,4 @@
-abstract class Material {
+public abstract class Material {
 
     int durabilidad;
 
