@@ -34,7 +34,7 @@ public class Constructor {
     }
 
     public Pico crearPicoDePiedraRefinada(){
-        return new Pico(1000,new DesgasteLineal(1),new PiedraRefinada(),20);
+        return new Pico(1000,new DesgastePorMaterial(0.1),new PiedraRefinada(),20);
     }
 
     public Pico crearPicoDeDiamante(){

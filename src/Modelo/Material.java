@@ -15,6 +15,8 @@ abstract class Material {
         return this;
     }
 
+    abstract Material obtener();
+
     abstract Material recoger(Material material, int desgaste);
 
     abstract Material recoger(Madera material, int desgaste);

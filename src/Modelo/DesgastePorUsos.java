@@ -8,7 +8,7 @@ public class DesgastePorUsos extends Desgaste{
         usosMaximos = CantDeUsos;
     }
 
-    double desgastar(int durabilidad, int fuerza){
+    double desgastar(int durabilidad, int fuerza,Material material){
         usos += 1;
         if (usos >= usosMaximos) {return 0;}
         return durabilidad;

@@ -35,4 +35,7 @@ public class Piedra extends Material {
     public Material recoger(Diamante material, int desgaste){
         return desgastar(desgaste);
     }
+
+    @Override
+    public Piedra obtener(){ return this;};
 }
