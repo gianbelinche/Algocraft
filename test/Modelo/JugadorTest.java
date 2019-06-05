@@ -8,22 +8,39 @@ import static org.junit.Assert.*;
 
 public class JugadorTest {
 
+    Constructor constructor;
+    Jugador jugador;
+    Herramienta herramienta;
+
+    @Before
+    public void setUp(){
+        constructor = new Constructor();
+        jugador = new Jugador();
+        herramienta = jugador.herramientaEquipada();
+    }
+
     @Test
-    public void testCrearJugadorPoseeHachaDeMadera(){
-        Jugador jugador = new Jugador();
-        Herramienta herramienta = jugador.herramientaEquipada();
-        assertEquals(100, herramienta.durabilidad());
-        assertEquals(2,herramienta.fuerza());
+    public void testCrearJugadorPoseeHachaComoHerramientaInicial(){
+        assertTrue(herramienta instanceof Hacha);
+    }
 
-        //Chequeo desgaste correspondiente al hacha de madera
+    @Test
+    public void testCrearJugadorPoseeHachaDeDurabilidadCorrecta(){
+        int durabilidadInicial = herramienta.durabilidad();
 
-        int durabilidad = herramienta.durabilidad();
-        herramienta.recoger(new Madera());
-        assertEquals(durabilidad-herramienta.fuerza(),herramienta.durabilidad());
+        assertEquals(100, durabilidadInicial);
+    }
 
-        //Otra opcion
-
+    @Test
+    public void testCrearJugadorPoseeHachaConDesgasteLineal(){
         assertTrue(herramienta.desgaste instanceof DesgasteLineal);
+    }
+
+    @Test
+    public void testCrearJugadorPoseeHachaConFuerzaCorrecta(){
+        int fuerzaHerramienta = herramienta.fuerza();;
+
+        assertEquals(2, herramienta.fuerza());
     }
 
 }
