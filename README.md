@@ -26,7 +26,7 @@ Tests de Herramienta:
 - [X] Pico Fino se usa contra los demás materiales y no se reduce su durabilidad
 
 Tests de Jugador: 
-- [] Correcta creación e inicialización del jugador
+- [X] Correcta creación e inicialización del jugador
 
 Test de Material:
 - [X] Madera se golpea con un Hacha de Madera y se verifica que se reduce la durabilidad del material.
