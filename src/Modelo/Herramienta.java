@@ -25,4 +25,3 @@ public class Herramienta {
         return miMaterial.recoger(material,fuerza);
     }
 }
-git 
