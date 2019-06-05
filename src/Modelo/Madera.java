@@ -36,6 +36,4 @@ public class Madera extends Material {
         return desgastar(desgaste);
     }
 
-    @Override
-    public Madera obtener(){ return this;};
 }

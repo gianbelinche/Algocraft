@@ -36,6 +36,4 @@ public class PiedraRefinada extends Material {
         return desgastar(desgaste);
     }
 
-    @Override
-    public PiedraRefinada obtener(){ return this;};
 }

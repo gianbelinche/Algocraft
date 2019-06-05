@@ -36,7 +36,5 @@ public class Metal extends Material {
         return desgastar(desgaste);
     }
 
-    @Override
-    public Metal obtener(){ return this;};
 }
 

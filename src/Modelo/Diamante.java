@@ -36,6 +36,4 @@ public class Diamante extends Material {
         return desgastar(desgaste);
     }
 
-    @Override
-    public Diamante obtener(){ return this;};
 }
