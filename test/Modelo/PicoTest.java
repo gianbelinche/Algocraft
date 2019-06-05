@@ -84,6 +84,24 @@ public class PicoTest {
         assertEquals( durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
     }
 
+    @Test
+    public void testUsarPicoDeMaderaContraMetalDisminuyeDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMadera = constructor.crearPicoDeMadera();
+        int durabilidad = picoDeMadera.durabilidad();
+        picoDeMadera.recoger(new Metal());
+        assertEquals( durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMaderaContraDiamanteDisminuyeDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMadera = constructor.crearPicoDeMadera();
+        int durabilidad = picoDeMadera.durabilidad();
+        picoDeMadera.recoger(new Diamante());
+        assertEquals( durabilidad - picoDeMadera.fuerza(),picoDeMadera.durabilidad());
+    }
+
 
     @Test
     public void testUsarPicoDePiedraContraMaderaDisminuyeDurabilidadCorrectamente(){
@@ -103,6 +121,156 @@ public class PicoTest {
         picoDePiedra.recoger(new Piedra());
         assert((int)(durabilidad - picoDePiedra.fuerza()/1.5) == picoDePiedra.durabilidad());
     }
+
+    @Test
+    public void testUsarPicoDePiedraContraMetalDisminuyeDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedra = constructor.crearPicoDePiedra();
+        int durabilidad = picoDePiedra.durabilidad();
+        picoDePiedra.recoger(new Metal());
+        assert((int)(durabilidad - picoDePiedra.fuerza()/1.5) == picoDePiedra.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDePiedraContraDiamanteDisminuyeDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedra = constructor.crearPicoDePiedra();
+        int durabilidad = picoDePiedra.durabilidad();
+        picoDePiedra.recoger(new Diamante());
+        assert((int)(durabilidad - picoDePiedra.fuerza()/1.5) == picoDePiedra.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraMadera1VezNoDisminuyeDurabilidad(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        int durabilidad = picoDeMetal.durabilidad();
+        picoDeMetal.recoger(new Madera());
+
+        assertEquals( durabilidad,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraPiedra1VezNoDisminuyeDurabilidad(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        int durabilidad = picoDeMetal.durabilidad();
+        picoDeMetal.recoger(new Piedra());
+
+        assertEquals( durabilidad,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraMetal1VezNoDisminuyeDurabilidad(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        int durabilidad = picoDeMetal.durabilidad();
+        picoDeMetal.recoger(new Metal());
+
+        assertEquals( durabilidad,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraDiamante1VezNoDisminuyeDurabilidad(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        int durabilidad = picoDeMetal.durabilidad();
+        picoDeMetal.recoger(new Diamante());
+
+        assertEquals( durabilidad,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraMadera10VecesDisminuyeDurabilidadaCero(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        Madera madera = new Madera();
+
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+        picoDeMetal.recoger(madera);
+
+        assertEquals( 0,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraPiedra10VecesDisminuyeDurabilidadaCero(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        Piedra piedra = new Piedra();
+
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+        picoDeMetal.recoger(piedra);
+
+
+        assertEquals( 0,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraMetal10VecesDisminuyeDurabilidadaCero(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        Metal metal = new Metal();
+
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+        picoDeMetal.recoger(metal);
+
+
+
+        assertEquals( 0,picoDeMetal.durabilidad());
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraDiamante10VecesDisminuyeDurabilidadaCero(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        Diamante diamante = new Diamante();
+
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+        picoDeMetal.recoger(diamante);
+
+
+
+
+        assertEquals( 0,picoDeMetal.durabilidad());
+    }
+
+
+
+
+
+
 
 
 }
