@@ -71,6 +71,26 @@ public class HachaTest {
     }
 
     @Test
+    public void testUsarHachadeMaderaContraMetalDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMadera = constructor.crearHachaDeMadera();
+        int durabilidad = hachaDeMadera.durabilidad();
+        hachaDeMadera.recoger(new Metal());
+        assertEquals(durabilidad-hachaDeMadera.fuerza(),hachaDeMadera.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadeMaderaContraDiamanteDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMadera = constructor.crearHachaDeMadera();
+        int durabilidad = hachaDeMadera.durabilidad();
+        hachaDeMadera.recoger(new Diamante());
+        assertEquals(durabilidad-hachaDeMadera.fuerza(),hachaDeMadera.durabilidad());
+
+    }
+
+    @Test
     public void testUsarHachadePiedraContraMaderaDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
@@ -87,6 +107,66 @@ public class HachaTest {
         int durabilidad = hachaDePiedra.durabilidad();
         hachaDePiedra.recoger(new Piedra());
         assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadePiedraContraMetalDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDePiedra = constructor.crearHachaDePiedra();
+        int durabilidad = hachaDePiedra.durabilidad();
+        hachaDePiedra.recoger(new Metal());
+        assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadePiedraContraDiamanteDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDePiedra = constructor.crearHachaDePiedra();
+        int durabilidad = hachaDePiedra.durabilidad();
+        hachaDePiedra.recoger(new Diamante());
+        assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadeMetalContraMaderaDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        int durabilidad = hachaDeMetal.durabilidad();
+        hachaDeMetal.recoger(new Madera());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadeMetalContraPiedraDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        int durabilidad = hachaDeMetal.durabilidad();
+        hachaDeMetal.recoger(new Piedra());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadeMetalContraMetalDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        int durabilidad = hachaDeMetal.durabilidad();
+        hachaDeMetal.recoger(new Metal());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+
+    }
+
+    @Test
+    public void testUsarHachadeMetalContraDiamanteDisminuyeLaDurabilidadCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        int durabilidad = hachaDeMetal.durabilidad();
+        hachaDeMetal.recoger(new Diamante());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
 
     }
 }
