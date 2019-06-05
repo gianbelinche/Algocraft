@@ -40,7 +40,7 @@ public class JugadorTest {
     public void testCrearJugadorPoseeHachaConFuerzaCorrecta(){
         int fuerzaHerramienta = herramienta.fuerza();;
 
-        assertEquals(2, herramienta.fuerza());
+        assertEquals(2, fuerzaHerramienta);
     }
 
 }
