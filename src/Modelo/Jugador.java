@@ -2,9 +2,12 @@ package Modelo;
 
 public class Jugador {
 
-    private Constructor constructor = new Constructor();
-    private Hacha hachaDeMadera = constructor.crearHachaDeMadera();
-    private Herramienta herramientaEquipada = hachaDeMadera;
+    private Herramienta herramientaEquipada;
+
+    public Jugador(){
+        Constructor constructor = new Constructor();
+        herramientaEquipada = constructor.crearHachaDeMadera();
+    }
 
     public Herramienta herramientaEquipada() {
         return herramientaEquipada;
