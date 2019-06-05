@@ -6,9 +6,9 @@ import static org.junit.Assert.*;
 
 public class DiamanteTest {
 
-    int durabilidadInicial;
-    Constructor constructor;
-    Diamante diamante;
+    private int durabilidadInicial;
+    private Constructor constructor;
+    private Diamante diamante;
 
     @Before
     public void setUp(){

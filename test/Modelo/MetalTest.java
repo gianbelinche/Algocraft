@@ -6,9 +6,9 @@ import static org.junit.Assert.*;
 
 public class MetalTest {
 
-    int durabilidadInicial;
-    Constructor constructor;
-    Metal metal;
+    private int durabilidadInicial;
+    private Constructor constructor;
+    private Metal metal;
 
     @Before
     public void setUp(){

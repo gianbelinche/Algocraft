@@ -6,9 +6,9 @@ import static org.junit.Assert.*;
 
 public class MaderaTest {
 
-        int durabilidadInicial;
-        Constructor constructor;
-        Madera madera;
+        private int durabilidadInicial;
+        private Constructor constructor;
+        private Madera madera;
 
         @Before
         public void setUp(){

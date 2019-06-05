@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PiedraTest {
-    int durabilidadInicial;
-    Constructor constructor;
-    Piedra piedra;
+    private int durabilidadInicial;
+    private Constructor constructor;
+    private Piedra piedra;
 
     @Before
     public void setUp(){

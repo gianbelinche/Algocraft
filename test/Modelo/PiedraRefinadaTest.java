@@ -6,9 +6,9 @@ import static org.junit.Assert.*;
 
 public class PiedraRefinadaTest {
 
-    int durabilidadInicial;
-    Constructor constructor;
-    PiedraRefinada piedrarefinada;
+    private int durabilidadInicial;
+    private Constructor constructor;
+    private PiedraRefinada piedrarefinada;
 
     @Before
     public void setUp(){
