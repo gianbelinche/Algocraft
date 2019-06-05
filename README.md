@@ -20,10 +20,10 @@ Tests de Herramienta:
 - [X] Se crea hacha de metal con con su durabilidad y fuerza correspondiente
 - [X] Se crea Pico de metal con con su durabilidad y fuerza correspondiente
 - [X] Se crea Pico Fino con con su durabilidad y fuerza correspondiente
-- [] Hacha se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Hacha
-- [] Pico se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Pico
-- [] Pico Fino se usa contra Diamante y se reduce su durabilidad correspondiente
-- [] Pico Fino se usa contra los demás materiales y no se reduce su durabilidad
+- [X] Hacha se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Hacha
+- [X] Pico se usa contra cada uno de los materiales y se reduce su durabilidad correspondiente al material del Pico
+- [X] Pico Fino se usa contra Diamante y se reduce su durabilidad correspondiente
+- [X] Pico Fino se usa contra los demás materiales y no se reduce su durabilidad
 
 Tests de Jugador: 
 - [] Correcta creación e inicialización del jugador
