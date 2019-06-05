@@ -12,4 +12,9 @@ public class DesgasteLineal extends Desgaste {
     public double desgastar(int durabilidad, int fuerza, Material material){
         return durabilidad - fuerza * modificador;
     }
+
+    @Override
+    public double desgastar(int durabilidad, int fuerza, Diamante material){
+        return durabilidad - fuerza * modificador;
+    }
 }

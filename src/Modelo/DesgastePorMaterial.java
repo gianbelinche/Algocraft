@@ -8,9 +8,13 @@ public class DesgastePorMaterial extends Desgaste {
     }
 
 
+    @Override
     public double desgastar(int durabilidad, int fuerza, Material material){
-        if (material.obtener() instanceof Diamante){
-            return durabilidad - durabilidad * factor;
-        } else { return durabilidad;}
+        return durabilidad;
+    }
+
+    @Override
+    public double desgastar(int durabilidad, int fuerza, Diamante material){
+        return durabilidad - durabilidad * factor;
     }
 }
