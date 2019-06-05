@@ -6,28 +6,28 @@ import static org.junit.Assert.*;
 public class HachaTest {
 
     @Test
-    public void crearHachaDeMetalPoseeDurabilidadCorrecta(){
+    public void testCrearHachaDeMetalPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
         assertEquals(400,durabilidad);
     }
     @Test
-    public void crearHachaDeMetalPoseeFuerzaCorrecta() {
+    public void testCrearHachaDeMetalPoseeFuerzaCorrecta() {
         Constructor constructor = new Constructor();
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int fuerza = hachaDeMetal.fuerza();
         assertEquals(10, fuerza);
     }
     @Test
-    public void crearHachaDeMaderaPoseeDurabilidadCorrecta(){
+    public void testCrearHachaDeMaderaPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         int durabilidad = hachaDeMadera.durabilidad();
         assertEquals(100,durabilidad);
     }
     @Test
-    public void crearHachaDeMaderaPoseeFuerzaCorrecta(){
+    public void testCrearHachaDeMaderaPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         int fuerza = hachaDeMadera.fuerza();
@@ -35,7 +35,7 @@ public class HachaTest {
     }
 
     @Test
-    public void crearHachaDePiedraPoseeDurabilidadCorrecta(){
+    public void testCrearHachaDePiedraPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
         int durabilidad = hachaDePiedra.durabilidad();
@@ -43,7 +43,7 @@ public class HachaTest {
     }
 
     @Test
-    public void crearHachaDePiedraPoseeFuerzaCorrecta(){
+    public void testCrearHachaDePiedraPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
         int fuerza = hachaDePiedra.fuerza();
@@ -51,7 +51,7 @@ public class HachaTest {
     }
 
     @Test
-    public void usarHachadeMaderaContraPiedraDisminuyeLaDurabilidadCorrectamente(){
+    public void testUsarHachadeMaderaContraPiedraDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         int durabilidad = hachaDeMadera.durabilidad();
@@ -61,7 +61,7 @@ public class HachaTest {
     }
 
     @Test
-    public void usarHachadeMaderaContraMaderaDisminuyeLaDurabilidadCorrectamente(){
+    public void testUsarHachadeMaderaContraMaderaDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         int durabilidad = hachaDeMadera.durabilidad();
@@ -71,7 +71,7 @@ public class HachaTest {
     }
 
     @Test
-    public void usarHachadePiedraContraMaderaDisminuyeLaDurabilidadCorrectamente(){
+    public void testUsarHachadePiedraContraMaderaDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
         int durabilidad = hachaDePiedra.durabilidad();
@@ -81,7 +81,7 @@ public class HachaTest {
     }
 
     @Test
-    public void usarHachadePiedraContraPiedraDisminuyeLaDurabilidadCorrectamente(){
+    public void testUsarHachadePiedraContraPiedraDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
         int durabilidad = hachaDePiedra.durabilidad();

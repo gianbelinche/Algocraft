@@ -7,35 +7,35 @@ public class PicoTest {
 
 
     @Test
-    public void construirPicoDeMetalPoseeDurabilidadCorrecta(){
+    public void testConstruirPicoDeMetalPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDeMetal = constructor.crearPicoDeMetal();
         int durabilidad = picoDeMetal.durabilidad();
         assertEquals(400,durabilidad);
     }
     @Test
-    public void construirPicoDeMetalPoseeFuerzaCorrecta(){
+    public void testConstruirPicoDeMetalPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDeMetal = constructor.crearPicoDeMetal();
         int fuerza = picoDeMetal.fuerza();
         assertEquals(12,fuerza);
     }
     @Test
-    public void construirPicoDePiedraRefinadaPoseeDurabilidadCorrecta(){
+    public void testConstruirPicoDePiedraRefinadaPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDePiedraRefinada = constructor.crearPicoDePiedraRefinada();
         int durabilidad = picoDePiedraRefinada.durabilidad();
         assertEquals(1000,durabilidad);
     }
     @Test
-    public void construirPicoDePiedraRefinadaPoseeFuerzaCorrecta(){
+    public void testConstruirPicoDePiedraRefinadaPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDePiedraRefinada = constructor.crearPicoDePiedraRefinada();
         int fuerza = picoDePiedraRefinada.fuerza();
         assertEquals(20,fuerza);
     }
     @Test
-    public void construirPicoDeMaderaPoseeDurabilidadCorrecta(){
+    public void testConstruirPicoDeMaderaPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDeMadera = constructor.crearPicoDeMadera();
         int durabilidad = picoDeMadera.durabilidad();
@@ -43,7 +43,7 @@ public class PicoTest {
     }
 
     @Test
-    public void construirPicoDeMaderaPoseeFuerzaCorrecta(){
+    public void testConstruirPicoDeMaderaPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDeMadera = constructor.crearPicoDeMadera();
         int fuerza = picoDeMadera.fuerza();
@@ -51,7 +51,7 @@ public class PicoTest {
     }
 
     @Test
-    public void construirPicoDePiedraPoseeDurabilidadCorrecta(){
+    public void testConstruirPicoDePiedraPoseeDurabilidadCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDePiedra = constructor.crearPicoDePiedra();
         int durabilidad = picoDePiedra.durabilidad();
@@ -59,7 +59,7 @@ public class PicoTest {
     }
 
     @Test
-    public void construirPicoDePiedraPoseeFuerzaCorrecta(){
+    public void testConstruirPicoDePiedraPoseeFuerzaCorrecta(){
         Constructor constructor = new Constructor();
         Pico picoDePiedra = constructor.crearPicoDePiedra();
         int fuerza = picoDePiedra.fuerza();
@@ -67,7 +67,7 @@ public class PicoTest {
     }
 
     @Test
-    public void usarPicoDeMaderaContraMaderaDisminuyeDurabilidadCorrectamente(){
+    public void testUsarPicoDeMaderaContraMaderaDisminuyeDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Pico picoDeMadera = constructor.crearPicoDeMadera();
         int durabilidad = picoDeMadera.durabilidad();
@@ -76,7 +76,7 @@ public class PicoTest {
     }
 
     @Test
-    public void usarPicoDeMaderaContraPiedraDisminuyeDurabilidadCorrectamente(){
+    public void testUsarPicoDeMaderaContraPiedraDisminuyeDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Pico picoDeMadera = constructor.crearPicoDeMadera();
         int durabilidad = picoDeMadera.durabilidad();
@@ -86,7 +86,7 @@ public class PicoTest {
 
 
     @Test
-    public void usarPicoDePiedraContraMaderaDisminuyeDurabilidadCorrectamente(){
+    public void testUsarPicoDePiedraContraMaderaDisminuyeDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Pico picoDePiedra = constructor.crearPicoDePiedra();
         int durabilidad = picoDePiedra.durabilidad();
@@ -96,7 +96,7 @@ public class PicoTest {
     }
 
     @Test
-    public void usarPicoDePiedraContraPiedraDisminuyeDurabilidadCorrectamente(){
+    public void testUsarPicoDePiedraContraPiedraDisminuyeDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Pico picoDePiedra = constructor.crearPicoDePiedra();
         int durabilidad = picoDePiedra.durabilidad();
