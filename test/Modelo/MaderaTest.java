@@ -80,32 +80,5 @@ public class MaderaTest {
         assertEquals(durabilidadInicial, madera.durabilidad());
     }
 
-    @Test
-    public void testUsoHachaDePiedraRefinadaEnMaderaYSeDesgastaLaMadera(){
-
-        Hacha hacha = constructor.crearHachaDePiedraRefinada();
-        hacha.recoger(madera);
-
-        assertEquals(durabilidadInicial - hacha.fuerza() , madera.durabilidad());
-    }
-
-    @Test
-    public void testUsoPicoDeDiamanteEnMaderaYNoSeDesgastaLaMadera(){
-
-        Pico pico = constructor.crearPicoDeDiamante();
-        pico.recoger(madera);
-
-        assertEquals(durabilidadInicial , madera.durabilidad());
-    }
-
-    @Test
-    public void testUsoHachaDeDiamanteEnMaderaYSeDesgastaLaMadera(){
-
-        Hacha hacha = constructor.crearHachaDeDiamante();
-        hacha.recoger(madera);
-
-        assertEquals(durabilidadInicial - hacha.fuerza() , madera.durabilidad());
-    }
-
 
 }

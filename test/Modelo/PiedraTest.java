@@ -79,32 +79,4 @@ public class PiedraTest {
         assertEquals(durabilidadInicial - pico.fuerza() , piedra.durabilidad());
     }
 
-    @Test
-    public void testUsoHachaDePiedraRefinadaEnPiedraYNoSeDesgastaLaPiedra(){
-
-        Hacha hacha = constructor.crearHachaDePiedraRefinada();
-        hacha.recoger(piedra);
-
-        assertEquals(durabilidadInicial , piedra.durabilidad());
-    }
-
-    @Test
-    public void testUsoPicoDeDiamanteEnPiedraYSeDesgastaLaPiedra(){
-
-        Pico pico = constructor.crearPicoDeDiamante();
-        pico.recoger(piedra);
-
-        assertEquals(durabilidadInicial - pico.fuerza() , piedra.durabilidad());
-    }
-
-    @Test
-    public void testUsoHachaDeDiamanteEnPiedraYNoSeDesgastaLaPiedra(){
-
-        Hacha hacha = constructor.crearHachaDeDiamante();
-        hacha.recoger(piedra);
-
-        assertEquals(durabilidadInicial , piedra.durabilidad());
-    }
-
-
 }
