@@ -7,47 +7,53 @@ public class HachaTest {
 
     @Test
     public void testCrearHachaDeMetalPoseeDurabilidadCorrecta(){
+        int durabilidadDelHacha = 400;
         Constructor constructor = new Constructor();
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
-        assertEquals(400,durabilidad);
+        assertEquals(durabilidadDelHacha,durabilidad);
     }
     @Test
     public void testCrearHachaDeMetalPoseeFuerzaCorrecta() {
+        int fuerzaDelHacha = 10;
         Constructor constructor = new Constructor();
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int fuerza = hachaDeMetal.fuerza();
-        assertEquals(10, fuerza);
+        assertEquals(fuerzaDelHacha, fuerza);
     }
     @Test
     public void testCrearHachaDeMaderaPoseeDurabilidadCorrecta(){
+        int durabilidadDelHacha = 100;
         Constructor constructor = new Constructor();
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         int durabilidad = hachaDeMadera.durabilidad();
-        assertEquals(100,durabilidad);
+        assertEquals(durabilidadDelHacha,durabilidad);
     }
     @Test
     public void testCrearHachaDeMaderaPoseeFuerzaCorrecta(){
+        int fuerzaDelHacha = 2;
         Constructor constructor = new Constructor();
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         int fuerza = hachaDeMadera.fuerza();
-        assertEquals(2,fuerza);
+        assertEquals(fuerzaDelHacha,fuerza);
     }
 
     @Test
     public void testCrearHachaDePiedraPoseeDurabilidadCorrecta(){
+        int durabilidadDelHacha = 200;
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
         int durabilidad = hachaDePiedra.durabilidad();
-        assertEquals(200,durabilidad);
+        assertEquals(durabilidadDelHacha,durabilidad);
     }
 
     @Test
     public void testCrearHachaDePiedraPoseeFuerzaCorrecta(){
+        int fuerzaDelHacha = 5;
         Constructor constructor = new Constructor();
         Hacha hachaDePiedra = constructor.crearHachaDePiedra();
         int fuerza = hachaDePiedra.fuerza();
-        assertEquals(5,fuerza);
+        assertEquals(fuerzaDelHacha,fuerza);
     }
 
     @Test
@@ -129,14 +135,14 @@ public class HachaTest {
         assertEquals(durabilidad-hachaDePiedra.fuerza(),hachaDePiedra.durabilidad());
 
     }
-
+    private int factor = 2;
     @Test
     public void testUsarHachadeMetalContraMaderaDisminuyeLaDurabilidadCorrectamente(){
         Constructor constructor = new Constructor();
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
         hachaDeMetal.recoger(new Madera());
-        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());
 
     }
 
@@ -146,7 +152,7 @@ public class HachaTest {
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
         hachaDeMetal.recoger(new Piedra());
-        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());
 
     }
 
@@ -156,7 +162,7 @@ public class HachaTest {
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
         hachaDeMetal.recoger(new Metal());
-        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());
 
     }
 
@@ -166,7 +172,7 @@ public class HachaTest {
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
         hachaDeMetal.recoger(new Diamante());
-        assertEquals(durabilidad-hachaDeMetal.fuerza()/2,hachaDeMetal.durabilidad());
+        assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());
 
     }
 }

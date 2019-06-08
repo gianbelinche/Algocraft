@@ -24,9 +24,10 @@ public class JugadorTest {
 
     @Test
     public void testCrearJugadorPoseeHachaDeDurabilidadCorrecta(){
+        int durabilidadDeseada = 100;
         int durabilidadInicial = herramienta.durabilidad();
 
-        assertEquals(100, durabilidadInicial);
+        assertEquals(durabilidadDeseada, durabilidadInicial);
     }
 
     @Test
@@ -36,9 +37,10 @@ public class JugadorTest {
 
     @Test
     public void testCrearJugadorPoseeHachaConFuerzaCorrecta(){
+        int fuerzaDeseada = 2;
         int fuerzaHerramienta = herramienta.fuerza();
 
-        assertEquals(2, fuerzaHerramienta);
+        assertEquals(fuerzaDeseada, fuerzaHerramienta);
     }
 
 }
