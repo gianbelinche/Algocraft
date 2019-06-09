@@ -11,5 +11,9 @@ public class MesaDeCrafteo {
         semilla[indice1][indice2] = material;
     }
 
+    public Material enPosicion(int index1, int index2){
+        return semilla[index1][index2];
+    }
+
 
 }
