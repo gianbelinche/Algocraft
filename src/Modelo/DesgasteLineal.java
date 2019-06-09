@@ -1,6 +1,6 @@
 package Modelo;
 
-public class DesgasteLineal extends Desgaste {
+public class DesgasteLineal implements Desgaste {
     double modificador;
 
     public DesgasteLineal(double nuevoModificador){

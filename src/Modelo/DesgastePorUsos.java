@@ -1,6 +1,6 @@
 package Modelo;
 
-public class DesgastePorUsos extends Desgaste{
+public class DesgastePorUsos implements Desgaste{
     private int usos;
     private int usosMaximos;
 
@@ -10,7 +10,7 @@ public class DesgastePorUsos extends Desgaste{
     }
 
     @Override
-    double desgastar(int durabilidad, int fuerza,Material material){
+    public double desgastar(int durabilidad, int fuerza,Material material){
         usos += 1;
         if (usos >= usosMaximos) {return 0;}
         return durabilidad;

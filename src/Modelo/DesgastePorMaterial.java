@@ -1,6 +1,6 @@
 package Modelo;
 
-public class DesgastePorMaterial extends Desgaste {
+public class DesgastePorMaterial implements Desgaste {
     private double factor;
 
     public DesgastePorMaterial(double nuevoFactor){
