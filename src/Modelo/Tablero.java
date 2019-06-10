@@ -36,16 +36,26 @@ public class Tablero {
         return mapa[x][y];
     }
 
-    public boolean moverObjeto(int x_prev, int y_prev, int x_nuev, int y_nuev){
-        /*"Como sabe posicion si pude mover el objeto?"*/
-        Object objeto = this.obtenerDePosicion(x_prev, y_prev);
-
-        if(objeto == null){
-            colocarEnPosicion(x_nuev, y_nuev, objeto);
-            return true;
-        }
-        return false;
+    public int moverDerecha(int x, int y){
+        if(!validarPosicion(x,y)) return x;
+        return x+1;
     }
+
+    public int moverIzquierda(int x, int y){
+        if(!validarPosicion(x,y)) return x;
+        return x-1;
+    }
+
+    public int moverArriba(int x, int y){
+        if(!validarPosicion(x,y)) return y;
+        return y+1;
+    }
+
+    public int moverAbajo(int x, int y){
+        if(!validarPosicion(x,y)) return y;
+        return y-1;
+    }
+
 
 }
 
