@@ -38,55 +38,31 @@ public class Tablero {
 
     public int moverDerecha(int x, int y){
         if(!validarPosicion(x,y) || (obtenerDePosicion(x+1, y) != null)) return x;
-        colocarEnPosicion(x+1, y, obtenerDePosicion(x, y));
-        colocarEnPosicion(x, y, null);
+        colocarEnPosicion(x+1, y, obtenerDePosicion(x,y));
+        colocarEnPosicion(x, y,null);
         return x+1;
     }
 
     public int moverIzquierda(int x, int y){
         if(!validarPosicion(x,y) || (obtenerDePosicion(x-1, y) != null)) return x;
-        colocarEnPosicion(x-1, y, obtenerDePosicion(x, y));
-        colocarEnPosicion(x, y, null);
+        colocarEnPosicion(x-1, y, obtenerDePosicion(x,y));
+        colocarEnPosicion(x, y,null);
         return x-1;
     }
 
     public int moverAbajo(int x, int y){
         if(!validarPosicion(x,y) || (obtenerDePosicion(x, y+1) != null)) return y;
-        colocarEnPosicion(x, y+1, obtenerDePosicion(x, y));
-        colocarEnPosicion(x, y, null);
+        colocarEnPosicion(x, y+1, obtenerDePosicion(x,y));
+        colocarEnPosicion(x, y,null);
         return y+1;
     }
 
     public int moverArriba(int x, int y){
         if(!validarPosicion(x,y) || (obtenerDePosicion(x, y-1) != null)) return y;
-        colocarEnPosicion(x, y-1, obtenerDePosicion(x, y));
-        colocarEnPosicion(x, y, null);
+        colocarEnPosicion(x, y-1, obtenerDePosicion(x,y));
+        colocarEnPosicion(x, y,null);
         return y-1;
     }
 
 
 }
-
-
-    /*
-    public void colocarEnPosicion(Posicion posicion, Object objeto){
-        int x = posicion.getX();
-        int y = posicion.getY();
-        mapa[x][y] = objeto;
-    }
-    public Object obtenerDePosicion(Posicion posicion){
-        int x = posicion.getX();
-        int y = posicion.getY();
-        return mapa[x][y];
-    }
-    public Posicion moverObjeto(Posicion pos_ant, Posicion nueva_pos){
-        "Como sabe posicion si pude mover el objeto?"
-        Object objeto = this.obtenerDePosicion(pos_ant);
-
-        if(objeto == null){
-            colocarEnPosicion(nueva_pos, objeto);
-            return nueva_pos;
-        }
-        return pos_ant;
-    }
-    */

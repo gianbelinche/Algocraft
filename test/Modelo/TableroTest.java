@@ -67,7 +67,7 @@ public class TableroTest {
         assertEquals(nuevo_x, x);
     }
     @Test
-    public void TestTableroColocarObjeto(){
+    public void TestTableroColocarMaterial(){
         int x = 6;
         int y = 3;
         Piedra piedra = new Piedra();
@@ -75,7 +75,7 @@ public class TableroTest {
         assertEquals(piedra, tablero.obtenerDePosicion(x,y));
     }
     @Test
-    public void TestTableroColocarObjetoYMoverlo(){
+    public void TestTableroColocarMaterialYMoverlo(){
         int x = 6;
         int y = 3;
         int nueva_y;
@@ -85,12 +85,41 @@ public class TableroTest {
         assertEquals(piedra, tablero.obtenerDePosicion(x,nueva_y));
     }
     @Test
-    public void TestTableroColocarObjetoYMoverloDevuelveNullEnPosicionOriginal(){
+    public void TestTableroColocarMaterialYMoverloDevuelveNullEnPosicionOriginal(){
         int x = 6;
         int y = 3;
         int nueva_y;
         Piedra piedra = new Piedra();
         tablero.colocarEnPosicion(x,y,piedra);
+        nueva_y = tablero.moverArriba(x, y);
+        assertEquals(null, tablero.obtenerDePosicion(x,y));
+    }
+
+    @Test
+    public void TestTableroColocarJugador(){
+        int x = 6;
+        int y = 3;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y));
+    }
+    @Test
+    public void TestTableroColocarJugadorYMoverlo(){
+        int x = 6;
+        int y = 3;
+        int nueva_y;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        nueva_y = tablero.moverArriba(x, y);
+        assertEquals(jugador, tablero.obtenerDePosicion(x,nueva_y));
+    }
+    @Test
+    public void TestTableroColocarJugadorYMoverloDevuelveNullEnPosicionOriginal(){
+        int x = 6;
+        int y = 3;
+        int nueva_y;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
         nueva_y = tablero.moverArriba(x, y);
         assertEquals(null, tablero.obtenerDePosicion(x,y));
     }

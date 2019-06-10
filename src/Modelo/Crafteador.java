@@ -20,6 +20,7 @@ public class Crafteador {
     }
 
     private void crearSemillas(){
+        /*
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         MesaDeCrafteo mesaHachaDeMadera = new MesaDeCrafteo();
         Madera madera1 = new Madera();
@@ -34,5 +35,7 @@ public class Crafteador {
         mesaHachaDeMadera.posicionar(2,1,madera5);
 
         semillas.put(mesaHachaDeMadera,hachaDeMadera);
+
+         */
     }
 }

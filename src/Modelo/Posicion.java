@@ -4,10 +4,12 @@ public class Posicion {
 
     private int x;
     private int y;
+    private Tablero tablero;
 
-    public Posicion(int unX, int unY){
+    public Posicion(int unX, int unY, Tablero unTablero){
         x = unX;
         y = unY;
+        tablero = unTablero;
     }
 
     public int getX(){
@@ -18,20 +20,28 @@ public class Posicion {
         return y;
     }
 
-    public void moverDerecha(Tablero tablero){
+    public void setX(int unX){
+        x = unX;
+    }
+
+    public void setY(int unY){
+        x = unY;
+    }
+
+    public void moverDerecha(){
         this.x = tablero.moverDerecha(this.x, this.y);
     }
 
-    public void moverIzquierda(Tablero tablero){
+    public void moverIzquierda(){
         this.x = tablero.moverIzquierda(this.x, this.y);
     }
 
-    public void moverAbajo(Tablero tablero){
-        this.y = tablero.moverAbajo(this.x, this.y);
+    public void moverArriba(){
+        this.y = tablero.moverArriba(this.x, this.y);
     }
 
-    public void moverArriba(Tablero tablero){
-        this.y = tablero.moverArriba(this.x, this.y);
+    public void moverAbajo(){
+        this.y = tablero.moverAbajo(this.x, this.y);
     }
 
 }

@@ -5,10 +5,10 @@ public class Jugador {
     private Herramienta herramientaEquipada;
     private Posicion posicion;
 
-    public Jugador(){
+    public Jugador(Tablero tablero){
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
-        posicion = new Posicion(5, 5);
+        posicion = new Posicion(5, 5, tablero);
     }
 
     public Herramienta herramientaEquipada() {

@@ -16,8 +16,9 @@ public class PosicionTest {
     public void setUp(){
         int ancho = 10;
         int alto = 15;
-        posicion = new Posicion(posicionEnX,posicionEnY);
         tablero = new Tablero(ancho, alto);
+        posicion = new Posicion(posicionEnX,posicionEnY, tablero);
+
     }
 
     @Test
@@ -32,25 +33,25 @@ public class PosicionTest {
 
     @Test
     public void testMoverPosicionADerechaCambiaXCorrectamente(){
-        posicion.moverDerecha(tablero);
+        posicion.moverDerecha();
         assertEquals(posicionEnX+1, posicion.getX());
     }
 
     @Test
     public void testMoverPosicionAIzquierdaCambiaXCorrectamente(){
-        posicion.moverIzquierda(tablero);
+        posicion.moverIzquierda();
         assertEquals(posicionEnX-1, posicion.getX());
     }
 
     @Test
     public void testMoverPosicionAbajoCambiaXCorrectamente(){
-        posicion.moverAbajo(tablero);
+        posicion.moverAbajo();
         assertEquals(posicionEnY+1, posicion.getY());
     }
 
     @Test
     public void testMoverPosicionArribaCambiaXCorrectamente(){
-        posicion.moverArriba(tablero);
+        posicion.moverArriba();
         assertEquals(posicionEnY-1, posicion.getY());
     }
 

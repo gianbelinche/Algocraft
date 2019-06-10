@@ -9,11 +9,13 @@ public class JugadorTest {
     Constructor constructor;
     Jugador jugador;
     Herramienta herramienta;
+    Tablero tablero;
 
     @Before
     public void setUp(){
         constructor = new Constructor();
-        jugador = new Jugador();
+        tablero = new Tablero(10, 10);
+        jugador = new Jugador(tablero);
         herramienta = jugador.herramientaEquipada();
     }
 
