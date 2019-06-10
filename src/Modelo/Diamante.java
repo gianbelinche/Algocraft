@@ -1,5 +1,7 @@
 package Modelo;
 
+import com.sun.org.apache.bcel.internal.generic.D2I;
+
 public class Diamante extends Material {
 
     public Diamante(){
@@ -36,11 +38,9 @@ public class Diamante extends Material {
         return desgastar(desgaste);
     }
 
-    public boolean equals(Material material){
-        return false;
+    public boolean esIgual(Material material){
+        return material instanceof Diamante;
     }
-    public boolean equals(Diamante dimante){
-        return true;
-    }
+
 
 }

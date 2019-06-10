@@ -26,4 +26,6 @@ abstract class Material {
     abstract Material recoger(PiedraRefinada material, int desgaste);
 
     abstract Material recoger(Diamante material, int desgaste);
+
+    abstract boolean esIgual(Material material);
 }

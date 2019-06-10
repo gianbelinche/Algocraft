@@ -36,4 +36,6 @@ public class PiedraRefinada extends Material {
         return desgastar(desgaste);
     }
 
+    public boolean esIgual(Material material){return false;};
+
 }

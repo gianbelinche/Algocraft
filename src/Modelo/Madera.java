@@ -36,11 +36,9 @@ public class Madera extends Material {
         return desgastar(desgaste);
     }
 
-    public boolean equals(Material material){
-        return false;
+    public boolean esIgual(Material material){
+        return material instanceof Madera;
     }
-    public boolean equals(Madera madera){
-        return true;
-    }
+
 
 }

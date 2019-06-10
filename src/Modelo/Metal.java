@@ -36,12 +36,10 @@ public class Metal extends Material {
         return desgastar(desgaste);
     }
 
-    public boolean equals(Material material){
-        return false;
+    public boolean esIgual(Material material){
+        return material instanceof Metal;
     }
-    public boolean equals(Metal metal){
-        return true;
-    }
+
 
 }
 

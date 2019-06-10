@@ -16,13 +16,17 @@ public class MesaDeCrafteo {
         return semilla[index1][index2];
     }
 
+    @Override
+    public boolean equals(Object otroObjeto){
+        MesaDeCrafteo otraMesa;
+        if (otroObjeto instanceof MesaDeCrafteo) otraMesa = (MesaDeCrafteo) otroObjeto;
+        else{return false;};
 
-    public boolean equals(MesaDeCrafteo otraMesa){
         for(int i=0;i<3;i++){
             if (otraMesa.enPosicion(i,i) == null && this.enPosicion(i,i) == null){
                 continue;
             }
-            if (!(otraMesa.enPosicion(i,i).equals(this.enPosicion(i,i)))){
+            if (!(otraMesa.enPosicion(i,i).esIgual(this.enPosicion(i,i)))){
                 return false;
             }
         }
