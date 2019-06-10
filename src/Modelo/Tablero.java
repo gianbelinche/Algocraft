@@ -10,15 +10,6 @@ public class Tablero {
         ancho = anchoPasado;
         alto = altoPasado;
         mapa = new Object[ancho][alto];
-
-        for(int i=0; i<ancho; i++){
-
-            for(int j=0; j<alto; j++){
-                mapa[i][j] = null;
-            }
-
-        }
-
     }
 
     private boolean validarPosicion(int x, int y){
