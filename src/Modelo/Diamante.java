@@ -1,7 +1,5 @@
 package Modelo;
 
-import com.sun.org.apache.bcel.internal.generic.D2I;
-
 public class Diamante extends Material {
 
     public Diamante(){

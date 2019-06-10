@@ -21,51 +21,11 @@ public class TableroTest {
     public void TestTableroSeCreaConCeldasVacias(){
         for(int x=0; x<ancho; x++){
             for(int y=0; y<alto; y++){
-                assertEquals(tablero.obtenerDePosicion(x,y), null);
+                assertEquals(1, tablero.estaLibre(x,y));
             }
         }
     }
-    @Test
-    public void TestTableroMoverDerecha(){
-        int x = 5;
-        int y = 5;
-        int nuevo_x;
-        nuevo_x = tablero.moverDerecha(x, y);
-        assertEquals(nuevo_x, x+1);
 
-    }
-    @Test
-    public void TestTableroMoverArriba(){
-        int x = 5;
-        int y = 5;
-        int nuevo_y;
-        nuevo_y = tablero.moverArriba(x, y);
-        assertEquals(nuevo_y, y-1);
-    }
-    @Test
-    public void TestTableroMoverIzquierda(){
-        int x = 5;
-        int y = 5;
-        int nuevo_x;
-        nuevo_x = tablero.moverIzquierda(x, y);
-        assertEquals(nuevo_x, x-1);
-    }
-    @Test
-    public void TestTableroMoverAbajo(){
-        int x = 5;
-        int y = 5;
-        int nuevo_y;
-        nuevo_y = tablero.moverAbajo(x, y);
-        assertEquals(nuevo_y, y+1);
-    }
-    @Test
-    public void TestTableroMoverFueraDeBordeNoAlteraPosicion(){
-        int x = 10;
-        int y = 5;
-        int nuevo_x;
-        nuevo_x = tablero.moverDerecha(x, y);
-        assertEquals(nuevo_x, x);
-    }
     @Test
     public void TestTableroColocarMaterial(){
         int x = 6;
@@ -74,55 +34,155 @@ public class TableroTest {
         tablero.colocarEnPosicion(x,y,piedra);
         assertEquals(piedra, tablero.obtenerDePosicion(x,y));
     }
+
     @Test
-    public void TestTableroColocarMaterialYMoverlo(){
+    public void TestTableroBorrarMaterial(){
         int x = 6;
         int y = 3;
-        int nueva_y;
         Piedra piedra = new Piedra();
         tablero.colocarEnPosicion(x,y,piedra);
-        nueva_y = tablero.moverArriba(x, y);
-        assertEquals(piedra, tablero.obtenerDePosicion(x,nueva_y));
-    }
-    @Test
-    public void TestTableroColocarMaterialYMoverloDevuelveNullEnPosicionOriginal(){
-        int x = 6;
-        int y = 3;
-        int nueva_y;
-        Piedra piedra = new Piedra();
-        tablero.colocarEnPosicion(x,y,piedra);
-        nueva_y = tablero.moverArriba(x, y);
-        assertEquals(null, tablero.obtenerDePosicion(x,y));
+        tablero.borrarEnPosicion(x,y);
+        assertEquals(1, tablero.estaLibre(x,y));
     }
 
     @Test
     public void TestTableroColocarJugador(){
-        int x = 6;
-        int y = 3;
+        int x = 5;
+        int y = 5;
         Jugador jugador = new Jugador(tablero);
         tablero.colocarEnPosicion(x,y,jugador);
         assertEquals(jugador, tablero.obtenerDePosicion(x,y));
     }
+
     @Test
-    public void TestTableroColocarJugadorYMoverlo(){
-        int x = 6;
-        int y = 3;
-        int nueva_y;
+    public void TestTableroBorrarJugador(){
+        int x = 5;
+        int y = 5;
         Jugador jugador = new Jugador(tablero);
         tablero.colocarEnPosicion(x,y,jugador);
-        nueva_y = tablero.moverArriba(x, y);
-        assertEquals(jugador, tablero.obtenerDePosicion(x,nueva_y));
+        tablero.borrarEnPosicion(x,y);
+        assertEquals(1, tablero.estaLibre(x,y));
     }
+
     @Test
-    public void TestTableroColocarJugadorYMoverloDevuelveNullEnPosicionOriginal(){
-        int x = 6;
-        int y = 3;
-        int nueva_y;
+    public void TestTableroJugadorSeMueveHaciaLaDerechaYAumentaSuX(){
+        int x = 5;
+        int y = 5;
         Jugador jugador = new Jugador(tablero);
         tablero.colocarEnPosicion(x,y,jugador);
-        nueva_y = tablero.moverArriba(x, y);
-        assertEquals(null, tablero.obtenerDePosicion(x,y));
+
+        jugador.moverDerecha();
+        assertEquals(jugador, tablero.obtenerDePosicion(x + 1,y));
     }
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaLaDerechaYDejaUnaCasillaLibre(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        jugador.moverDerecha();
+
+        assertEquals(1, tablero.estaLibre(x,y));
+    }
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaLaIzquierdaYDisminuyeSuX(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+
+        jugador.moverIzquierda();
+        assertEquals(jugador, tablero.obtenerDePosicion(x - 1,y));
+    }
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaLaIzquierdaYDejaUnaCasillaLibre(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        jugador.moverIzquierda();
+
+        assertEquals(1, tablero.estaLibre(x,y));
+    }
+
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaArribaYDisminuyeSuY(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+
+        jugador.moverArriba();
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y - 1));
+    }
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaArribaYDejaUnaCasillaLibre(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        jugador.moverArriba();
+
+        assertEquals(1, tablero.estaLibre(x,y));
+    }
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaAbajoYAumentaSuY(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+
+        jugador.moverAbajo();
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1));
+    }
+
+    @Test
+    public void TestTableroJugadorSeMueveHaciaAbajoYDejaUnaCasillaLibre(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        jugador.moverAbajo();
+
+        assertEquals(1, tablero.estaLibre(x,y));
+    }
+
+
+    @Test
+    public void TestTableroMoverJugadorFueraDelBordeNoAlteraPosicion(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+
+        for(int i = 0;i <100;i++){
+            jugador.moverDerecha();
+        }
+
+        assertEquals(jugador, tablero.obtenerDePosicion(ancho - 1,y));
+    }
+
+    @Test
+    public void TestTableroMoverJugadorContraMaterialNoAlteraSuPosicion(){
+        int x = 5;
+        int y = 5;
+        Jugador jugador = new Jugador(tablero);
+        tablero.colocarEnPosicion(x,y,jugador);
+        Piedra piedra = new Piedra();
+        tablero.colocarEnPosicion(x + 1,y,piedra);
+
+        jugador.moverDerecha();
+
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y));
+    }
+
+
 
 
 }

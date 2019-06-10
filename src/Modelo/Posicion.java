@@ -12,36 +12,30 @@ public class Posicion {
         tablero = unTablero;
     }
 
-    public int getX(){
-        return x;
-    }
-
-    public int getY(){
-        return y;
-    }
-
-    public void setX(int unX){
-        x = unX;
-    }
-
-    public void setY(int unY){
-        x = unY;
+    public void mover(int incrementoX, int incrementoY){
+        int escalaDeMovimiento = tablero.mover(x,y,incrementoX,incrementoY);
+        x += incrementoX*escalaDeMovimiento;
+        y += incrementoY*escalaDeMovimiento;
     }
 
     public void moverDerecha(){
-        this.x = tablero.moverDerecha(this.x, this.y);
+        mover(1,0);
     }
 
     public void moverIzquierda(){
-        this.x = tablero.moverIzquierda(this.x, this.y);
+        mover(-1,0);
     }
 
     public void moverArriba(){
-        this.y = tablero.moverArriba(this.x, this.y);
+        mover(0,-1);
     }
 
     public void moverAbajo(){
-        this.y = tablero.moverAbajo(this.x, this.y);
+        mover(0,1);
     }
 
+    //Hacen falta?
+
+    public int getX() {return x;}
+    public int getY() {return y;}
 }

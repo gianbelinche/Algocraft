@@ -1,6 +1,6 @@
 package Modelo;
 
-abstract class Material {
+abstract class Material implements Posicionable{
 
     int durabilidad;
 
@@ -28,4 +28,9 @@ abstract class Material {
     abstract Material recoger(Diamante material, int desgaste);
 
     abstract boolean esIgual(Material material);
+
+    @Override
+    public int estaLibre() {
+        return 0;
+    }
 }

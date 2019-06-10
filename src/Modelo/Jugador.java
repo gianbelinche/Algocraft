@@ -1,6 +1,6 @@
 package Modelo;
 
-public class Jugador {
+public class Jugador implements Posicionable{
 
     private Herramienta herramientaEquipada;
     private Posicion posicion;
@@ -14,7 +14,12 @@ public class Jugador {
     public Herramienta herramientaEquipada() {
         return herramientaEquipada;
     }
-    /*
+
+    @Override
+    public int estaLibre() {
+        return 0;
+    }
+
     public void moverDerecha(){
         posicion.moverDerecha();
     }
@@ -28,5 +33,4 @@ public class Jugador {
     public void moverAbajo(){
         posicion.moverAbajo();
     }
-     */
 }
