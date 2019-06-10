@@ -19,23 +19,54 @@ public class Crafteador {
 
     }
 
-    private void crearSemillas(){
-
+    private void crearSemillaHachaDeMadera(){
         Hacha hachaDeMadera = constructor.crearHachaDeMadera();
         MesaDeCrafteo mesaHachaDeMadera = new MesaDeCrafteo();
-        Madera madera1 = new Madera();
-        mesaHachaDeMadera.posicionar(0,0,madera1);
-        Madera madera2 = new Madera();
-        mesaHachaDeMadera.posicionar(0,1,madera2);
-        Madera madera3 = new Madera();
-        mesaHachaDeMadera.posicionar(1,0,madera3);
-        Madera madera4 = new Madera();
-        mesaHachaDeMadera.posicionar(1,1,madera4);
-        Madera madera5 = new Madera();
-        mesaHachaDeMadera.posicionar(2,1,madera5);
+        Madera madera = new Madera();
+        mesaHachaDeMadera.posicionar(0,0,madera);
+        mesaHachaDeMadera.posicionar(0,1,madera);
+        mesaHachaDeMadera.posicionar(1,0,madera);
+        mesaHachaDeMadera.posicionar(1,1,madera);
+        mesaHachaDeMadera.posicionar(2,1,madera);
 
         semillas.put(mesaHachaDeMadera,hachaDeMadera);
+    }
 
+    private void crearSemillaHachaDePiedra(){
+        Hacha hachaDePiedra = constructor.crearHachaDePiedra();
+        MesaDeCrafteo mesaHachaDePiedra = new MesaDeCrafteo();
+        Madera madera = new Madera();
+        Piedra piedra = new Piedra();
+        mesaHachaDePiedra.posicionar(0,0,piedra);
+        mesaHachaDePiedra.posicionar(0,1,piedra);
+        mesaHachaDePiedra.posicionar(1,0,piedra);
+        mesaHachaDePiedra.posicionar(1,1,madera);
+        mesaHachaDePiedra.posicionar(2,1,madera);
+
+        semillas.put(mesaHachaDePiedra,hachaDePiedra);
+    }
+
+    private void crearSemillaHachaDeMetal(){
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        MesaDeCrafteo mesaHachaDeMetal = new MesaDeCrafteo();
+        Madera madera = new Madera();
+        Metal metal = new Metal();
+        mesaHachaDeMetal.posicionar(0,0,metal);
+        mesaHachaDeMetal.posicionar(0,1,metal);
+        mesaHachaDeMetal.posicionar(1,0,metal);
+        mesaHachaDeMetal.posicionar(1,1,madera);
+        mesaHachaDeMetal.posicionar(2,1,madera);
+
+        semillas.put(mesaHachaDeMetal,hachaDeMetal);
+    }
+
+    private void crearSemillas(){
+
+        this.crearSemillaHachaDeMadera();
+
+        this.crearSemillaHachaDePiedra();
+
+        this.crearSemillaHachaDeMetal();
 
     }
 }
