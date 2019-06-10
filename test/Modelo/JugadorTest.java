@@ -6,11 +6,14 @@ import static org.junit.Assert.*;
 
 public class JugadorTest {
 
-    private Herramienta herramienta;
+    Constructor constructor;
+    Jugador jugador;
+    Herramienta herramienta;
 
     @Before
     public void setUp(){
-        Jugador jugador = new Jugador();
+        constructor = new Constructor();
+        jugador = new Jugador();
         herramienta = jugador.herramientaEquipada();
     }
 
