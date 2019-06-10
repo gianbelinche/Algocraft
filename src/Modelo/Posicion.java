@@ -9,7 +9,7 @@ public class Posicion {
         x = unX;
         y = unY;
     }
-    /*
+
     public int getX(){
         return x;
     }
@@ -18,14 +18,6 @@ public class Posicion {
         return y;
     }
 
-    public void setX(int unX){
-        x = unX;
-    }
-
-    public void setY(int unY){
-        x = unY;
-    }
-    */
     public void moverDerecha(Tablero tablero){
         this.x = tablero.moverDerecha(this.x, this.y);
     }
@@ -34,12 +26,12 @@ public class Posicion {
         this.x = tablero.moverIzquierda(this.x, this.y);
     }
 
-    public void moverArriba(Tablero tablero){
-        this.y = tablero.moverArriba(this.x, this.y);
-    }
-
     public void moverAbajo(Tablero tablero){
         this.y = tablero.moverAbajo(this.x, this.y);
+    }
+
+    public void moverArriba(Tablero tablero){
+        this.y = tablero.moverArriba(this.x, this.y);
     }
 
 }
