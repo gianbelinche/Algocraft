@@ -2,6 +2,7 @@ package Modelo;
 
 abstract class Material implements Posicionable{
 
+    Posicion posicion;
     int durabilidad;
 
     public int durabilidad(){
@@ -11,7 +12,7 @@ abstract class Material implements Posicionable{
     protected Material desgastar(int desgaste){
         durabilidad -= desgaste;
         if(durabilidad > 0) return null;
-        //Elminar material del mapa.
+        posicion.borrar();
         return this;
     }
 

@@ -34,6 +34,9 @@ public class Posicion {
         mover(0,1);
     }
 
+    public void borrar(){
+        tablero.borrarEnPosicion(x,y);
+    }
     //Hacen falta?
 
     public int getX() {return x;}
