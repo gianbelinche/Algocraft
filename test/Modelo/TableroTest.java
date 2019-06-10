@@ -16,7 +16,7 @@ public class TableroTest {
         ancho = 10;
         tablero = new Tablero(ancho, alto);
     }
-    /*
+
     @Test
     public void TestTableroSeCreaConCeldasVacias(){
         for(int x=0; x<ancho; x++){
@@ -26,5 +26,5 @@ public class TableroTest {
         }
     }
 
-     */
+
 }

@@ -1,6 +1,7 @@
 package Modelo;
 
 public class MesaDeCrafteo {
+
     private Material [][]  semilla = new Material[3][3];
 
     public Material [][] obtenerSemilla(){
@@ -14,6 +15,5 @@ public class MesaDeCrafteo {
     public Material enPosicion(int index1, int index2){
         return semilla[index1][index2];
     }
-
 
 }
