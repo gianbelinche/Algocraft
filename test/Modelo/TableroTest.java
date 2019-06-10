@@ -181,4 +181,20 @@ public class TableroTest {
 
         assertEquals(jugador, tablero.obtenerDePosicion(x,y));
     }
+
+    @Test
+    public void TestTableroAlRecolectarseUnMaterialSeEliminaDelMapa(){
+        int x = 5;
+        int y = 5;
+        Piedra piedra = new Piedra();
+        tablero.colocarEnPosicion(x,y,piedra);
+
+        Constructor constructor = new Constructor();
+        Pico pico = constructor.crearPicoDeMetal();
+        pico.recoger(piedra);
+        pico.recoger(piedra);
+        pico.recoger(piedra);
+
+        assertEquals(1, tablero.estaLibre(x,y));
+    }
 }

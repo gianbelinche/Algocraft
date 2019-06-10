@@ -64,8 +64,10 @@ public class MaderaTest {
 
     @Test
     public void testUsoHachaDeMetalEnMaderaYSeDesgastaLaMadera(){
-
         Hacha hacha = constructor.crearHachaDeMetal();
+        Tablero tablero = new Tablero(10,10);
+        tablero.colocarEnPosicion(0,0,madera);
+
         hacha.recoger(madera);
 
         assertEquals(durabilidadInicial - hacha.fuerza() , madera.durabilidad());

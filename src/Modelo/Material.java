@@ -12,6 +12,7 @@ abstract class Material implements Posicionable{
     protected Material desgastar(int desgaste){
         durabilidad -= desgaste;
         if(durabilidad > 0) return null;
+        posicion.borrar(this);
         return this;
     }
 

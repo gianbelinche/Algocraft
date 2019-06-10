@@ -141,7 +141,12 @@ public class HachaTest {
         Constructor constructor = new Constructor();
         Hacha hachaDeMetal = constructor.crearHachaDeMetal();
         int durabilidad = hachaDeMetal.durabilidad();
-        hachaDeMetal.recoger(new Madera());
+
+        Madera madera = new Madera();
+        Tablero tablero = new Tablero(10,10);
+        tablero.colocarEnPosicion(0,0,madera);
+
+        hachaDeMetal.recoger(madera);
         assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());
 
     }

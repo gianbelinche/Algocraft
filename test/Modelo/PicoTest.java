@@ -213,17 +213,13 @@ public class PicoTest {
         Constructor constructor = new Constructor();
         Pico picoDeMetal = constructor.crearPicoDeMetal();
         Piedra piedra = new Piedra();
+        Tablero tablero = new Tablero(10,10);
 
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
-        picoDeMetal.recoger(piedra);
+        for(int i = 0; i < 10; i++)
+        {
+            tablero.colocarEnPosicion(0,0,piedra);
+            picoDeMetal.recoger(piedra);
+        }
 
 
         assertEquals( 0,picoDeMetal.durabilidad());
@@ -234,18 +230,13 @@ public class PicoTest {
         Constructor constructor = new Constructor();
         Pico picoDeMetal = constructor.crearPicoDeMetal();
         Metal metal = new Metal();
+        Tablero tablero = new Tablero(10,10);
 
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-        picoDeMetal.recoger(metal);
-
+        for(int i = 0; i < 10; i++)
+        {
+            tablero.colocarEnPosicion(0,0,metal);
+            picoDeMetal.recoger(metal);
+        }
 
         assertEquals( 0,picoDeMetal.durabilidad());
     }
