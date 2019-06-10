@@ -20,10 +20,14 @@ public class Jugador implements Posicionable{
         return 0;
     }
 
+    @Override
+    public void establecerPosicion(Posicion nuevaPosicion){
+        posicion = nuevaPosicion;
+    }
+
     public void moverDerecha(){
         posicion.moverDerecha();
     }
-
     public void moverIzquierda(){
         posicion.moverIzquierda();
     }

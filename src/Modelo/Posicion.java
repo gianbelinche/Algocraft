@@ -13,9 +13,7 @@ public class Posicion {
     }
 
     public void mover(int incrementoX, int incrementoY){
-        int escalaDeMovimiento = tablero.mover(x,y,incrementoX,incrementoY);
-        x += incrementoX*escalaDeMovimiento;
-        y += incrementoY*escalaDeMovimiento;
+        tablero.mover(x,y,incrementoX,incrementoY);
     }
 
     public void moverDerecha(){
@@ -34,9 +32,11 @@ public class Posicion {
         mover(0,1);
     }
 
-    public void borrar(){
+    public void borrar(Posicionable objeto){
         tablero.borrarEnPosicion(x,y);
+        objeto.establecerPosicion(null);
     }
+
     //Hacen falta?
 
     public int getX() {return x;}

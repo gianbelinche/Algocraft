@@ -22,34 +22,34 @@ public class Tablero {
         }
     }
 
-    public  int estaLibre(int x, int y)
-    {
-        if(!validarPosicion(x,y)) return 0;
-        return obtenerDePosicion(x,y).estaLibre();
-    }
-
-    public void colocarEnPosicion(int x, int y, Posicionable objeto){
-        if(validarPosicion(x,y)) mapa[x][y] = objeto;
-    }
-
-    public void borrarEnPosicion(int x, int y){
-        if(validarPosicion(x,y)) mapa[x][y] = posicionVacia;
-    }
-
     private boolean validarPosicion(int x, int y){
         if(x >= ancho || x < 0) return false;
         if(y >= alto  || y < 0) return false;
         return true;
     }
 
-    public Posicionable obtenerDePosicion(int x, int y){
+    public void colocarEnPosicion(int x, int y, Posicionable objetoColocado){
+        if(!validarPosicion(x,y)) return;
+        mapa[x][y] = objetoColocado;
+        Posicion nuevaPosicion = new Posicion(x,y,this);
+        objetoColocado.establecerPosicion(nuevaPosicion);
+    }
 
-        if(!validarPosicion(x,y)) return posicionVacia;
+    public void borrarEnPosicion(int x, int y){
+        mapa[x][y] = posicionVacia;
+    }
+
+    public Posicionable obtenerDePosicion(int x, int y){
         return mapa[x][y];
     }
 
+    public  int estaLibre(int x, int y)
+    {
+        if(!validarPosicion(x,y)) return 0;
+        return obtenerDePosicion(x,y).estaLibre();
+    }
 
-    public int mover(int viejaX,int viejaY,int incrementoX, int incrementoY)
+    public void mover(int viejaX,int viejaY,int incrementoX, int incrementoY)
     {
         Posicionable objetoAMover = obtenerDePosicion(viejaX,viejaY);
         int escalaDeMovimiento = estaLibre(viejaX + incrementoX,viejaY + incrementoY);
@@ -58,7 +58,5 @@ public class Tablero {
 
         borrarEnPosicion(viejaX,viejaY);
         colocarEnPosicion(nuevaX,nuevaY,objetoAMover);
-
-        return escalaDeMovimiento;
     }
 }

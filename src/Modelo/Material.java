@@ -12,7 +12,6 @@ abstract class Material implements Posicionable{
     protected Material desgastar(int desgaste){
         durabilidad -= desgaste;
         if(durabilidad > 0) return null;
-        posicion.borrar();
         return this;
     }
 
@@ -33,5 +32,10 @@ abstract class Material implements Posicionable{
     @Override
     public int estaLibre() {
         return 0;
+    }
+
+    @Override
+    public void establecerPosicion(Posicion nuevaPosicion){
+        posicion = nuevaPosicion;
     }
 }

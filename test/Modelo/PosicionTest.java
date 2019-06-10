@@ -31,6 +31,9 @@ public class PosicionTest {
         assertEquals(posicionEnY, posicion.getY());
     }
 
+    /* Ver metodo colocarEnPosicion de Tablero
+    //----------------------------------------
+
     @Test
     public void testMoverPosicionADerechaCambiaXCorrectamente(){
         posicion.moverDerecha();
@@ -55,4 +58,5 @@ public class PosicionTest {
         assertEquals(posicionEnY-1, posicion.getY());
     }
 
+     */
 }

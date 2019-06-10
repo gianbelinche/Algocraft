@@ -181,8 +181,4 @@ public class TableroTest {
 
         assertEquals(jugador, tablero.obtenerDePosicion(x,y));
     }
-
-
-
-
 }
