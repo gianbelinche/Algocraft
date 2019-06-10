@@ -36,4 +36,11 @@ public class Madera extends Material {
         return desgastar(desgaste);
     }
 
+    public boolean equals(Material material){
+        return false;
+    }
+    public boolean equals(Madera madera){
+        return true;
+    }
+
 }

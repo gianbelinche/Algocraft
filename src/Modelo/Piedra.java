@@ -36,4 +36,11 @@ public class Piedra extends Material {
         return desgastar(desgaste);
     }
 
+    public boolean equals(Material material){
+        return false;
+    }
+    public boolean equals(Piedra piedra){
+        return true;
+    }
+
 }

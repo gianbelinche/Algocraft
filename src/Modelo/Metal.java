@@ -36,5 +36,12 @@ public class Metal extends Material {
         return desgastar(desgaste);
     }
 
+    public boolean equals(Material material){
+        return false;
+    }
+    public boolean equals(Metal metal){
+        return true;
+    }
+
 }
 

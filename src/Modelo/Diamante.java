@@ -36,4 +36,11 @@ public class Diamante extends Material {
         return desgastar(desgaste);
     }
 
+    public boolean equals(Material material){
+        return false;
+    }
+    public boolean equals(Diamante dimante){
+        return true;
+    }
+
 }
