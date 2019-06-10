@@ -12,6 +12,13 @@ public class Tablero {
         mapa = new Object[ancho][alto];
     }
 
+    public void colocarEnPosicion(int x, int y, Object objeto){
+        if(!validarPosicion(x,y)){
+            return; // CAMBIAR PARA LANZAR EXCEPCION
+        }
+        mapa[x][y] = objeto;
+    }
+
     private boolean validarPosicion(int x, int y){
         if(x>=ancho || x < 0){
             return false;
@@ -22,13 +29,6 @@ public class Tablero {
         return true;
     }
 
-    public void colocarEnPosicion(int x, int y, Object objeto){
-        if(!validarPosicion(x,y)){
-            return; // CAMBIAR PARA LANZAR EXCEPCION
-        }
-        mapa[x][y] = objeto;
-    }
-
     public Object obtenerDePosicion(int x, int y){
         if(!validarPosicion(x,y)){
             return null; // CAMBIAR PARA LANZAR EXCEPCION
@@ -36,16 +36,34 @@ public class Tablero {
         return mapa[x][y];
     }
 
-    public boolean moverObjeto(int x_prev, int y_prev, int x_nuev, int y_nuev){
-        /*"Como sabe posicion si pude mover el objeto?"*/
-        Object objeto = this.obtenerDePosicion(x_prev, y_prev);
-
-        if(objeto == null){
-            colocarEnPosicion(x_nuev, y_nuev, objeto);
-            return true;
-        }
-        return false;
+    public int moverDerecha(int x, int y){
+        if(!validarPosicion(x,y) || (obtenerDePosicion(x+1, y) != null)) return x;
+        colocarEnPosicion(x+1, y, obtenerDePosicion(x, y));
+        colocarEnPosicion(x, y, null);
+        return x+1;
     }
+
+    public int moverIzquierda(int x, int y){
+        if(!validarPosicion(x,y) || (obtenerDePosicion(x-1, y) != null)) return x;
+        colocarEnPosicion(x-1, y, obtenerDePosicion(x, y));
+        colocarEnPosicion(x, y, null);
+        return x-1;
+    }
+
+    public int moverAbajo(int x, int y){
+        if(!validarPosicion(x,y) || (obtenerDePosicion(x, y+1) != null)) return y;
+        colocarEnPosicion(x, y+1, obtenerDePosicion(x, y));
+        colocarEnPosicion(x, y, null);
+        return y+1;
+    }
+
+    public int moverArriba(int x, int y){
+        if(!validarPosicion(x,y) || (obtenerDePosicion(x, y-1) != null)) return y;
+        colocarEnPosicion(x, y-1, obtenerDePosicion(x, y));
+        colocarEnPosicion(x, y, null);
+        return y-1;
+    }
+
 
 }
 
