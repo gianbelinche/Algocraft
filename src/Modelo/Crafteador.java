@@ -60,6 +60,64 @@ public class Crafteador {
         semillas.put(mesaHachaDeMetal,hachaDeMetal);
     }
 
+    private void crearSemillaPicoDeMadera(){
+        Pico picoDeMadera = constructor.crearPicoDeMadera();
+        MesaDeCrafteo mesaPicoDeMadera = new MesaDeCrafteo();
+        Madera madera = new Madera();
+        mesaPicoDeMadera.posicionar(0,0,madera);
+        mesaPicoDeMadera.posicionar(0,1,madera);
+        mesaPicoDeMadera.posicionar(0,2,madera);
+        mesaPicoDeMadera.posicionar(1,1,madera);
+        mesaPicoDeMadera.posicionar(2,1,madera);
+
+        semillas.put(mesaPicoDeMadera,picoDeMadera);
+    }
+
+    private void crearSemillaPicoDePiedra(){
+        Pico picoDePiedra = constructor.crearPicoDePiedra();
+        MesaDeCrafteo mesaPicoDePiedra = new MesaDeCrafteo();
+        Madera madera = new Madera();
+        Piedra piedra = new Piedra();
+        mesaPicoDePiedra.posicionar(0,0,piedra);
+        mesaPicoDePiedra.posicionar(0,1,piedra);
+        mesaPicoDePiedra.posicionar(0,2,piedra);
+        mesaPicoDePiedra.posicionar(1,1,madera);
+        mesaPicoDePiedra.posicionar(2,1,madera);
+
+        semillas.put(mesaPicoDePiedra,picoDePiedra);
+    }
+
+    private void crearSemillaPicoDeMetal(){
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        MesaDeCrafteo mesaPicoDeMetal = new MesaDeCrafteo();
+        Madera madera = new Madera();
+        Metal metal = new Metal();
+        mesaPicoDeMetal.posicionar(0,0,metal);
+        mesaPicoDeMetal.posicionar(0,1,metal);
+        mesaPicoDeMetal.posicionar(0,2,metal);
+        mesaPicoDeMetal.posicionar(1,1,madera);
+        mesaPicoDeMetal.posicionar(2,1,madera);
+
+        semillas.put(mesaPicoDeMetal,picoDeMetal);
+    }
+
+    private void crearSemillaPicoDePiedraRefinada(){
+        Pico picoDePiedraRefinada = constructor.crearPicoDePiedraRefinada();
+        MesaDeCrafteo mesaPicoDePiedraRefinada = new MesaDeCrafteo();
+        Madera madera = new Madera();
+        Metal metal = new Metal();
+        Piedra piedra = new Piedra();
+        mesaPicoDePiedraRefinada.posicionar(0,0,metal);
+        mesaPicoDePiedraRefinada.posicionar(0,1,metal);
+        mesaPicoDePiedraRefinada.posicionar(0,2,metal);
+        mesaPicoDePiedraRefinada.posicionar(1,0,piedra);
+        mesaPicoDePiedraRefinada.posicionar(1,1,madera);
+        mesaPicoDePiedraRefinada.posicionar(2,1,madera);
+
+        semillas.put(mesaPicoDePiedraRefinada,picoDePiedraRefinada);
+    }
+
+
     private void crearSemillas(){
 
         this.crearSemillaHachaDeMadera();
@@ -67,6 +125,14 @@ public class Crafteador {
         this.crearSemillaHachaDePiedra();
 
         this.crearSemillaHachaDeMetal();
+
+        this.crearSemillaPicoDeMadera();
+
+        this.crearSemillaPicoDePiedra();
+
+        this.crearSemillaPicoDeMetal();
+
+        this.crearSemillaPicoDePiedraRefinada();
 
     }
 }

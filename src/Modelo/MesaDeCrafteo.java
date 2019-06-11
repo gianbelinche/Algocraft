@@ -23,11 +23,15 @@ public class MesaDeCrafteo {
         else{return false;};
 
         for(int i=0;i<3;i++){
-            if (otraMesa.enPosicion(i,i) == null && this.enPosicion(i,i) == null){
-                continue;
-            }
-            if (!(otraMesa.enPosicion(i,i).esIgual(this.enPosicion(i,i)))){
-                return false;
+            for(int j=0;j<3;j++){
+                if (otraMesa.enPosicion(i, j) == null){
+                    if (this.enPosicion(i, j) == null) continue;
+                    else{return false;}
+                }
+
+                if (!(otraMesa.enPosicion(i, j).esIgual(this.enPosicion(i, j)))) {
+                    return false;
+                }
             }
         }
         return true;
