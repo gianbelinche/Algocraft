@@ -3,12 +3,12 @@ package Modelo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class CrafteadorTest {
+public class RecetarioTest {
 
     @Test
     public void testCorrectoCrafteoDeHachaDeMadera(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(0,0,madera);
         mesa.posicionar(0,1,madera);
@@ -16,9 +16,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta hacha = crafteador.craftear(mesa);
+        Herramienta hacha = recetario.craftear(mesa);
         int fuerzaDelHacha = 2;
         int fuerza = hacha.fuerza();
         assertEquals(fuerzaDelHacha,fuerza);
@@ -28,7 +28,7 @@ public class CrafteadorTest {
     @Test
     public void testCorrectoCrafteoDeHachaDePiedra(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         mesa.posicionar(0,0,piedra);
@@ -37,9 +37,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta hacha = crafteador.craftear(mesa);
+        Herramienta hacha = recetario.craftear(mesa);
         int fuerzaDelHacha = 5;
         int fuerza = hacha.fuerza();
         assertEquals(fuerzaDelHacha,fuerza);
@@ -49,7 +49,7 @@ public class CrafteadorTest {
     @Test
     public void testCorrectoCrafteoDeHachaDeMetal(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         Metal metal = new Metal();
         mesa.posicionar(0,0,metal);
@@ -58,9 +58,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta hacha = crafteador.craftear(mesa);
+        Herramienta hacha = recetario.craftear(mesa);
         int fuerzaDelHacha = 10;
         int fuerza = hacha.fuerza();
         assertEquals(fuerzaDelHacha,fuerza);
@@ -70,7 +70,7 @@ public class CrafteadorTest {
     @Test
     public void testCorrectoCrafteoDePicoDeMadera(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(0,0,madera);
         mesa.posicionar(0,1,madera);
@@ -78,9 +78,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta pico = crafteador.craftear(mesa);
+        Herramienta pico = recetario.craftear(mesa);
         int fuerzaDelPico = 2;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
@@ -90,7 +90,7 @@ public class CrafteadorTest {
     @Test
     public void testCorrectoCrafteoDePicoDePiedra(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         mesa.posicionar(0,0,piedra);
@@ -99,9 +99,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta pico = crafteador.craftear(mesa);
+        Herramienta pico = recetario.craftear(mesa);
         int fuerzaDelPico = 4;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
@@ -111,7 +111,7 @@ public class CrafteadorTest {
     @Test
     public void testCorrectoCrafteoDePicoDeMetal(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         Metal metal = new Metal();
         mesa.posicionar(0,0,metal);
@@ -120,9 +120,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta pico = crafteador.craftear(mesa);
+        Herramienta pico = recetario.craftear(mesa);
         int fuerzaDelPico = 12;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
@@ -132,7 +132,7 @@ public class CrafteadorTest {
     @Test
     public void testCorrectoCrafteoDePicoDePiedraRefinada(){
 
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
@@ -143,9 +143,9 @@ public class CrafteadorTest {
         mesa.posicionar(1,1,madera);
         mesa.posicionar(2,1,madera);
 
-        Crafteador crafteador = new Crafteador();
+        Recetario recetario = new Recetario();
 
-        Herramienta pico = crafteador.craftear(mesa);
+        Herramienta pico = recetario.craftear(mesa);
         int fuerzaDelPico = 20;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);

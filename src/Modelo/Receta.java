@@ -1,6 +1,6 @@
 package Modelo;
 
-public class MesaDeCrafteo {
+public class Receta {
 
     private Material [][]  semilla = new Material[3][3];
 
@@ -18,8 +18,8 @@ public class MesaDeCrafteo {
 
     @Override
     public boolean equals(Object otroObjeto){
-        MesaDeCrafteo otraMesa;
-        if (otroObjeto instanceof MesaDeCrafteo) otraMesa = (MesaDeCrafteo) otroObjeto;
+        Receta otraMesa;
+        if (otroObjeto instanceof Receta) otraMesa = (Receta) otroObjeto;
         else{return false;};
 
         for(int i=0;i<3;i++){

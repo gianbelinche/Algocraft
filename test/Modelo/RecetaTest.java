@@ -2,22 +2,20 @@ package Modelo;
 
 import org.junit.Test;
 
-import java.util.Objects;
-
 import static org.junit.Assert.*;
 
-public class MesaDeCrafteoTest {
+public class RecetaTest {
 
     @Test
     public void testCorrectaInicializacionDeMesaDeCrafteo(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
 
         assertNull(mesa.enPosicion(0,0));
     }
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion00(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(0,0,madera);
         assertEquals(madera,mesa.enPosicion(0,0));
@@ -25,7 +23,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion01(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(0,1,madera);
         assertEquals(madera,mesa.enPosicion(0,1));
@@ -33,7 +31,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion02(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Piedra piedra = new Piedra();
         mesa.posicionar(0,2,piedra);
         assertEquals(piedra,mesa.enPosicion(0,2));
@@ -41,7 +39,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion10(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Piedra piedra = new Piedra();
         mesa.posicionar(1,0,piedra);
         assertEquals(piedra,mesa.enPosicion(1,0));
@@ -49,7 +47,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion11(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(1,1,madera);
         assertEquals(madera,mesa.enPosicion(1,1));
@@ -57,7 +55,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion12(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Metal metal = new Metal();
         mesa.posicionar(1,2,metal);
         assertEquals(metal,mesa.enPosicion(1,2));
@@ -65,7 +63,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion20(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(2,0,madera);
         assertEquals(madera,mesa.enPosicion(2,0));
@@ -73,7 +71,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion21(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Metal metal = new Metal();
         mesa.posicionar(2,1,metal);
         assertEquals(metal,mesa.enPosicion(2,1));
@@ -81,7 +79,7 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testCorrectoPosicionamientoDeMaterialEnLaPosicion22(){
-        MesaDeCrafteo mesa = new MesaDeCrafteo();
+        Receta mesa = new Receta();
         Madera madera = new Madera();
         mesa.posicionar(2,2,madera);
         assertEquals(madera,mesa.enPosicion(2,2));
@@ -89,15 +87,15 @@ public class MesaDeCrafteoTest {
 
     @Test
     public void testDosMesasDeCrafteoVaciasSonIguales(){
-        MesaDeCrafteo mesa1 = new MesaDeCrafteo();
-        MesaDeCrafteo mesa2 = new MesaDeCrafteo();
+        Receta mesa1 = new Receta();
+        Receta mesa2 = new Receta();
         assert(mesa1.equals(mesa2));
     }
 
     @Test
     public void testDosMesasConMaderaEnLaPrimerPosicionSonIguales(){
-        MesaDeCrafteo mesa1 = new MesaDeCrafteo();
-        MesaDeCrafteo mesa2 = new MesaDeCrafteo();
+        Receta mesa1 = new Receta();
+        Receta mesa2 = new Receta();
         Madera madera1 = new Madera();
         Madera madera2 = new Madera();
         mesa1.posicionar(0,0,madera1);
