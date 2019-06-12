@@ -30,33 +30,4 @@ public class PosicionTest {
     public void testPosicionSeCreaCorrectamenteEnY(){
         assertEquals(posicionEnY, posicion.getY());
     }
-
-    /* Ver metodo colocarEnPosicion de Tablero
-    //----------------------------------------
-
-    @Test
-    public void testMoverPosicionADerechaCambiaXCorrectamente(){
-        posicion.moverDerecha();
-        assertEquals(posicionEnX+1, posicion.getX());
-    }
-
-    @Test
-    public void testMoverPosicionAIzquierdaCambiaXCorrectamente(){
-        posicion.moverIzquierda();
-        assertEquals(posicionEnX-1, posicion.getX());
-    }
-
-    @Test
-    public void testMoverPosicionAbajoCambiaXCorrectamente(){
-        posicion.moverAbajo();
-        assertEquals(posicionEnY+1, posicion.getY());
-    }
-
-    @Test
-    public void testMoverPosicionArribaCambiaXCorrectamente(){
-        posicion.moverArriba();
-        assertEquals(posicionEnY-1, posicion.getY());
-    }
-
-     */
 }

@@ -213,11 +213,15 @@ public class PicoTest {
         Constructor constructor = new Constructor();
         Pico picoDeMetal = constructor.crearPicoDeMetal();
         Piedra piedra = new Piedra();
-        Tablero tablero = new Tablero(10,10);
+        int anchoTablero = 10;
+        int altoTablero = 10;
+        int xPiedra = 0;
+        int yPiedra = 0;
+        Tablero tablero = new Tablero(anchoTablero,altoTablero);
 
         for(int i = 0; i < 10; i++)
         {
-            tablero.colocarEnPosicion(0,0,piedra);
+            tablero.colocarEnPosicion(xPiedra,yPiedra,piedra);
             picoDeMetal.recoger(piedra);
         }
 

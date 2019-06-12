@@ -37,8 +37,7 @@ public class Posicion {
         objeto.establecerPosicion(null);
     }
 
-    //Hacen falta?
-
     public int getX() {return x;}
+
     public int getY() {return y;}
 }

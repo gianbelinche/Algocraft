@@ -65,8 +65,12 @@ public class MaderaTest {
     @Test
     public void testUsoHachaDeMetalEnMaderaYSeDesgastaLaMadera(){
         Hacha hacha = constructor.crearHachaDeMetal();
-        Tablero tablero = new Tablero(10,10);
-        tablero.colocarEnPosicion(0,0,madera);
+        int anchoTablero = 10;
+        int altoTablero = 10;
+        int xMadera = 0;
+        int yMadera = 0;
+        Tablero tablero = new Tablero(anchoTablero,altoTablero);
+        tablero.colocarEnPosicion(xMadera,yMadera,madera);
 
         hacha.recoger(madera);
 
