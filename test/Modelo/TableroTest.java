@@ -18,7 +18,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroSeCreaConCeldasVacias(){
+    public void testTableroSeCreaConCeldasVacias(){
         for(int x=0; x<ancho; x++){
             for(int y=0; y<alto; y++){
                 assertEquals(1, tablero.estaLibre(x,y));
@@ -27,7 +27,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroColocarMaterial(){
+    public void testTableroColocarMaterial(){
         int x = 6;
         int y = 3;
         Piedra piedra = new Piedra();
@@ -36,7 +36,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroBorrarMaterial(){
+    public void testTableroBorrarMaterial(){
         int x = 6;
         int y = 3;
         Piedra piedra = new Piedra();
@@ -46,7 +46,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroColocarJugador(){
+    public void testTableroColocarJugador(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -55,7 +55,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroBorrarJugador(){
+    public void testTableroBorrarJugador(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -65,7 +65,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroJugadorSeMueveHaciaLaDerechaYDejaUnaCasillaLibre(){
+    public void testTableroJugadorSeMueveHaciaLaDerechaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -76,7 +76,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroJugadorSeMueveHaciaLaIzquierdaYDejaUnaCasillaLibre(){
+    public void testTableroJugadorSeMueveHaciaLaIzquierdaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -87,7 +87,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroJugadorSeMueveHaciaArribaYDejaUnaCasillaLibre(){
+    public void testTableroJugadorSeMueveHaciaArribaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -99,7 +99,7 @@ public class TableroTest {
 
 
     @Test
-    public void TestTableroJugadorSeMueveHaciaAbajoYDejaUnaCasillaLibre(){
+    public void testTableroJugadorSeMueveHaciaAbajoYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -111,7 +111,7 @@ public class TableroTest {
 
 
     @Test
-    public void TestTableroMoverJugadorFueraDelBordeNoAlteraPosicion(){
+    public void testTableroMoverJugadorFueraDelBordeNoAlteraPosicion(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -125,7 +125,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroMoverJugadorContraMaterialNoAlteraSuPosicion(){
+    public void testTableroMoverJugadorContraMaterialNoAlteraSuPosicion(){
         int x = 5;
         int y = 5;
         Jugador jugador = new Jugador(tablero);
@@ -139,7 +139,7 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroAlRecolectarseUnMaterialSeEliminaDelMapa(){
+    public void testTableroAlRecolectarseUnMaterialSeEliminaDelMapa(){
         int x = 5;
         int y = 5;
         Piedra piedra = new Piedra();
