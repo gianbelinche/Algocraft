@@ -40,5 +40,10 @@ public class Madera extends Material {
         return material instanceof Madera;
     }
 
+    public boolean esIgual(Posicionable material){
+        return material instanceof Madera;
+    }
+
+
 
 }

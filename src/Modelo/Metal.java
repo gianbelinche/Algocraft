@@ -40,6 +40,10 @@ public class Metal extends Material {
         return material instanceof Metal;
     }
 
+    public boolean esIgual(Posicionable material){
+        return material instanceof Metal;
+    }
+
 
 }
 

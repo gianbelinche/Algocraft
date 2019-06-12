@@ -40,5 +40,9 @@ public class Diamante extends Material {
         return material instanceof Diamante;
     }
 
+    public boolean esIgual(Posicionable material){
+        return material instanceof Diamante;
+    }
+
 
 }

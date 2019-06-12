@@ -37,4 +37,8 @@ public class Jugador implements Posicionable{
     public void moverAbajo(){
         posicion.moverAbajo();
     }
+
+    public boolean esIgual(Posicionable otroJugador) {
+        return otroJugador instanceof Jugador;
+    }
 }

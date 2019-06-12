@@ -9,4 +9,8 @@ public class PosicionVacia implements Posicionable{
 
     @Override
     public void establecerPosicion(Posicion nuevaPosicion){ };
+
+    public boolean esIgual(Posicionable otraPosicion){
+        return otraPosicion instanceof PosicionVacia;
+    }
 }

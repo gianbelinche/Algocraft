@@ -16,5 +16,24 @@ public class Juego {
         madera = new Madera();
         diamante = new Diamante();
         metal = new Metal();
+        this.inicializarTablero();
+    }
+
+    private void inicializarTablero(){
+        tablero.colocarEnPosicion(0,0,new Madera());
+        tablero.colocarEnPosicion(0,1,new Madera());
+        tablero.colocarEnPosicion(1,0,new Madera());
+        tablero.colocarEnPosicion(1,1,new Madera());
+        tablero.colocarEnPosicion(5,2,new Piedra());
+        tablero.colocarEnPosicion(6,2,new Piedra());
+        tablero.colocarEnPosicion(7,2,new Piedra());
+        tablero.colocarEnPosicion(1,4,new Metal());
+        tablero.colocarEnPosicion(1,5,new Metal());
+        tablero.colocarEnPosicion(9,8,new Diamante());
+        tablero.colocarEnPosicion(3,7,jugador);
+    }
+
+    public boolean tableroEsCorrecto(Tablero otroTablero){
+        return tablero.esIgual(otroTablero);
     }
 }

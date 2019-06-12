@@ -38,4 +38,6 @@ public class PiedraRefinada extends Material {
 
     public boolean esIgual(Material material){return false;};
 
+    public boolean esIgual(Posicionable material){return false;};
+
 }
