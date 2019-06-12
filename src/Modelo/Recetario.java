@@ -23,12 +23,8 @@ public class Recetario {
         try {
             herramienta = (recetario.get(receta)).invoke(constructor);
         }
-        catch (IllegalAccessException e) {
-            System.out.print("Acceso ilegal");
-        }
-        catch (InvocationTargetException e) {
-            System.out.print("Excepcion de Objetivo");
-        }
+        catch (IllegalAccessException e) {}
+        catch (InvocationTargetException e) { }
 
         return (Herramienta) herramienta;
 
@@ -38,9 +34,7 @@ public class Recetario {
 
         try {
             metodo = Constructor.class.getDeclaredMethod(unMetodo);
-        } catch (NoSuchMethodException e) {
-            System.out.print("No encuentro el metodo");
-        }
+        } catch (NoSuchMethodException e) { }
 
         return metodo;
     }
