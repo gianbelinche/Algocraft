@@ -8,31 +8,31 @@ public class PiedraRefinada extends Material {
 
     @Override
     public Material recoger(Material material, int desgaste){
-        return material.recoger(this, desgaste);
+        return material.serRecogido(this, desgaste);
     }
 
     @Override
-    public Material recoger(Madera material, int desgaste){
+    public Material serRecogido(Madera material, int desgaste){
         return null;
     }
 
     @Override
-    public Material recoger(Piedra material, int desgaste){
+    public Material serRecogido(Piedra material, int desgaste){
         return null;
     }
 
     @Override
-    public Material recoger(Metal material, int desgaste){
+    public Material serRecogido(Metal material, int desgaste){
         return null;
     }
 
     @Override
-    public Material recoger(PiedraRefinada material, int desgaste){
+    public Material serRecogido(PiedraRefinada material, int desgaste){
         return desgastar(desgaste);
     }
 
     @Override
-    public Material recoger(Diamante material, int desgaste){
+    public Material serRecogido(Diamante material, int desgaste){
         return desgastar(desgaste);
     }
 

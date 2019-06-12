@@ -18,15 +18,15 @@ abstract class Material implements Posicionable{
 
     abstract Material recoger(Material material, int desgaste);
 
-    abstract Material recoger(Madera material, int desgaste);
+    abstract Material serRecogido(Madera material, int desgaste);
 
-    abstract Material recoger(Piedra material, int desgaste);
+    abstract Material serRecogido(Piedra material, int desgaste);
 
-    abstract Material recoger(Metal material, int desgaste);
+    abstract Material serRecogido(Metal material, int desgaste);
 
-    abstract Material recoger(PiedraRefinada material, int desgaste);
+    abstract Material serRecogido(PiedraRefinada material, int desgaste);
 
-    abstract Material recoger(Diamante material, int desgaste);
+    abstract Material serRecogido(Diamante material, int desgaste);
 
     abstract boolean esIgual(Material material);
 

@@ -8,17 +8,17 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDeHachaDeMadera(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
-        mesa.posicionar(0,0,madera);
-        mesa.posicionar(0,1,madera);
-        mesa.posicionar(1,0,madera);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,madera);
+        receta.posicionar(0,1,madera);
+        receta.posicionar(1,0,madera);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta hacha = recetario.craftear(mesa);
+        Herramienta hacha = recetario.craftear(receta);
         int fuerzaDelHacha = 2;
         int fuerza = hacha.fuerza();
         assertEquals(fuerzaDelHacha,fuerza);
@@ -28,18 +28,18 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDeHachaDePiedra(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
-        mesa.posicionar(0,0,piedra);
-        mesa.posicionar(0,1,piedra);
-        mesa.posicionar(1,0,piedra);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,piedra);
+        receta.posicionar(0,1,piedra);
+        receta.posicionar(1,0,piedra);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta hacha = recetario.craftear(mesa);
+        Herramienta hacha = recetario.craftear(receta);
         int fuerzaDelHacha = 5;
         int fuerza = hacha.fuerza();
         assertEquals(fuerzaDelHacha,fuerza);
@@ -49,18 +49,18 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDeHachaDeMetal(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
         Metal metal = new Metal();
-        mesa.posicionar(0,0,metal);
-        mesa.posicionar(0,1,metal);
-        mesa.posicionar(1,0,metal);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,metal);
+        receta.posicionar(0,1,metal);
+        receta.posicionar(1,0,metal);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta hacha = recetario.craftear(mesa);
+        Herramienta hacha = recetario.craftear(receta);
         int fuerzaDelHacha = 10;
         int fuerza = hacha.fuerza();
         assertEquals(fuerzaDelHacha,fuerza);
@@ -70,17 +70,17 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDeMadera(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
-        mesa.posicionar(0,0,madera);
-        mesa.posicionar(0,1,madera);
-        mesa.posicionar(0,2,madera);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,madera);
+        receta.posicionar(0,1,madera);
+        receta.posicionar(0,2,madera);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta pico = recetario.craftear(mesa);
+        Herramienta pico = recetario.craftear(receta);
         int fuerzaDelPico = 2;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
@@ -90,18 +90,18 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDePiedra(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
-        mesa.posicionar(0,0,piedra);
-        mesa.posicionar(0,1,piedra);
-        mesa.posicionar(0,2,piedra);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,piedra);
+        receta.posicionar(0,1,piedra);
+        receta.posicionar(0,2,piedra);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta pico = recetario.craftear(mesa);
+        Herramienta pico = recetario.craftear(receta);
         int fuerzaDelPico = 4;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
@@ -111,18 +111,18 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDeMetal(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
         Metal metal = new Metal();
-        mesa.posicionar(0,0,metal);
-        mesa.posicionar(0,1,metal);
-        mesa.posicionar(0,2,metal);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,metal);
+        receta.posicionar(0,1,metal);
+        receta.posicionar(0,2,metal);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta pico = recetario.craftear(mesa);
+        Herramienta pico = recetario.craftear(receta);
         int fuerzaDelPico = 12;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
@@ -132,28 +132,24 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDePiedraRefinada(){
 
-        Receta mesa = new Receta();
+        Receta receta = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();
-        mesa.posicionar(0,0,metal);
-        mesa.posicionar(0,1,metal);
-        mesa.posicionar(0,2,metal);
-        mesa.posicionar(1,0,piedra);
-        mesa.posicionar(1,1,madera);
-        mesa.posicionar(2,1,madera);
+        receta.posicionar(0,0,metal);
+        receta.posicionar(0,1,metal);
+        receta.posicionar(0,2,metal);
+        receta.posicionar(1,0,piedra);
+        receta.posicionar(1,1,madera);
+        receta.posicionar(2,1,madera);
 
         Recetario recetario = new Recetario();
 
-        Herramienta pico = recetario.craftear(mesa);
+        Herramienta pico = recetario.craftear(receta);
         int fuerzaDelPico = 20;
         int fuerza = pico.fuerza();
         assertEquals(fuerzaDelPico,fuerza);
 
     }
-
-
-
-
 
 }
