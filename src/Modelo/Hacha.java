@@ -10,6 +10,6 @@ public class Hacha extends Herramienta {
     }
 
     public Material recoger(Madera material){
-        return _recoger(material);
+        return recogerPredeterminado(material);
     }
 }

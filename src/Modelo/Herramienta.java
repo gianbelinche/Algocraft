@@ -19,7 +19,7 @@ public class Herramienta {
         return null;
     }
 
-    public Material _recoger(Material material){
+    protected Material recogerPredeterminado(Material material){
 
         durabilidad = (int) desgaste.desgastar(durabilidad, fuerza, material);
         return miMaterial.recoger(material,fuerza);
