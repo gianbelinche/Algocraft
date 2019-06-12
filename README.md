@@ -40,8 +40,8 @@ Construcción de herramienta:
 - [X] Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
 
 Jugador:
-- Se verifica la correcta inicialización del jugador en el mapa.
-- Se verifica que puede moverse para todas las direcciones vacías.
+- [X] Se verifica la correcta inicialización del jugador en el mapa.
+- [X] Se verifica que puede moverse para todas las direcciones vacías.
 
 Mapa:
 - [X] Se verifica que se puede ocupar un casillero vacío del terreno.
