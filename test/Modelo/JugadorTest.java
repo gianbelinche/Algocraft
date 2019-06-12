@@ -10,13 +10,20 @@ public class JugadorTest {
     Jugador jugador;
     Herramienta herramienta;
     Tablero tablero;
+    int x;
+    int y;
 
     @Before
     public void setUp(){
         constructor = new Constructor();
-        tablero = new Tablero(10, 10);
         jugador = new Jugador(tablero);
         herramienta = jugador.herramientaEquipada();
+
+        tablero = new Tablero(10, 10);
+        x = 5;
+        y = 5;
+        tablero.colocarEnPosicion(x,y,jugador);
+
     }
 
     @Test
@@ -45,4 +52,31 @@ public class JugadorTest {
         assertEquals(fuerzaDeseada, fuerzaHerramienta);
     }
 
+    @Test
+    public void testJugadorSeMueveHaciaLaDerechaYAumentaSuX(){
+
+        jugador.moverDerecha();
+        assertEquals(jugador, tablero.obtenerDePosicion(x + 1,y));
+    }
+
+    @Test
+    public void testJugadorSeMueveHaciaLaIzquierdaYDisminuyeSuX(){
+
+        jugador.moverIzquierda();
+        assertEquals(jugador, tablero.obtenerDePosicion(x - 1,y));
+    }
+
+    @Test
+    public void testJugadorSeMueveHaciaArribaYDisminuyeSuY(){
+
+        jugador.moverArriba();
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y - 1));
+    }
+
+    @Test
+    public void testJugadorSeMueveHaciaArribaYAumentaSuY(){
+
+        jugador.moverAbajo();
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1));
+    }
 }

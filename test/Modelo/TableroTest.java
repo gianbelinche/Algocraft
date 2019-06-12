@@ -65,17 +65,6 @@ public class TableroTest {
     }
 
     @Test
-    public void TestTableroJugadorSeMueveHaciaLaDerechaYAumentaSuX(){
-        int x = 5;
-        int y = 5;
-        Jugador jugador = new Jugador(tablero);
-        tablero.colocarEnPosicion(x,y,jugador);
-
-        jugador.moverDerecha();
-        assertEquals(jugador, tablero.obtenerDePosicion(x + 1,y));
-    }
-
-    @Test
     public void TestTableroJugadorSeMueveHaciaLaDerechaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
@@ -84,17 +73,6 @@ public class TableroTest {
         jugador.moverDerecha();
 
         assertEquals(1, tablero.estaLibre(x,y));
-    }
-
-    @Test
-    public void TestTableroJugadorSeMueveHaciaLaIzquierdaYDisminuyeSuX(){
-        int x = 5;
-        int y = 5;
-        Jugador jugador = new Jugador(tablero);
-        tablero.colocarEnPosicion(x,y,jugador);
-
-        jugador.moverIzquierda();
-        assertEquals(jugador, tablero.obtenerDePosicion(x - 1,y));
     }
 
     @Test
@@ -108,18 +86,6 @@ public class TableroTest {
         assertEquals(1, tablero.estaLibre(x,y));
     }
 
-
-    @Test
-    public void TestTableroJugadorSeMueveHaciaArribaYDisminuyeSuY(){
-        int x = 5;
-        int y = 5;
-        Jugador jugador = new Jugador(tablero);
-        tablero.colocarEnPosicion(x,y,jugador);
-
-        jugador.moverArriba();
-        assertEquals(jugador, tablero.obtenerDePosicion(x,y - 1));
-    }
-
     @Test
     public void TestTableroJugadorSeMueveHaciaArribaYDejaUnaCasillaLibre(){
         int x = 5;
@@ -131,16 +97,6 @@ public class TableroTest {
         assertEquals(1, tablero.estaLibre(x,y));
     }
 
-    @Test
-    public void TestTableroJugadorSeMueveHaciaAbajoYAumentaSuY(){
-        int x = 5;
-        int y = 5;
-        Jugador jugador = new Jugador(tablero);
-        tablero.colocarEnPosicion(x,y,jugador);
-
-        jugador.moverAbajo();
-        assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1));
-    }
 
     @Test
     public void TestTableroJugadorSeMueveHaciaAbajoYDejaUnaCasillaLibre(){
