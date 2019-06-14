@@ -1,6 +1,6 @@
 # TP 2: Algocraft
 
-[![Build Status](https://travis-ci.org/gianbelinche/Algocraft.svg?branch=master)](https://travis-ci.org/gianbelinche/Algocraft)
+[![Build Status](https://travis-ci.com/gianbelinche/Algocraft.svg?token=xEYqd5i1cnxyGdTqNmc5&branch=master)](https://travis-ci.com/gianbelinche/Algocraft)
 
 [![codecov](https://codecov.io/gh/gianbelinche/Algocraft/branch/master/graph/badge.svg)](https://codecov.io/gh/gianbelinche/Algocraft)
 
