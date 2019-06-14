@@ -3,7 +3,8 @@ language: java
 jdk:
   - oraclejdk11
 
-install: ant
+install: 
+  - ant
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
