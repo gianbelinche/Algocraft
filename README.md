@@ -12,7 +12,7 @@
 
 [Link al informe](https://www.overleaf.com/7947345989bkzwrjbznkvx)
 
-## Entregas
+## Entregas 
 
 **Entrega 1:** Jueves 6 de Junio
 
