@@ -4,15 +4,12 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Ventana extends Application {
 
-    public static void main(String[] args) {
-
-        launch(args);
-
-    }
+    public static void main(String[] args) { launch(args); }
 
     @Override
     public void start(Stage primaryStage) {
@@ -20,14 +17,15 @@ public class Ventana extends Application {
 
         StackPane layout = new StackPane();
 
-        Button button = new Button();
+        Button startButton = new StartButton();
+        Button exitButton = new ExitButton();
 
-        button.setText("Caca");
+        VBox contenedorBotones = new VBox(startButton, exitButton);
+        contenedorBotones.setSpacing(15);
 
-        layout.getChildren().add(button);
+        layout.getChildren().add(contenedorBotones);
 
         Scene scene = new Scene(layout);
-
         primaryStage.setScene(scene);
 
         primaryStage.show();
