@@ -20,7 +20,7 @@ public class FirstLayout extends StackPane {
         contenedorBotones.setAlignment(Pos.CENTER);
 
         //Cargo Imagen
-        FileInputStream input = new FileInputStream("C:\\Users\\user\\Desktop\\Algoritmos 3\\TP2\\src\\Vista\\Prueba.png");
+        FileInputStream input = new FileInputStream("C:\\Users\\user\\Desktop\\Algoritmos 3\\TP2\\src\\Vista\\Prueba.jpg");
 
         Image image = new Image(input);
 
@@ -31,7 +31,6 @@ public class FirstLayout extends StackPane {
         //Adapto tamaño de imagen a tamaño de pantalla
 
         Background background = new Background(backgroundImage);
-
         contenedorBotones.setBackground(background);
 
         this.getChildren().add(contenedorBotones);
