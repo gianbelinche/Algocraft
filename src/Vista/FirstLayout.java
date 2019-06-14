@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.ExitButtonHandler;
 import Controlador.StartButtonHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -18,7 +19,10 @@ public class FirstLayout extends StackPane {
         StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
         Button startButton = new StartButton();
         startButton.setOnAction(startButtonHandler);
+        ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage);
         Button exitButton = new ExitButton();
+        exitButton.setOnAction(exitButtonHandler);
+
 
         VBox contenedorBotones = new VBox(startButton, exitButton);
         contenedorBotones.setSpacing(25);
