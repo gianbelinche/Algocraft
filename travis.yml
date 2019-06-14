@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - oraclejdk8
+
+install: ant
+script: ant integracion-continua
+
+after_success:
+ - bash <(curl -s https://codecov.io/bash) -c -F modelo
+
+notifications:
+  email:
+    - gianbelinche@hotmail.com.ar
+    - francobarreneche5@gmail.com
+    - guido_botta@hotmail.com
+    - julianv6004@gmail.com
