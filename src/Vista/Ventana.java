@@ -15,7 +15,7 @@ public class Ventana extends Application {
     public void start(Stage primaryStage) throws FileNotFoundException {
         primaryStage.setTitle("Ventana Principal");
 
-        StackPane layout = new FirstLayout();
+        StackPane layout = new FirstLayout(primaryStage);
 
         Scene scene = new Scene(layout, 512,250);
         primaryStage.setScene(scene);

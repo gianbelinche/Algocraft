@@ -1,18 +1,23 @@
 package Vista;
 
+import Controlador.StartButtonHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class FirstLayout extends StackPane {
 
-    public FirstLayout() throws FileNotFoundException {
+    public FirstLayout(Stage stage) throws FileNotFoundException {
         //Creo Botones
+
+        StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
         Button startButton = new StartButton();
+        startButton.setOnAction(startButtonHandler);
         Button exitButton = new ExitButton();
 
         VBox contenedorBotones = new VBox(startButton, exitButton);
@@ -20,7 +25,7 @@ public class FirstLayout extends StackPane {
         contenedorBotones.setAlignment(Pos.CENTER);
 
         //Cargo Imagen
-        FileInputStream input = new FileInputStream("C:\\Users\\user\\Desktop\\Algoritmos 3\\TP2\\src\\Vista\\Prueba.jpg");
+        FileInputStream input = new FileInputStream("F:\\Users\\Gianluca\\Desktop\\OneDrive\\carpeta\\Algoritmos 3\\Algocraft\\Algocraft\\src\\Vista\\Prueba.jpg");
 
         Image image = new Image(input);
 

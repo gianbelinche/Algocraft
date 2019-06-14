@@ -11,7 +11,7 @@ public class VentanaInventario extends Application {
     }
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage)  {
 
         stage.setTitle("AlgoCraft");
         ContenedorInventario contenedorInventario = new ContenedorInventario(stage);
@@ -21,7 +21,7 @@ public class VentanaInventario extends Application {
         // stage.setOnCloseRequest()
 
         stage.setScene(escenaInventario);
-        stage.setFullScreen(true);
+        //stage.setFullScreen(true);
 
         stage.show();
     }
