@@ -23,10 +23,10 @@ public class Ventana extends Application {
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
 
-        StackPane layout = new TitleLayout(primaryStage);
+        StackPane titleLayout = new TitleLayout(primaryStage);
 
-        Scene scene = new Scene(layout, 512,250);
-        primaryStage.setScene(scene);
+        Scene titleScene = new Scene(titleLayout, 512,250);
+        primaryStage.setScene(titleScene);
 
         primaryStage.show();
     }
@@ -34,14 +34,10 @@ public class Ventana extends Application {
     public void mainStart(Stage mainStage){
         mainStage.setTitle("Main");
 
-        ContenedorInventario contenedorInventario = new ContenedorInventario(mainStage);
-        Scene escenaInventario = new Scene(contenedorInventario, 640, 480);
+        StackPane mainLayout = new MainLayout(mainStage);
 
-        // add handler to this:
-        // stage.setOnCloseRequest()
-
-        mainStage.setScene(escenaInventario);
-        //stage.setFullScreen(true);
+        Scene mainScene = new Scene(mainLayout, mainStage.getWidth(), mainStage.getHeight());
+        mainStage.setScene(mainScene);
 
         mainStage.show();
     }
