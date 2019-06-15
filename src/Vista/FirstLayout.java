@@ -29,9 +29,7 @@ public class FirstLayout extends StackPane {
         contenedorBotones.setAlignment(Pos.CENTER);
 
         //Cargo Imagen
-        FileInputStream input = new FileInputStream("F:\\Users\\Gianluca\\Desktop\\OneDrive\\carpeta\\Algoritmos 3\\Algocraft\\Algocraft\\src\\Vista\\Prueba.jpg");
-
-        Image image = new Image(input);
+        Image image = new Image("file:src/Vista/Imagenes/Prueba.jpg");
 
         BackgroundImage backgroundImage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
@@ -43,6 +41,8 @@ public class FirstLayout extends StackPane {
         contenedorBotones.setBackground(background);
 
         this.getChildren().add(contenedorBotones);
+
+
     }
 
 }
