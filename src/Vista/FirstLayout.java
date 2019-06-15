@@ -6,8 +6,11 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -23,6 +26,7 @@ public class FirstLayout extends StackPane {
         Button exitButton = new ExitButton();
         ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
         exitButton.setOnAction(exitButtonHandler);
+
 
 
         VBox contenedorBotones = new VBox(startButton, exitButton);
