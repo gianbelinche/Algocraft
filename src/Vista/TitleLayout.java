@@ -19,15 +19,11 @@ public class TitleLayout extends StackPane {
     public TitleLayout(Stage stage) {
         //Creo Botones
 
-        StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
-        Button startButton = new StartButton();
-        startButton.setOnAction(startButtonHandler);
-
-        Button exitButton = new ExitButton();
-        ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
-        exitButton.setOnAction(exitButtonHandler);
+        Button startButton = new StartButton(stage, this);
+        Button exitButton = new ExitButton(stage);
 
         VBox contenedorBotones = new VBox(startButton, exitButton);
+        //startButton.prefHeightProperty().bind(contenedorBotones.heightProperty());
         contenedorBotones.setSpacing(25);
         contenedorBotones.setAlignment(Pos.CENTER);
 
