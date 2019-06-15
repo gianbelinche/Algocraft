@@ -1,10 +1,11 @@
 package Vista;
 
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class MainLayout extends StackPane {
+public class MainLayout extends Pane {
 
     public MainLayout(Stage mainStage) {
 
@@ -18,7 +19,17 @@ public class MainLayout extends StackPane {
         //Adapto tamaño de imagen a tamaño de pantalla
 
         Background background = new Background(backgroundImage);
+        InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
+        //Creo boton inventario
 
+        BotonInventario botonInventario = new BotonInventario(mainStage, inventarioLayout);
+       // botonInventario.setTranslateX(10);
+        //botonInventario.setTranslateY(10);
+        //botonInventario.setTranslateZ(10);
+        botonInventario.setAlignment(Pos.BOTTOM_LEFT);
+
+
+        this.getChildren().addAll(inventarioLayout, botonInventario);
         this.setBackground(background);
     }
 

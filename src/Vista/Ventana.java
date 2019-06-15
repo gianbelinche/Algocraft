@@ -3,6 +3,7 @@ package Vista;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -25,7 +26,7 @@ public class Ventana extends Application {
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
 
-        StackPane titleLayout = new TitleLayout(primaryStage);
+        TitleLayout titleLayout = new TitleLayout(primaryStage);
 
         Scene titleScene = new Scene(titleLayout);
         primaryStage.setScene(titleScene);
@@ -38,13 +39,14 @@ public class Ventana extends Application {
         primaryStage.setWidth(primaryScreenBounds.getWidth());
         primaryStage.setHeight(primaryScreenBounds.getHeight());
 
+
         primaryStage.show();
     }
 
     public void mainStart(Stage mainStage){
         mainStage.setTitle("Main");
 
-        StackPane mainLayout = new MainLayout(mainStage);
+        MainLayout mainLayout = new MainLayout(mainStage);
 
         Scene mainScene = new Scene(mainLayout, mainStage.getWidth(), mainStage.getHeight());
         mainStage.setScene(mainScene);
