@@ -9,6 +9,14 @@ import javafx.stage.Stage;
 public class MainLayout extends Pane {
 
     public MainLayout(Stage mainStage) {
+        //Creo botones de movimiento
+        BotonMoverArriba botonMoverArriba = new BotonMoverArriba(mainStage);
+        BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(mainStage);
+        BotonMoverDerecha botonMoverDerecha = new BotonMoverDerecha(mainStage);
+        BotonMoverIzquierda botonMoverIzquierda = new BotonMoverIzquierda(mainStage);
+
+        HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
+        VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
 
         //Cargo Imagen
         Image image = new Image("file:src/Vista/Imagenes/TableroPrueba.jpg");
@@ -29,7 +37,7 @@ public class MainLayout extends Pane {
         contenedorBotones.getChildren().addAll(botonEntrarInventario);
         this.setOnKeyPressed(new SalirDeInventarioHandler(inventarioLayout));
 
-        this.getChildren().addAll(inventarioLayout, contenedorBotones);
+        this.getChildren().addAll(inventarioLayout, contenedorBotones, botonesMovimientoCompleto);
         this.setBackground(background);
     }
 
