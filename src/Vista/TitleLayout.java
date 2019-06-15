@@ -14,9 +14,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class FirstLayout extends StackPane {
+public class TitleLayout extends StackPane {
 
-    public FirstLayout(Stage stage) throws FileNotFoundException {
+    public TitleLayout(Stage stage) {
         //Creo Botones
 
         StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
@@ -26,8 +26,6 @@ public class FirstLayout extends StackPane {
         Button exitButton = new ExitButton();
         ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
         exitButton.setOnAction(exitButtonHandler);
-
-
 
         VBox contenedorBotones = new VBox(startButton, exitButton);
         contenedorBotones.setSpacing(25);

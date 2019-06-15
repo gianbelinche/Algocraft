@@ -8,15 +8,14 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 public class Ventana extends Application {
 
     public static void main(String[] args) { launch(args); }
 
     @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
-        primaryStage.setTitle("Ventana Principal");
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Title");
 
         String musicFile = "src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";     // For example
 
@@ -24,13 +23,26 @@ public class Ventana extends Application {
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
 
-        StackPane layout = new FirstLayout(primaryStage);
-
-
+        StackPane layout = new TitleLayout(primaryStage);
 
         Scene scene = new Scene(layout, 512,250);
         primaryStage.setScene(scene);
 
         primaryStage.show();
+    }
+
+    public void mainStart(Stage mainStage){
+        mainStage.setTitle("Main");
+
+        ContenedorInventario contenedorInventario = new ContenedorInventario(mainStage);
+        Scene escenaInventario = new Scene(contenedorInventario, 640, 480);
+
+        // add handler to this:
+        // stage.setOnCloseRequest()
+
+        mainStage.setScene(escenaInventario);
+        //stage.setFullScreen(true);
+
+        mainStage.show();
     }
 }
