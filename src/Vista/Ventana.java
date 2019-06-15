@@ -18,7 +18,7 @@ public class Ventana extends Application {
     public void start(Stage primaryStage) throws FileNotFoundException {
         primaryStage.setTitle("Ventana Principal");
 
-        String musicFile = "Algocraft/src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";     // For example
+        String musicFile = "src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";     // For example
 
         Media sound = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
