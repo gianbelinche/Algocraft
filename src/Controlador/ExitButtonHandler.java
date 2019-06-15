@@ -17,10 +17,10 @@ public class ExitButtonHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         if (contador == 0){
-            button.setText("Dont Do It");
+            button.setText("Don't Do It");
         }
         if (contador == 1){
-            button.setText("Please Dont");
+            button.setText("Please Don't");
         }
 
         if (contador == 2){
