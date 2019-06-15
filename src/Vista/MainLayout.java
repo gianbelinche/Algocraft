@@ -1,6 +1,7 @@
 package Vista;
 
-import javafx.geometry.Pos;
+
+import Controlador.SalirDeInventarioHandler;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -8,6 +9,14 @@ import javafx.stage.Stage;
 public class MainLayout extends Pane {
 
     public MainLayout(Stage mainStage) {
+        //Creo botones de movimiento
+        BotonMoverArriba botonMoverArriba = new BotonMoverArriba(mainStage);
+        BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(mainStage);
+        BotonMoverDerecha botonMoverDerecha = new BotonMoverDerecha(mainStage);
+        BotonMoverIzquierda botonMoverIzquierda = new BotonMoverIzquierda(mainStage);
+
+        HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
+        VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
 
         //Cargo Imagen
         Image image = new Image("file:src/Vista/Imagenes/TableroPrueba.jpg");
@@ -22,14 +31,13 @@ public class MainLayout extends Pane {
         InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
         //Creo boton inventario
 
-        BotonInventario botonInventario = new BotonInventario(mainStage, inventarioLayout);
-       // botonInventario.setTranslateX(10);
-        //botonInventario.setTranslateY(10);
-        //botonInventario.setTranslateZ(10);
-        botonInventario.setAlignment(Pos.BOTTOM_LEFT);
+        VBox contenedorBotones = new VBox();
+        BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout, contenedorBotones);
+        //ExitButton botonSalir = new ExitButton(mainStage);
+        contenedorBotones.getChildren().addAll(botonEntrarInventario);
+        this.setOnKeyPressed(new SalirDeInventarioHandler(inventarioLayout));
 
-
-        this.getChildren().addAll(inventarioLayout, botonInventario);
+        this.getChildren().addAll(inventarioLayout, contenedorBotones, botonesMovimientoCompleto);
         this.setBackground(background);
     }
 

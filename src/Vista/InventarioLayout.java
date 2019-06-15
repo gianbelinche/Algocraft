@@ -3,7 +3,6 @@ package Vista;
 import Controlador.SalirDeInventarioHandler;
 import javafx.scene.layout.*;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -16,9 +15,15 @@ public class InventarioLayout extends Pane {
         this.setVisible(false);
         this.stage = stage;
         this.setPadding(new Insets(25));
-        this.setTranslateX(stage.getWidth()/2 - getWidth());
-        this.setTranslateY(stage.getHeight()/2 - 100);
-        setMaxSize(200, 200);
+        setPrefSize(stage.getWidth()*0.2, stage.getHeight()*0.3);
+
+        //Alguna forma para no hardcodear??
+
+        double Xposition = stage.getWidth()/2 - 200;;
+        double Yposition = stage.getHeight()/2 - 200;
+        this.setTranslateX(Xposition);
+        this.setTranslateY(Yposition);
+
         //Cargo la imagen
         Image imagen = new Image("file:src/Vista/Imagenes/Inventario_crafteador.png");
 
@@ -30,27 +35,49 @@ public class InventarioLayout extends Pane {
         this.setOnKeyPressed(new SalirDeInventarioHandler(this));
 
 
-        //Creo los botones y los guardo en el GridPane
+        //Creo botones de mesa de crafteo y los guardo en el GridPane
         GridPane mesaCrafteo = new GridPane();
-        mesaCrafteo.setMaxSize(50, 50 );
-        BotonMesaCrafteo[][] botones = new BotonMesaCrafteo[3][3];
-
-        mesaCrafteo.prefWidth(this.getWidth()/2);
-        mesaCrafteo.prefHeight(this.getHeight()/2);
+        BotonMesaCrafteo[][] botonesMesa = new BotonMesaCrafteo[3][3];
+        //Más hardcodeo :(
+        mesaCrafteo.setTranslateX(66);
+        mesaCrafteo.setTranslateY(25);
+        mesaCrafteo.setPrefSize(110, 106);
+        mesaCrafteo.setHgap(5);
+        mesaCrafteo.setVgap(3);
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botones[i][j] = new BotonMesaCrafteo();
-                botones[i][j].setText(i + "," + j);
-                mesaCrafteo.add(botones[i][j], j, i, 1, 1);
-                botones[i][j].prefWidthProperty().bind(mesaCrafteo.widthProperty());
-                botones[i][j].prefHeightProperty().bind(mesaCrafteo.heightProperty());
+                botonesMesa[i][j] = new BotonMesaCrafteo();
+                //botones[i][j].setText(i + "," + j);
+                mesaCrafteo.add(botonesMesa[i][j], j, i, 1, 1);
+                botonesMesa[i][j].prefWidthProperty().bind(mesaCrafteo.widthProperty());
+                botonesMesa[i][j].prefHeightProperty().bind(mesaCrafteo.heightProperty());
+            }
+        }
+
+        //Armo el inventario con un GridPane
+        GridPane inventario = new GridPane();
+
+        BotonInventario[][] botonesInventario = new BotonInventario[3][9];
+        //Aún más :(
+        inventario.setTranslateX(12);
+        inventario.setTranslateY(152);
+        inventario.setPrefSize(352, 110);
+        inventario.setHgap(5);
+        inventario.setVgap(3);
+
+        for(int i=0; i < 3; i++){
+            for(int j=0; j<9; j++){
+                botonesInventario[i][j] = new BotonInventario();
+                //botones[i][j].setText(i + "," + j);
+                inventario.add(botonesInventario[i][j], j, i, 1, 1);
+                botonesInventario[i][j].prefWidthProperty().bind(inventario.widthProperty());
+                botonesInventario[i][j].prefHeightProperty().bind(inventario.heightProperty());
             }
         }
 
 
-
-        this.getChildren().addAll(mesaCrafteo);
+        this.getChildren().addAll(mesaCrafteo, inventario);
     }
 
 }

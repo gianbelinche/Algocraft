@@ -1,11 +1,13 @@
 package Vista;
 
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -26,8 +28,19 @@ public class Ventana extends Application {
 
         TitleLayout titleLayout = new TitleLayout(primaryStage);
 
-        Scene titleScene = new Scene(titleLayout, 512,250);
+        Scene titleScene = new Scene(titleLayout);
         primaryStage.setScene(titleScene);
+
+        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
+
+        //set Stage boundaries to visible bounds of the main screen
+        primaryStage.setX(primaryScreenBounds.getMinX());
+        primaryStage.setY(primaryScreenBounds.getMinY());
+        primaryStage.setWidth(primaryScreenBounds.getWidth());
+        primaryStage.setHeight(primaryScreenBounds.getHeight());
+
+        primaryStage.setResizable(false);
+
         primaryStage.show();
     }
 
