@@ -7,9 +7,9 @@ import javafx.stage.Stage;
 
 public class BotonInventario extends Button{
 
-        public BotonInventario(Stage stage, StackPane pane){
+        public BotonInventario(Stage stage, InventarioLayout pane){
             this.setText("Inventario");
-            BotonInventarioHandler botonInventarioHandler = new BotonInventarioHandler(pane);
+            BotonInventarioHandler botonInventarioHandler = new BotonInventarioHandler(this, pane);
             this.setOnAction(botonInventarioHandler);
     }
 

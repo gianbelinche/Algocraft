@@ -1,26 +1,23 @@
 package Vista;
 
+import Controlador.SalirDeInventarioHandler;
 import javafx.scene.layout.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class InventarioLayout extends StackPane {
+public class InventarioLayout extends Pane {
     Stage stage;
+
     public InventarioLayout(Stage stage){
 
         super();
+        this.setVisible(false);
         this.stage = stage;
-        this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(25));
+        this.setTranslateX(stage.getWidth()/2 - getWidth());
+        this.setTranslateY(stage.getHeight()/2 - 100);
         setMaxSize(200, 200);
         //Cargo la imagen
         Image imagen = new Image("file:src/Vista/Imagenes/Inventario_crafteador.png");
@@ -28,6 +25,10 @@ public class InventarioLayout extends StackPane {
         BackgroundImage imagenDeInventario = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
         new BackgroundSize(1.0, 1.0, true, true, false, false));
         this.setBackground(new Background(imagenDeInventario));
+
+        //Creo botones
+        this.setOnKeyPressed(new SalirDeInventarioHandler(this));
+
 
         //Creo los botones y los guardo en el GridPane
         GridPane mesaCrafteo = new GridPane();
