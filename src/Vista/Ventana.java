@@ -27,7 +27,6 @@ public class Ventana extends Application {
 
         Scene titleScene = new Scene(titleLayout, 512,250);
         primaryStage.setScene(titleScene);
-
         primaryStage.show();
     }
 
@@ -35,9 +34,15 @@ public class Ventana extends Application {
         mainStage.setTitle("Main");
 
         StackPane mainLayout = new MainLayout(mainStage);
+        StackPane inventarioLayout = new InventarioLayout((mainStage));
 
         Scene mainScene = new Scene(mainLayout, mainStage.getWidth(), mainStage.getHeight());
+        //Scene inventarioScene = new Scene(inventarioLayout, mainStage.getWidth(), mainStage.getHeight());
+
         mainStage.setScene(mainScene);
+       // mainStage.setScene(inventarioScene);
+
+        //inventarioLayout.setVisible(true);
 
         mainStage.show();
     }

@@ -19,13 +19,19 @@ public class TitleLayout extends StackPane {
     public TitleLayout(Stage stage) {
         //Creo Botones
 
+        StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
         Button startButton = new StartButton(stage, this);
+        startButton.setOnAction(startButtonHandler);
+
+
         Button exitButton = new ExitButton(stage);
+        ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
+        exitButton.setOnAction(exitButtonHandler);
 
         VBox contenedorBotones = new VBox(startButton, exitButton);
-        //startButton.prefHeightProperty().bind(contenedorBotones.heightProperty());
         contenedorBotones.setSpacing(25);
         contenedorBotones.setAlignment(Pos.CENTER);
+
 
         //Cargo Imagen
         Image image = new Image("file:src/Vista/Imagenes/Prueba.jpg");
