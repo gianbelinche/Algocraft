@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 public class TitleLayout extends StackPane {
 
     public TitleLayout(Stage stage) {
-        //Creo Botones
 
-        StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
+        //Creo Botones
         Button startButton = new StartButton(stage);
+        StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
         startButton.setOnAction(startButtonHandler);
 
         Button exitButton = new ExitButton(stage);
