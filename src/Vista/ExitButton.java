@@ -14,7 +14,7 @@ public class ExitButton extends Button {
         this.setOnAction(exitButtonHandler);
         //Seteo tamaño a 5% de pantalla
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-        this.setPrefWidth(primaryScreenBounds.getWidth()*0.05);
+        this.setPrefWidth(primaryScreenBounds.getWidth()*0.1);
         this.setPrefHeight(primaryScreenBounds.getHeight()*0.05);
     }
 

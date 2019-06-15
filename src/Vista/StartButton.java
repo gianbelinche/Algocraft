@@ -24,6 +24,19 @@ public class StartButton extends Button {
 
         this.setGraphic(imageView);
 
+        Image imagee = new Image("file:src/Vista/Imagenes/BotonPlay.jpg");
+
+        //CAMBIAR ESTO, ES HORRIBLE
+        BackgroundImage backgroundImage = new BackgroundImage(imagee,
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0, 1.0, true, true, false, false));
+        //Adapto tamaño de imagen a tamaño de pantalla
+
+        Background background = new Background(backgroundImage);
+        this.setBackground(background);
+        //HASTA ACA
+
         //Seteo tamaño a 5% de pantalla
 
     }
