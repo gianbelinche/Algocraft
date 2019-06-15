@@ -27,7 +27,7 @@ public class ContenedorInventario extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPadding(new Insets(25));
-        Image imagen = new Image("file:src/Vista/Imagenes/Fondo_con_inventario.png");
+        Image imagen = new Image("file:Algocraft/src/Vista/Imagenes/Fondo_con_inventario.png");
         BackgroundImage imagenDeInventario = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeInventario));
 
