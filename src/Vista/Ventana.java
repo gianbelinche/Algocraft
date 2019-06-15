@@ -39,6 +39,7 @@ public class Ventana extends Application {
         primaryStage.setWidth(primaryScreenBounds.getWidth());
         primaryStage.setHeight(primaryScreenBounds.getHeight());
 
+        primaryStage.setResizable(false);
 
         primaryStage.show();
     }

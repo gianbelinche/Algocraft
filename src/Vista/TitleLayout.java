@@ -6,13 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 public class TitleLayout extends StackPane {
 
@@ -20,9 +14,8 @@ public class TitleLayout extends StackPane {
         //Creo Botones
 
         StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
-        Button startButton = new StartButton(stage, this);
+        Button startButton = new StartButton(stage);
         startButton.setOnAction(startButtonHandler);
-
 
         Button exitButton = new ExitButton(stage);
         ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
@@ -31,7 +24,6 @@ public class TitleLayout extends StackPane {
         VBox contenedorBotones = new VBox(startButton, exitButton);
         contenedorBotones.setSpacing(25);
         contenedorBotones.setAlignment(Pos.CENTER);
-
 
         //Cargo Imagen
         Image image = new Image("file:src/Vista/Imagenes/Prueba.jpg");
