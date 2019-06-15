@@ -7,13 +7,17 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class ExitButtonHandler implements EventHandler<ActionEvent> {
+
     Stage stage;
     Button button;
+
     public ExitButtonHandler(Stage stage,Button button){
         this.stage = stage;
         this.button = button;
     }
+
     private int contador = 0;
+
     @Override
     public void handle(ActionEvent event) {
         if (contador == 0){
@@ -31,4 +35,5 @@ public class ExitButtonHandler implements EventHandler<ActionEvent> {
         }
         contador += 1;
     }
+
 }
