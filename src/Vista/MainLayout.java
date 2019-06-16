@@ -16,6 +16,7 @@ public class MainLayout extends Pane {
     public MainLayout(Stage mainStage) {
         //Creo botones de movimiento
         BotonMoverArriba botonMoverArriba = new BotonMoverArriba(mainStage);
+        botonMoverArriba.setTranslateX(28); //HARDCODEO
         BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(mainStage);
         BotonMoverDerecha botonMoverDerecha = new BotonMoverDerecha(mainStage);
         BotonMoverIzquierda botonMoverIzquierda = new BotonMoverIzquierda(mainStage);
@@ -40,10 +41,12 @@ public class MainLayout extends Pane {
         HBox cajaCompleta = new HBox(columnaBotones);
         cajaCompleta.setPrefSize(150, Screen.getPrimary().getVisualBounds().getHeight());
         cajaCompleta.setSpacing(40);
-        cajaCompleta.setStyle("-fx-background-color: #000000;");
+        cajaCompleta.setStyle("-fx-background-color: rgba(42,51,51,0.2);");
         cajaCompleta.setAlignment(Pos.CENTER);
 
-        this.getChildren().addAll(inventarioLayout, cajaCompleta);
+        BotonOcultarBotones botonOcultarBotones = new BotonOcultarBotones();
+
+        this.getChildren().addAll(inventarioLayout, cajaCompleta, botonOcultarBotones);
     }
 
 }
