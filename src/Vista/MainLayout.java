@@ -23,8 +23,7 @@ public class MainLayout extends Pane {
         HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
         botonesMovimientoCompleto.setSpacing(10);
-
-
+        
         InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
 
         //Creo boton inventario
