@@ -43,4 +43,8 @@ public class Juego {
     public boolean tableroEsCorrecto(Tablero otroTablero){
         return tablero.esIgual(otroTablero);
     }
+
+    public Jugador obtenerJugador(){
+        return jugador;
+    }
 }

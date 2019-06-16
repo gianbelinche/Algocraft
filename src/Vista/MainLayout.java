@@ -1,7 +1,9 @@
 package Vista;
 
 
+import Controlador.BotonMoverAbajoHandler;
 import Controlador.SalirDeInventarioHandler;
+import Modelo.Juego;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -13,10 +15,12 @@ import javafx.stage.Stage;
 
 public class MainLayout extends Pane {
 
-    public MainLayout(Stage mainStage) {
+    public MainLayout(Stage mainStage, Juego juego) {
+
         //Creo botones de movimiento
         BotonMoverArriba botonMoverArriba = new BotonMoverArriba(mainStage);
-        BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(mainStage);
+        BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(mainStage,juego.obtenerJugador());
+        botonMoverAbajo.setOnAction(new BotonMoverAbajoHandler(botonMoverAbajo));
         BotonMoverDerecha botonMoverDerecha = new BotonMoverDerecha(mainStage);
         BotonMoverIzquierda botonMoverIzquierda = new BotonMoverIzquierda(mainStage);
 
