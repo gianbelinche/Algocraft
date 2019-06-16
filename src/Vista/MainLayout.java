@@ -2,6 +2,7 @@ package Vista;
 
 
 import Controlador.BotonMoverAbajoHandler;
+import Controlador.BotonMoverArribaHandler;
 import Controlador.SalirDeInventarioHandler;
 import Modelo.Juego;
 import javafx.geometry.Pos;
@@ -18,7 +19,8 @@ public class MainLayout extends Pane {
     public MainLayout(Stage mainStage, Juego juego,Ventana ventana) {
 
         //Creo botones de movimiento
-        BotonMoverArriba botonMoverArriba = new BotonMoverArriba(mainStage);
+        BotonMoverArriba botonMoverArriba = new BotonMoverArriba(ventana,juego.obtenerJugador());
+        botonMoverArriba.setOnAction(new BotonMoverArribaHandler(botonMoverArriba));
         botonMoverArriba.setTranslateX(28); //HARDCODEO
 
         BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(ventana,juego.obtenerJugador());
