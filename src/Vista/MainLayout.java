@@ -36,12 +36,10 @@ public class MainLayout extends Pane {
 
         botonesMovimientoCompleto.setSpacing(10);
 
-        InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
-
         //Creo boton inventario
+        InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
         VBox contenedorBotones = new VBox();
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout, contenedorBotones);
-        //ExitButton botonSalir = new ExitButton(mainStage);
         contenedorBotones.getChildren().addAll(botonEntrarInventario);
         this.setOnKeyPressed(new SalirDeInventarioHandler(inventarioLayout));
 
@@ -55,7 +53,8 @@ public class MainLayout extends Pane {
         cajaCompleta.setStyle("-fx-background-color: rgba(42,51,51,0.2);");
         cajaCompleta.setAlignment(Pos.CENTER);
 
-        BotonOcultarBotones botonOcultarBotones = new BotonOcultarBotones();
+        BotonOcultarBotones botonOcultarBotones = new BotonOcultarBotones(cajaCompleta);
+        //ExitButton botonSalir = new ExitButton(mainStage);
 
         this.getChildren().addAll(inventarioLayout, cajaCompleta, botonOcultarBotones);
     }
