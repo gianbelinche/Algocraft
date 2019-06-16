@@ -2,8 +2,12 @@ package Vista;
 
 
 import Controlador.SalirDeInventarioHandler;
+import javafx.geometry.Pos;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Box;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MainLayout extends Pane {
@@ -17,28 +21,33 @@ public class MainLayout extends Pane {
 
         HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
+        botonesMovimientoCompleto.setSpacing(10);
 
         //Cargo Imagen
-        Image image = new Image("file:src/Vista/Imagenes/TableroPrueba.jpg");
+        Image image = new Image("file:src/Vista/Imagenes/Prueba.png");
+        ImageView pantalla = new ImageView(image);
+        pantalla.setFitWidth(Screen.getPrimary().getVisualBounds().getWidth());
+        pantalla.setFitHeight(Screen.getPrimary().getVisualBounds().getHeight());
 
-        BackgroundImage backgroundImage = new BackgroundImage(image,
-                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                new BackgroundSize(1.0, 1.0, true, true, false, false));
-        //Adapto tamaño de imagen a tamaño de pantalla
-
-        Background background = new Background(backgroundImage);
         InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
-        //Creo boton inventario
 
+        //Creo boton inventario
         VBox contenedorBotones = new VBox();
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout, contenedorBotones);
         //ExitButton botonSalir = new ExitButton(mainStage);
         contenedorBotones.getChildren().addAll(botonEntrarInventario);
         this.setOnKeyPressed(new SalirDeInventarioHandler(inventarioLayout));
 
-        this.getChildren().addAll(inventarioLayout, contenedorBotones, botonesMovimientoCompleto);
-        this.setBackground(background);
+        VBox columnaBotones = new VBox(botonesMovimientoCompleto, contenedorBotones);
+        columnaBotones.setSpacing(100);
+        columnaBotones.setAlignment(Pos.CENTER);
+
+        HBox cajaCompleta = new HBox(columnaBotones, pantalla);
+        cajaCompleta.setPrefSize(Screen.getPrimary().getVisualBounds().getWidth(), Screen.getPrimary().getVisualBounds().getHeight());
+        cajaCompleta.setSpacing(40);
+        cajaCompleta.setStyle("-fx-background-color: #000000;");
+
+        this.getChildren().addAll(inventarioLayout, cajaCompleta);
     }
 
 }

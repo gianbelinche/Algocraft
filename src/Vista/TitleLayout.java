@@ -38,8 +38,6 @@ public class TitleLayout extends StackPane {
         contenedorBotones.setBackground(background);
 
         this.getChildren().add(contenedorBotones);
-
-
     }
 
 }
