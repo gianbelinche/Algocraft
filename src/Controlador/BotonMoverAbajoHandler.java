@@ -13,6 +13,7 @@ public class BotonMoverAbajoHandler implements EventHandler<ActionEvent> {
 
     public void handle(ActionEvent event){
         button.obtenerJugador().moverAbajo();
+        button.obtenerVentana().actualizarImagen();
 
     }
 }

@@ -15,13 +15,13 @@ import javafx.stage.Stage;
 
 public class MainLayout extends Pane {
 
-    public MainLayout(Stage mainStage, Juego juego) {
+    public MainLayout(Stage mainStage, Juego juego,Ventana ventana) {
 
         //Creo botones de movimiento
         BotonMoverArriba botonMoverArriba = new BotonMoverArriba(mainStage);
         botonMoverArriba.setTranslateX(28); //HARDCODEO
 
-        BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(mainStage,juego.obtenerJugador());
+        BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(ventana,juego.obtenerJugador());
         botonMoverAbajo.setOnAction(new BotonMoverAbajoHandler(botonMoverAbajo));
 
         BotonMoverDerecha botonMoverDerecha = new BotonMoverDerecha(mainStage);
@@ -29,7 +29,7 @@ public class MainLayout extends Pane {
 
         HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
-        
+
         botonesMovimientoCompleto.setSpacing(10);
 
         InventarioLayout inventarioLayout = new InventarioLayout((mainStage));

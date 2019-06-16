@@ -6,12 +6,18 @@ import javafx.stage.Stage;
 
 public class BotonMoverAbajo extends Button {
     Jugador jugador;
-    public BotonMoverAbajo(Stage stage, Jugador jugador){
+    Ventana ventana;
+    public BotonMoverAbajo(Ventana ventana, Jugador jugador){
         this.jugador = jugador;
         this.setText("~");
+        this.ventana = ventana;
     }
     public Jugador obtenerJugador(){
         return jugador;
+    }
+
+    public Ventana obtenerVentana(){
+        return ventana;
     }
 
 }

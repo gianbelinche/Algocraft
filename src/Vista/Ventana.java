@@ -67,7 +67,7 @@ public class Ventana extends Application {
         terreno = canvas.getGraphicsContext2D();
         root.getChildren().add(canvas);
 
-        MainLayout mainLayout = new MainLayout(mainStage,juego);
+        MainLayout mainLayout = new MainLayout(mainStage,juego,this);
         root.getChildren().add(mainLayout);
 
         actualizarImagen();
