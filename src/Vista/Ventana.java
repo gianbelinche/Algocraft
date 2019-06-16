@@ -17,13 +17,8 @@ import java.io.File;
 import Modelo.Juego;
 public class Ventana extends Application {
 
-
     private Juego juego;
-    private Stage escenario;
-    private Scene escena;
     private GraphicsContext terreno;
-    double pantallaAncho;
-    double pantallaAlto;
 
     public static void main(String[] args) {
         launch(args);
@@ -58,14 +53,12 @@ public class Ventana extends Application {
     }
 
     public void mainStart(Stage mainStage){
-        //Inicializacion de juego 
+        //Inicializacion de juego
         juego = new Juego();
 
-        escenario = mainStage;
         mainStage.setTitle("Main");
 
         Group root = new Group();
-
 
         Scene mainScene = new Scene( root, 4000, 4000);
         mainStage.setScene(mainScene);
@@ -82,6 +75,7 @@ public class Ventana extends Application {
     }
 
     public void actualizarImagen(){
+
         terreno.setFill(Color.LIGHTCYAN);
         terreno.fillRect(0,0,3000,3000);
         juego.dibujar(terreno);
