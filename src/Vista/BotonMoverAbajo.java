@@ -10,7 +10,7 @@ public class BotonMoverAbajo extends Button {
     Ventana ventana;
     public BotonMoverAbajo(Ventana ventana, Jugador jugador){
         this.jugador = jugador;
-        this.setText("~");
+        this.setText("↓");
         this.ventana = ventana;
 
         BotonMoverAbajoHandler handler = new BotonMoverAbajoHandler(this);

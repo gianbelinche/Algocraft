@@ -7,12 +7,13 @@ import javafx.stage.Stage;
 
 public class BotonMoverIzquierda extends Button {
 
+
     Jugador jugador;
     Ventana ventana;
 
     public BotonMoverIzquierda(Ventana ventana,Jugador jugador){
 
-        this.setText("<");
+        this.setText("←");
         this.jugador = jugador;
         this.ventana = ventana;
         BotonMoverIzquierdaHandler handler = new BotonMoverIzquierdaHandler(this);
