@@ -58,7 +58,7 @@ public class Ventana extends Application {
     }
 
     public void mainStart(Stage mainStage){
-        //Inicializacion de juego
+        //Inicializacion de juego 
         juego = new Juego();
 
         escenario = mainStage;
