@@ -3,7 +3,7 @@ package Modelo;
 public class Proyector {
     private int lado = 110;
     private double ajusteDePerspectiva = 0.58;
-    int corrimientoX = 200;
+    int corrimientoX = 600;
     int corrimientoY = 100;
 
     public int obtenerXIso(double x, double y){
