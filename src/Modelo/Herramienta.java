@@ -1,6 +1,6 @@
 package Modelo;
 
-public class Herramienta {
+public class Herramienta implements Almacenable{
 
     Material miMaterial;
     int durabilidad;
@@ -24,4 +24,8 @@ public class Herramienta {
         durabilidad = (int) desgaste.desgastar(durabilidad, fuerza, material);
         return miMaterial.recoger(material,fuerza);
     }
+
+    public boolean almacenar(Almacenable objeto){ return false;}
+
+    public Almacenable obtener(){return this;}
 }

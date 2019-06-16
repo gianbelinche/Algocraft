@@ -8,12 +8,15 @@ public class Jugador implements Posicionable{
     private Herramienta herramientaEquipada;
     private Posicion posicion;
     private Image sprite;
+    private Inventario inventario;
+
 
     public Jugador(Tablero tablero){
         sprite = new Image("file:src/Vista/Imagenes/CasillaJugador.png");
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
         posicion = new Posicion(5, 5, tablero);
+        inventario = new Inventario();
     }
 
     public Herramienta herramientaEquipada() {
@@ -45,6 +48,16 @@ public class Jugador implements Posicionable{
 
     public boolean esIgual(Posicionable otroJugador) {
         return otroJugador instanceof Jugador;
+    }
+
+    public void recoger(Material unMaterial){
+        Almacenable materialRecogido = herramientaEquipada.recoger(unMaterial);
+        if(materialRecogido != null){
+            inventario.almacenar(materialRecogido);
+        }
+    }
+    public Almacenable obtenerDeInventario(int x, int y){
+        return inventario.obtenerDePosicion(x, y);
     }
 
     @Override

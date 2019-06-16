@@ -3,7 +3,10 @@ package Modelo;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-abstract class Material implements Posicionable{
+abstract class Material implements Posicionable,Almacenable{
+
+
+
     Image sprite;
     Posicion posicion;
     int durabilidad;
@@ -42,6 +45,10 @@ abstract class Material implements Posicionable{
     public void establecerPosicion(Posicion nuevaPosicion){
         posicion = nuevaPosicion;
     }
+
+    public boolean almacenar(Almacenable objeto){ return false;}
+
+    public Almacenable obtener(){return this;}
 
     @Override
     public void dibujar(int x, int y, GraphicsContext gc){

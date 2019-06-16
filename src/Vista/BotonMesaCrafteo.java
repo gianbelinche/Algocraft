@@ -7,6 +7,6 @@ public class BotonMesaCrafteo extends Button {
     public BotonMesaCrafteo(){
         setText("");
         //Transparenta el boton
-        //setStyle("-fx-background-color: transparent");
+        setStyle("-fx-background-color: transparent");
     }
 }

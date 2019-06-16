@@ -39,11 +39,12 @@ public class InventarioLayout extends Pane {
         GridPane mesaCrafteo = new GridPane();
         BotonMesaCrafteo[][] botonesMesa = new BotonMesaCrafteo[3][3];
         //Más hardcodeo :(
-        mesaCrafteo.setTranslateX(66);
+        mesaCrafteo.setTranslateX(63);
         mesaCrafteo.setTranslateY(25);
-        mesaCrafteo.setPrefSize(110, 106);
-        mesaCrafteo.setHgap(5);
+        mesaCrafteo.setPrefSize(114, 106);
+        mesaCrafteo.setHgap(7);
         mesaCrafteo.setVgap(3);
+
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
@@ -60,10 +61,10 @@ public class InventarioLayout extends Pane {
 
         BotonInventario[][] botonesInventario = new BotonInventario[3][9];
         //Aún más :(
-        inventario.setTranslateX(12);
-        inventario.setTranslateY(152);
-        inventario.setPrefSize(352, 110);
-        inventario.setHgap(5);
+        inventario.setTranslateX(15);
+        inventario.setTranslateY(154);
+        inventario.setPrefSize(354, 106);
+        inventario.setHgap(9);
         inventario.setVgap(3);
 
         for(int i=0; i < 3; i++){
@@ -75,6 +76,7 @@ public class InventarioLayout extends Pane {
                 botonesInventario[i][j].prefHeightProperty().bind(inventario.heightProperty());
             }
         }
+
 
 
         this.getChildren().addAll(mesaCrafteo, inventario);

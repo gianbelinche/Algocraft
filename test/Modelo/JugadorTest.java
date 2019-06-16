@@ -79,4 +79,5 @@ public class JugadorTest {
         jugador.moverAbajo();
         assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1));
     }
+
 }
