@@ -18,16 +18,10 @@ public class StartButton extends Button {
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 
         Image image = new Image("file:src/Vista/Imagenes/BotonPlay.png");
-        ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(primaryScreenBounds.getWidth()*0.15);
-        imageView.setFitHeight(primaryScreenBounds.getHeight()*0.08);
+        this.setPrefWidth(primaryScreenBounds.getWidth()*0.15);
+        this.setPrefHeight(primaryScreenBounds.getHeight()*0.08);
 
-        this.setGraphic(imageView);
-
-        Image imagee = new Image("file:src/Vista/Imagenes/BotonPlay.jpg");
-
-        //CAMBIAR ESTO, ES HORRIBLE
-        BackgroundImage backgroundImage = new BackgroundImage(imagee,
+        BackgroundImage backgroundImage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
@@ -35,9 +29,6 @@ public class StartButton extends Button {
 
         Background background = new Background(backgroundImage);
         this.setBackground(background);
-        //HASTA ACA
-
-        //Seteo tamaño a 5% de pantalla
 
     }
 
