@@ -30,37 +30,31 @@ public class Ventana extends Application {
     }
 
     @Override
-    public void start(Stage nuevoEscenario) {
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Title");
 
-        //Inicializacion de sonido
+        String musicFile = "src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";     // For example
 
-        String musicFile = "src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
 
-        //Inicializacion de ventana
+        TitleLayout titleLayout = new TitleLayout(primaryStage);
 
-        escenario = nuevoEscenario;
-        escenario.setTitle("Title");
-
-        TitleLayout titleLayout = new TitleLayout(escenario);
         Scene titleScene = new Scene(titleLayout);
-        escenario.setScene(titleScene);
-
-        escena = titleScene;
+        primaryStage.setScene(titleScene);
 
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
 
-        pantallaAlto = primaryScreenBounds.getWidth();
-        pantallaAncho = primaryScreenBounds.getHeight();
-        escenario.setX(primaryScreenBounds.getMinX());
-        escenario.setY(primaryScreenBounds.getMinY());
-        escenario.setWidth(pantallaAncho);
-        escenario.setHeight(pantallaAlto);
-        escenario.setResizable(false);
+        //set Stage boundaries to visible bounds of the main screen
+        primaryStage.setX(primaryScreenBounds.getMinX());
+        primaryStage.setY(primaryScreenBounds.getMinY());
+        primaryStage.setWidth(primaryScreenBounds.getWidth());
+        primaryStage.setHeight(primaryScreenBounds.getHeight());
 
-        escenario.show();
+        primaryStage.setResizable(false);
+
+        primaryStage.show();
     }
 
     public void mainStart(Stage mainStage){
