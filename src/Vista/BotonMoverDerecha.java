@@ -1,8 +1,8 @@
 package Vista;
 
+import Controlador.BotonMoverDerechaHandler;
 import Modelo.Jugador;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class BotonMoverDerecha extends Button {
 
@@ -13,6 +13,8 @@ public class BotonMoverDerecha extends Button {
         this.setText(">");
         this.jugador = jugador;
         this.ventana = ventana;
+        BotonMoverDerechaHandler handler = new BotonMoverDerechaHandler(this);
+        this.setOnAction(handler);
     }
 
     public Jugador obtenerJugador(){

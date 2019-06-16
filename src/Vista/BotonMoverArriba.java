@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.BotonMoverArribaHandler;
 import Modelo.Jugador;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -12,6 +13,10 @@ public class BotonMoverArriba extends Button {
         this.setText("^");
         this.jugador = jugador;
         this.ventana = ventana;
+
+        BotonMoverArribaHandler handler = new BotonMoverArribaHandler(this);
+
+        this.setOnAction(handler);
         }
 
     public Jugador obtenerJugador(){
