@@ -10,7 +10,7 @@ public class BotonMoverDerecha extends Button {
     Ventana ventana;
 
     public BotonMoverDerecha(Ventana ventana, Jugador jugador) {
-        this.setText(">");
+        this.setText("→");
         this.jugador = jugador;
         this.ventana = ventana;
     }

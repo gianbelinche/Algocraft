@@ -9,7 +9,7 @@ public class BotonMoverArriba extends Button {
     Ventana ventana;
 
     public BotonMoverArriba(Ventana ventana, Jugador jugador) {
-        this.setText("^");
+        this.setText("↑");
         this.jugador = jugador;
         this.ventana = ventana;
         }
