@@ -62,3 +62,9 @@ Interfaz gráfica inicial básica:
 - Menú inicial.
 
 **Entrega 4:** Jueves 27 de Junio
+
+Trabajo Práctico Completo:
+- Funcionando
+- Interfaz Gráfica Final
+- Sonidos
+- Informe Completo
