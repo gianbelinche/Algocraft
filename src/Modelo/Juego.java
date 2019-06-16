@@ -1,5 +1,7 @@
 package Modelo;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class Juego {
     private Jugador jugador;
     private Tablero tablero;
@@ -20,6 +22,7 @@ public class Juego {
     }
 
     private void inicializarTablero(){
+
         tablero.colocarEnPosicion(0,0,new Madera());
         tablero.colocarEnPosicion(0,1,new Madera());
         tablero.colocarEnPosicion(1,0,new Madera());
@@ -31,8 +34,12 @@ public class Juego {
         tablero.colocarEnPosicion(1,5,new Metal());
         tablero.colocarEnPosicion(9,8,new Diamante());
         tablero.colocarEnPosicion(3,7,jugador);
+
     }
 
+    public void dibujar(GraphicsContext terreno){
+        tablero.dibujar(terreno);
+    }
     public boolean tableroEsCorrecto(Tablero otroTablero){
         return tablero.esIgual(otroTablero);
     }

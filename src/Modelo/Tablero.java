@@ -1,5 +1,8 @@
 package Modelo;
 
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+
 public class Tablero {
 
     private Posicionable [][] mapa;
@@ -40,6 +43,7 @@ public class Tablero {
     }
 
     public Posicionable obtenerDePosicion(int x, int y){
+        if(!validarPosicion(x,y)) return posicionVacia;
         return mapa[x][y];
     }
 
@@ -69,5 +73,23 @@ public class Tablero {
             }
         }
         return true;
+    }
+
+    public void dibujar(GraphicsContext terreno){
+
+        Proyector proyector = new Proyector();
+        Posicionable posicionable;
+
+        for(int i = 0;i < ancho;i++)
+        {
+            for(int j = 0;j < alto;j++)
+            {
+                int imgXIso = proyector.obtenerXIso(i,j);
+                int imgYIso = proyector.obtenerYIso(i,j);
+
+                posicionable =  obtenerDePosicion(i,j);
+                if(posicionable != null)  posicionable.dibujar(imgXIso,imgYIso,terreno);
+            }
+        }
     }
 }

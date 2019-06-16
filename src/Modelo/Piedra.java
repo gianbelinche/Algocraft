@@ -1,9 +1,12 @@
 package Modelo;
 
+import javafx.scene.image.Image;
+
 public class Piedra extends Material {
 
     public Piedra() {
         durabilidad = 30;
+        sprite = new Image("file:src/Vista/Imagenes/CasillaPiedra.png");
     }
 
     @Override

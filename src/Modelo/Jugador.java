@@ -1,11 +1,16 @@
 package Modelo;
 
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+
 public class Jugador implements Posicionable{
 
     private Herramienta herramientaEquipada;
     private Posicion posicion;
+    private Image sprite;
 
     public Jugador(Tablero tablero){
+        sprite = new Image("file:src/Vista/Imagenes/CasillaJugador.png");
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
         posicion = new Posicion(5, 5, tablero);
@@ -40,5 +45,10 @@ public class Jugador implements Posicionable{
 
     public boolean esIgual(Posicionable otroJugador) {
         return otroJugador instanceof Jugador;
+    }
+
+    @Override
+    public void dibujar(int x, int y, GraphicsContext gc){
+        gc.drawImage(sprite,x,y);
     }
 }
