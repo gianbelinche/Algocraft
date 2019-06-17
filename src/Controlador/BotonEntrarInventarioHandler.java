@@ -1,7 +1,7 @@
 package Controlador;
 
 
-import Vista.InventarioLayout;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.VBox;

@@ -1,6 +1,8 @@
 package Vista;
 
 import Controlador.MoverPersonajeHandler;
+import Vista.VentanaJuego.VentanaTablero.MainLayout;
+import Vista.VentanaPrincipal.TitleLayout;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
@@ -12,9 +14,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-
 import java.io.File;
 import Modelo.Juego;
+
 public class Ventana extends Application {
 
     private Juego juego;

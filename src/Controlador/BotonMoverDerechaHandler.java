@@ -1,9 +1,8 @@
 package Controlador;
 
-import Vista.BotonMoverDerecha;
+import Vista.VentanaJuego.VentanaTablero.BotonMoverDerecha;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 
 public class BotonMoverDerechaHandler implements EventHandler<ActionEvent> {
     BotonMoverDerecha button;

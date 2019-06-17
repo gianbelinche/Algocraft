@@ -1,6 +1,7 @@
-package Vista;
+package Vista.VentanaJuego.VentanaTablero;
 
 import Controlador.BotonEntrarInventarioHandler;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 

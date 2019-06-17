@@ -1,6 +1,6 @@
 package Controlador;
 
-import Vista.InventarioLayout;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;

@@ -1,6 +1,7 @@
-package Vista;
+package Vista.VentanaPrincipal;
 
 import Controlador.StartButtonHandler;
+import Vista.Vista;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;

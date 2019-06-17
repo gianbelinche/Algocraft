@@ -1,7 +1,10 @@
-package Vista;
+package Vista.VentanaPrincipal;
 
 import Controlador.ExitButtonHandler;
 import Controlador.StartButtonHandler;
+import Vista.VentanaPrincipal.ExitButton;
+import Vista.VentanaPrincipal.StartButton;
+import Vista.Vista;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;

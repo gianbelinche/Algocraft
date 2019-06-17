@@ -1,23 +1,21 @@
-package Vista;
+package Vista.VentanaJuego.VentanaTablero;
 
-import Controlador.BotonMoverArribaHandler;
+import Controlador.BotonMoverAbajoHandler;
 import Modelo.Jugador;
+import Vista.Ventana;
 import javafx.scene.control.Button;
 
-public class BotonMoverArriba extends Button {
+public class BotonMoverAbajo extends Button {
     Jugador jugador;
     Ventana ventana;
-
-    public BotonMoverArriba(Ventana ventana, Jugador jugador) {
-        this.setText("↑");
+    public BotonMoverAbajo(Ventana ventana, Jugador jugador){
         this.jugador = jugador;
+        this.setText("↓");
         this.ventana = ventana;
 
-        BotonMoverArribaHandler handler = new BotonMoverArribaHandler(this);
-
+        BotonMoverAbajoHandler handler = new BotonMoverAbajoHandler(this);
         this.setOnAction(handler);
-        }
-
+    }
     public Jugador obtenerJugador(){
         return jugador;
     }
@@ -25,6 +23,5 @@ public class BotonMoverArriba extends Button {
     public Ventana obtenerVentana(){
         return ventana;
     }
-
 
 }

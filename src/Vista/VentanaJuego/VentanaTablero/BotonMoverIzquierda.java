@@ -1,7 +1,8 @@
-package Vista;
+package Vista.VentanaJuego.VentanaTablero;
 
 import Controlador.BotonMoverIzquierdaHandler;
 import Modelo.Jugador;
+import Vista.Ventana;
 import javafx.scene.control.Button;
 
 public class BotonMoverIzquierda extends Button {
@@ -10,7 +11,7 @@ public class BotonMoverIzquierda extends Button {
     Jugador jugador;
     Ventana ventana;
 
-    public BotonMoverIzquierda(Ventana ventana,Jugador jugador){
+    public BotonMoverIzquierda(Ventana ventana, Jugador jugador){
 
         this.setText("←");
         this.jugador = jugador;

@@ -1,20 +1,19 @@
-package Vista;
+package Vista.VentanaJuego.VentanaTablero;
 
 
 import Controlador.*;
 import Modelo.Juego;
+import Vista.Ventana;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
+import Vista.VentanaJuego.VentanaTablero.*;
 import javafx.geometry.Pos;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Box;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MainLayout extends Pane {
 
-    public MainLayout(Stage mainStage, Juego juego,Ventana ventana) {
+    public MainLayout(Stage mainStage, Juego juego, Ventana ventana) {
 
         //Creo botones de movimiento
         BotonMoverArriba botonMoverArriba = new BotonMoverArriba(ventana,juego.obtenerJugador());

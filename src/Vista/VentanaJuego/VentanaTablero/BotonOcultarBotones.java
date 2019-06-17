@@ -1,4 +1,4 @@
-package Vista;
+package Vista.VentanaJuego.VentanaTablero;
 
 import Controlador.BotonOcultarBotonesHandler;
 import javafx.scene.control.Button;
