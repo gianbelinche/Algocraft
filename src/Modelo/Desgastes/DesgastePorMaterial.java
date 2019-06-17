@@ -1,4 +1,8 @@
-package Modelo;
+package Modelo.Desgastes;
+
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Material;
+
 
 public class DesgastePorMaterial implements Desgaste {
     private double factor;

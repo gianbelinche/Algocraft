@@ -1,5 +1,12 @@
 package Modelo;
 
+import Modelo.Construccion.Constructor;
+import Modelo.Escenario.Tablero;
+import Modelo.Herramientas.Pico;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

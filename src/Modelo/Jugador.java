@@ -1,10 +1,15 @@
 package Modelo;
 
+import Modelo.Construccion.Constructor;
+import Modelo.Escenario.Posicion;
+import Modelo.Escenario.Posicionable;
+import Modelo.Escenario.Tablero;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Materiales.Material;
 import Vista.Vista;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 
-public class Jugador implements Posicionable{
+public class Jugador implements Posicionable {
 
     private Herramienta herramientaEquipada;
     private Posicion posicion;

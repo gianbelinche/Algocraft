@@ -1,5 +1,9 @@
 package Modelo;
 
+import Modelo.Construccion.Constructor;
+import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.Pico;
+import Modelo.Materiales.PiedraRefinada;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;

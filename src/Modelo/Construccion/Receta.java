@@ -1,8 +1,10 @@
-package Modelo;
+package Modelo.Construccion;
+
+import Modelo.Materiales.Material;
 
 public class Receta {
 
-    private Material [][]  semilla = new Material[3][3];
+    private Material[][]  semilla = new Material[3][3];
 
     public Material [][] obtenerSemilla(){
         return semilla;

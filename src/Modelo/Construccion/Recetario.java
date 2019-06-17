@@ -1,15 +1,22 @@
-package Modelo;
+package Modelo.Construccion;
+import Modelo.Construccion.Constructor;
+import Modelo.Construccion.Receta;
+import Modelo.Herramientas.Herramienta;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
+
 import java.lang.reflect.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Recetario {
     private Map<Receta,Method> recetario;
-    private Constructor constructor;
+    private Modelo.Construccion.Constructor constructor;
 
     public Recetario(){
         recetario = new HashMap<>();
-        constructor  = new Constructor();
+        constructor  = new Modelo.Construccion.Constructor();
         this.crearSemillas();
     }
 

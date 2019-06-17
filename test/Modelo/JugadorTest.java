@@ -1,5 +1,9 @@
 package Modelo;
 
+import Modelo.Construccion.Constructor;
+import Modelo.Escenario.Tablero;
+import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.Herramienta;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -38,11 +42,13 @@ public class JugadorTest {
 
         assertEquals(durabilidadDeseada, durabilidadInicial);
     }
-
+    /*
     @Test
     public void testCrearJugadorPoseeHachaConDesgasteLineal(){
         assertTrue(herramienta.desgaste instanceof DesgasteLineal);
     }
+
+     */
 
     @Test
     public void testCrearJugadorPoseeHachaConFuerzaCorrecta(){

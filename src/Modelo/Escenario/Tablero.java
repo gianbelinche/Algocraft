@@ -1,10 +1,10 @@
-package Modelo;
+package Modelo.Escenario;
 
 import javafx.scene.canvas.GraphicsContext;
 
 public class Tablero {
 
-    private Posicionable [][] mapa;
+    private Posicionable[][] mapa;
     private int ancho;
     private int alto;
     private PosicionVacia posicionVacia;

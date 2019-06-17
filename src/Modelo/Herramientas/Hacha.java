@@ -1,4 +1,9 @@
-package Modelo;
+package Modelo.Herramientas;
+
+import Modelo.Desgastes.Desgaste;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
+
 
 public class Hacha extends Herramienta {
 

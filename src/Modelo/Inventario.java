@@ -1,5 +1,7 @@
 package Modelo;
 
+import Modelo.Escenario.PosicionVacia;
+
 public class Inventario {
     private Almacenable[][] inventario;
     private int ancho = 9;

@@ -1,5 +1,7 @@
 package Modelo;
 
+import Modelo.Escenario.Posicion;
+import Modelo.Escenario.Tablero;
 import org.junit.Before;
 import org.junit.Test;
 

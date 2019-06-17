@@ -1,10 +1,12 @@
-package Modelo;
+package Modelo.Materiales;
 
+import Modelo.*;
+import Modelo.Escenario.Posicion;
+import Modelo.Escenario.Posicionable;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import Vista.Vista;
 
-abstract class Material implements Posicionable,Almacenable{
+public abstract class Material implements Posicionable, Almacenable {
 
 
 
@@ -23,7 +25,7 @@ abstract class Material implements Posicionable,Almacenable{
         return this;
     }
 
-    abstract Material recoger(Material material, int desgaste);
+    public abstract Material recoger(Material material, int desgaste);
 
     abstract Material serRecogido(Madera material, int desgaste);
 

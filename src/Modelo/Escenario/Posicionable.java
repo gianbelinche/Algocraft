@@ -1,8 +1,8 @@
-package Modelo;
+package Modelo.Escenario;
 
 import javafx.scene.canvas.GraphicsContext;
 
-interface Posicionable {
+public interface Posicionable {
 
     abstract int estaLibre();
 

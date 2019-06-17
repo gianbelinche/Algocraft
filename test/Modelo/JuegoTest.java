@@ -1,7 +1,11 @@
 package Modelo;
 
+import Modelo.Escenario.Tablero;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class JuegoTest {
 

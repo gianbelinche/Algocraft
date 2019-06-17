@@ -1,5 +1,9 @@
 package Modelo;
 
+import Modelo.Construccion.Receta;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,13 +1,14 @@
-package Modelo;
+package Modelo.Materiales;
 
+
+import Modelo.Escenario.Posicionable;
 import Vista.Vista;
-import javafx.scene.image.Image;
 
-public class Diamante extends Material {
+public class Metal extends Material {
 
-    public Diamante(){
-        vista = new Vista("file:src/Vista/Imagenes/CasillaDiamante.png");
-        durabilidad = 100;
+    public Metal(){
+        vista = new Vista("file:src/Vista/Imagenes/CasillaMetal.png");
+        durabilidad = 50;
     }
 
     @Override
@@ -22,12 +23,12 @@ public class Diamante extends Material {
 
     @Override
     public Material serRecogido(Piedra material, int desgaste){
-        return null;
+        return desgastar(desgaste);
     }
 
     @Override
     public Material serRecogido(Metal material, int desgaste){
-        return null;
+        return desgastar(desgaste);
     }
 
     @Override
@@ -41,12 +42,13 @@ public class Diamante extends Material {
     }
 
     public boolean esIgual(Material material){
-        return material instanceof Diamante;
+        return material instanceof Metal;
     }
 
     public boolean esIgual(Posicionable material){
-        return material instanceof Diamante;
+        return material instanceof Metal;
     }
 
 
 }
+

@@ -1,5 +1,9 @@
 package Modelo;
 
+import Modelo.Construccion.Constructor;
+import Modelo.Escenario.Tablero;
+import Modelo.Herramientas.Pico;
+import Modelo.Materiales.Piedra;
 import org.junit.Before;
 import org.junit.Test;
 

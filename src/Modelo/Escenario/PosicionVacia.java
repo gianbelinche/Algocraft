@@ -1,10 +1,10 @@
-package Modelo;
+package Modelo.Escenario;
 
+import Modelo.Almacenable;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import Vista.Vista;
 
-public class PosicionVacia implements Posicionable,Almacenable{
+public class PosicionVacia implements Posicionable, Almacenable {
 
 
     Vista vista;

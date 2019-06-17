@@ -1,4 +1,11 @@
-package Modelo;
+package Modelo.Herramientas;
+
+import Modelo.Desgastes.Desgaste;
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Material;
+import Modelo.Materiales.Metal;
+import Modelo.Materiales.Piedra;
+import Modelo.Materiales.PiedraRefinada;
 
 public class Pico extends Herramienta {
 

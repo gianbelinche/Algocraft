@@ -1,4 +1,5 @@
-package Modelo;
+package Modelo.Escenario;
+
 
 public class Posicion {
 

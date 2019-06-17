@@ -1,6 +1,9 @@
-package Modelo;
+package Modelo.Desgastes;
 
-public class DesgastePorUsos implements Desgaste{
+import Modelo.Materiales.Diamante;
+import Modelo.Materiales.Material;
+
+public class DesgastePorUsos implements Desgaste {
     private int usos;
     private int usosMaximos;
 
@@ -10,7 +13,7 @@ public class DesgastePorUsos implements Desgaste{
     }
 
     @Override
-    public double desgastar(int durabilidad, int fuerza,Material material){
+    public double desgastar(int durabilidad, int fuerza, Material material){
         usos += 1;
         if (usos >= usosMaximos) {return 0;}
         return durabilidad;

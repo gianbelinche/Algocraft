@@ -1,6 +1,10 @@
-package Modelo;
+package Modelo.Herramientas;
 
-public class Herramienta implements Almacenable{
+import Modelo.Almacenable;
+import Modelo.Desgastes.Desgaste;
+import Modelo.Materiales.Material;
+
+public class Herramienta implements Almacenable {
 
     Material miMaterial;
     int durabilidad;

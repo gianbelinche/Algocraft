@@ -1,13 +1,13 @@
-package Modelo;
+package Modelo.Materiales;
 
-import javafx.scene.image.Image;
+import Modelo.Escenario.Posicionable;
 import Vista.Vista;
 
-public class Piedra extends Material {
+public class Madera extends Material {
 
-    public Piedra() {
-        durabilidad = 30;
-        vista = new Vista("file:src/Vista/Imagenes/CasillaPiedra.png");
+    public Madera() {
+        vista = new Vista("file:src/Vista/Imagenes/CasillaMadera.png");
+        durabilidad = 10;
     }
 
     @Override
@@ -41,12 +41,13 @@ public class Piedra extends Material {
     }
 
     public boolean esIgual(Material material){
-        return material instanceof Piedra;
+        return material instanceof Madera;
     }
 
     public boolean esIgual(Posicionable material){
-        return material instanceof Piedra;
+        return material instanceof Madera;
     }
+
 
 
 }
