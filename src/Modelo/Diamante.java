@@ -1,11 +1,12 @@
 package Modelo;
 
+import Vista.Vista;
 import javafx.scene.image.Image;
 
 public class Diamante extends Material {
 
     public Diamante(){
-        sprite = new Image("file:src/Vista/Imagenes/CasillaDiamante.png");
+        vista = new Vista("file:src/Vista/Imagenes/CasillaDiamante.png");
         durabilidad = 100;
     }
 

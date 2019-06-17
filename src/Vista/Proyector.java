@@ -1,4 +1,4 @@
-package Modelo;
+package Vista;
 
 public class Proyector {
     private int lado = 110;

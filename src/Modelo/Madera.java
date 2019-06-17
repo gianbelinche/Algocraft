@@ -1,11 +1,12 @@
 package Modelo;
 
+import Vista.Vista;
 import javafx.scene.image.Image;
 
 public class Madera extends Material {
 
     public Madera() {
-        sprite = new Image("file:src/Vista/Imagenes/CasillaMadera.png");
+        vista = new Vista("file:src/Vista/Imagenes/CasillaMadera.png");
         durabilidad = 10;
     }
 

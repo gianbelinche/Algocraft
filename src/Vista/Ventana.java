@@ -18,7 +18,7 @@ import Modelo.Juego;
 public class Ventana extends Application {
 
     private Juego juego;
-    private GraphicsContext terreno;
+    private GraphicsContext gc;
 
     public static void main(String[] args) {
         launch(args);
@@ -68,7 +68,7 @@ public class Ventana extends Application {
 
 
         Canvas canvas = new Canvas(5000,4000);
-        terreno = canvas.getGraphicsContext2D();
+        gc = canvas.getGraphicsContext2D();
         root.getChildren().add(canvas);
 
         MainLayout mainLayout = new MainLayout(mainStage,juego,this);
@@ -80,9 +80,9 @@ public class Ventana extends Application {
 
     public void actualizarImagen(){
 
-        terreno.setFill(Color.LIGHTCYAN);
-        terreno.fillRect(0,0,3000,3000);
-        juego.dibujar(terreno);
+        gc.setFill(Color.LIGHTCYAN);
+        gc.fillRect(0,0,3000,3000);
+        juego.dibujar(gc);
 
     }
 }

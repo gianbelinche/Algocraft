@@ -2,12 +2,13 @@ package Modelo;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import Vista.Vista;
 
 abstract class Material implements Posicionable,Almacenable{
 
 
 
-    Image sprite;
+    Vista vista;
     Posicion posicion;
     int durabilidad;
 
@@ -46,12 +47,11 @@ abstract class Material implements Posicionable,Almacenable{
         posicion = nuevaPosicion;
     }
 
+    public void dibujar(int x, int y, GraphicsContext gc){
+        vista.dibujar(x,y,gc);
+    }
+
     public boolean almacenar(Almacenable objeto){ return false;}
 
     public Almacenable obtener(){return this;}
-
-    @Override
-    public void dibujar(int x, int y, GraphicsContext gc){
-        gc.drawImage(sprite,x,y);
-    }
 }

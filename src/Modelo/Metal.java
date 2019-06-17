@@ -1,11 +1,12 @@
 package Modelo;
 
+import Vista.Vista;
 import javafx.scene.image.Image;
 
 public class Metal extends Material {
 
     public Metal(){
-        sprite = new Image("file:src/Vista/Imagenes/CasillaMetal.png");
+        vista = new Vista("file:src/Vista/Imagenes/CasillaMetal.png");
         durabilidad = 50;
     }
 
