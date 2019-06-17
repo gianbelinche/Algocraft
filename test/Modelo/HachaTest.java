@@ -2,6 +2,7 @@ package Modelo;
 
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
+import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Hacha;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
@@ -187,4 +188,65 @@ public class HachaTest {
         assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());
 
     }
+
+    @Test
+    public void testHachaDeMaderaRompeMaterialesMuchasVecesYSeRompeElla(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMadera = constructor.crearHachaDeMadera();
+        hachaDeMadera.recoger(new Madera());
+        hachaDeMadera.recoger(new Piedra());
+        hachaDeMadera.recoger(new Metal());
+        hachaDeMadera.recoger(new Diamante());
+        for(int i = 0;i<46;i++){
+            hachaDeMadera.recoger(new Madera());
+        }
+        boolean paso = false;
+        try{
+            hachaDeMadera.recoger(new Piedra());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
+
+    @Test
+    public void testHachaDePiedraRompeMaterialesMuchasVecesYSeRompeElla(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDePiedra = constructor.crearHachaDePiedra();
+        hachaDePiedra.recoger(new Madera());
+        hachaDePiedra.recoger(new Piedra());
+        hachaDePiedra.recoger(new Metal());
+        hachaDePiedra.recoger(new Diamante());
+        for(int i = 0;i<36;i++){
+            hachaDePiedra.recoger(new Madera());
+        }
+        boolean paso = false;
+        try{
+            hachaDePiedra.recoger(new Piedra());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
+
+    @Test
+    public void testHachaDeMetalRompeMaterialesMuchasVecesYSeRompeElla(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        hachaDeMetal.recoger(new Piedra());
+        hachaDeMetal.recoger(new Metal());
+        hachaDeMetal.recoger(new Diamante());
+        for(int i = 0;i<77;i++){
+            hachaDeMetal.recoger(new Piedra());
+        }
+        boolean paso = false;
+        try{
+            hachaDeMetal.recoger(new Piedra());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
+
+
 }

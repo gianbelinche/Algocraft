@@ -1,6 +1,7 @@
 package Modelo.Herramientas;
 
 import Modelo.Desgastes.Desgaste;
+import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Material;
 import Modelo.Materiales.Metal;
@@ -24,6 +25,9 @@ public class Pico extends Herramienta {
 
     public Material recoger(Diamante material)  {
         durabilidad = (int) desgaste.desgastar(durabilidad, fuerza, material);
+        if (durabilidad < 0){
+            throw new HerramientaRotaException();
+        }
         return miMaterial.recoger((Material) material,fuerza);
     }
 

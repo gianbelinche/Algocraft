@@ -2,6 +2,7 @@ package Modelo.Herramientas;
 
 import Modelo.Almacenable;
 import Modelo.Desgastes.Desgaste;
+import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Materiales.Material;
 
 public class Herramienta implements Almacenable {
@@ -20,12 +21,16 @@ public class Herramienta implements Almacenable {
     public Material recoger(Material material){
 
         durabilidad = (int) desgaste.desgastar(durabilidad, fuerza, material);
+        if (durabilidad < 0){
+            throw new HerramientaRotaException();
+        }
         return null;
     }
 
     protected Material recogerPrincipal(Material material){
 
         durabilidad = (int) desgaste.desgastar(durabilidad, fuerza, material);
+        if (durabilidad < 0) throw new HerramientaRotaException();
         return miMaterial.recoger(material,fuerza);
     }
 
