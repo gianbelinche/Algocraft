@@ -1,12 +1,12 @@
 package Vista;
 
+import Controlador.MoverPersonajeHandler;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.Background;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -61,7 +61,11 @@ public class Ventana extends Application {
         Group root = new Group();
 
         Scene mainScene = new Scene( root, 4000, 4000);
+        //No pude ponerlo en botones, habrá que ver si hay una forma mas linda de hacerlo
+        mainScene.setOnKeyPressed(new MoverPersonajeHandler(juego.obtenerJugador(),this));
+
         mainStage.setScene(mainScene);
+
 
         Canvas canvas = new Canvas(5000,4000);
         terreno = canvas.getGraphicsContext2D();

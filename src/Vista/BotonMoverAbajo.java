@@ -3,7 +3,6 @@ package Vista;
 import Controlador.BotonMoverAbajoHandler;
 import Modelo.Jugador;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class BotonMoverAbajo extends Button {
     Jugador jugador;

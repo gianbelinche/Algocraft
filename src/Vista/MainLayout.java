@@ -30,6 +30,7 @@ public class MainLayout extends Pane {
         BotonMoverIzquierda botonMoverIzquierda = new BotonMoverIzquierda(ventana,juego.obtenerJugador());
 
 
+
         HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
 

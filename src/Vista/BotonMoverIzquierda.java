@@ -3,7 +3,6 @@ package Vista;
 import Controlador.BotonMoverIzquierdaHandler;
 import Modelo.Jugador;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 public class BotonMoverIzquierda extends Button {
 
@@ -16,8 +15,7 @@ public class BotonMoverIzquierda extends Button {
         this.setText("←");
         this.jugador = jugador;
         this.ventana = ventana;
-        BotonMoverIzquierdaHandler handler = new BotonMoverIzquierdaHandler(this);
-        this.setOnAction(handler);
+        this.setOnAction(new BotonMoverIzquierdaHandler(this));
     }
 
     public Jugador obtenerJugador(){
@@ -27,5 +25,6 @@ public class BotonMoverIzquierda extends Button {
     public Ventana obtenerVentana(){
         return ventana;
     }
+
 
 }
