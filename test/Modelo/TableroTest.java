@@ -2,6 +2,7 @@ package Modelo;
 
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
+import Modelo.Escenario.TableroIterador;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.Piedra;
 import org.junit.Before;
@@ -15,12 +16,11 @@ public class TableroTest {
     int ancho;
 
     public void resetearTablero(Tablero elTablero, int ancho,int alto){
-        for(int i = 0;i < ancho;i++)
-        {
-            for(int j = 0;j < alto;j++)
-            {
-                elTablero.borrarEnPosicion(i,j);
-            }
+
+        TableroIterador iterador = tablero.obtenerIterador();
+        while(!iterador.haFinalizado()){
+            iterador.borrarEnActual();
+            iterador.avanzar();
         }
     }
 

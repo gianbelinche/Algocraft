@@ -4,7 +4,7 @@ public class Tablero {
 
     private static Tablero elTablero;
     private static int anchoPorDefecto = 10;
-    private static int largoPorDefecto = 10;
+    private static int altoPorDefecto = 10;
 
     private Posicionable[][] mapa;
     private int ancho;
@@ -17,22 +17,24 @@ public class Tablero {
     }
 
     public static Tablero obtenerTablero(){
-        if(elTablero == null) elTablero = new Tablero(anchoPorDefecto,largoPorDefecto);
+        if(elTablero == null) elTablero = new Tablero(anchoPorDefecto,altoPorDefecto);
         return elTablero;
     }
 
+    public TableroIterador obtenerIterador(){
+        return new TableroIterador(this,ancho,alto);
+    }
     private Tablero(int anchoPasado, int altoPasado){
         ancho = anchoPasado;
         alto = altoPasado;
         mapa = new Posicionable[ancho][alto];
         posicionVacia = new PosicionVacia();
 
-        for(int i = 0;i < ancho;i++)
-        {
-            for(int j = 0;j < alto;j++)
-            {
-                colocarEnPosicion(i,j,posicionVacia);
-            }
+        TableroIterador iterador = obtenerIterador();
+
+        while(!iterador.haFinalizado()){
+            iterador.colocarEnActual(posicionVacia);
+            iterador.avanzar();
         }
     }
 
@@ -76,6 +78,7 @@ public class Tablero {
     }
 
     public boolean esIgual(Tablero otroTablero){
+
         for(int i = 0;i < ancho;i++)
         {
             for(int j = 0;j < alto;j++)
