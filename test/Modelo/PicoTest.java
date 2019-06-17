@@ -2,6 +2,7 @@ package Modelo;
 
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
+import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
@@ -195,83 +196,6 @@ public class PicoTest {
         assertEquals( durabilidad,picoDeMetal.durabilidad());
     }
 
-    @Test
-    public void testUsarPicoDeMetalContraMadera10VecesDisminuyeDurabilidadaCero(){
-        Constructor constructor = new Constructor();
-        Pico picoDeMetal = constructor.crearPicoDeMetal();
-        Madera madera = new Madera();
-
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-        picoDeMetal.recoger(madera);
-
-        assertEquals( 0,picoDeMetal.durabilidad());
-    }
-
-    @Test
-    public void testUsarPicoDeMetalContraPiedra10VecesDisminuyeDurabilidadaCero(){
-        Constructor constructor = new Constructor();
-        Pico picoDeMetal = constructor.crearPicoDeMetal();
-        Piedra piedra = new Piedra();
-        int anchoTablero = 10;
-        int altoTablero = 10;
-        int xPiedra = 0;
-        int yPiedra = 0;
-        Tablero tablero = new Tablero(anchoTablero,altoTablero);
-
-        for(int i = 0; i < 10; i++)
-        {
-            tablero.colocarEnPosicion(xPiedra,yPiedra,piedra);
-            picoDeMetal.recoger(piedra);
-        }
-
-
-        assertEquals( 0,picoDeMetal.durabilidad());
-    }
-
-    @Test
-    public void testUsarPicoDeMetalContraMetal10VecesDisminuyeDurabilidadaCero(){
-        Constructor constructor = new Constructor();
-        Pico picoDeMetal = constructor.crearPicoDeMetal();
-        Metal metal = new Metal();
-        Tablero tablero = new Tablero(10,10);
-
-        for(int i = 0; i < 10; i++)
-        {
-            tablero.colocarEnPosicion(0,0,metal);
-            picoDeMetal.recoger(metal);
-        }
-
-        assertEquals( 0,picoDeMetal.durabilidad());
-    }
-
-    @Test
-    public void testUsarPicoDeMetalContraDiamante10VecesDisminuyeDurabilidadaCero(){
-        Constructor constructor = new Constructor();
-        Pico picoDeMetal = constructor.crearPicoDeMetal();
-        Diamante diamante = new Diamante();
-
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-        picoDeMetal.recoger(diamante);
-
-
-        assertEquals( 0,picoDeMetal.durabilidad());
-    }
 
     @Test
     public void testUsarPicoDePiedraRefinadaContraDiamanteDisminuyeDurabilidadCorrectamente(){
@@ -318,7 +242,84 @@ public class PicoTest {
 
     }
 
+    @Test
+    public void testPicoDeMaderaRompeMaterialesMuchasVecesYSeRompeEl(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMadera = constructor.crearPicoDeMadera();
+        picoDeMadera.recoger(new Madera());
+        picoDeMadera.recoger(new Piedra());
+        picoDeMadera.recoger(new Metal());
+        picoDeMadera.recoger(new Diamante());
+        for(int i = 0;i<46;i++){
+            picoDeMadera.recoger(new Madera());
+        }
+        boolean paso = false;
+        try{
+            picoDeMadera.recoger(new Piedra());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
 
+    @Test
+    public void testPicoDePiedraRompeMaterialesMuchasVecesYSeRompeEl(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedra = constructor.crearPicoDePiedra();
+        picoDePiedra.recoger(new Madera());
+        picoDePiedra.recoger(new Piedra());
+        picoDePiedra.recoger(new Metal());
+        picoDePiedra.recoger(new Diamante());
+        for(int i = 0;i<63;i++){
+            picoDePiedra.recoger(new Madera());
+        }
+        boolean paso = false;
+        try{
+            picoDePiedra.recoger(new Piedra());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
+
+    @Test
+    public void testPicoDeMetalRompeMaterialesMuchasVecesYSeRompeEl(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        picoDeMetal.recoger(new Madera());
+        picoDeMetal.recoger(new Piedra());
+        picoDeMetal.recoger(new Metal());
+        picoDeMetal.recoger(new Diamante());
+        picoDeMetal.recoger(new Madera());
+        picoDeMetal.recoger(new Piedra());
+        picoDeMetal.recoger(new Metal());
+        picoDeMetal.recoger(new Diamante());
+        picoDeMetal.recoger(new Metal());
+
+        boolean paso = false;
+        try{
+            picoDeMetal.recoger(new Piedra());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
+
+    @Test
+    public void testPicoDePiedraRefinadaRompeMaterialesMuchasVecesYSeRompeEl(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedraRefinada = constructor.crearPicoDePiedraRefinada();
+        for(int i = 0;i<50;i++){
+            picoDePiedraRefinada.recoger(new Diamante());
+        }
+        boolean paso = false;
+        try{
+            picoDePiedraRefinada.recoger(new Diamante());
+        }catch (HerramientaRotaException e){
+            paso = true;
+        }
+        assertTrue(paso);
+    }
 
 
 

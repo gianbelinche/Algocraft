@@ -1,5 +1,6 @@
 package Modelo.Desgastes;
 
+import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Material;
 
@@ -19,6 +20,9 @@ public class DesgastePorMaterial implements Desgaste {
 
     @Override
     public double desgastar(int durabilidad, int fuerza, Diamante material){
+        if (durabilidad == 0){
+            throw new HerramientaRotaException();
+        }
         return durabilidad - durabilidad * factor;
     }
 }
