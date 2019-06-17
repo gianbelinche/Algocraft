@@ -1,4 +1,4 @@
-package Controlador;
+package Controlador.BotonesHandlers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

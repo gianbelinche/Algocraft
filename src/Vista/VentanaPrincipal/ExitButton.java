@@ -1,7 +1,6 @@
 package Vista.VentanaPrincipal;
 
-import Controlador.ExitButtonHandler;
-import Vista.Vista;
+import Controlador.BotonesHandlers.ExitButtonHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;

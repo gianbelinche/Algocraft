@@ -1,4 +1,4 @@
-package Controlador;
+package Controlador.BotonesHandlers;
 
 import Vista.Ventana;
 import javafx.event.ActionEvent;
