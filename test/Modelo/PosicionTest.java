@@ -18,7 +18,7 @@ public class PosicionTest {
     public void setUp(){
         int ancho = 10;
         int alto = 15;
-        tablero = new Tablero(ancho, alto);
+        tablero = Tablero.obtenerTablero(ancho, alto);
         posicion = new Posicion(posicionEnX,posicionEnY, tablero);
 
     }

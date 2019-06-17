@@ -151,7 +151,7 @@ public class HachaTest {
         int durabilidad = hachaDeMetal.durabilidad();
 
         Madera madera = new Madera();
-        Tablero tablero = new Tablero(10,10);
+        Tablero tablero = Tablero.obtenerTablero(10,10);
         tablero.colocarEnPosicion(0,0,madera);
 
         hachaDeMetal.recoger(madera);

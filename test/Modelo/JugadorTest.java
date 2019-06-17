@@ -26,7 +26,7 @@ public class JugadorTest {
         jugador = new Jugador(tablero);
         herramienta = jugador.herramientaEquipada();
 
-        tablero = new Tablero(10, 10);
+        tablero = Tablero.obtenerTablero(10, 10);
         x = 5;
         y = 5;
         tablero.colocarEnPosicion(x,y,jugador);

@@ -84,7 +84,7 @@ public class Ventana extends Application {
 
         gc.setFill(Color.LIGHTCYAN);
         gc.fillRect(0,0,3000,3000);
-        juego.dibujar(gc);
+
 
     }
 }

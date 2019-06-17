@@ -14,11 +14,22 @@ public class TableroTest {
     int alto;
     int ancho;
 
+    public void resetearTablero(Tablero elTablero, int ancho,int alto){
+        for(int i = 0;i < ancho;i++)
+        {
+            for(int j = 0;j < alto;j++)
+            {
+                elTablero.borrarEnPosicion(i,j);
+            }
+        }
+    }
+
     @Before
     public void SetUp(){
         alto = 8;
         ancho = 10;
-        tablero = new Tablero(ancho, alto);
+        tablero = Tablero.obtenerTablero(ancho, alto);
+        resetearTablero(tablero,ancho,alto);
     }
 
     @Test

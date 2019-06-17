@@ -13,7 +13,7 @@ public class Dibujante {
 
     public Dibujante(){
         vistaMaterial = new VistaMaterial();
-        tablero = new Tablero();
+        tablero = Tablero.obtenerTablero();
         anchoTablero = tablero.getAncho();
         altoTablero = tablero.getAlto();
     }

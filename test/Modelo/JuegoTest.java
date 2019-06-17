@@ -12,7 +12,7 @@ public class JuegoTest {
     @Test
     public void testCorrectaInicializacionDeLosMaterialesEnElTablero(){
         Juego juego = new Juego();
-        Tablero tableroEsperado = new Tablero(10,10);
+        Tablero tableroEsperado = Tablero.obtenerTablero(10,10);
         tableroEsperado.colocarEnPosicion(0,0,new Madera());
         tableroEsperado.colocarEnPosicion(0,1,new Madera());
         tableroEsperado.colocarEnPosicion(1,0,new Madera());

@@ -2,12 +2,26 @@ package Modelo.Escenario;
 
 public class Tablero {
 
+    private static Tablero elTablero;
+    private static int anchoPorDefecto = 10;
+    private static int largoPorDefecto = 10;
+
     private Posicionable[][] mapa;
     private int ancho;
     private int alto;
     private PosicionVacia posicionVacia;
 
-    public Tablero(int anchoPasado, int altoPasado){
+    public static Tablero obtenerTablero(int anchoPasado, int altoPasado){
+        if(elTablero == null) elTablero = new Tablero(anchoPasado,altoPasado);
+        return elTablero;
+    }
+
+    public static Tablero obtenerTablero(){
+        if(elTablero == null) elTablero = new Tablero(anchoPorDefecto,largoPorDefecto);
+        return elTablero;
+    }
+
+    private Tablero(int anchoPasado, int altoPasado){
         ancho = anchoPasado;
         alto = altoPasado;
         mapa = new Posicionable[ancho][alto];

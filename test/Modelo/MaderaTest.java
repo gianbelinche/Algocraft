@@ -75,7 +75,7 @@ public class MaderaTest {
         int altoTablero = 10;
         int xMadera = 0;
         int yMadera = 0;
-        Tablero tablero = new Tablero(anchoTablero,altoTablero);
+        Tablero tablero = Tablero.obtenerTablero(anchoTablero,altoTablero);
         tablero.colocarEnPosicion(xMadera,yMadera,madera);
 
         hacha.recoger(madera);

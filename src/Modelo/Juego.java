@@ -17,7 +17,7 @@ public class Juego {
     public Juego(){
         int ancho = 10;
         int alto = 10;
-        tablero = new Tablero(ancho, alto);
+        tablero = Tablero.obtenerTablero(ancho,alto);
         jugador = new Jugador(tablero);
         piedra = new Piedra();
         madera = new Madera();
@@ -42,9 +42,6 @@ public class Juego {
 
     }
 
-    public void dibujar(GraphicsContext terreno){
-        tablero.dibujar(terreno);
-    }
     public boolean tableroEsCorrecto(Tablero otroTablero){
         return tablero.esIgual(otroTablero);
     }
