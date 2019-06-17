@@ -1,4 +1,4 @@
-package Vista.VentanaPrincipal;
+package Vista.VentanaPrincipal.Botones;
 
 import Controlador.BotonesHandlers.ExitButtonHandler;
 import javafx.geometry.Rectangle2D;

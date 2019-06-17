@@ -1,6 +1,6 @@
 package Controlador.BotonesHandlers;
 
-import Vista.VentanaJuego.VentanaTablero.BotonMoverDerecha;
+import Vista.VentanaJuego.VentanaTablero.Botones.BotonMoverDerecha;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

@@ -1,4 +1,4 @@
-package Vista.VentanaJuego.VentanaTablero;
+package Vista.VentanaJuego.VentanaTablero.Botones;
 
 import Controlador.BotonesHandlers.BotonMoverAbajoHandler;
 import Modelo.Jugador;

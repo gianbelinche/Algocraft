@@ -1,4 +1,4 @@
-package Vista.VentanaJuego.VentanaInventario;
+package Vista.VentanaJuego.VentanaInventario.Botones;
 
 import javafx.scene.control.Button;
 

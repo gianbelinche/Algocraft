@@ -5,10 +5,11 @@ import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Madera;
-import Modelo.Materiales.Material;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class JugadorTest {
 

@@ -5,7 +5,7 @@ import Controlador.*;
 import Modelo.Juego;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
-import Vista.VentanaJuego.VentanaTablero.*;
+import Vista.VentanaJuego.VentanaTablero.Botones.*;
 import javafx.geometry.Pos;
 import javafx.scene.layout.*;
 import javafx.stage.Screen;

@@ -1,12 +1,11 @@
 package Vista.VentanaJuego.VentanaInventario;
 
 import Controlador.SalirDeInventarioHandler;
-import Vista.VentanaJuego.VentanaInventario.BotonInventario;
-import Vista.VentanaJuego.VentanaInventario.BotonMesaCrafteo;
-import Vista.Vista;
-import javafx.scene.layout.*;
+import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
+import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class InventarioLayout extends Pane {

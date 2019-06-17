@@ -1,6 +1,5 @@
 package Modelo.Escenario;
 
-
 public class Posicion {
 
     private int x;

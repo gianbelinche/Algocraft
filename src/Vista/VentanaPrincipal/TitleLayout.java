@@ -3,7 +3,7 @@ package Vista.VentanaPrincipal;
 import Controlador.BotonesHandlers.ExitButtonHandler;
 import Controlador.BotonesHandlers.StartButtonHandler;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
+import Vista.VentanaPrincipal.Botones.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -13,11 +13,11 @@ public class TitleLayout extends StackPane {
     public TitleLayout(Stage stage) {
 
         //Creo Botones
-        Button startButton = new StartButton(stage);
+        StartButton startButton = new StartButton(stage);
         StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
         startButton.setOnAction(startButtonHandler);
 
-        Button exitButton = new ExitButton(stage);
+        ExitButton exitButton = new ExitButton(stage);
         ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
         exitButton.setOnAction(exitButtonHandler);
 
