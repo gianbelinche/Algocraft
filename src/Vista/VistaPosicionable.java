@@ -7,7 +7,7 @@ import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 import javafx.scene.canvas.GraphicsContext;
 
-public class VistaMaterial {
+public class VistaPosicionable {
 
     Vista vista;
 

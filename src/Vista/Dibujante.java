@@ -6,13 +6,13 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class Dibujante {
 
-    private VistaMaterial vistaMaterial;
+    private VistaPosicionable vistaPosicionable;
     private Tablero tablero;
     private int anchoTablero;
     private int altoTablero;
 
     public Dibujante(){
-        vistaMaterial = new VistaMaterial();
+        vistaPosicionable = new VistaPosicionable();
         tablero = Tablero.obtenerTablero();
         anchoTablero = tablero.getAncho();
         altoTablero = tablero.getAlto();
@@ -27,7 +27,7 @@ public class Dibujante {
             for(int j = 0;j < altoTablero;j++)
             {
                 posicionable =  tablero.obtenerDePosicion(i,j);
-                vistaMaterial.dibujar(posicionable, i,j,gc);
+                vistaPosicionable.dibujar(posicionable, i,j,gc);
             }
         }
     }
