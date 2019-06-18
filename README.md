@@ -10,7 +10,7 @@
 
 ## Informe
 
-[Link al informe](https://www.overleaf.com/7947345989bkzwrjbznkvx)
+[Link al informe](https://www.overleaf.com/read/jkwgxmczkfqk)
 
 ## Entregas 
 
