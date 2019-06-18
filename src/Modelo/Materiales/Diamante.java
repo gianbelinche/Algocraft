@@ -1,7 +1,6 @@
 package Modelo.Materiales;
 
 import Modelo.Escenario.Posicionable;
-import Vista.Vista;
 
 public class Diamante extends Material {
 

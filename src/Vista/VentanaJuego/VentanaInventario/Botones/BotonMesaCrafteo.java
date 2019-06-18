@@ -1,7 +1,5 @@
 package Vista.VentanaJuego.VentanaInventario.Botones;
 
-
-import Vista.Vista;
 import javafx.scene.control.Button;
 
 public class BotonMesaCrafteo extends Button {
