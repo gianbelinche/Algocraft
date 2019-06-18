@@ -5,8 +5,11 @@ import Vista.Vista;
 
 public class Diamante extends Material {
 
+    private String ruta;
+
     public Diamante(){
         durabilidad = 100;
+        ruta = "file:src/Vista/Imagenes/CasillaDiamante.png";
     }
 
     @Override
@@ -48,8 +51,8 @@ public class Diamante extends Material {
     }
 
     @Override
-    public Diamante getObjeto(){
-        return this;
+    public String obtenerRutaImagen(){
+        return ruta;
     }
 
 }

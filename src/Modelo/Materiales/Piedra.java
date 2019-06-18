@@ -5,8 +5,11 @@ import Vista.Vista;
 
 public class Piedra extends Material {
 
+    private String ruta;
+
     public Piedra() {
         durabilidad = 30;
+        ruta = "file:src/Vista/Imagenes/CasillaPiedra.png";
     }
 
     @Override
@@ -48,8 +51,8 @@ public class Piedra extends Material {
     }
 
     @Override
-    public Piedra getObjeto(){
-        return this;
+    public String obtenerRutaImagen(){
+        return ruta;
     }
 
 }

@@ -27,6 +27,7 @@ public class Dibujante {
             for(int j = 0;j < altoTablero;j++)
             {
                 posicionable =  tablero.obtenerDePosicion(i,j);
+                System.out.println(posicionable.getClass());
                 vistaPosicionable.dibujar(posicionable, i,j,gc);
             }
         }

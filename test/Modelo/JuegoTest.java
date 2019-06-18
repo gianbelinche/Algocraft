@@ -1,5 +1,5 @@
 package Modelo;
-
+/*
 import Modelo.Escenario.Tablero;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
@@ -8,12 +8,12 @@ import Modelo.Materiales.Piedra;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+*/
 public class JuegoTest {
-
+/*
     @Test
     public void testCorrectaInicializacionDeLosMaterialesEnElTablero(){
-        /*
+
         Juego juego = new Juego();
         Tablero tableroEsperado = Tablero.obtenerTablero(10,10);
 
@@ -30,8 +30,8 @@ public class JuegoTest {
         tableroEsperado.colocarEnPosicion(3,7,new Jugador(tableroEsperado));
 
         assert(juego.tableroEsCorrecto(tableroEsperado));
-         */
+
 
         assertEquals(1,1);
-    }
+    }*/
 }

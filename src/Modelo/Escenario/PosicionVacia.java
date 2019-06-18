@@ -1,16 +1,13 @@
 package Modelo.Escenario;
 
 import Modelo.Almacenable;
-import javafx.scene.canvas.GraphicsContext;
-import Vista.Vista;
 
 public class PosicionVacia implements Posicionable, Almacenable {
 
-
-    Vista vista;
+    private String ruta;
 
     public PosicionVacia(){
-       vista = new Vista("file:src/Vista/Imagenes/CasillaVacia.png");
+        ruta = "file:src/Vista/Imagenes/CasillaVacia.png";
     }
 
     @Override
@@ -27,14 +24,10 @@ public class PosicionVacia implements Posicionable, Almacenable {
 
     public boolean almacenar(Almacenable objeto){ return true;}
 
-    public void dibujar(int x, int y, GraphicsContext gc){
-        vista.dibujar(x,y,gc);
-    }
-
     public Almacenable obtener(){return null;}
 
     @Override
-    public PosicionVacia getObjeto(){
-        return this;
+    public String obtenerRutaImagen(){
+        return ruta;
     }
 }

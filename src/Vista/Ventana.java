@@ -82,6 +82,7 @@ public class Ventana extends Application {
 
     public void actualizarImagen(){
 
+        (new Dibujante()).dibujar(gc);
         gc.setFill(Color.LIGHTCYAN);
         gc.fillRect(0,0,3000,3000);
 

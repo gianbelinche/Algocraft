@@ -1,10 +1,8 @@
 package Modelo.Materiales;
 
-import Modelo.*;
+import Modelo.Almacenable;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.Posicionable;
-import javafx.scene.canvas.GraphicsContext;
-import Vista.Vista;
 
 public abstract class Material implements Posicionable, Almacenable {
 

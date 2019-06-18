@@ -8,5 +8,5 @@ public interface Posicionable {
 
     boolean esIgual(Posicionable otroPosicionable);
 
-    Posicionable getObjeto();
+    String obtenerRutaImagen();
 }
