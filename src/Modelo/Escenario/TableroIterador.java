@@ -18,7 +18,7 @@ public class TableroIterador {
     }
 
     public boolean haFinalizado(){
-        return (x == (ancho - 1) && y == (alto - 1));
+        return (x == 0 && y == alto);
     }
 
     public Posicionable verActual(){
@@ -41,4 +41,11 @@ public class TableroIterador {
         }
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }
