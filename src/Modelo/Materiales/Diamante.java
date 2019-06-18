@@ -6,7 +6,6 @@ import Vista.Vista;
 public class Diamante extends Material {
 
     public Diamante(){
-        vista = new Vista("file:src/Vista/Imagenes/CasillaDiamante.png");
         durabilidad = 100;
     }
 

@@ -6,7 +6,6 @@ import Vista.Vista;
 public class Madera extends Material {
 
     public Madera() {
-        vista = new Vista("file:src/Vista/Imagenes/CasillaMadera.png");
         durabilidad = 10;
     }
 

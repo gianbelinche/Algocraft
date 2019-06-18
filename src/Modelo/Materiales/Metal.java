@@ -2,12 +2,10 @@ package Modelo.Materiales;
 
 
 import Modelo.Escenario.Posicionable;
-import Vista.Vista;
 
 public class Metal extends Material {
 
     public Metal(){
-        vista = new Vista("file:src/Vista/Imagenes/CasillaMetal.png");
         durabilidad = 50;
     }
 

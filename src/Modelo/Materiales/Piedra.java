@@ -7,7 +7,6 @@ public class Piedra extends Material {
 
     public Piedra() {
         durabilidad = 30;
-        vista = new Vista("file:src/Vista/Imagenes/CasillaPiedra.png");
     }
 
     @Override

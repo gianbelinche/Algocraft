@@ -1,7 +1,5 @@
 package Modelo.Escenario;
 
-import javafx.scene.canvas.GraphicsContext;
-
 public class Tablero {
 
     private Posicionable[][] mapa;
@@ -74,17 +72,12 @@ public class Tablero {
         return true;
     }
 
-    public void dibujar(GraphicsContext gc){
-
-        Posicionable posicionable;
-
-        for(int i = 0;i < ancho;i++)
-        {
-            for(int j = 0;j < alto;j++)
-            {
-                posicionable =  obtenerDePosicion(i,j);
-                posicionable.dibujar(i,j,gc);
-            }
-        }
+    public int getAncho(){
+        return this.ancho;
     }
+
+    public int getAlto(){
+        return this.alto;
+    }
+
 }
