@@ -47,5 +47,9 @@ public class Piedra extends Material {
         return material instanceof Piedra;
     }
 
+    @Override
+    public Piedra getObjeto(){
+        return this;
+    }
 
 }

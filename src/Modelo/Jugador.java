@@ -70,4 +70,9 @@ public class Jugador implements Posicionable {
     public Almacenable obtenerDeInventario(int x, int y){
         return inventario.obtenerDePosicion(x, y);
     }
+
+    @Override
+    public Jugador getObjeto(){
+        return this;
+    }
 }

@@ -47,6 +47,10 @@ public class Metal extends Material {
         return material instanceof Metal;
     }
 
+    @Override
+    public Metal getObjeto(){
+        return this;
+    }
 
 }
 

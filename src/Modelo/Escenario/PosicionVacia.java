@@ -32,4 +32,9 @@ public class PosicionVacia implements Posicionable, Almacenable {
     }
 
     public Almacenable obtener(){return null;}
+
+    @Override
+    public PosicionVacia getObjeto(){
+        return this;
+    }
 }

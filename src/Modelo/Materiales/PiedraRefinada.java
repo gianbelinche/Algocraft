@@ -42,4 +42,9 @@ public class PiedraRefinada extends Material {
 
     public boolean esIgual(Posicionable material){return false;};
 
+    @Override
+    public PiedraRefinada getObjeto(){
+        return this;
+    }
+
 }

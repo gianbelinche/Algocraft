@@ -47,6 +47,9 @@ public class Madera extends Material {
         return material instanceof Madera;
     }
 
-
+    @Override
+    public Madera getObjeto(){
+        return this;
+    }
 
 }

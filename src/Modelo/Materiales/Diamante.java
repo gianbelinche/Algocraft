@@ -47,5 +47,9 @@ public class Diamante extends Material {
         return material instanceof Diamante;
     }
 
+    @Override
+    public Diamante getObjeto(){
+        return this;
+    }
 
 }

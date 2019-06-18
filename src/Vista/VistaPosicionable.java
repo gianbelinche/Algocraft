@@ -12,7 +12,7 @@ public class VistaPosicionable {
     Vista vista;
 
     public void dibujar(Posicionable posicionable, int x, int y, GraphicsContext gc){
-        return;
+        this.dibujar(posicionable.getObjeto(), x, y, gc);
     }
 
     public void dibujar(Piedra posicionable, int x, int y, GraphicsContext gc){
