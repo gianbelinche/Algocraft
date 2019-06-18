@@ -15,14 +15,14 @@ public class DesgastePorUsos implements Desgaste {
     @Override
     public double desgastar(int durabilidad, int fuerza, Material material){
         usos += 1;
-        if (usos >= usosMaximos) {return 0;}
+        if (usos >= usosMaximos) {return -1;}
         return durabilidad;
     }
 
     @Override
     public double desgastar(int durabilidad, int fuerza, Diamante material){
         usos += 1;
-        if (usos >= usosMaximos) {return 0;}
+        if (usos >= usosMaximos) {return -1;}
         return durabilidad;
     }
 }
