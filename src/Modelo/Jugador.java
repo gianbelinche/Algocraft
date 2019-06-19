@@ -7,6 +7,8 @@ import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Material;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class Jugador implements Posicionable {
 
     private Herramienta herramientaEquipada;
@@ -57,7 +59,12 @@ public class Jugador implements Posicionable {
     }
 
     public void recoger(Material unMaterial){
-        Almacenable materialRecogido = herramientaEquipada.recoger(unMaterial);
+        Almacenable materialRecogido = null;
+        
+        try {
+            materialRecogido = (Almacenable) herramientaEquipada.getClass().getDeclaredMethod("recoger",unMaterial.getClass()).invoke(herramientaEquipada,unMaterial);
+        } catch (Exception e) {}
+
         if(materialRecogido != null){
             inventario.almacenar(materialRecogido);
         }

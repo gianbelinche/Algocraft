@@ -96,8 +96,7 @@ public class JugadorTest {
         jugador.moverAbajo();
         assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1));
     }
-    /*
-    Queda próximo a arreglar.
+
     @Test
     public void testJugadorRecogeMaderaConHachaYSeGuardaEnInventario(){
         Constructor constructor = new Constructor();
@@ -112,8 +111,5 @@ public class JugadorTest {
         maderaRecogida = jugador.obtenerDeInventario(0,0);
 
         assertEquals(madera, maderaRecogida);
-
     }
-
-     */
 }
