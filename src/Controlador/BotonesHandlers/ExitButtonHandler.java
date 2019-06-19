@@ -3,6 +3,8 @@ package Controlador.BotonesHandlers;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class ExitButtonHandler implements EventHandler<ActionEvent> {
@@ -19,19 +21,27 @@ public class ExitButtonHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
+        Image image = new Image("file:src/Vista/Imagenes/Exit.png");
         if (contador == 0){
-            button.setText("Don't Do It");
+            image = new Image("file:src/Vista/Imagenes/Dont do it.png");
         }
         if (contador == 1){
-            button.setText("Please Don't");
+            image = new Image("file:src/Vista/Imagenes/Please Dont.png");
         }
 
         if (contador == 2){
-            button.setText("I Have A Family");
+            image = new Image("file:src/Vista/Imagenes/I have a family.png");
         }
         if (contador > 2){
             stage.close();
         }
+        BackgroundImage backgroundImage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0, 1.0, true, true, false, false));
+        //Adapto tamaño de imagen a tamaño de pantalla
+        Background background = new Background(backgroundImage);
+        button.setBackground(background);
         contador += 1;
     }
 
