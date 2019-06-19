@@ -16,7 +16,7 @@ public abstract class Material implements Posicionable, Almacenable {
     protected Material desgastar(int desgaste){
         durabilidad -= desgaste;
         if(durabilidad > 0) return null;
-        posicion.borrar(this);
+        if(posicion != null) {posicion.borrar(this);}
         return this;
     }
 

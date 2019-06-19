@@ -4,10 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Hacha;
-import Modelo.Materiales.Diamante;
-import Modelo.Materiales.Madera;
-import Modelo.Materiales.Metal;
-import Modelo.Materiales.Piedra;
+import Modelo.Materiales.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -246,6 +243,59 @@ public class HachaTest {
             paso = true;
         }
         assertTrue(paso);
+    }
+
+    @Test
+    public void testUsarHachaDeMaderaContraMaderaSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMadera = constructor.crearHachaDeMadera();
+        Madera madera = new Madera();
+        Material maderaRecogida;
+        hachaDeMadera.recoger(madera);
+        hachaDeMadera.recoger(madera);
+        hachaDeMadera.recoger(madera);
+        hachaDeMadera.recoger(madera);
+        maderaRecogida = hachaDeMadera.recoger(madera);
+
+        assertEquals(madera, maderaRecogida);
+
+    }
+
+    @Test
+    public void testUsarHachaDePiedraContraMaderaSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDePiedra = constructor.crearHachaDePiedra();
+        Madera madera = new Madera();
+        Material maderaRecogida;
+        int durabilidadMaterial = madera.durabilidad();
+        int fuerzaHerramienta = hachaDePiedra.durabilidad();
+        int numero_iteraciones = durabilidadMaterial/fuerzaHerramienta -1 ;
+        for(int i=0; i<numero_iteraciones; i++){
+            hachaDePiedra.recoger(madera);
+        }
+        hachaDePiedra.recoger(madera);
+    maderaRecogida = hachaDePiedra.recoger(madera);
+
+    assertEquals(madera, maderaRecogida);
+
+    }
+    @Test
+    public void testUsarHachaDeMetalContraMaderaSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMetal = constructor.crearHachaDeMetal();
+        Madera madera = new Madera();
+        Material maderaRecogida;
+        int durabilidadMaterial = madera.durabilidad();
+        int fuerzaHerramienta = hachaDeMetal.durabilidad();
+        int numero_iteraciones = durabilidadMaterial/fuerzaHerramienta/2 -1 ;
+        for(int i=0; i<numero_iteraciones; i++){
+            hachaDeMetal.recoger(madera);
+        }
+        hachaDeMetal.recoger(madera);
+        maderaRecogida = hachaDeMetal.recoger(madera);
+
+        assertEquals(madera, maderaRecogida);
+
     }
 
 

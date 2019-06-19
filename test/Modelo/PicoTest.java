@@ -4,10 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Pico;
-import Modelo.Materiales.Diamante;
-import Modelo.Materiales.Madera;
-import Modelo.Materiales.Metal;
-import Modelo.Materiales.Piedra;
+import Modelo.Materiales.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -322,7 +319,122 @@ public class PicoTest {
     }
 
 
+    @Test
+    public void testUsarPicoDeMaderaContraPiedraSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMadera = constructor.crearPicoDeMadera();
+        Piedra piedra = new Piedra();
+        Material piedraRecogida;
+        int durabilidadMaterial = piedra.durabilidad();
+        int fuerzaHerramienta = picoDeMadera.fuerza();
+        int numero_iteraciones = durabilidadMaterial/fuerzaHerramienta-1;
+        for(int i=0; i<numero_iteraciones; i++){
+            picoDeMadera.recoger(piedra);
+        }
 
+        piedraRecogida = picoDeMadera.recoger(piedra);
+
+        assertEquals(piedra, piedraRecogida);
+
+    }
+
+    @Test
+    public void testUsarPicoDePiedraContraPiedraSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedra = constructor.crearPicoDePiedra();
+        Piedra piedra = new Piedra();
+        Material piedraRecogida;
+        int durabilidadMaterial = piedra.durabilidad();
+        int fuerzaHerramienta = picoDePiedra.fuerza();
+        int numero_iteraciones = (int)(durabilidadMaterial/(fuerzaHerramienta/1.5))-1;
+        for(int i=0; i<numero_iteraciones; i++){
+            picoDePiedra.recoger(piedra);
+        }
+
+        piedraRecogida = picoDePiedra.recoger(piedra);
+
+        assertEquals(piedra, piedraRecogida);
+
+    }
+
+    @Test
+    public void testUsarPicoDeMetalContraPiedraSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDeMetal = constructor.crearPicoDeMetal();
+        Piedra piedra = new Piedra();
+        Material piedraRecogida;
+
+        int durabilidadMaterial = piedra.durabilidad();
+        int fuerzaHerramienta = picoDeMetal.fuerza();
+        int numero_iteraciones = (int)(durabilidadMaterial/(fuerzaHerramienta/1.5))-1;
+
+        for(int i=0; i<numero_iteraciones; i++){
+            picoDeMetal.recoger(piedra);
+        }
+        piedraRecogida = picoDeMetal.recoger(piedra);
+
+        assertEquals(piedra, piedraRecogida);
+
+    }
+
+    @Test
+    public void testUsarPicoDePiedraRefinadaContraPiedraSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedraRefinada = constructor.crearPicoDePiedraRefinada();
+        Piedra piedra = new Piedra();
+        Material piedraRecogida;
+
+        int durabilidadMaterial = piedra.durabilidad();
+        int fuerzaHerramienta = picoDePiedraRefinada.fuerza();
+        int numero_iteraciones = (int)(durabilidadMaterial/(fuerzaHerramienta/1.5))-1;
+
+        for(int i=0; i<numero_iteraciones; i++){
+            picoDePiedraRefinada.recoger(piedra);
+        }
+        piedraRecogida = picoDePiedraRefinada.recoger(piedra);
+
+        assertEquals(piedra, piedraRecogida);
+
+    }
+
+    @Test
+    public void testUsarPicoDePiedraContraMetalSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedra = constructor.crearPicoDePiedra();
+        Metal metal = new Metal();
+        Material metalRecogido;
+        int durabilidadMaterial = metal.durabilidad();
+        int fuerzaHerramienta = picoDePiedra.fuerza();
+        int numero_iteraciones = (int)(durabilidadMaterial/(fuerzaHerramienta/1.5))-1;
+        for(int i=0; i<numero_iteraciones; i++){
+            picoDePiedra.recoger(metal);
+        }
+
+        metalRecogido = picoDePiedra.recoger(metal);
+
+        assertEquals(metal, metalRecogido);
+
+    }
+
+    @Test
+    public void testUsarPicoDePiedraRefinadaContraDiamanteSeObtieneRecursoCorrectamente(){
+        Constructor constructor = new Constructor();
+        Pico picoDePiedraRefinada = constructor.crearPicoDePiedraRefinada();
+        Diamante diamante = new Diamante();
+        Material diamanteRecogido;
+
+        int durabilidadMaterial = diamante.durabilidad();
+        int fuerzaHerramienta = picoDePiedraRefinada.fuerza();
+        int numero_iteraciones = durabilidadMaterial/fuerzaHerramienta - 1;
+
+        for(int i=0; i<numero_iteraciones; i++){
+            picoDePiedraRefinada.recoger(diamante);
+        }
+        diamanteRecogido = picoDePiedraRefinada.recoger(diamante);
+
+        assertEquals(diamante, diamanteRecogido);
+
+    }
 
 
 
