@@ -1,6 +1,7 @@
 package Vista.VentanaJuego.VentanaInventario;
 
 import Controlador.SalirDeInventarioHandler;
+import Modelo.Almacenable;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Insets;
@@ -26,6 +27,8 @@ public class InventarioLayout extends Pane {
         this.setTranslateX(Xposition);
         this.setTranslateY(Yposition);
 
+        Almacenable materialSeleccionado = null;
+
         //Cargo la imagen
         Image imagen = new Image("file:src/Vista/Imagenes/Inventario_crafteador.png");
 
@@ -50,7 +53,7 @@ public class InventarioLayout extends Pane {
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botonesMesa[i][j] = new BotonMesaCrafteo();
+                botonesMesa[i][j] = new BotonMesaCrafteo(materialSeleccionado, j, i);
                 //botones[i][j].setText(i + "," + j);
                 mesaCrafteo.add(botonesMesa[i][j], j, i, 1, 1);
                 botonesMesa[i][j].prefWidthProperty().bind(mesaCrafteo.widthProperty());
@@ -71,7 +74,7 @@ public class InventarioLayout extends Pane {
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<9; j++){
-                botonesInventario[i][j] = new BotonInventario();
+                botonesInventario[i][j] = new BotonInventario(materialSeleccionado, j, i);
                 //botones[i][j].setText(i + "," + j);
                 inventario.add(botonesInventario[i][j], j, i, 1, 1);
                 botonesInventario[i][j].prefWidthProperty().bind(inventario.widthProperty());

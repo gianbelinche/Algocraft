@@ -5,6 +5,7 @@ import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Madera;
+import Modelo.Materiales.Material;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -95,5 +96,24 @@ public class JugadorTest {
         jugador.moverAbajo();
         assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1));
     }
+    /*
+    Queda próximo a arreglar.
+    @Test
+    public void testJugadorRecogeMaderaConHachaYSeGuardaEnInventario(){
+        Constructor constructor = new Constructor();
+        jugador.equipar(constructor.crearHachaDeMadera());
+        Madera madera = new Madera();
+        Almacenable maderaRecogida;
+        jugador.recoger(madera);
+        jugador.recoger(madera);
+        jugador.recoger(madera);
+        jugador.recoger(madera);
+        jugador.recoger(madera);
+        maderaRecogida = jugador.obtenerDeInventario(0,0);
 
+        assertEquals(madera, maderaRecogida);
+
+    }
+
+     */
 }

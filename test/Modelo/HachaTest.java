@@ -4,6 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.*;
 import org.junit.Test;
 import static org.junit.Assert.*;

@@ -27,6 +27,9 @@ public class Jugador implements Posicionable {
         return herramientaEquipada;
     }
 
+    public void equipar(Herramienta herramienta){
+        herramientaEquipada = herramienta;
+    }
     @Override
     public int estaLibre() {
         return 0;

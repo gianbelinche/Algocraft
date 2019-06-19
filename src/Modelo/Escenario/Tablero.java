@@ -24,6 +24,8 @@ public class Tablero {
     public TableroIterador obtenerIterador(){
         return new TableroIterador(this,ancho,alto);
     }
+
+
     private Tablero(int anchoPasado, int altoPasado){
         ancho = anchoPasado;
         alto = altoPasado;
