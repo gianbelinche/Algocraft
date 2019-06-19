@@ -26,7 +26,7 @@ public class TitleLayout extends StackPane {
         contenedorBotones.setAlignment(Pos.CENTER);
 
         //Cargo Imagen
-        Image image = new Image("file:src/Vista/Imagenes/Prueba.jpg");
+        Image image = new Image("file:src/Vista/Imagenes/MainTitle.png");
 
         BackgroundImage backgroundImage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
