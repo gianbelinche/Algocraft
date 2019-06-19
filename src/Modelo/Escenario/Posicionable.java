@@ -7,6 +7,4 @@ public interface Posicionable {
     void establecerPosicion(Posicion nuevaPosicion);
 
     boolean esIgual(Posicionable otroPosicionable);
-
-    String obtenerRutaImagen();
 }

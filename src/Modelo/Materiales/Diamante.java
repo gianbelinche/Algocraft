@@ -5,11 +5,8 @@ import Modelo.Escenario.Posicionable;
 
 public class Diamante extends Material {
 
-    private String ruta;
-
     public Diamante(){
         durabilidad = 100;
-        ruta = "file:src/Vista/Imagenes/CasillaDiamante.png";
     }
 
     @Override
@@ -48,11 +45,6 @@ public class Diamante extends Material {
 
     public boolean esIgual(Posicionable material){
         return material instanceof Diamante;
-    }
-
-    @Override
-    public String obtenerRutaImagen(){
-        return ruta;
     }
 
 }

@@ -5,11 +5,8 @@ import Modelo.Escenario.Posicionable;
 
 public class Metal extends Material {
 
-    private String ruta;
-
     public Metal(){
         durabilidad = 50;
-        ruta = "file:src/Vista/Imagenes/CasillaMetal.png";
     }
 
     @Override
@@ -48,11 +45,6 @@ public class Metal extends Material {
 
     public boolean esIgual(Posicionable material){
         return material instanceof Metal;
-    }
-
-    @Override
-    public String obtenerRutaImagen(){
-        return ruta;
     }
 
 }

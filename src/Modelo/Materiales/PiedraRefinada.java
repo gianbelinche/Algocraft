@@ -4,11 +4,8 @@ import Modelo.Escenario.Posicionable;
 
 public class PiedraRefinada extends Material {
 
-    private String ruta;
-
     public PiedraRefinada(){
         durabilidad = 75;
-        ruta = "";
     }
 
     @Override
@@ -41,13 +38,7 @@ public class PiedraRefinada extends Material {
         return desgastar(desgaste);
     }
 
-    public boolean esIgual(Material material){return false;};
+    public boolean esIgual(Material material){return false;}
 
-    public boolean esIgual(Posicionable material){return false;};
-
-    @Override
-    public String obtenerRutaImagen(){
-        return ruta;
-    }
-
+    public boolean esIgual(Posicionable material){return false;}
 }

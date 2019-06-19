@@ -4,11 +4,8 @@ import Modelo.Escenario.Posicionable;
 
 public class Piedra extends Material {
 
-    private String ruta;
-
     public Piedra() {
         durabilidad = 30;
-        ruta = "file:src/Vista/Imagenes/CasillaPiedra.png";
     }
 
     @Override
@@ -47,11 +44,6 @@ public class Piedra extends Material {
 
     public boolean esIgual(Posicionable material){
         return material instanceof Piedra;
-    }
-
-    @Override
-    public String obtenerRutaImagen(){
-        return ruta;
     }
 
 }

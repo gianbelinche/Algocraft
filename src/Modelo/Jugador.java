@@ -12,7 +12,6 @@ public class Jugador implements Posicionable {
     private Herramienta herramientaEquipada;
     private Posicion posicion;
     private Inventario inventario;
-    private String ruta;
 
 
     public Jugador(){
@@ -20,7 +19,6 @@ public class Jugador implements Posicionable {
         herramientaEquipada = constructor.crearHachaDeMadera();
         posicion = new Posicion(5, 5);
         inventario = new Inventario();
-        ruta = "file:src/Vista/Imagenes/CasillaJugador.png";
     }
 
     public Herramienta herramientaEquipada() {
@@ -69,8 +67,4 @@ public class Jugador implements Posicionable {
         return inventario.obtenerDePosicion(x, y);
     }
 
-    @Override
-    public String obtenerRutaImagen(){
-        return ruta;
-    }
 }
