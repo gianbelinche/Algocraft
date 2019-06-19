@@ -62,21 +62,17 @@ public class Tablero {
         return mapa[x][y];
     }
 
-    public  int estaLibre(int x, int y)
+    public void mover(int viejaX,int viejaY,int nuevaX, int nuevaY)
     {
-        if(!validarPosicion(x,y)) return 0;
-        return obtenerDePosicion(x,y).estaLibre();
-    }
+        if(!validarPosicion(nuevaX,nuevaY)) return;
 
-    public void mover(int viejaX,int viejaY,int incrementoX, int incrementoY)
-    {
-        Posicionable objetoAMover = obtenerDePosicion(viejaX,viejaY);
-        int escalaDeMovimiento = estaLibre(viejaX + incrementoX,viejaY + incrementoY);
-        int nuevaX = viejaX + incrementoX*escalaDeMovimiento;
-        int nuevaY = viejaY + incrementoY*escalaDeMovimiento;
+        Posicionable objetoMoviendose = obtenerDePosicion(viejaX,viejaY);
+        Posicionable casillaDestino = obtenerDePosicion(nuevaX,nuevaY);
+
+        Posicion nuevaPosicion = casillaDestino.actualizarPosicion(viejaX,viejaY,nuevaX,nuevaY);
 
         borrarEnPosicion(viejaX,viejaY);
-        colocarEnPosicion(nuevaX,nuevaY,objetoAMover);
+        colocarEnPosicion(nuevaPosicion.getX(),nuevaPosicion.getY(),objetoMoviendose);
     }
 
     public boolean esIgual(Tablero otroTablero){

@@ -6,14 +6,20 @@ public class Posicion {
     private int y;
     private Tablero tablero;
 
-    public Posicion(int unX, int unY, Tablero unTablero){
+    public Posicion(int unX, int unY, Tablero nuevoTablero){
         x = unX;
         y = unY;
-        tablero = unTablero;
+        tablero = nuevoTablero;
+    }
+
+    public Posicion(int unX, int unY){
+        x = unX;
+        y = unY;
+        tablero = Tablero.obtenerTablero();
     }
 
     public void mover(int incrementoX, int incrementoY){
-        tablero.mover(x,y,incrementoX,incrementoY);
+        tablero.mover(x,y,x + incrementoX,y + incrementoY);
     }
 
     public void moverDerecha(){

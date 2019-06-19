@@ -15,10 +15,10 @@ public class Jugador implements Posicionable {
     private String ruta;
 
 
-    public Jugador(Tablero tablero){
+    public Jugador(){
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
-        posicion = new Posicion(5, 5, tablero);
+        posicion = new Posicion(5, 5);
         inventario = new Inventario();
         ruta = "file:src/Vista/Imagenes/CasillaJugador.png";
     }
@@ -30,9 +30,10 @@ public class Jugador implements Posicionable {
     public void equipar(Herramienta herramienta){
         herramientaEquipada = herramienta;
     }
+
     @Override
-    public int estaLibre() {
-        return 0;
+    public Posicion actualizarPosicion(int viejaX, int viejaY, int nuevaX, int nuevaY){
+        return new Posicion(viejaX,viejaY);
     }
 
     @Override

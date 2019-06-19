@@ -11,8 +11,8 @@ public class PosicionVacia implements Posicionable, Almacenable {
     }
 
     @Override
-    public int estaLibre(){
-        return 1;
+    public Posicion actualizarPosicion(int viejaX, int viejaY, int nuevaX, int nuevaY){
+        return new Posicion(nuevaX,nuevaY);
     }
 
     @Override

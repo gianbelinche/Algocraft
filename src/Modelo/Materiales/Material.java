@@ -35,8 +35,8 @@ public abstract class Material implements Posicionable, Almacenable {
     abstract boolean esIgual(Material material);
 
     @Override
-    public int estaLibre() {
-        return 0;
+    public Posicion actualizarPosicion(int viejaX, int viejaY, int nuevaX, int nuevaY){
+        return new Posicion(viejaX,viejaY);
     }
 
     @Override

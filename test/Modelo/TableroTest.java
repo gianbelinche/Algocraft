@@ -1,8 +1,7 @@
 package Modelo;
 
 import Modelo.Construccion.Constructor;
-import Modelo.Escenario.Tablero;
-import Modelo.Escenario.TableroIterador;
+import Modelo.Escenario.*;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.Piedra;
 import org.junit.Before;
@@ -36,7 +35,7 @@ public class TableroTest {
     public void testTableroSeCreaConCeldasVacias(){
         for(int x=0; x<ancho; x++){
             for(int y=0; y<alto; y++){
-                assertEquals(1, tablero.estaLibre(x,y));
+                assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
             }
         }
     }
@@ -57,14 +56,14 @@ public class TableroTest {
         Piedra piedra = new Piedra();
         tablero.colocarEnPosicion(x,y,piedra);
         tablero.borrarEnPosicion(x,y);
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 
     @Test
     public void testTableroColocarJugador(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         assertEquals(jugador, tablero.obtenerDePosicion(x,y));
     }
@@ -73,43 +72,43 @@ public class TableroTest {
     public void testTableroBorrarJugador(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         tablero.borrarEnPosicion(x,y);
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 
     @Test
     public void testTableroJugadorSeMueveHaciaLaDerechaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         jugador.moverDerecha();
 
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 
     @Test
     public void testTableroJugadorSeMueveHaciaLaIzquierdaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         jugador.moverIzquierda();
 
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 
     @Test
     public void testTableroJugadorSeMueveHaciaArribaYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         jugador.moverArriba();
 
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 
 
@@ -117,11 +116,11 @@ public class TableroTest {
     public void testTableroJugadorSeMueveHaciaAbajoYDejaUnaCasillaLibre(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         jugador.moverAbajo();
 
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 
 
@@ -129,7 +128,7 @@ public class TableroTest {
     public void testTableroMoverJugadorFueraDelBordeNoAlteraPosicion(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
 
         for(int i = 0;i <100;i++){
@@ -143,7 +142,7 @@ public class TableroTest {
     public void testTableroMoverJugadorContraMaterialNoAlteraSuPosicion(){
         int x = 5;
         int y = 5;
-        Jugador jugador = new Jugador(tablero);
+        Jugador jugador = new Jugador();
         tablero.colocarEnPosicion(x,y,jugador);
         Piedra piedra = new Piedra();
         tablero.colocarEnPosicion(x + 1,y,piedra);
@@ -166,6 +165,6 @@ public class TableroTest {
         pico.recoger(piedra);
         pico.recoger(piedra);
 
-        assertEquals(1, tablero.estaLibre(x,y));
+        assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
     }
 }

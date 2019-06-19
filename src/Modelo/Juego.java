@@ -18,7 +18,7 @@ public class Juego {
         int ancho = 10;
         int alto = 10;
         tablero = Tablero.obtenerTablero(ancho,alto);
-        jugador = new Jugador(tablero);
+        jugador = new Jugador();
         piedra = new Piedra();
         madera = new Madera();
         diamante = new Diamante();

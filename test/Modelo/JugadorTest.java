@@ -24,7 +24,7 @@ public class JugadorTest {
     @Before
     public void setUp(){
         constructor = new Constructor();
-        jugador = new Jugador(tablero);
+        jugador = new Jugador();
         herramienta = jugador.herramientaEquipada();
 
         tablero = Tablero.obtenerTablero(10, 10);

@@ -10,7 +10,6 @@ import static org.junit.Assert.*;
 public class PosicionTest {
 
     private Posicion posicion;
-    private Tablero tablero;
     private int posicionEnX = 3;
     private int posicionEnY = 6;
 
@@ -18,8 +17,7 @@ public class PosicionTest {
     public void setUp(){
         int ancho = 10;
         int alto = 15;
-        tablero = Tablero.obtenerTablero(ancho, alto);
-        posicion = new Posicion(posicionEnX,posicionEnY, tablero);
+        posicion = new Posicion(posicionEnX,posicionEnY);
 
     }
 
