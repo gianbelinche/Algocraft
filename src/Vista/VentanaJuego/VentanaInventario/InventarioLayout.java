@@ -18,12 +18,12 @@ public class InventarioLayout extends Pane {
         this.setVisible(false);
         this.stage = stage;
         this.setPadding(new Insets(25));
-        setPrefSize(stage.getWidth()*0.2, stage.getHeight()*0.3);
+        setPrefSize(stage.getWidth()*0.3, stage.getHeight()*0.45);
 
         //Alguna forma para no hardcodear??
 
         double Xposition = stage.getWidth()/2 - 200;;
-        double Yposition = stage.getHeight()/2 - 200;
+        double Yposition = stage.getHeight()/2 - 210;
         this.setTranslateX(Xposition);
         this.setTranslateY(Yposition);
 
@@ -44,11 +44,11 @@ public class InventarioLayout extends Pane {
         GridPane mesaCrafteo = new GridPane();
         BotonMesaCrafteo[][] botonesMesa = new BotonMesaCrafteo[3][3];
         //Más hardcodeo :(
-        mesaCrafteo.setTranslateX(63);
-        mesaCrafteo.setTranslateY(25);
-        mesaCrafteo.setPrefSize(114, 106);
-        mesaCrafteo.setHgap(7);
-        mesaCrafteo.setVgap(3);
+        mesaCrafteo.setTranslateX(64);
+        mesaCrafteo.setTranslateY(29);
+        mesaCrafteo.setPrefSize(120, 106);
+        mesaCrafteo.setHgap(5);
+        mesaCrafteo.setVgap(4);
 
 
         for(int i=0; i < 3; i++){
@@ -66,10 +66,10 @@ public class InventarioLayout extends Pane {
 
         BotonInventario[][] botonesInventario = new BotonInventario[3][9];
         //Aún más :(
-        inventario.setTranslateX(15);
-        inventario.setTranslateY(154);
-        inventario.setPrefSize(354, 106);
-        inventario.setHgap(9);
+        inventario.setTranslateX(13);
+        inventario.setTranslateY(168);
+        inventario.setPrefSize(366, 108);
+        inventario.setHgap(2);
         inventario.setVgap(3);
 
         for(int i=0; i < 3; i++){

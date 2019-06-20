@@ -9,7 +9,7 @@ public class BotonMesaCrafteo extends Button {
         setText("");
         //Transparenta el boton
         //setStyle("-fx-background-color: transparent");
-        BotonMesaCrafteoHandler botonMesaHandler = new BotonMesaCrafteoHandler(materialSeleccionado, x, y);
-        this.setOnAction(botonMesaHandler);
+        /*BotonMesaCrafteoHandler botonMesaHandler = new BotonMesaCrafteoHandler(materialSeleccionado, x, y);
+        this.setOnAction(botonMesaHandler);*/
     }
 }
