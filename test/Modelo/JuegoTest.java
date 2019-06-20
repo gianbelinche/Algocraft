@@ -1,44 +1,56 @@
 package Modelo;
 
+import Modelo.Escenario.*;
+import Modelo.Materiales.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/*
-import Modelo.Escenario.Tablero;
-import Modelo.Materiales.Diamante;
-import Modelo.Materiales.Madera;
-import Modelo.Materiales.Metal;
-import Modelo.Materiales.Piedra;
-
-
-*/
 public class JuegoTest {
-    @Test
-    public void testHacerQueTravisPase(){
-        assertTrue(true);
-    }
-/*
+
+    Tablero tablero;
+
     @Test
     public void testCorrectaInicializacionDeLosMaterialesEnElTablero(){
 
         Juego juego = new Juego();
-        Tablero tableroEsperado = Tablero.obtenerTablero(10,10);
+        tablero = Tablero.obtenerTablero();
+        int anchoEsperado = 10;
+        int altoEsperado = 10;
 
-        tableroEsperado.colocarEnPosicion(0,0,new Madera());
-        tableroEsperado.colocarEnPosicion(0,1,new Madera());
-        tableroEsperado.colocarEnPosicion(1,0,new Madera());
-        tableroEsperado.colocarEnPosicion(1,1,new Madera());
-        tableroEsperado.colocarEnPosicion(5,2,new Piedra());
-        tableroEsperado.colocarEnPosicion(6,2,new Piedra());
-        tableroEsperado.colocarEnPosicion(7,2,new Piedra());
-        tableroEsperado.colocarEnPosicion(1,4,new Metal());
-        tableroEsperado.colocarEnPosicion(1,5,new Metal());
-        tableroEsperado.colocarEnPosicion(9,8,new Diamante());
-        tableroEsperado.colocarEnPosicion(3,7,new Jugador(tableroEsperado));
+        Class[][] tableroEsperado = new Class[anchoEsperado][altoEsperado];
 
-        assert(juego.tableroEsCorrecto(tableroEsperado));
+        for(int i = 0;i < anchoEsperado;i++)
+        {
+            for(int j = 0; j < altoEsperado; j++)
+            {
+                tableroEsperado[i][j] = PosicionVacia.class;
+            }
+        }
+
+        tableroEsperado[0][0] = Madera.class;
+        tableroEsperado[0][1] = Madera.class;
+        tableroEsperado[1][0] = Madera.class;
+        tableroEsperado[1][1] = Madera.class;
+
+        tableroEsperado[5][2] = Piedra.class;
+        tableroEsperado[6][2] = Piedra.class;
+        tableroEsperado[7][2] = Piedra.class;
+
+        tableroEsperado[1][4] = Metal.class;
+        tableroEsperado[1][5] = Metal.class;
+
+        tableroEsperado[9][8] = Diamante.class;
+        tableroEsperado[3][7] = Jugador.class;
 
 
-        assertEquals(1,1);
-    }*/
+        for(int i = 0;i < anchoEsperado;i++)
+        {
+            for(int j = 0; j < altoEsperado; j++)
+            {
+                assertEquals(tableroEsperado[i][j],tablero.obtenerDePosicion(i,j).getClass());
+            }
+        }
+
+
+    }
 }
