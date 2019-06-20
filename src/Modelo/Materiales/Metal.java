@@ -39,10 +39,12 @@ public class Metal extends Material {
         return desgastar(desgaste);
     }
 
+    @Override
     public boolean esIgual(Material material){
         return material instanceof Metal;
     }
 
+    @Override
     public boolean esIgual(Posicionable material){
         return material instanceof Metal;
     }

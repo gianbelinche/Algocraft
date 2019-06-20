@@ -39,10 +39,12 @@ public class Diamante extends Material {
         return desgastar(desgaste);
     }
 
+    @Override
     public boolean esIgual(Material material){
         return material instanceof Diamante;
     }
 
+    @Override
     public boolean esIgual(Posicionable material){
         return material instanceof Diamante;
     }

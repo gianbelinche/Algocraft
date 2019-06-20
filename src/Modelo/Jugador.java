@@ -3,11 +3,8 @@ package Modelo;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.Posicionable;
-import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Material;
-
-import java.lang.reflect.InvocationTargetException;
 
 public class Jugador implements Posicionable {
 

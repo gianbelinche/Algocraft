@@ -1,7 +1,5 @@
 package Modelo.Escenario;
 
-import javafx.geometry.Pos;
-
 public class TableroIterador {
     private Tablero tablero;
     private int ancho;

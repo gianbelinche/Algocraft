@@ -38,7 +38,9 @@ public class PiedraRefinada extends Material {
         return desgastar(desgaste);
     }
 
+    @Override
     public boolean esIgual(Material material){return false;}
 
+    @Override
     public boolean esIgual(Posicionable material){return false;}
 }

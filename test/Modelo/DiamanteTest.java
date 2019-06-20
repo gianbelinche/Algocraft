@@ -4,7 +4,6 @@ import Modelo.Construccion.Constructor;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.Diamante;
-import Vista.Ventana;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,7 +13,7 @@ public class DiamanteTest {
     private int durabilidadInicial;
     private Constructor constructor;
     private Diamante diamante;
-    private Ventana ventana = new Ventana();
+
     @Before
     public void setUp(){
         constructor = new Constructor();

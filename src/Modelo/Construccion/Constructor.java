@@ -1,14 +1,8 @@
 package Modelo.Construccion;
 
-import Modelo.Desgastes.DesgasteLineal;
-import Modelo.Desgastes.DesgastePorMaterial;
-import Modelo.Desgastes.DesgastePorUsos;
-import Modelo.Herramientas.Hacha;
-import Modelo.Herramientas.Pico;
-import Modelo.Materiales.Madera;
-import Modelo.Materiales.Metal;
-import Modelo.Materiales.Piedra;
-import Modelo.Materiales.PiedraRefinada;
+import Modelo.Desgastes.*;
+import Modelo.Herramientas.*;
+import Modelo.Materiales.*;
 
 public class Constructor {
     public Hacha crearHachaDeMadera(){

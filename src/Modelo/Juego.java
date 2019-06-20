@@ -5,7 +5,6 @@ import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
-import javafx.scene.canvas.GraphicsContext;
 
 public class Juego {
     private Jugador jugador;
@@ -40,10 +39,6 @@ public class Juego {
         tablero.colocarEnPosicion(9,8,new Diamante());
         tablero.colocarEnPosicion(3,7,jugador);
 
-    }
-
-    public boolean tableroEsCorrecto(Tablero otroTablero){
-        return tablero.esIgual(otroTablero);
     }
 
     public Jugador obtenerJugador(){

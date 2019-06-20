@@ -74,17 +74,4 @@ public class Tablero {
         borrarEnPosicion(viejaX,viejaY);
         colocarEnPosicion(nuevaPosicion.getX(),nuevaPosicion.getY(),objetoMoviendose);
     }
-
-    public boolean esIgual(Tablero otroTablero){
-
-        for(int i = 0;i < ancho;i++)
-        {
-            for(int j = 0;j < alto;j++)
-            {
-                if (!(this.obtenerDePosicion(i,j).esIgual(otroTablero.obtenerDePosicion(i,j)))) return false;
-            }
-        }
-        return true;
-    }
-
 }

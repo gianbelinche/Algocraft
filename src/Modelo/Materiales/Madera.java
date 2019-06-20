@@ -38,10 +38,12 @@ public class Madera extends Material {
         return desgastar(desgaste);
     }
 
+    @Override
     public boolean esIgual(Material material){
         return material instanceof Madera;
     }
 
+    @Override
     public boolean esIgual(Posicionable material){
         return material instanceof Madera;
     }
