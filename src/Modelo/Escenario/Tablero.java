@@ -87,12 +87,4 @@ public class Tablero {
         return true;
     }
 
-    public int getAncho(){
-        return this.ancho;
-    }
-
-    public int getAlto(){
-        return this.alto;
-    }
-
 }

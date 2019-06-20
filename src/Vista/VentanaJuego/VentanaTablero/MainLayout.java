@@ -16,23 +16,16 @@ public class MainLayout extends Pane {
     public MainLayout(Stage mainStage, Juego juego, Ventana ventana) {
 
         //Creo botones de movimiento
-        BotonMoverArriba botonMoverArriba = new BotonMoverArriba(ventana,juego.obtenerJugador());
-
-        botonMoverArriba.setTranslateX(28); //HARDCODEO
-
         BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(ventana,juego.obtenerJugador());
-
-
         BotonMoverDerecha botonMoverDerecha = new BotonMoverDerecha(ventana,juego.obtenerJugador());
-
-
         BotonMoverIzquierda botonMoverIzquierda = new BotonMoverIzquierda(ventana,juego.obtenerJugador());
 
+        HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo, botonMoverDerecha);
 
+        BotonMoverArriba botonMoverArriba = new BotonMoverArriba(ventana,juego.obtenerJugador());
+        botonMoverArriba.setTranslateX(28); //HARDCODEO
 
-        HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo,botonMoverDerecha);
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
-
         botonesMovimientoCompleto.setSpacing(10);
 
         //Creo boton inventario

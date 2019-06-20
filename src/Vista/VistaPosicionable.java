@@ -16,11 +16,9 @@ public class VistaPosicionable {
     private Map<Class, Image> imagenes;
 
     public VistaPosicionable(){
-
         proyector = new Proyector();
         imagenes = new HashMap<>();
         inicializarImagenes();
-
     }
 
     private void inicializarImagenes(){
