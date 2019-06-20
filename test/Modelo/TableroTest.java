@@ -3,6 +3,7 @@ package Modelo;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.*;
 import Modelo.Herramientas.Pico;
+import Modelo.Materiales.Madera;
 import Modelo.Materiales.Piedra;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,10 +12,11 @@ import static org.junit.Assert.*;
 
 public class TableroTest {
     private Tablero tablero;
-    int alto;
-    int ancho;
+    private TableroIterador iterador;
+    private int alto;
+    private int ancho;
 
-    public void resetearTablero(Tablero elTablero, int ancho,int alto){
+    private void resetearTablero(Tablero elTablero, int ancho,int alto){
 
         TableroIterador iterador = tablero.obtenerIterador();
         while(!iterador.haFinalizado()){
@@ -25,10 +27,11 @@ public class TableroTest {
 
     @Before
     public void SetUp(){
-        alto = 8;
+        alto = 10;
         ancho = 10;
         tablero = Tablero.obtenerTablero(ancho, alto);
         resetearTablero(tablero,ancho,alto);
+        iterador = tablero.obtenerIterador();
     }
 
     @Test
@@ -166,5 +169,122 @@ public class TableroTest {
         pico.recoger(piedra);
 
         assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
+    }
+
+    @Test
+    public void testTableroIteradorRecorreTodoElTablero(){
+        int xEsperada = 0;
+        int yEsperada = alto;
+
+        while(!iterador.haFinalizado()){
+            iterador.avanzar();
+        }
+
+        assertEquals(xEsperada, iterador.getX());
+        assertEquals(yEsperada,iterador.getY());
+    }
+
+    @Test
+    public void testTableroIteradorColocaObjetoCorrectamente(){
+
+        Madera objetoAcolocar = new Madera();
+        int x = 3;
+        iterador.avanzar();
+        iterador.avanzar();
+        iterador.avanzar();
+        iterador.colocarEnActual(objetoAcolocar);
+
+        assertEquals(tablero.obtenerDePosicion(x,0),objetoAcolocar);
+    }
+
+    @Test
+    public void testTableroIteradorColocaObjetoCorrectamenteVolumen(){
+
+        Madera objetoAcolocar = new Madera();
+
+        while(!iterador.haFinalizado()){
+            iterador.colocarEnActual(objetoAcolocar);
+            iterador.avanzar();
+        }
+
+        for(int x=0; x<ancho; x++){
+            for(int y=0; y<alto; y++){
+                assertEquals(tablero.obtenerDePosicion(x,y),objetoAcolocar);
+            }
+        }
+    }
+
+    @Test
+    public void testTableroIteradorBorraObjetoCorrectamente(){
+
+        Madera objetoAcolocar = new Madera();
+        int x = 3;
+        iterador.avanzar();
+        iterador.avanzar();
+        iterador.avanzar();
+        iterador.colocarEnActual(objetoAcolocar);
+        iterador.borrarEnActual();
+
+        assertEquals(tablero.obtenerDePosicion(x,0).getClass(),PosicionVacia.class);
+    }
+
+    @Test
+    public void testTableroIteradorBorraObjetoCorrectamenteVolumen(){
+
+        Madera objetoAcolocar = new Madera();
+
+        for(int x=0; x<ancho; x++){
+            for(int y=0; y<alto; y++){
+                tablero.colocarEnPosicion(x,y,objetoAcolocar);
+            }
+        }
+
+        while(!iterador.haFinalizado()){
+            iterador.borrarEnActual();
+            iterador.avanzar();
+        }
+
+        for(int x=0; x<ancho; x++){
+            for(int y=0; y<alto; y++){
+                assertEquals(tablero.obtenerDePosicion(x,y).getClass(),PosicionVacia.class);
+            }
+        }
+    }
+
+    @Test
+    public void testTableroIteradorRetornaObjetoActualCorrectamente(){
+
+        int x = 2;
+        int y = 6;
+        Madera objetoAcolocar = new Madera();
+        tablero.colocarEnPosicion(x,y,objetoAcolocar);
+
+        for(int i = 0; i < (y*ancho + x);i++) iterador.avanzar();
+
+        assertEquals(objetoAcolocar,iterador.verActual());
+    }
+
+    @Test
+    public void testTableroIteradorRetornaObjetoActualCorrectamenteVolumen(){
+
+        for(int x=0; x<ancho; x++){
+            for(int y=0; y<alto; y++){
+                tablero.colocarEnPosicion(x,y,new Piedra());
+            }
+        }
+
+        int x = 0;
+        int y = 0;
+
+        while(!iterador.haFinalizado()){
+            assertEquals(tablero.obtenerDePosicion(x,y),iterador.verActual());
+            iterador.avanzar();
+
+            x++;
+            if(x == ancho){
+                y++;
+                x = 0;
+            }
+        }
     }
 }
