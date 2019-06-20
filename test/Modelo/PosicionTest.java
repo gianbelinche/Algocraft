@@ -1,7 +1,6 @@
 package Modelo;
 
 import Modelo.Escenario.Posicion;
-import Modelo.Escenario.Tablero;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,8 +14,6 @@ public class PosicionTest {
 
     @Before
     public void setUp(){
-        int ancho = 10;
-        int alto = 15;
         posicion = new Posicion(posicionEnX,posicionEnY);
 
     }

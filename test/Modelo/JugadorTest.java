@@ -5,7 +5,6 @@ import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Madera;
-import Modelo.Materiales.Material;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,7 +30,6 @@ public class JugadorTest {
         x = 5;
         y = 5;
         tablero.colocarEnPosicion(x,y,jugador);
-
     }
 
     @Test

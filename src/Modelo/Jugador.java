@@ -60,7 +60,7 @@ public class Jugador implements Posicionable {
 
     public void recoger(Material unMaterial){
         Almacenable materialRecogido = null;
-        
+
         try {
             materialRecogido = (Almacenable) herramientaEquipada.getClass().getDeclaredMethod("recoger",unMaterial.getClass()).invoke(herramientaEquipada,unMaterial);
         } catch (Exception e) {}

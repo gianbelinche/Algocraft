@@ -18,8 +18,8 @@ public class PiedraTest {
         constructor = new Constructor();
         piedra = new Piedra();
         durabilidadInicial = piedra.durabilidad();
-
     }
+
     @Test
     public void testUsoPicoDeMaderaEnPiedraYSeDesgastaLaPiedra(){
 

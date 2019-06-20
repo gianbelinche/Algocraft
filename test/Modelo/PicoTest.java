@@ -1,7 +1,6 @@
 package Modelo;
 
 import Modelo.Construccion.Constructor;
-import Modelo.Escenario.Tablero;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.*;

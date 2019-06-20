@@ -1,10 +1,8 @@
 package Modelo;
 
 import Modelo.Construccion.Constructor;
-import Modelo.Escenario.Tablero;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Hacha;
-import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -149,8 +147,6 @@ public class HachaTest {
         int durabilidad = hachaDeMetal.durabilidad();
 
         Madera madera = new Madera();
-        Tablero tablero = Tablero.obtenerTablero(10,10);
-        tablero.colocarEnPosicion(0,0,madera);
 
         hachaDeMetal.recoger(madera);
         assertEquals(durabilidad-hachaDeMetal.fuerza()/factor,hachaDeMetal.durabilidad());

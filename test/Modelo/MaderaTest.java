@@ -1,7 +1,6 @@
 package Modelo;
 
 import Modelo.Construccion.Constructor;
-import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.Madera;
@@ -71,13 +70,6 @@ public class MaderaTest {
     @Test
     public void testUsoHachaDeMetalEnMaderaYSeDesgastaLaMadera(){
         Hacha hacha = constructor.crearHachaDeMetal();
-        int anchoTablero = 10;
-        int altoTablero = 10;
-        int xMadera = 0;
-        int yMadera = 0;
-        Tablero tablero = Tablero.obtenerTablero(anchoTablero,altoTablero);
-        tablero.colocarEnPosicion(xMadera,yMadera,madera);
-
         hacha.recoger(madera);
 
         assertEquals(durabilidadInicial - hacha.fuerza() , madera.durabilidad());
