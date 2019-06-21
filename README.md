@@ -57,9 +57,9 @@ Juego:
 **Entrega 3:** Viernes 21 de Junio (18:30hs en Biblioteca)
 
 Interfaz gráfica inicial básica: 
-- Comienzo del juego .
-- Disposición de materiales en el tablero.
-- Menú inicial.
+- [X] Comienzo del juego .
+- [X] Disposición de materiales en el tablero.
+- [X] Menú inicial.
 
 **Entrega 4:** Jueves 27 de Junio
 
