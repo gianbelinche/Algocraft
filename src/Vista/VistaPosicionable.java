@@ -14,11 +14,9 @@ import static java.lang.Math.sqrt;
 
 public class VistaPosicionable {
 
-    Proyector proyector;
     private Map<Class, Image> imagenes;
 
     public VistaPosicionable(){
-        proyector = new Proyector();
         imagenes = new HashMap<>();
         inicializarImagenes();
     }
@@ -27,6 +25,7 @@ public class VistaPosicionable {
 
         imagenes.put(Jugador.class      ,new Image("file:src/Vista/Imagenes/CasillaJugador.png"));
         imagenes.put(PosicionVacia.class,new Image("file:src/Vista/Imagenes/CasillaVacia.png"));
+        imagenes.put(Tierra.class       ,new Image("file:src/Vista/Imagenes/CasillaTierra.png"));
         imagenes.put(Madera.class       ,new Image("file:src/Vista/Imagenes/CasillaMadera.png"));
         imagenes.put(Piedra.class       ,new Image("file:src/Vista/Imagenes/CasillaPiedra.png"));
         imagenes.put(Metal.class        ,new Image("file:src/Vista/Imagenes/CasillaMetal.png"));
@@ -36,11 +35,11 @@ public class VistaPosicionable {
 
     public void dibujar(Class clase, int x, int y,int z, GraphicsContext gc){
 
-        Image imagen = new Image("file:src/Vista/Imagenes/iso.png");
-        double l = 50/2;
-        x *= l;y *= l;z *= l;
+        Image imagen = imagenes.get(clase);
+        double l = 64;
+        x *= l/2;y *= l/2;z = (int)(z*l/2 - imagen.getHeight());
         double XIso = (x - y)/sqrt(2);
         double YIso = (x + 2*z + y)/sqrt(6);
-        gc.drawImage(imagen,XIso + 500,YIso + 200);
+        gc.drawImage(imagen,XIso + 500,YIso + 100);
     }
 }
