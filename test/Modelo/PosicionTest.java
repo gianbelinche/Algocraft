@@ -11,10 +11,11 @@ public class PosicionTest {
     private Posicion posicion;
     private int posicionEnX = 3;
     private int posicionEnY = 6;
+    private int posicionEnZ = 0;
 
     @Before
     public void setUp(){
-        posicion = new Posicion(posicionEnX,posicionEnY);
+        posicion = new Posicion(posicionEnX,posicionEnY,posicionEnZ);
 
     }
 

@@ -23,7 +23,8 @@ public class Dibujante {
             posicionable = tableroIterador.verActual();
             int x = tableroIterador.getX();
             int y = tableroIterador.getY();
-            vistaPosicionable.dibujar(posicionable.getClass(), x,y,gc);
+            int z = tableroIterador.getZ();
+            vistaPosicionable.dibujar(posicionable.getClass(),x,y,z,gc);
             tableroIterador.avanzar();
         }
     }

@@ -2,7 +2,7 @@ package Modelo.Escenario;
 
 public interface Posicionable {
 
-    Posicion actualizarPosicion(int viejaX, int viejaY, int nuevaX, int nuevaY);
+    public Posicion actualizarPosicion(int viejaX, int viejaY,int viejaZ, int nuevaX, int nuevaY,int nuevaZ);
 
     void establecerPosicion(Posicion nuevaPosicion);
 

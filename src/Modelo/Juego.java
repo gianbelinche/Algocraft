@@ -15,8 +15,9 @@ public class Juego {
     private Metal metal;
     public Juego(){
         int ancho = 10;
+        int largo = 10;
         int alto = 10;
-        tablero = Tablero.obtenerTablero(ancho,alto);
+        tablero = Tablero.obtenerTablero(ancho,largo,alto);
         jugador = new Jugador();
         piedra = new Piedra();
         madera = new Madera();
@@ -27,17 +28,17 @@ public class Juego {
 
     private void inicializarTablero(){
 
-        tablero.colocarEnPosicion(0,0,new Madera());
-        tablero.colocarEnPosicion(0,1,new Madera());
-        tablero.colocarEnPosicion(1,0,new Madera());
-        tablero.colocarEnPosicion(1,1,new Madera());
-        tablero.colocarEnPosicion(5,2,new Piedra());
-        tablero.colocarEnPosicion(6,2,new Piedra());
-        tablero.colocarEnPosicion(7,2,new Piedra());
-        tablero.colocarEnPosicion(1,4,new Metal());
-        tablero.colocarEnPosicion(1,5,new Metal());
-        tablero.colocarEnPosicion(9,8,new Diamante());
-        tablero.colocarEnPosicion(3,7,jugador);
+        tablero.colocarEnPosicion(0,0,0,new Madera());
+        tablero.colocarEnPosicion(0,1,0,new Madera());
+        tablero.colocarEnPosicion(1,0,0,new Madera());
+        tablero.colocarEnPosicion(1,1,0,new Madera());
+        tablero.colocarEnPosicion(5,2,0,new Piedra());
+        tablero.colocarEnPosicion(6,2,0,new Piedra());
+        tablero.colocarEnPosicion(7,2,0,new Piedra());
+        tablero.colocarEnPosicion(1,4,0,new Metal());
+        tablero.colocarEnPosicion(1,5,0,new Metal());
+        tablero.colocarEnPosicion(9,8,0,new Diamante());
+        tablero.colocarEnPosicion(3,7,0,jugador);
 
     }
 

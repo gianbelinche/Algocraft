@@ -16,7 +16,7 @@ public class Jugador implements Posicionable {
     public Jugador(){
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
-        posicion = new Posicion(5, 5);
+        posicion = new Posicion(5, 5,0);
         inventario = new Inventario();
     }
 
@@ -29,8 +29,8 @@ public class Jugador implements Posicionable {
     }
 
     @Override
-    public Posicion actualizarPosicion(int viejaX, int viejaY, int nuevaX, int nuevaY){
-        return new Posicion(viejaX,viejaY);
+    public Posicion actualizarPosicion(int viejaX, int viejaY,int viejaZ, int nuevaX, int nuevaY,int nuevaZ){
+        return new Posicion(viejaX,viejaY,viejaZ);
     }
 
     @Override
