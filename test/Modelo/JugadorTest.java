@@ -2,6 +2,7 @@ package Modelo;
 
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
+import Modelo.Escenario.TableroIterador;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Madera;
@@ -22,13 +23,29 @@ public class JugadorTest {
     private int z;
     private Direccion direccion;
 
+
+    private void resetearTablero(Tablero elTablero){
+
+        TableroIterador iterador = tablero.obtenerIterador();
+        while(!iterador.haFinalizado()){
+            iterador.borrarEnActual();
+            iterador.avanzar();
+        }
+    }
+
     @Before
     public void setUp(){
         constructor = new Constructor();
         jugador = new Jugador();
         herramienta = jugador.herramientaEquipada();
         direccion = jugador.getDireccion();
-        tablero = Tablero.obtenerTablero(10, 10,10);
+
+        int largo = 10;
+        int ancho = 10;
+        int alto  = 10;
+        tablero = Tablero.obtenerTablero(ancho, largo,alto);
+        resetearTablero(tablero);
+        
         x = 6;
         y = 6;
         z = 0;
