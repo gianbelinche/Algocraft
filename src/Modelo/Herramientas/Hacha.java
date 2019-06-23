@@ -18,5 +18,16 @@ public class Hacha extends Herramienta {
         return recogerPrincipal(material);
     }
 
+    @Override
+    public boolean equals(Object otroObjeto){
+        Hacha otraHacha;
+        if (!(otroObjeto instanceof Hacha)) return false;
+        otraHacha = (Hacha) otroObjeto;
+
+        if(otraHacha.mismoMaterial(miMaterial)) return true;
+
+        return false;
+    }
+
 
 }

@@ -31,4 +31,15 @@ public class Pico extends Herramienta {
         return miMaterial.recoger((Material) material,fuerza);
     }
 
+    @Override
+    public boolean equals(Object otroObjeto){
+        Pico otroPico;
+        if (!(otroObjeto instanceof Pico)) return false;
+        otroPico = (Pico) otroObjeto;
+
+        if(otroPico.mismoMaterial(miMaterial)) return true;
+
+        return false;
+    }
+
 }

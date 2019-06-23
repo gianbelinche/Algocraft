@@ -62,6 +62,7 @@ public abstract class Material implements Posicionable, Almacenable {
 
     @Override
     public boolean equals(Object objeto){
+        if (!(objeto instanceof Material)) return false;
         return esIgual((Material)objeto);
     }
 }
