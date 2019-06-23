@@ -189,8 +189,8 @@ public class TableroTest {
     @Test
     public void testTableroIteradorRecorreTodoElTablero(){
         int xEsperada = 0;
-        int yEsperada = 0;
-        int zEsperada = -1;
+        int yEsperada = largo;
+        int zEsperada = alto - 1;
 
         while(!iterador.haFinalizado()){
             iterador.avanzar();
@@ -278,13 +278,14 @@ public class TableroTest {
     public void testTableroIteradorRetornaObjetoActualCorrectamente(){
 
         int x = 2;
-        int y = 6;
+        int y = 0;
         int z = alto - 1;
 
         Madera objetoAcolocar = new Madera();
         tablero.colocarEnPosicion(x,y,z,objetoAcolocar);
 
-        for(int i = 0; i < (y*ancho + x);i++) iterador.avanzar();
+        iterador.avanzar();
+        iterador.avanzar();
 
         assertEquals(objetoAcolocar,iterador.verActual());
     }

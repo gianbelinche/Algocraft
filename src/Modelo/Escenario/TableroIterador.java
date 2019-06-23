@@ -16,7 +16,7 @@ public class TableroIterador {
     }
 
     public boolean haFinalizado(){
-        return (x == 0 && y == largo && z == 0);
+        return (x == 0 && y == largo && z == alto - 1);
     }
 
     public Posicionable verActual(){
