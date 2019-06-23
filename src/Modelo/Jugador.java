@@ -11,13 +11,14 @@ public class Jugador implements Posicionable {
     private Herramienta herramientaEquipada;
     private Posicion posicion;
     private Inventario inventario;
-
+    private Direccion direccion;
 
     public Jugador(){
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
         posicion = new Posicion(5, 5,0);
         inventario = new Inventario();
+        direccion = new Abajo();
     }
 
     public Herramienta herramientaEquipada() {
@@ -38,17 +39,32 @@ public class Jugador implements Posicionable {
         posicion = nuevaPosicion;
     }
 
+    public void actualizarDireccion(Direccion direccion){
+        this.direccion = direccion;
+    }
+
+    public Direccion getDireccion(){
+        return direccion;
+    }
+
     public void moverDerecha(){
         posicion.moverDerecha();
+        actualizarDireccion(new Derecha());
     }
+
     public void moverIzquierda(){
         posicion.moverIzquierda();
+        actualizarDireccion(new Izquierda());
     }
+
     public void moverArriba(){
         posicion.moverArriba();
+        actualizarDireccion(new Arriba());
     }
+
     public void moverAbajo(){
         posicion.moverAbajo();
+        actualizarDireccion(new Abajo());
     }
 
     public boolean esIgual(Posicionable otroJugador) {
