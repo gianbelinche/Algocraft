@@ -18,15 +18,13 @@ public class BotonOcultarBotonesHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
-        if ((contador%2) == 0) {
-            button.setText("Mostrar Botones");
-            caja.setVisible(false);
+        caja.setVisible(!caja.isVisible());
+        if (caja.isVisible()) {
+            button.setText("Ocultar Botones");
         }
         else {
-            button.setText("Ocultar Botones");
-            caja.setVisible(true);
+            button.setText("Mostrar Botones");
         }
-        contador += 1;
     }
 
 }
