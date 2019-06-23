@@ -2,6 +2,7 @@ package Vista.VentanaJuego.VentanaTablero;
 
 
 import Controlador.*;
+import Controlador.BotonesHandlers.BotonPicarTalarHandler;
 import Modelo.Juego;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
@@ -23,14 +24,18 @@ public class MainLayout extends Pane {
         HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo, botonMoverDerecha);
 
         BotonMoverArriba botonMoverArriba = new BotonMoverArriba(ventana,juego.obtenerJugador());
-        botonMoverArriba.setTranslateX(28); //HARDCODEO
+        botonMoverArriba.setTranslateX(28); //Lo acomodo
 
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
         botonesMovimientoCompleto.setSpacing(10);
 
+        //Creo boton para picar/talar
+        BotonPicarTalar botonPicarTalar = new BotonPicarTalar(ventana, juego.obtenerJugador());
+        VBox contenedorBotones = new VBox(botonPicarTalar);
+        contenedorBotones.setSpacing(20);
+
         //Creo boton inventario
         InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
-        VBox contenedorBotones = new VBox();
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout, contenedorBotones);
         contenedorBotones.getChildren().addAll(botonEntrarInventario);
         this.setOnKeyPressed(new SalirDeInventarioHandler(inventarioLayout));

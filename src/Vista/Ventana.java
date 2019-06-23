@@ -1,6 +1,6 @@
 package Vista;
 
-import Controlador.MoverPersonajeHandler;
+import Controlador.MainHandler;
 import Vista.VentanaJuego.VentanaTablero.MainLayout;
 import Vista.VentanaPrincipal.TitleLayout;
 import javafx.application.Application;
@@ -64,10 +64,9 @@ public class Ventana extends Application {
 
         Scene mainScene = new Scene( root, 4000, 4000);
         //No pude ponerlo en botones, habrá que ver si hay una forma mas linda de hacerlo
-        mainScene.setOnKeyPressed(new MoverPersonajeHandler(juego.obtenerJugador(),this));
+        mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this));
 
         mainStage.setScene(mainScene);
-
 
         Canvas canvas = new Canvas(5000,4000);
         gc = canvas.getGraphicsContext2D();
