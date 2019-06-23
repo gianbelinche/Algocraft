@@ -17,4 +17,6 @@ public class Hacha extends Herramienta {
     public Material recoger(Madera material){
         return recogerPrincipal(material);
     }
+
+
 }

@@ -10,13 +10,16 @@ public class BotonInventarioHandler implements EventHandler<ActionEvent> {
     Almacenable materialSeleccionado;
     int x;
     int y;
-    public BotonInventarioHandler(Almacenable material, int x_pasado, int y_pasado){
+
+    public BotonInventarioHandler(Almacenable material, int x_pasado, int y_pasado) {
         materialSeleccionado = material;
         x = x_pasado;
         y = y_pasado;
     }
+
     @Override
-    public void handle(ActionEvent event){
-        materialSeleccionado = jugador.obtenerDeInventario(x,y);
+    public void handle(ActionEvent event) {
+        //materialSeleccionado = jugador.obtenerDeInventario(x,y);
+
     }
 }

@@ -90,8 +90,10 @@ public class Jugador implements Posicionable {
         }
     }
 
-    public Almacenable obtenerDeInventario(int x, int y){
-        return inventario.obtenerDePosicion(x, y);
+    public void guardarEnInventario(Almacenable objeto){
+        inventario.almacenar(objeto);
     }
-
+    public Almacenable obtenerDeInventario(Almacenable objeto){
+        return inventario.obtener(objeto);
+    }
 }

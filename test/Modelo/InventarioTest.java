@@ -15,35 +15,30 @@ public class InventarioTest {
     private int ancho = 9;
     private int alto = 3;
 
+
     @Test
-    public void inventarioSeInicializaConPosicionesVaciasTest(){
-        inventario = new Inventario();
-        for(int x=0; x<ancho; x++){
-            for(int y=0; y<alto; y++){
-                assertNull(inventario.obtenerDePosicion(x,y));
-            }
-        }
-    }
-    @Test
-    public void guardarHerramientaEnInventarioSeGuardaEnPrimeraPosicionTest(){
+    public void guardarHerramientaEnInventarioSeGuardaCorrectamente(){
         inventario = new Inventario();
         Constructor constructor = new Constructor();
         Herramienta herramienta = constructor.crearPicoDeMetal();
         inventario.almacenar(herramienta);
-        assertEquals(inventario.obtenerDePosicion(0,0), herramienta);
+        Herramienta otraHerramienta = constructor.crearPicoDeMetal();
+        assertEquals(herramienta, inventario.obtener(otraHerramienta));
     }
 
+
     @Test
-    public void guardarMaterialEnInventarioSeGuardaEnPrimeraPosicionTest(){
+    public void guardarMaterialEnInventarioSeGuardaCorrectamente(){
         inventario = new Inventario();
         Piedra piedra = new Piedra();
+        Piedra otraPiedra = new Piedra();
         inventario.almacenar(piedra);
-        assertEquals(piedra, inventario.obtenerDePosicion(0,0));
+        assertEquals(piedra, otraPiedra);
     }
 
 
     @Test
-    public void guardarMaterialesSeAlmacenanLinealmenteEnOrden(){
+    public void guardarVariosMaterialesSeGuardanCorrectamente(){
         inventario = new Inventario();
         Piedra piedra = new Piedra();
         Madera madera = new Madera();
@@ -53,20 +48,35 @@ public class InventarioTest {
         inventario.almacenar(madera);
         inventario.almacenar(diamante);
         inventario.almacenar(metal);
-        assertEquals(piedra, inventario.obtenerDePosicion(0,0));
-        assertEquals(madera, inventario.obtenerDePosicion(1,0));
-        assertEquals(diamante, inventario.obtenerDePosicion(2,0));
-        assertEquals(metal, inventario.obtenerDePosicion(3,0));
+        Piedra  otraPiedra = new Piedra();
+        Madera otraMadera = new Madera();
+        Diamante otroDiamante = new Diamante();
+        Metal otroMetal = new Metal();
+        assertEquals(piedra, inventario.obtener(otraPiedra));
+        assertEquals(madera, inventario.obtener(otraMadera));
+        assertEquals(diamante, inventario.obtener(otroDiamante));
+        assertEquals(metal, inventario.obtener(otroMetal));
     }
 
     @Test
-    public void guardarSegundoMaterialNoPisaAlPrimeroTest(){
+    public void guardarVariasHerramientasSeGuardanCorrectamente(){
         inventario = new Inventario();
-        Piedra piedra = new Piedra();
-        Madera madera = new Madera();
-        inventario.almacenar(piedra);
-        inventario.almacenar(madera);
-        assertEquals(inventario.obtenerDePosicion(0,0), piedra);
+        Constructor constructor = new Constructor();
+        Herramienta picoMetal = constructor.crearPicoDeMetal();
+        Herramienta picoPiedra = constructor.crearPicoDePiedra();
+        Herramienta picoMadera = constructor.crearPicoDeMadera();
+
+        inventario.almacenar(picoMetal);
+        inventario.almacenar(picoPiedra);
+        inventario.almacenar(picoMadera);
+
+        Herramienta otroPicoMetal = constructor.crearPicoDeMetal();
+        Herramienta otroPicoPiedra = constructor.crearPicoDePiedra();
+        Herramienta otroPicoMadera = constructor.crearPicoDeMadera();
+
+        assertEquals(picoMetal, inventario.obtener(otroPicoMetal));
+        assertEquals(picoPiedra, inventario.obtener(otroPicoPiedra));
+        assertEquals(picoMadera, inventario.obtener(otroPicoMadera));
     }
 
 }

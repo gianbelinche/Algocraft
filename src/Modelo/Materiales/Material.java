@@ -9,14 +9,16 @@ public abstract class Material implements Posicionable, Almacenable {
     Posicion posicion;
     int durabilidad;
 
-    public int durabilidad(){
+    public int durabilidad() {
         return durabilidad;
     }
 
-    protected Material desgastar(int desgaste){
+    protected Material desgastar(int desgaste) {
         durabilidad -= desgaste;
-        if(durabilidad > 0) return null;
-        if(posicion != null) {posicion.borrar(this);}
+        if (durabilidad > 0) return null;
+        if (posicion != null) {
+            posicion.borrar(this);
+        }
         return this;
     }
 
@@ -34,18 +36,32 @@ public abstract class Material implements Posicionable, Almacenable {
 
     abstract boolean esIgual(Material material);
 
-    public Posicion actualizarPosicion(int viejaX, int viejaY,int viejaZ, int nuevaX, int nuevaY,int nuevaZ){
-        return new Posicion(viejaX,viejaY,viejaZ);
+    public Posicion actualizarPosicion(int viejaX, int viejaY, int viejaZ, int nuevaX, int nuevaY, int nuevaZ) {
+        return new Posicion(viejaX, viejaY, viejaZ);
     }
 
     @Override
-    public void establecerPosicion(Posicion nuevaPosicion){
+    public void establecerPosicion(Posicion nuevaPosicion) {
         posicion = nuevaPosicion;
     }
 
     @Override
-    public boolean almacenar(Almacenable objeto){ return false;}
+    public boolean almacenar(Almacenable objeto) {
+        return false;
+    }
 
     @Override
-    public Almacenable obtener(){return this;}
+    public Almacenable obtener() {
+        return this;
+    }
+
+    @Override
+    public int hashCode(){
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Object objeto){
+        return esIgual((Material)objeto);
+    }
 }

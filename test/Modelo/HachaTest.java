@@ -295,5 +295,11 @@ public class HachaTest {
 
     }
 
-
+    @Test
+    public void testUnHachaDeMaderaEsIgualAOtraHachaDeMadera(){
+        Constructor constructor = new Constructor();
+        Hacha hachaDeMadera = constructor.crearHachaDeMadera();
+        Hacha otraHachaDeMadera = constructor.crearHachaDeMadera();
+        assertTrue(hachaDeMadera.equals(otraHachaDeMadera));
+    }
 }

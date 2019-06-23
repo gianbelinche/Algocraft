@@ -155,8 +155,11 @@ public class JugadorTest {
         jugador.recoger();
         jugador.recoger();
         jugador.recoger();
-        maderaRecogida = jugador.obtenerDeInventario(0,0);
+        Madera otraMadera = new Madera();
+        maderaRecogida = jugador.obtenerDeInventario(otraMadera);
 
         assertEquals(madera, maderaRecogida);
     }
+
+
 }

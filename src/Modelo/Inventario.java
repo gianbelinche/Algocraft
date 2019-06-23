@@ -1,34 +1,54 @@
 package Modelo;
 
-import Modelo.Escenario.PosicionVacia;
+
+import Modelo.Construccion.Constructor;
+import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.Pico;
+import Modelo.Materiales.*;
+
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class Inventario {
+    private Map<Almacenable, LinkedList> inventario = new HashMap<>();
 
-    private Almacenable[][] inventario;
-    private int ancho = 9;
-    private int alto = 3;
 
     public Inventario(){
-        inventario = new Almacenable[alto][ancho];
-        for(int i=0; i<alto; i++){
-            for(int j=0; j<ancho; j++){
-                inventario[i][j] = new PosicionVacia();
-            }
-        }
+        Constructor constructor = new Constructor();
+        //Materiales
+        inventario.put(new Madera(), new LinkedList<Madera>());
+        inventario.put(new Piedra(), new LinkedList<Piedra>());
+        inventario.put(new Diamante(), new LinkedList<Diamante>());
+        inventario.put(new Metal(), new LinkedList<Metal>());
+        inventario.put(new PiedraRefinada(), new LinkedList<PiedraRefinada>());
+        //Hachas
+        inventario.put(constructor.crearHachaDeMadera(), new LinkedList<Hacha>());
+        inventario.put(constructor.crearHachaDeMetal(), new LinkedList<Hacha>());
+        inventario.put(constructor.crearHachaDePiedra(), new LinkedList<Hacha>());
+        //Picos
+        inventario.put(constructor.crearPicoDeMadera(), new LinkedList<Pico>());
+        inventario.put(constructor.crearPicoDePiedra(), new LinkedList<Pico>());
+        inventario.put(constructor.crearPicoDeMetal(), new LinkedList<Pico>());
+        inventario.put(constructor.crearPicoDePiedraRefinada(), new LinkedList<Pico>());
     }
 
-    public void almacenar(Almacenable objeto){
-        for(int i=0; i<alto; i++){
-            for(int j=0; j<ancho; j++){
-                if(inventario[i][j].almacenar(objeto)){
-                    inventario[i][j] = objeto;
-                    break;
-                }
-            }
-        }
+    public void almacenar(Almacenable objeto) {
+
+        LinkedList list = inventario.get(objeto);
+        list.add(objeto);
     }
 
-    public Almacenable obtenerDePosicion(int x, int y){
-        return inventario[y][x].obtener();
+    public Almacenable obtener(Almacenable objeto){
+
+        return (Almacenable) inventario.get(objeto).remove(0);
+
+    }
+
+    @Override
+    public int hashCode(){
+        return 0;
     }
 }
+
