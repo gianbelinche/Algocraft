@@ -13,20 +13,21 @@ import static org.junit.Assert.assertTrue;
 
 public class JugadorTest {
 
-    Constructor constructor;
-    Jugador jugador;
-    Herramienta herramienta;
-    Tablero tablero;
-    int x;
-    int y;
-    int z;
+    private Constructor constructor;
+    private Jugador jugador;
+    private Herramienta herramienta;
+    private Tablero tablero;
+    private int x;
+    private int y;
+    private int z;
+    private Direccion direccion;
 
     @Before
     public void setUp(){
         constructor = new Constructor();
         jugador = new Jugador();
         herramienta = jugador.herramientaEquipada();
-
+        direccion = jugador.getDireccion();
         tablero = Tablero.obtenerTablero(10, 10,10);
         x = 5;
         y = 5;
@@ -60,7 +61,6 @@ public class JugadorTest {
         assertEquals(durabilidadInicial-desgasteFinal, herramienta.durabilidad());
     }
 
-
     @Test
     public void testCrearJugadorPoseeHachaConFuerzaCorrecta(){
         int fuerzaDeseada = 2;
@@ -69,9 +69,39 @@ public class JugadorTest {
         assertEquals(fuerzaDeseada, fuerzaHerramienta);
     }
 
+
+    @Test
+    public void testJugadorSeCreaConDireccionAbajo(){
+        assertTrue(direccion instanceof Abajo);
+    }
+
+    @Test
+    public void testJugadorSeMueveHaciaAbajoYNoCambiaSuDireccion(){
+        jugador.moverAbajo();
+        assertTrue(jugador.getDireccion() instanceof Abajo);
+    }
+
+
+    @Test
+    public void testJugadorSeMueveHaciaLaDerechaYCambiaSuDireccion(){
+        jugador.moverDerecha();
+        assertTrue(jugador.getDireccion() instanceof Derecha);
+    }
+
+    @Test
+    public void testJugadorSeMueveHaciaLaIzquierdaYCambiaSuDireccion(){
+        jugador.moverIzquierda();
+        assertTrue(jugador.getDireccion() instanceof Izquierda);
+    }
+
+    @Test
+    public void testJugadorSeMueveHaciaArribaYCambiaSuDireccion(){
+        jugador.moverArriba();
+        assertTrue(jugador.getDireccion() instanceof Arriba);
+    }
+
     @Test
     public void testJugadorSeMueveHaciaLaDerechaYAumentaSuX(){
-
         jugador.moverDerecha();
         assertEquals(jugador, tablero.obtenerDePosicion(x + 1,y,z));
     }
@@ -91,23 +121,38 @@ public class JugadorTest {
     }
 
     @Test
-    public void testJugadorSeMueveHaciaArribaYAumentaSuY(){
+    public void testJugadorSeMueveHaciAbajoYAumentaSuY(){
 
         jugador.moverAbajo();
         assertEquals(jugador, tablero.obtenerDePosicion(x,y + 1,z));
     }
 
     @Test
+    public void testJugadorMoverCambiaDireccionPeroNoPosicionAlChocarConPosicionable(){
+        int xMaterial = x;
+        int yMaterial = y-1;
+        int zMaterial = z;
+        tablero.colocarEnPosicion(xMaterial,yMaterial,zMaterial,new Madera());
+        jugador.moverArriba();
+        assertEquals(jugador, tablero.obtenerDePosicion(x,y,z));
+        assertTrue(jugador.getDireccion() instanceof Arriba);
+    }
+
+    @Test
     public void testJugadorRecogeMaderaConHachaYSeGuardaEnInventario(){
         Constructor constructor = new Constructor();
-        jugador.equipar(constructor.crearHachaDeMadera());
+        jugador.equipar(constructor.crearHachaDeMadera()); //ES NECESARIO??
         Madera madera = new Madera();
+        int xMaterial = x;
+        int yMaterial = y+1; //Direccion de jugador: Abajo
+        int zMaterial = z;
+        tablero.colocarEnPosicion(xMaterial,yMaterial,zMaterial,madera);
         Almacenable maderaRecogida;
-        jugador.recoger(madera);
-        jugador.recoger(madera);
-        jugador.recoger(madera);
-        jugador.recoger(madera);
-        jugador.recoger(madera);
+        jugador.recoger();
+        jugador.recoger();
+        jugador.recoger();
+        jugador.recoger();
+        jugador.recoger();
         maderaRecogida = jugador.obtenerDeInventario(0,0);
 
         assertEquals(madera, maderaRecogida);

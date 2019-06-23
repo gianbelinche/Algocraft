@@ -3,6 +3,7 @@ package Modelo;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.Posicionable;
+import Modelo.Escenario.Tablero;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Material;
 
@@ -12,6 +13,7 @@ public class Jugador implements Posicionable {
     private Posicion posicion;
     private Inventario inventario;
     private Direccion direccion;
+    private Tablero tablero;
 
     public Jugador(){
         Constructor constructor = new Constructor();
@@ -19,6 +21,7 @@ public class Jugador implements Posicionable {
         posicion = new Posicion(5, 5,0);
         inventario = new Inventario();
         direccion = new Abajo();
+        tablero = Tablero.obtenerTablero();
     }
 
     public Herramienta herramientaEquipada() {
@@ -39,7 +42,7 @@ public class Jugador implements Posicionable {
         posicion = nuevaPosicion;
     }
 
-    public void actualizarDireccion(Direccion direccion){
+    private void actualizarDireccion(Direccion direccion){
         this.direccion = direccion;
     }
 
@@ -71,7 +74,11 @@ public class Jugador implements Posicionable {
         return otroJugador instanceof Jugador;
     }
 
-    public void recoger(Material unMaterial){
+    public void recoger(){
+        int xMaterial = posicion.getX() + direccion.getIncrementoX();
+        int yMaterial = posicion.getY() + direccion.getIncrementoY();
+        int zMaterial = posicion.getZ();
+        Posicionable unMaterial = tablero.obtenerDePosicion(xMaterial, yMaterial, zMaterial);
         Almacenable materialRecogido = null;
 
         try {

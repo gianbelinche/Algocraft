@@ -33,9 +33,7 @@ public class Posicion {
         mover(-1,0);
     }
 
-    public void moverArriba(){
-        mover(0,-1);
-    }
+    public void moverArriba(){ mover(0,-1); }
 
     public void moverAbajo(){
         mover(0,1);

@@ -9,7 +9,7 @@ public class Abajo implements Direccion {
 
     @Override
     public int getIncrementoY() {
-        return -1;
+        return 1;
     }
 
 }
