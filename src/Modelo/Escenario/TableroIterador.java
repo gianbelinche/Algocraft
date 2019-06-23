@@ -16,7 +16,7 @@ public class TableroIterador {
     }
 
     public boolean haFinalizado(){
-        return (x == 0 && y == 0 && z == -1);
+        return (x == 0 && y == largo && z == 0);
     }
 
     public Posicionable verActual(){
@@ -34,10 +34,10 @@ public class TableroIterador {
     public void avanzar(){
         x++;
         if(x == ancho){
-            x = 0;y++;
+            x = 0;z--;
         }
-        if(y == largo){
-           x = 0;y = 0;z--;
+        if(z < 0){
+           x = 0;y++;z = alto - 1;
         }
     }
 
