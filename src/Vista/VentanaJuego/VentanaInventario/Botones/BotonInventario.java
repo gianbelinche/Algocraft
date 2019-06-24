@@ -1,11 +1,18 @@
 package Vista.VentanaJuego.VentanaInventario.Botones;
 
-import Modelo.Almacenable;
+import Controlador.BotonesHandlers.BotonInventarioHandler;
+import Modelo.Materiales.Material;
+import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.scene.control.Button;
 
 public class BotonInventario extends Button {
-    public BotonInventario(Almacenable materialSeleccionado, int x, int y){
-        /*BotonInventarioHandler botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado, x, y);
-        this.setOnAction(botonInventarioHandler);*/
+    BotonInventarioHandler botonInventarioHandler;
+
+    public BotonInventario(MaterialSeleccionado materialSeleccionado){
+        botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado);
+        this.setOnAction(botonInventarioHandler);
+    }
+    public void setMaterial(Material miMaterial){
+        botonInventarioHandler.setMaterial(miMaterial);
     }
 }

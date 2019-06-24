@@ -1,25 +1,24 @@
 package Controlador.BotonesHandlers;
 
-import Modelo.Jugador;
-import Modelo.Almacenable;
+
+import Modelo.Materiales.Material;
+import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class BotonInventarioHandler implements EventHandler<ActionEvent> {
-    Jugador jugador;
-    Almacenable materialSeleccionado;
-    int x;
-    int y;
+    MaterialSeleccionado materialSeleccionado;
+    Material miMaterial;
 
-    public BotonInventarioHandler(Almacenable material, int x_pasado, int y_pasado) {
-        materialSeleccionado = material;
-        x = x_pasado;
-        y = y_pasado;
+    public BotonInventarioHandler(MaterialSeleccionado materialSelec) {
+        materialSeleccionado = materialSelec;
     }
 
+    public void setMaterial(Material material){
+        miMaterial = material;
+    }
     @Override
     public void handle(ActionEvent event) {
-        //materialSeleccionado = jugador.obtenerDeInventario(x,y);
-
+        materialSeleccionado.seleccionarMaterial(miMaterial);
     }
 }

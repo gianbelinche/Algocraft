@@ -1,9 +1,11 @@
 package Vista.VentanaJuego.VentanaInventario;
 
 import Controlador.EntrarSalirDeInventarioHandler;
-import Modelo.Almacenable;
 import Modelo.Construccion.Receta;
 import Modelo.Juego;
+import Modelo.Jugador;
+import Modelo.Materiales.Madera;
+import Modelo.Materiales.Metal;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonCraftear;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
@@ -31,6 +33,9 @@ public class InventarioLayout extends Pane {
         this.setTranslateY(Yposition);
 
 
+        //Cargo jugador
+        Jugador jugador = juego.obtenerJugador();
+
 
         //Cargo la imagen
         Image imagen = new Image("file:src/Vista/Imagenes/Inventario_crafteador.png");
@@ -53,12 +58,12 @@ public class InventarioLayout extends Pane {
         mesaCrafteo.setHgap(5);
         mesaCrafteo.setVgap(4);
 
-        MaterialSeleccionado materialSeleccionad = new MaterialSeleccionado();
+        MaterialSeleccionado materialSeleccionado = new MaterialSeleccionado();
 
         Receta receta = new Receta();
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botonesMesa[i][j] = new BotonMesaCrafteo(receta,materialSeleccionad, j, i);
+                botonesMesa[i][j] = new BotonMesaCrafteo(jugador, receta, materialSeleccionado, j, i);
                 //botones[i][j].setText(i + "," + j);
                 mesaCrafteo.add(botonesMesa[i][j], j, i, 1, 1);
                 botonesMesa[i][j].prefWidthProperty().bind(mesaCrafteo.widthProperty());
@@ -66,7 +71,7 @@ public class InventarioLayout extends Pane {
             }
         }
 
-        BotonCraftear botonCraftear = new BotonCraftear(receta,juego.obtenerJugador());
+        BotonCraftear botonCraftear = new BotonCraftear(receta,jugador);
         botonCraftear.setTranslateX(395);
         botonCraftear.setTranslateY(80);
         botonCraftear.setPrefSize(80,80);
@@ -83,11 +88,9 @@ public class InventarioLayout extends Pane {
         inventario.setHgap(2);
         inventario.setVgap(3);
 
-        Almacenable materialSeleccionado = null;
-
         for(int i=0; i < 3; i++){
             for(int j=0; j<9; j++){
-                botonesInventario[i][j] = new BotonInventario(materialSeleccionado, j, i);
+                botonesInventario[i][j] = new BotonInventario(materialSeleccionado);
                 //botones[i][j].setText(i + "," + j);
                 inventario.add(botonesInventario[i][j], j, i, 1, 1);
                 botonesInventario[i][j].prefWidthProperty().bind(inventario.widthProperty());
@@ -95,7 +98,11 @@ public class InventarioLayout extends Pane {
             }
         }
 
-        this.getChildren().addAll(mesaCrafteo, inventario,botonCraftear);
+        //Seteo los botones con sus materiales
+        botonesInventario[0][0].setMaterial(new Madera());
+        botonesInventario[0][1].setMaterial(new Metal());
+
+        this.getChildren().addAll(mesaCrafteo, inventario, botonCraftear);
     }
 
     public void cambiarVisibilidad() {
