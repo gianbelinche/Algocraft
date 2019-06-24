@@ -21,6 +21,9 @@ public class Ventana extends Application {
 
     private Juego juego;
     private Dibujante dibujante;
+    private double anchoPantalla;
+    private double altoPantalla;
+
 
     public static void main(String[] args) {
         launch(args);
@@ -48,7 +51,6 @@ public class Ventana extends Application {
         primaryStage.setY(primaryScreenBounds.getMinY());
         primaryStage.setWidth(primaryScreenBounds.getWidth());
         primaryStage.setHeight(primaryScreenBounds.getHeight());
-
         primaryStage.setResizable(false);
 
         primaryStage.show();
@@ -60,15 +62,19 @@ public class Ventana extends Application {
 
         mainStage.setTitle("Main");
         Group root = new Group();
-        Scene mainScene = new Scene( root, 4000, 4000);
+
+        Rectangle2D bordesPantalla = Screen.getPrimary().getVisualBounds();
+        anchoPantalla = bordesPantalla.getWidth();
+        altoPantalla = bordesPantalla.getHeight();
+        Scene mainScene = new Scene( root, anchoPantalla, altoPantalla);
 
         //No pude ponerlo en botones, habrá que ver si hay una forma mas linda de hacerlo
         mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this));
         mainStage.setScene(mainScene);
 
 
-        Canvas canvas = new Canvas(5000,4000);
-        dibujante = new Dibujante(canvas.getGraphicsContext2D());
+        Canvas canvas = new Canvas(anchoPantalla,altoPantalla);
+        dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla/2,altoPantalla/8);
         root.getChildren().add(canvas);
 
         MainLayout mainLayout = new MainLayout(mainStage,juego,this);
@@ -81,4 +87,5 @@ public class Ventana extends Application {
     public void actualizarImagen(){
         dibujante.dibujar();
     }
+
 }

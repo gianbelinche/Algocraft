@@ -12,8 +12,8 @@ public class Dibujante {
     private VistaPosicionable vistaPosicionable;
     private Tablero tablero;
 
-    public Dibujante(GraphicsContext nuevoAtril){
-        vistaPosicionable = new VistaPosicionable();
+    public Dibujante(GraphicsContext nuevoAtril, double corrimientoX,double corrimientoY){
+        vistaPosicionable = new VistaPosicionable(corrimientoX,corrimientoY);
         tablero = Tablero.obtenerTablero();
         atril = nuevoAtril;
     }

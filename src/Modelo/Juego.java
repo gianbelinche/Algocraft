@@ -14,7 +14,7 @@ public class Juego {
         int alto  = 5;
         tablero = Tablero.crearTablero(ancho,largo,alto);
         jugador = new Jugador();
-        this.inicializarTablero();
+        inicializarTablero();
     }
 
 

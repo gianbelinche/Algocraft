@@ -13,10 +13,15 @@ import static java.lang.Math.sqrt;
 public class VistaPosicionable {
 
     private Map<Class, Image> imagenes;
+    private double ladoCelda = 64;
+    private double corrimientoX;
+    private double corrimientoY;
 
-    public VistaPosicionable(){
+    public VistaPosicionable(double nuevoCorrimientoX, double nuevoCorrimientoY){
         imagenes = new HashMap<>();
         inicializarImagenes();
+        corrimientoY = nuevoCorrimientoY;
+        corrimientoX = nuevoCorrimientoX;
     }
 
     private void inicializarImagenes(){
@@ -34,10 +39,9 @@ public class VistaPosicionable {
     public void dibujar(Class clase, int x, int y,int z, GraphicsContext gc){
 
         Image imagen = imagenes.get(clase);
-        double l = 64;
-        x *= l/2;y *= l/2;z = (int)(z*l/2 - imagen.getHeight());
+        x *= ladoCelda/2;y *= ladoCelda/2;z = (int)(z*ladoCelda/2 - imagen.getHeight());
         double XIso = (x - y)/sqrt(2);
         double YIso = (x + 2*z + y)/sqrt(6);
-        gc.drawImage(imagen,XIso + 500,YIso + 100);
+        gc.drawImage(imagen,XIso + corrimientoX,YIso + corrimientoY);
     }
 }
