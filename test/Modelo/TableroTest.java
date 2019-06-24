@@ -31,7 +31,7 @@ public class TableroTest {
         largo = 10;
         ancho = 10;
         alto  = 10;
-        tablero = Tablero.obtenerTablero(ancho, largo,alto);
+        tablero = Tablero.crearTablero(ancho, largo,alto);
         resetearTablero(tablero);
         iterador = tablero.obtenerIterador();
     }

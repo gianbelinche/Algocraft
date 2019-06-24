@@ -14,8 +14,8 @@ public class Tablero {
 
     private PosicionVacia posicionVacia;
 
-    public static Tablero obtenerTablero(int anchoPasado, int largoPasado,int altoPasado){
-        if(elTablero == null) elTablero = new Tablero(anchoPasado,largoPasado,altoPasado);
+    public static Tablero crearTablero(int anchoPasado, int largoPasado,int altoPasado){
+        elTablero = new Tablero(anchoPasado,largoPasado,altoPasado);
         return elTablero;
     }
 

@@ -12,7 +12,7 @@ public class Juego {
         int ancho = 18;
         int largo = 20;
         int alto  = 5;
-        tablero = Tablero.obtenerTablero(ancho,largo,alto);
+        tablero = Tablero.crearTablero(ancho,largo,alto);
         jugador = new Jugador();
         this.inicializarTablero();
     }

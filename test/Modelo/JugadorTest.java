@@ -39,13 +39,8 @@ public class JugadorTest {
         jugador = new Jugador();
         herramienta = jugador.herramientaEquipada();
         direccion = jugador.getDireccion();
-
-        int largo = 10;
-        int ancho = 10;
-        int alto  = 10;
-        tablero = Tablero.obtenerTablero(ancho, largo,alto);
+        tablero = Tablero.obtenerTablero();
         resetearTablero(tablero);
-        
         x = 6;
         y = 6;
         z = 0;
