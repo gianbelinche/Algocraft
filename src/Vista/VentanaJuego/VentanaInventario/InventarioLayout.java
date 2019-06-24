@@ -3,6 +3,8 @@ package Vista.VentanaJuego.VentanaInventario;
 import Controlador.EntrarSalirDeInventarioHandler;
 import Modelo.Almacenable;
 import Modelo.Construccion.Receta;
+import Modelo.Juego;
+import Vista.VentanaJuego.VentanaInventario.Botones.BotonCraftear;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Insets;
@@ -13,7 +15,7 @@ import javafx.stage.Stage;
 public class InventarioLayout extends Pane {
     Stage stage;
 
-    public InventarioLayout(Stage stage){
+    public InventarioLayout(Stage stage, Juego juego){
 
         super();
         this.setVisible(false);
@@ -23,12 +25,12 @@ public class InventarioLayout extends Pane {
 
         //Alguna forma para no hardcodear??
 
-        double Xposition = stage.getWidth()/2 - 200;;
+        double Xposition = stage.getWidth()/2 - 200;
         double Yposition = stage.getHeight()/2 - 210;
         this.setTranslateX(Xposition);
         this.setTranslateY(Yposition);
 
-        Almacenable materialSeleccionado = null;
+
 
         //Cargo la imagen
         Image imagen = new Image("file:src/Vista/Imagenes/Inventario_crafteador.png");
@@ -51,10 +53,12 @@ public class InventarioLayout extends Pane {
         mesaCrafteo.setHgap(5);
         mesaCrafteo.setVgap(4);
 
+        MaterialSeleccionado materialSeleccionad = new MaterialSeleccionado();
+
         Receta receta = new Receta();
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botonesMesa[i][j] = new BotonMesaCrafteo(receta,materialSeleccionado, j, i);
+                botonesMesa[i][j] = new BotonMesaCrafteo(receta,materialSeleccionad, j, i);
                 //botones[i][j].setText(i + "," + j);
                 mesaCrafteo.add(botonesMesa[i][j], j, i, 1, 1);
                 botonesMesa[i][j].prefWidthProperty().bind(mesaCrafteo.widthProperty());
@@ -62,6 +66,10 @@ public class InventarioLayout extends Pane {
             }
         }
 
+        BotonCraftear botonCraftear = new BotonCraftear(receta,juego.obtenerJugador());
+        botonCraftear.setTranslateX(395);
+        botonCraftear.setTranslateY(80);
+        botonCraftear.setPrefSize(80,80);
 
 
         //Armo el inventario con un GridPane
@@ -75,6 +83,8 @@ public class InventarioLayout extends Pane {
         inventario.setHgap(2);
         inventario.setVgap(3);
 
+        Almacenable materialSeleccionado = null;
+
         for(int i=0; i < 3; i++){
             for(int j=0; j<9; j++){
                 botonesInventario[i][j] = new BotonInventario(materialSeleccionado, j, i);
@@ -85,7 +95,7 @@ public class InventarioLayout extends Pane {
             }
         }
 
-        this.getChildren().addAll(mesaCrafteo, inventario);
+        this.getChildren().addAll(mesaCrafteo, inventario,botonCraftear);
     }
 
     public void cambiarVisibilidad() {

@@ -34,7 +34,7 @@ public class MainLayout extends Pane {
         contenedorBotones.setSpacing(20);
 
         //Creo boton inventario
-        InventarioLayout inventarioLayout = new InventarioLayout((mainStage));
+        InventarioLayout inventarioLayout = new InventarioLayout(mainStage,juego);
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout);
         contenedorBotones.getChildren().addAll(botonEntrarInventario);
         this.setOnKeyPressed(new EntrarSalirDeInventarioHandler(inventarioLayout));

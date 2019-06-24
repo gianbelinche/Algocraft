@@ -3,15 +3,16 @@ package Controlador.BotonesHandlers;
 import Modelo.Construccion.Receta;
 import Modelo.Almacenable;
 import Modelo.Materiales.Material;
+import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     Receta receta;
-    Almacenable materialSeleccionado;
+    MaterialSeleccionado materialSeleccionado;
     int x;
     int y;
-    public BotonMesaCrafteoHandler(Receta receta,Almacenable material, int x_pasado, int y_pasado){
+    public BotonMesaCrafteoHandler(Receta receta, MaterialSeleccionado material, int x_pasado, int y_pasado){
         //Esto no anda, ¿crear clase MaterialSeleccionado?
         this.receta = receta;
         materialSeleccionado = material;
@@ -20,7 +21,7 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent event){
-        this.receta.posicionar(x,y, (Material) materialSeleccionado);
+        this.receta.posicionar(x,y, materialSeleccionado.obtenerSeleccionado());
         //Probar cambiar el tercer parametro de receta de "Material" a "Almacenable" o simplemente cambiar de Almacenable a Material en estos botones.
         //receta.posicionar(x,y, materialSeleccionado);
     }

@@ -3,14 +3,15 @@ package Vista.VentanaJuego.VentanaInventario.Botones;
 import Controlador.BotonesHandlers.BotonMesaCrafteoHandler;
 import Modelo.Almacenable;
 import Modelo.Construccion.Receta;
+import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.scene.control.Button;
 
 public class BotonMesaCrafteo extends Button {
     Receta receta;
-    Almacenable material;
+    MaterialSeleccionado material;
     int x;
     int y;
-    public BotonMesaCrafteo(Receta receta, Almacenable materialSeleccionado, int x, int y){
+    public BotonMesaCrafteo(Receta receta, MaterialSeleccionado materialSeleccionado, int x, int y){
         this.receta = receta;
         this.material = materialSeleccionado;
         this.x = x;
