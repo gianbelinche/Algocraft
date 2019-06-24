@@ -1,7 +1,5 @@
 package Vista.VentanaJuego.VentanaInventario.Botones;
 
-import Controlador.BotonesHandlers.BotonEntrarInventarioHandler;
-import Controlador.BotonesHandlers.BotonInventarioHandler;
 import Modelo.Almacenable;
 import javafx.scene.control.Button;
 

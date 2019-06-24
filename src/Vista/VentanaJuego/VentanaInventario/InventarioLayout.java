@@ -1,6 +1,6 @@
 package Vista.VentanaJuego.VentanaInventario;
 
-import Controlador.SalirDeInventarioHandler;
+import Controlador.EntrarSalirDeInventarioHandler;
 import Modelo.Almacenable;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
@@ -37,7 +37,7 @@ public class InventarioLayout extends Pane {
         this.setBackground(new Background(imagenDeInventario));
 
         //Creo botones
-        this.setOnKeyPressed(new SalirDeInventarioHandler(this));
+        this.setOnKeyPressed(new EntrarSalirDeInventarioHandler(this));
 
 
         //Creo botones de mesa de crafteo y los guardo en el GridPane
@@ -82,9 +82,10 @@ public class InventarioLayout extends Pane {
             }
         }
 
-
-
         this.getChildren().addAll(mesaCrafteo, inventario);
     }
 
+    public void cambiarVisibilidad() {
+        setVisible(!isVisible());
+    }
 }
