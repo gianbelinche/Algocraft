@@ -17,11 +17,11 @@ public class VistaPosicionable {
     private double corrimientoX;
     private double corrimientoY;
 
-    public VistaPosicionable(double nuevoCorrimientoX, double nuevoCorrimientoY){
+    public VistaPosicionable(double anchoPantalla, double altoPantalla){
         imagenes = new HashMap<>();
         inicializarImagenes();
-        corrimientoY = nuevoCorrimientoY;
-        corrimientoX = nuevoCorrimientoX;
+        corrimientoX = anchoPantalla/2;
+        corrimientoY = altoPantalla/8;
     }
 
     private void inicializarImagenes(){

@@ -75,7 +75,7 @@ public class Ventana extends Application {
 
         //Creo tablero de juego
         Canvas canvas = new Canvas(anchoPantalla,altoPantalla);
-        dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla/2,altoPantalla/8);
+        dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla,altoPantalla);
 
         //Creo fondo principal
         MainLayout mainLayout = new MainLayout(mainStage,juego,this, inventarioLayout);
