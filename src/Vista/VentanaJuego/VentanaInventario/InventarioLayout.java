@@ -2,6 +2,7 @@ package Vista.VentanaJuego.VentanaInventario;
 
 import Controlador.EntrarSalirDeInventarioHandler;
 import Modelo.Almacenable;
+import Modelo.Construccion.Receta;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Insets;
@@ -50,16 +51,18 @@ public class InventarioLayout extends Pane {
         mesaCrafteo.setHgap(5);
         mesaCrafteo.setVgap(4);
 
-
+        Receta receta = new Receta();
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botonesMesa[i][j] = new BotonMesaCrafteo(materialSeleccionado, j, i);
+                botonesMesa[i][j] = new BotonMesaCrafteo(receta,materialSeleccionado, j, i);
                 //botones[i][j].setText(i + "," + j);
                 mesaCrafteo.add(botonesMesa[i][j], j, i, 1, 1);
                 botonesMesa[i][j].prefWidthProperty().bind(mesaCrafteo.widthProperty());
                 botonesMesa[i][j].prefHeightProperty().bind(mesaCrafteo.heightProperty());
             }
         }
+
+
 
         //Armo el inventario con un GridPane
         GridPane inventario = new GridPane();
