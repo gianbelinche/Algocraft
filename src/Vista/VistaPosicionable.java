@@ -3,10 +3,8 @@ package Vista;
 import Modelo.Escenario.*;
 import Modelo.Jugador;
 import Modelo.Materiales.*;
-import Modelo.Escenario.Posicionable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import java.util.HashMap;
 import java.util.Map;
 

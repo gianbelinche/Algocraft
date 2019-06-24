@@ -20,7 +20,7 @@ import Modelo.Juego;
 public class Ventana extends Application {
 
     private Juego juego;
-    private GraphicsContext gc;
+    private Dibujante dibujante;
 
     public static void main(String[] args) {
         launch(args);
@@ -59,17 +59,16 @@ public class Ventana extends Application {
         juego = new Juego();
 
         mainStage.setTitle("Main");
-
         Group root = new Group();
-
         Scene mainScene = new Scene( root, 4000, 4000);
+
         //No pude ponerlo en botones, habrá que ver si hay una forma mas linda de hacerlo
         mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this));
-
         mainStage.setScene(mainScene);
 
+
         Canvas canvas = new Canvas(5000,4000);
-        gc = canvas.getGraphicsContext2D();
+        dibujante = new Dibujante(canvas.getGraphicsContext2D());
         root.getChildren().add(canvas);
 
         MainLayout mainLayout = new MainLayout(mainStage,juego,this);
@@ -80,12 +79,6 @@ public class Ventana extends Application {
     }
 
     public void actualizarImagen(){
-
-        gc.setFill(Color.LIGHTCYAN);
-        gc.fillRect(0,0,3000,3000);
-        (new Dibujante()).dibujar(gc);
-
-
-
+        dibujante.dibujar();
     }
 }

@@ -4,18 +4,28 @@ import Modelo.Escenario.Posicionable;
 import Modelo.Escenario.Tablero;
 import Modelo.Escenario.TableroIterador;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 public class Dibujante {
 
+    private GraphicsContext atril;
     private VistaPosicionable vistaPosicionable;
     private Tablero tablero;
 
-    public Dibujante(){
+    public Dibujante(GraphicsContext nuevoAtril){
         vistaPosicionable = new VistaPosicionable();
         tablero = Tablero.obtenerTablero();
+        atril = nuevoAtril;
     }
 
-    public void dibujar(GraphicsContext gc){
+    private void limpiarAtril(){
+        atril.setFill(Color.LIGHTCYAN);
+        atril.fillRect(0,0,3000,3000);
+    }
+
+    public void dibujar(){
+        limpiarAtril();
+
         Posicionable posicionable;
         TableroIterador tableroIterador = tablero.obtenerIterador();
 
@@ -24,7 +34,7 @@ public class Dibujante {
             int x = tableroIterador.getX();
             int y = tableroIterador.getY();
             int z = tableroIterador.getZ();
-            vistaPosicionable.dibujar(posicionable.getClass(),x,y,z,gc);
+            vistaPosicionable.dibujar(posicionable.getClass(),x,y,z,atril);
             tableroIterador.avanzar();
         }
     }
