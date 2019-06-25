@@ -1,6 +1,8 @@
 package Vista;
 
 import Modelo.Escenario.*;
+import Modelo.Escenario.Tierra;
+import Modelo.Jugador;
 import Modelo.Materiales.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -33,7 +35,7 @@ public class Main extends Application {
     public void start(Stage nuevoEscenario) throws Exception{
         z = 0;
         materiali = 0;
-        materialTope = 5;
+        materialTope = 9;
         Class[] materialesGrupo = new Class[materialTope];
 
         materialesGrupo[0] = Tierra.class;
@@ -41,6 +43,10 @@ public class Main extends Application {
         materialesGrupo[2] = Piedra.class;
         materialesGrupo[3] = Metal.class;
         materialesGrupo[4] = Diamante.class;
+        materialesGrupo[5] = PosicionOcupada.class;
+        materialesGrupo[6] = Agua.class;
+        materialesGrupo[7] = Bote.class;
+        materialesGrupo[8] = Jugador.class;
 
         escenario = nuevoEscenario;
         Group root = new Group();
