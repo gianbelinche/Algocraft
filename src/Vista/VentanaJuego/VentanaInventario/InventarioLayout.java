@@ -2,7 +2,6 @@ package Vista.VentanaJuego.VentanaInventario;
 
 import Modelo.Construccion.Constructor;
 import Modelo.Construccion.Receta;
-import Modelo.Construccion.Recetario;
 import Modelo.Juego;
 import Modelo.Jugador;
 import javafx.geometry.Pos;

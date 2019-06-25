@@ -11,7 +11,7 @@ import javafx.scene.layout.*;
 public class BotonInventarioMaterial extends Button {
 
     private int cantidad;
-    BotonInventarioHandler botonInventarioHandler;
+    private BotonInventarioHandler botonInventarioHandler;
 
     public BotonInventarioMaterial(MaterialSeleccionado materialSeleccionado, Image imagen){
 
@@ -23,17 +23,22 @@ public class BotonInventarioMaterial extends Button {
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
         this.setBackground(new Background(backgroundImage));
 
-        botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado);
+        this.botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado);
         this.setPrefSize(56,56);
         this.setOnAction(botonInventarioHandler);
+    }
 
-        cantidad = 0;
+    public void setCantidadyMaterial(int unaCantidad, Material miMaterial){
+        this.cantidad = unaCantidad;
         this.setText(Integer.toString(cantidad));
         this.setStyle("-fx-text-fill: rgb(252,246,255)");
         this.setAlignment(Pos.BOTTOM_RIGHT);
+
+        botonInventarioHandler.setMaterial(miMaterial);
     }
 
-    public void setMaterial(Material miMaterial){
-        botonInventarioHandler.setMaterial(miMaterial);
+    public void actualizarCantidad(int unaCantidad){
+        this.cantidad = unaCantidad;
+        this.setText(Integer.toString(cantidad));
     }
 }
