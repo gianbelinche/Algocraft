@@ -15,11 +15,11 @@ public class Jugador implements Posicionable {
     private Direccion direccion;
     private Tablero tablero;
 
-    public Jugador(){
+    public Jugador(Inventario unInventario){
         Constructor constructor = new Constructor();
         herramientaEquipada = constructor.crearHachaDeMadera();
         posicion = new Posicion(5, 5,0);
-        inventario = new Inventario();
+        inventario = unInventario;
         direccion = new Abajo();
         tablero = Tablero.obtenerTablero();
     }

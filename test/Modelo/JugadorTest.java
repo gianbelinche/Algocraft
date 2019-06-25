@@ -35,8 +35,9 @@ public class JugadorTest {
 
     @Before
     public void setUp(){
+        Inventario inventario = new Inventario();
         constructor = new Constructor();
-        jugador = new Jugador();
+        jugador = new Jugador(inventario);
         herramienta = jugador.herramientaEquipada();
         direccion = jugador.getDireccion();
         tablero = Tablero.obtenerTablero();

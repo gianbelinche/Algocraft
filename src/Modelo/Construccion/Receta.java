@@ -1,17 +1,30 @@
 package Modelo.Construccion;
 
+import Modelo.Inventario;
 import Modelo.Materiales.Material;
 
 public class Receta {
 
     private Material[][]  semilla = new Material[3][3];
 
+    private Inventario inventario;
+
+    public Receta(Inventario inventario){
+        this.inventario = inventario;
+    }
+
+
     public Material [][] obtenerSemilla(){
         return semilla;
     }
 
     public void posicionar(int indice1, int indice2, Material material){
-        semilla[indice1][indice2] = material;
+        Material materialPrevio = semilla[indice1][indice2];
+        if(materialPrevio != null){
+            inventario.almacenar(materialPrevio);
+        }
+
+        semilla[indice1][indice2] = (Material)inventario.obtener(material);
     }
 
     public Material enPosicion(int index1, int index2){
@@ -44,11 +57,22 @@ public class Receta {
         return 0;
     }
 
+    public void devolverAlInventario(){
+        for(int i =0;i<3;i++){
+            for(int j=0;j<3;j++){
+                Material materialPrevio = semilla[i][j];
+                if(materialPrevio != null){
+                    inventario.almacenar(materialPrevio);
+                }
+                semilla[i][j] = null;
+            }
+        }
+    }
 
     public void vaciar() {
         for(int i =0;i<3;i++){
             for(int j=0;j<3;j++){
-                this.posicionar(i,j,null);
+                semilla[i][j] = null;
             }
         }
     }
