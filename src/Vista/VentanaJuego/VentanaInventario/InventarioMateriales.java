@@ -1,28 +1,31 @@
 package Vista.VentanaJuego.VentanaInventario;
 
+import Modelo.Jugador;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioMaterial;
+import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
 public class InventarioMateriales extends GridPane {
 
-    public InventarioMateriales(MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout) {
-        BotonInventarioMaterial botonInventarioMaterial;
+    public InventarioMateriales(MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout, Jugador jugador) {
 
         this.setPrefSize(inventarioLayout.getPrefWidth()*0.5, inventarioLayout.getPrefHeight()*0.5);
         this.setAlignment(Pos.BOTTOM_CENTER);
 
+        BotonVacio botonVacio;
         for(int i=0; i < 3; i++){
             for(int j=0; j<9; j++){
-                botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
-                this.add(botonInventarioMaterial, j, i, 1, 1);
+                botonVacio = new BotonVacio(new Image("file:src/Vista/Imagenes/BotonVacio.png"));
+                this.add(botonVacio, j, i, 1, 1);
             }
         }
+        BotonInventarioMaterial botonInventarioMaterial;
         botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMadera.png"));
         botonInventarioMaterial.setCantidadyMaterial(0, new Madera());
         this.add(botonInventarioMaterial, 0, 0, 1, 1);

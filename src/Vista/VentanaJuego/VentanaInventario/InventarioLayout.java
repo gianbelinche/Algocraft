@@ -35,10 +35,10 @@ public class InventarioLayout extends GridPane {
         MesaCrafteo mesaCrafteo = new MesaCrafteo(stage, jugador, receta, materialSeleccionado);
 
         //Creo parte superior de Inventario
-        InventarioMateriales materiales = new InventarioMateriales(materialSeleccionado, this);
+        InventarioMateriales materiales = new InventarioMateriales(materialSeleccionado, this, jugador);
 
         //Creo parte inferior de inventario
-        InventarioHerramientas herramientas = new InventarioHerramientas(constructor,this);
+        InventarioHerramientas herramientas = new InventarioHerramientas(constructor,this, jugador);
 
         //Creo inventario completo
         VBox inventario = new VBox(materiales, herramientas);

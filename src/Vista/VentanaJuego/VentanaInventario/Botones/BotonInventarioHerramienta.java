@@ -2,6 +2,7 @@ package Vista.VentanaJuego.VentanaInventario.Botones;
 
 import Controlador.BotonesHandlers.BotonInventarioHerramientaHandler;
 import Modelo.Herramientas.Herramienta;
+import Modelo.Jugador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -9,11 +10,12 @@ import javafx.scene.layout.*;
 
 public class BotonInventarioHerramienta extends Button {
 
-    BotonInventarioHerramientaHandler botonInventarioHerramientaHandler;
-    Herramienta miHerramienta;
-    int cantidad;
+    private BotonInventarioHerramientaHandler botonInventarioHerramientaHandler;
+    private Herramienta miHerramienta;
+    private int cantidad;
+    private Jugador jugador;
 
-    public BotonInventarioHerramienta(Image imagen){
+    public BotonInventarioHerramienta(Image imagen, int unaCantidad, Herramienta unaHerramienta, Jugador unJugador){
 
         BackgroundImage backgroundImage = new BackgroundImage(imagen,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
@@ -25,9 +27,7 @@ public class BotonInventarioHerramienta extends Button {
         this.setOnAction(botonInventarioHerramientaHandler);
 
         this.setPrefSize(56,56);
-    }
 
-    public void setCantidadYHerramienta(int unaCantidad, Herramienta unaHerramienta){
         cantidad = unaCantidad;
 
         this.setText(Integer.toString(cantidad));
@@ -35,5 +35,11 @@ public class BotonInventarioHerramienta extends Button {
         this.setAlignment(Pos.BOTTOM_RIGHT);
 
         this.miHerramienta = unaHerramienta;
+        this.jugador = unJugador;
+    }
+
+    public void actualizarCantidad(int unaCantidad){
+        this.cantidad = unaCantidad;
+        this.setText(Integer.toString(cantidad));
     }
 }
