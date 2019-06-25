@@ -39,8 +39,8 @@ public class PiedraRefinada extends Material {
     }
 
     @Override
-    public boolean esIgual(Material material){return false;}
+    public boolean esIgual(Material material){return material instanceof PiedraRefinada;}
 
     @Override
-    public boolean esIgual(Posicionable material){return false;}
+    public boolean esIgual(Posicionable material){return material instanceof PiedraRefinada;}
 }
