@@ -15,7 +15,7 @@ public class BotonInventarioHerramienta extends Button {
     private int cantidad;
     private Jugador jugador;
 
-    public BotonInventarioHerramienta(Image imagen, int unaCantidad, Herramienta unaHerramienta, Jugador unJugador){
+    public BotonInventarioHerramienta(Image imagen, Herramienta unaHerramienta, Jugador unJugador){
 
         BackgroundImage backgroundImage = new BackgroundImage(imagen,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
@@ -28,7 +28,7 @@ public class BotonInventarioHerramienta extends Button {
 
         this.setPrefSize(56,56);
 
-        cantidad = unaCantidad;
+        cantidad = 0;
 
         this.setText(Integer.toString(cantidad));
         this.setStyle("-fx-text-fill: rgb(252,246,255)");
