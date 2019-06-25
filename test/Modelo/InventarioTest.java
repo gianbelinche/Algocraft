@@ -11,18 +11,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class InventarioTest {
+
     private Inventario inventario;
     private int ancho = 9;
     private int alto = 3;
-
-
-
 
     @Test
     public void obtenerMaterialDeInventarioVacioDevuelveCero(){
         inventario = new Inventario();
         assertEquals(0, inventario.obtenerCantidad(new Madera()));
     }
+
     @Test
     public void guardarHerramientaEnInventarioSeGuardaCorrectamente(){
         inventario = new Inventario();
@@ -33,6 +32,13 @@ public class InventarioTest {
         assertEquals(herramienta, inventario.obtener(otraHerramienta));
     }
 
+    @Test
+    public void obtenerCantidadDeInventarioDevuelveLaCantidadCorrecta(){
+        int cantidadCorrecta = 2;
+        inventario.almacenar(new Piedra());
+        inventario.almacenar(new Piedra());
+        assertEquals(cantidadCorrecta, inventario.obtenerCantidad(new Piedra()));
+    }
 
     @Test
     public void guardarMaterialEnInventarioSeGuardaCorrectamente(){
