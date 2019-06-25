@@ -11,6 +11,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
@@ -93,6 +94,10 @@ public class Ventana extends Application {
 
     public void actualizarImagen(){
         dibujante.dibujar();
+    }
+
+    public void cambiarImagenJugador(Image imagen){
+        dibujante.cambiarImagenJugador(imagen);
     }
 
 }

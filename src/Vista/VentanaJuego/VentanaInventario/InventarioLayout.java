@@ -4,15 +4,13 @@ import Modelo.Construccion.Constructor;
 import Modelo.Construccion.Receta;
 import Modelo.Juego;
 import Modelo.Jugador;
-import Modelo.Materiales.Madera;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonCraftear;
-import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventario;
+import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioMaterial;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioHerramienta;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -26,7 +24,7 @@ public class InventarioLayout extends GridPane {
         //Seteo el layout
         this.setVisible(false);
         this.stage = stage;
-        this.setPrefSize(stage.getWidth()*0.3, stage.getHeight()*0.5);
+        this.setPrefSize(stage.getWidth()*0.3, stage.getHeight()*0.55);
         this.setTranslateX(stage.getWidth()*0.35);
         this.setTranslateY(stage.getHeight()*0.25);
         this.setAlignment(Pos.CENTER);
@@ -64,22 +62,24 @@ public class InventarioLayout extends GridPane {
         //Creo parte superior de Inventario
         GridPane materiales = new GridPane();
 
-        BotonInventario botonesInventario;
+        BotonInventarioMaterial botonInventarioMaterial;
         materiales.setPrefSize(this.getPrefWidth()*0.5, this.getPrefHeight()*0.5);
         materiales.setAlignment(Pos.BOTTOM_CENTER);
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<9; j++){
-                botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
-                materiales.add(botonesInventario, j, i, 1, 1);
+                botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
+                materiales.add(botonInventarioMaterial, j, i, 1, 1);
             }
         }
-        /*botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
-        materiales.add(botonesInventario, 0, 0, 1, 1);
-        botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
-        materiales.add(botonesInventario, 1, 0, 1, 1);
-        botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
-        materiales.add(botonesInventario, 2, 0, 1, 1);*/ //Cambiar por imagenes correspondientes y su material
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMadera.png"));
+        materiales.add(botonInventarioMaterial, 0, 0, 1, 1);
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonPiedra.png"));
+        materiales.add(botonInventarioMaterial, 1, 0, 1, 1);
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMetal.png"));
+        materiales.add(botonInventarioMaterial, 2, 0, 1, 1);
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonDiamante.png"));
+        materiales.add(botonInventarioMaterial, 3, 0, 1, 1);
 
         //Creo parte inferior de inventario
         GridPane herramientas = new GridPane();

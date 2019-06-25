@@ -26,7 +26,7 @@ public class VistaPosicionable {
 
     private void inicializarImagenes(){
 
-        imagenes.put(Jugador.class      ,new Image("file:src/Vista/Imagenes/CasillaJugador.png"));
+        imagenes.put(Jugador.class      ,new Image("file:src/Vista/Imagenes/JugadorAbajo.png"));
         imagenes.put(PosicionVacia.class,new Image("file:src/Vista/Imagenes/CasillaVacia.png"));
         imagenes.put(Tierra.class       ,new Image("file:src/Vista/Imagenes/CasillaTierra.png"));
         imagenes.put(Madera.class       ,new Image("file:src/Vista/Imagenes/CasillaMadera.png"));
@@ -43,5 +43,9 @@ public class VistaPosicionable {
         double XIso = (x - y)/sqrt(2);
         double YIso = (x + 2*z + y)/sqrt(6);
         gc.drawImage(imagen,XIso + corrimientoX,YIso + corrimientoY);
+    }
+
+    public void cambiarImagenJugador(Image imagen){
+        imagenes.put(Jugador.class, imagen);
     }
 }

@@ -4,6 +4,7 @@ import Modelo.Escenario.Posicionable;
 import Modelo.Escenario.Tablero;
 import Modelo.Escenario.TableroIterador;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class Dibujante {
@@ -40,6 +41,10 @@ public class Dibujante {
             vistaPosicionable.dibujar(posicionable.getClass(),x,y,z,atril);
             tableroIterador.avanzar();
         }
+    }
+
+    public void cambiarImagenJugador(Image imagen){
+        vistaPosicionable.cambiarImagenJugador(imagen);
     }
 
 }
