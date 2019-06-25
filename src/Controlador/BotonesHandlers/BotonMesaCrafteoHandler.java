@@ -25,10 +25,12 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event){
         //Ojo, hay que pedirle al inventario el material, no usar directamente el materialSeleccionado
-
-        Material materialInventario = (Material) jugador.obtenerDeInventario(materialSeleccionado.obtenerSeleccionado());
-
-        this.receta.posicionar(x,y, materialInventario);
+        Material material = materialSeleccionado.obtenerSeleccionado();
+        if (material != null) {
+            Material materialInventario = (Material) jugador.obtenerDeInventario(material);
+            this.receta.posicionar(x,y, materialInventario);
+        }
+        
         //Probar cambiar el tercer parametro de receta de "Material" a "Almacenable" o simplemente cambiar de Almacenable a Material en estos botones.
         //receta.posicionar(x,y, materialSeleccionado);
     }

@@ -45,4 +45,11 @@ public class Receta {
     }
 
 
+    public void vaciar() {
+        for(int i =0;i<3;i++){
+            for(int j=0;j<3;j++){
+                this.posicionar(i,j,null);
+            }
+        }
+    }
 }

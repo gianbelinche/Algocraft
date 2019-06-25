@@ -1,5 +1,6 @@
 package Controlador.BotonesHandlers;
 
+import Modelo.Almacenable;
 import Modelo.Construccion.Receta;
 import Modelo.Construccion.Recetario;
 import Modelo.Herramientas.Herramienta;
@@ -19,9 +20,28 @@ public class BotonCraftearHandler implements EventHandler<javafx.event.ActionEve
 
     }
 
+
     public void handle(ActionEvent event){
         Recetario recetario = new Recetario();
         Herramienta herramienta = recetario.craftear(receta);
-        jugador.guardarEnInventario(herramienta);
+
+        if (herramienta == null) {
+            devolverAlmacenables(receta,jugador);
+        } else {
+            jugador.guardarEnInventario(herramienta);
+        }
+        receta.vaciar();
+
+    }
+
+    private void devolverAlmacenables(Receta receta, Jugador jugador){
+        for(int i =0;i<3;i++){
+            for(int j=0;j<3;j++){
+                Almacenable almacenable = receta.enPosicion(i,j);
+                if (almacenable != null){
+                    jugador.guardarEnInventario(almacenable);
+                }
+            }
+        }
     }
 }
