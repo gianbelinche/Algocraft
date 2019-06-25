@@ -435,7 +435,12 @@ public class PicoTest {
 
     }
 
-
-
+    @Test
+    public void testComparoDosPicosDePiedraRefinadaYSonIguales(){
+        Constructor constructor = new Constructor();
+        Pico pico1 = constructor.crearPicoDePiedraRefinada();
+        Pico pico2 = constructor.crearPicoDePiedraRefinada();
+        assertTrue(pico1.equals(pico2));
+    }
 
 }
