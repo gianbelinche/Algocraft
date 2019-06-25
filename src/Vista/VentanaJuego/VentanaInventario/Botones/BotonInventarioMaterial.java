@@ -13,7 +13,7 @@ public class BotonInventarioMaterial extends Button {
     private int cantidad;
     private BotonInventarioHandler botonInventarioHandler;
 
-    public BotonInventarioMaterial(MaterialSeleccionado materialSeleccionado, Image imagen){
+    public BotonInventarioMaterial(MaterialSeleccionado materialSeleccionado, Image imagen, Material miMaterial){
 
         Image image = imagen;
 
@@ -26,10 +26,8 @@ public class BotonInventarioMaterial extends Button {
         this.botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado);
         this.setPrefSize(56,56);
         this.setOnAction(botonInventarioHandler);
-    }
 
-    public void setCantidadyMaterial(int unaCantidad, Material miMaterial){
-        this.cantidad = unaCantidad;
+        this.cantidad = 0;
         this.setText(Integer.toString(cantidad));
         this.setStyle("-fx-text-fill: rgb(252,246,255)");
         this.setAlignment(Pos.BOTTOM_RIGHT);
