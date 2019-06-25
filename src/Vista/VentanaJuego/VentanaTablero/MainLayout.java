@@ -1,19 +1,20 @@
 package Vista.VentanaJuego.VentanaTablero;
 
 
-import Controlador.*;
 import Modelo.Juego;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaTablero.Botones.*;
 import javafx.geometry.Pos;
-import javafx.scene.layout.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MainLayout extends Pane {
 
-    public MainLayout(Stage mainStage, Juego juego, Ventana ventana) {
+    public MainLayout(Stage mainStage, Juego juego, Ventana ventana, InventarioLayout inventarioLayout) {
 
         //Creo botones de movimiento
         BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(ventana,juego.obtenerJugador());
@@ -34,10 +35,8 @@ public class MainLayout extends Pane {
         contenedorBotones.setSpacing(20);
 
         //Creo boton inventario
-        InventarioLayout inventarioLayout = new InventarioLayout(mainStage,juego);
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout);
         contenedorBotones.getChildren().addAll(botonEntrarInventario);
-        this.setOnKeyPressed(new EntrarSalirDeInventarioHandler(inventarioLayout));
 
         VBox columnaBotones = new VBox(botonesMovimientoCompleto, contenedorBotones);
         columnaBotones.setSpacing(100);
@@ -52,7 +51,7 @@ public class MainLayout extends Pane {
         BotonOcultarBotones botonOcultarBotones = new BotonOcultarBotones(cajaCompleta);
         //ExitButton botonSalir = new ExitButton(mainStage);
 
-        this.getChildren().addAll(inventarioLayout, cajaCompleta, botonOcultarBotones);
+        this.getChildren().addAll(cajaCompleta, botonOcultarBotones);
     }
 
 }

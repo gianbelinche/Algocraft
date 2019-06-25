@@ -1,6 +1,5 @@
 package Vista.VentanaJuego.VentanaInventario;
 
-import Controlador.EntrarSalirDeInventarioHandler;
 import Modelo.Construccion.Receta;
 import Modelo.Juego;
 import Modelo.Jugador;
@@ -43,10 +42,6 @@ public class InventarioLayout extends Pane {
         BackgroundImage imagenDeInventario = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
         new BackgroundSize(1.0, 1.0, true, true, false, false));
         this.setBackground(new Background(imagenDeInventario));
-
-        //Creo botones
-        this.setOnKeyPressed(new EntrarSalirDeInventarioHandler(this));
-
 
         //Creo botones de mesa de crafteo y los guardo en el GridPane
         GridPane mesaCrafteo = new GridPane();

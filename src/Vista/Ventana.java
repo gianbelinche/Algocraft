@@ -1,6 +1,8 @@
 package Vista;
 
 import Controlador.MainHandler;
+import Modelo.Juego;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaTablero.MainLayout;
 import Vista.VentanaPrincipal.TitleLayout;
 import javafx.application.Application;
@@ -8,14 +10,12 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+
 import java.io.File;
-import Modelo.Juego;
 
 public class Ventana extends Application {
 
@@ -68,17 +68,23 @@ public class Ventana extends Application {
         altoPantalla = bordesPantalla.getHeight();
         Scene mainScene = new Scene( root, anchoPantalla, altoPantalla);
 
-        //No pude ponerlo en botones, habrá que ver si hay una forma mas linda de hacerlo
-        mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this));
         mainStage.setScene(mainScene);
 
+        //Creo el layout del inventario
+        InventarioLayout inventarioLayout = new InventarioLayout(mainStage,juego);
 
+        //Creo tablero de juego
         Canvas canvas = new Canvas(anchoPantalla,altoPantalla);
         dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla/2,altoPantalla/8);
-        root.getChildren().add(canvas);
 
-        MainLayout mainLayout = new MainLayout(mainStage,juego,this);
+        //Creo fondo principal
+        MainLayout mainLayout = new MainLayout(mainStage,juego,this, inventarioLayout);
+
+        root.getChildren().add(canvas);
         root.getChildren().add(mainLayout);
+        root.getChildren().add(inventarioLayout);
+
+        mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this, inventarioLayout));
 
         actualizarImagen();
 
