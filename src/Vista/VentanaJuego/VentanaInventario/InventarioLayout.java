@@ -2,6 +2,7 @@ package Vista.VentanaJuego.VentanaInventario;
 
 import Modelo.Construccion.Constructor;
 import Modelo.Construccion.Receta;
+import Modelo.Construccion.Recetario;
 import Modelo.Juego;
 import Modelo.Jugador;
 import javafx.geometry.Pos;
@@ -27,7 +28,7 @@ public class InventarioLayout extends GridPane {
 
         //Cargo jugador, receta, materialseleccionado y constructor
         Jugador jugador = juego.obtenerJugador();
-        Receta receta = new Receta();
+        Receta receta = juego.obtenerReceta();
         MaterialSeleccionado materialSeleccionado = new MaterialSeleccionado();
         Constructor constructor = new Constructor();
 

@@ -73,7 +73,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         assertEquals(jugador, tablero.obtenerDePosicion(x,y,z));
     }
@@ -83,7 +84,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         tablero.borrarEnPosicion(x,y,z);
         assertEquals(tablero.obtenerDePosicion(x,y,z).getClass(),PosicionVacia.class);
@@ -94,7 +96,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         jugador.moverDerecha();
 
@@ -106,7 +109,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         jugador.moverIzquierda();
 
@@ -118,7 +122,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         jugador.moverArriba();
 
@@ -131,7 +136,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         jugador.moverAbajo();
 
@@ -144,7 +150,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
 
         for(int i = 0;i <100;i++){
@@ -159,7 +166,8 @@ public class TableroTest {
         int x = 5;
         int y = 5;
         int z = 0;
-        Jugador jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        Jugador jugador = new Jugador(inventario);
         tablero.colocarEnPosicion(x,y,z,jugador);
         Piedra piedra = new Piedra();
         tablero.colocarEnPosicion(x + 1,y,0,piedra);

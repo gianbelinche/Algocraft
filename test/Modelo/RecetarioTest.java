@@ -3,18 +3,41 @@ package Modelo;
 import Modelo.Construccion.Receta;
 import Modelo.Construccion.Recetario;
 import Modelo.Herramientas.Herramienta;
+import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RecetarioTest {
 
+    Receta receta;
+
+    private Inventario inicializarInventario(){
+            int numeroCadaMaterial = 30;
+            Inventario inventario = new Inventario();
+            for(int i = 0; i < numeroCadaMaterial; i++){
+                inventario.almacenar(new Madera());
+                inventario.almacenar(new Metal());
+                inventario.almacenar(new Piedra());
+                inventario.almacenar(new Diamante());
+            }
+            return inventario;
+
+    }
+
+    @Before
+    public void SetUp(){
+        Inventario inventario = inicializarInventario();
+        receta = new Receta(inventario);
+
+    }
+
     @Test
     public void testCorrectoCrafteoDeHachaDeMadera(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         receta.posicionar(0,0,madera);
         receta.posicionar(0,1,madera);
@@ -34,7 +57,6 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDeHachaDePiedra(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         receta.posicionar(0,0,piedra);
@@ -55,7 +77,6 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDeHachaDeMetal(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         Metal metal = new Metal();
         receta.posicionar(0,0,metal);
@@ -76,7 +97,6 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDeMadera(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         receta.posicionar(0,0,madera);
         receta.posicionar(0,1,madera);
@@ -96,7 +116,6 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDePiedra(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         receta.posicionar(0,0,piedra);
@@ -117,7 +136,6 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDeMetal(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         Metal metal = new Metal();
         receta.posicionar(0,0,metal);
@@ -138,7 +156,6 @@ public class RecetarioTest {
     @Test
     public void testCorrectoCrafteoDePicoDePiedraRefinada(){
 
-        Receta receta = new Receta();
         Madera madera = new Madera();
         Piedra piedra = new Piedra();
         Metal metal = new Metal();

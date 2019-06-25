@@ -1,5 +1,7 @@
 package Modelo;
 
+import Modelo.Construccion.Receta;
+import Modelo.Construccion.Recetario;
 import Modelo.Escenario.Tablero;
 import Modelo.Escenario.TableroIterador;
 import Modelo.Materiales.*;
@@ -7,13 +9,16 @@ import Modelo.Materiales.*;
 public class Juego {
     private Jugador jugador;
     private Tablero tablero;
+    private Receta receta;
 
     public Juego(){
         int ancho = 18;
         int largo = 20;
         int alto  = 5;
         tablero = Tablero.crearTablero(ancho,largo,alto);
-        jugador = new Jugador();
+        Inventario inventario = new Inventario();
+        jugador = new Jugador(inventario);
+        receta = new Receta(inventario);
         inicializarTablero();
     }
 
@@ -22,6 +27,8 @@ public class Juego {
     public Jugador obtenerJugador(){
         return jugador;
     }
+
+    public Receta obtenerReceta() {return receta;}
 
     private void inicializarTablero(){
 

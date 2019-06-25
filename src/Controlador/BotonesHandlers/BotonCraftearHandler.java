@@ -13,16 +13,18 @@ import javafx.event.EventHandler;
 public class BotonCraftearHandler implements EventHandler<javafx.event.ActionEvent> {
     Receta receta;
     Jugador jugador;
+    Recetario recetario;
 
     public BotonCraftearHandler(Receta receta, Jugador jugador){
         this.receta = receta;
         this.jugador = jugador;
+        this.recetario = recetario;
 
     }
 
 
     public void handle(ActionEvent event){
-        Recetario recetario = new Recetario();
+        Recetario recetario =  new Recetario();
         Herramienta herramienta = recetario.craftear(receta);
 
         if (herramienta == null) {
