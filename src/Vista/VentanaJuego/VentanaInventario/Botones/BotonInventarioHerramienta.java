@@ -38,8 +38,8 @@ public class BotonInventarioHerramienta extends Button {
         this.jugador = unJugador;
     }
 
-    public void actualizarCantidad(int unaCantidad){
-        this.cantidad = unaCantidad;
+    public void actualizarCantidad(){
+        this.cantidad = jugador.obtenerCantidadDeInventario(miHerramienta);
         this.setText(Integer.toString(cantidad));
     }
 }

@@ -89,7 +89,9 @@ public class Jugador implements Posicionable {
             inventario.almacenar(materialRecogido);
         }
     }
-
+    public int obtenerCantidadDeInventario(Almacenable almacenable){
+        return inventario.obtenerCantidad(almacenable);
+    }
     public void guardarEnInventario(Almacenable objeto){
         inventario.almacenar(objeto);
     }

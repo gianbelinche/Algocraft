@@ -45,7 +45,9 @@ public class Inventario {
         return (Almacenable) inventario.get(objeto).remove(0);
 
     }
-
+    public int obtenerCantidad(Almacenable almacenable){
+        return inventario.get(almacenable).size();
+    }
     @Override
     public int hashCode(){
         return 0;

@@ -174,5 +174,9 @@ public class JugadorTest {
         assertEquals(madera, maderaRecogida);
     }
 
-
+    @Test
+    public void testJugadorObtenerCantidadDeInventarioVacioDevuelveCero(){
+        Madera madera = new Madera();
+        assertEquals(jugador.obtenerCantidadDeInventario(madera), 0);
+    }
 }

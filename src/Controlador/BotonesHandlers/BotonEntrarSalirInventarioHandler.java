@@ -16,6 +16,8 @@ public class BotonEntrarSalirInventarioHandler implements EventHandler<ActionEve
         @Override
         public void handle(ActionEvent event){
             inventario.setVisible(!inventario.isVisible());
+            inventario.actualizarHerramientas();
+            inventario.actualizarMateriales();
         }
 
 

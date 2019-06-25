@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 public class MesaCrafteo extends GridPane {
 
-    public MesaCrafteo(Stage stage, Jugador jugador, Receta receta, MaterialSeleccionado materialSeleccionado) {
+    public MesaCrafteo(Stage stage, Jugador jugador, Receta receta, MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout) {
         this.setPrefSize(530, 480);
         BotonMesaCrafteo botonesMesa;
         this.setAlignment(Pos.TOP_CENTER);
@@ -20,14 +20,14 @@ public class MesaCrafteo extends GridPane {
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botonesMesa = new BotonMesaCrafteo(jugador, receta, materialSeleccionado);
+                botonesMesa = new BotonMesaCrafteo(jugador, receta, materialSeleccionado, inventarioLayout);
                 this.add(botonesMesa, j, i, 1, 1);
                 botonesMesa.setPrefSize(56,56);
             }
         }
 
         //Creo boton de craftear
-        BotonCraftear botonCraftear = new BotonCraftear(receta,jugador);
+        BotonCraftear botonCraftear = new BotonCraftear(receta,jugador, inventarioLayout);
         botonCraftear.setPrefWidth(80);
         botonCraftear.setPrefHeight(80);
         this.add(botonCraftear, 5,0,3,3);

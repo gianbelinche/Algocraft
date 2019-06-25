@@ -8,13 +8,14 @@ public class Juego {
     private Jugador jugador;
     private Tablero tablero;
     private Receta receta;
+    private Inventario inventario;
 
     public Juego(){
         int ancho = 18;
         int largo = 20;
         int alto  = 5;
         tablero = Tablero.crearTablero(ancho,largo,alto);
-        Inventario inventario = new Inventario();
+        inventario = new Inventario();
         jugador = new Jugador(inventario);
         receta = new Receta(inventario);
         inicializarTablero();

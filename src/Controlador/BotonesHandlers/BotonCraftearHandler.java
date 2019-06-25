@@ -6,6 +6,7 @@ import Modelo.Construccion.Recetario;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Inventario;
 import Modelo.Jugador;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -14,11 +15,13 @@ public class BotonCraftearHandler implements EventHandler<javafx.event.ActionEve
     Receta receta;
     Jugador jugador;
     Recetario recetario;
+    InventarioLayout inventarioLayout;
 
-    public BotonCraftearHandler(Receta receta, Jugador jugador){
+    public BotonCraftearHandler(Receta receta, Jugador jugador, InventarioLayout inventarioLayout){
         this.receta = receta;
         this.jugador = jugador;
         this.recetario = recetario;
+        this.inventarioLayout = inventarioLayout;
 
     }
 
@@ -33,7 +36,8 @@ public class BotonCraftearHandler implements EventHandler<javafx.event.ActionEve
             jugador.guardarEnInventario(herramienta);
         }
         receta.vaciar();
-
+        inventarioLayout.actualizarMateriales();
+        inventarioLayout.actualizarHerramientas();
     }
 
     private void devolverAlmacenables(Receta receta, Jugador jugador){

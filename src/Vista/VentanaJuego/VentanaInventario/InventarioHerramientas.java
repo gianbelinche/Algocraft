@@ -1,10 +1,12 @@
 package Vista.VentanaJuego.VentanaInventario;
 
+import Controlador.BotonesHandlers.BotonInventarioHandler;
 import Modelo.Construccion.Constructor;
 import Modelo.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioHerramienta;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
@@ -20,7 +22,7 @@ public class InventarioHerramientas extends GridPane {
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonHachaMadera.png")
                 , constructor.crearHachaDeMadera(), jugador);
-        botonHerramienta.actualizarCantidad(1);
+        botonHerramienta.actualizarCantidad();
         this.add(botonHerramienta, 0, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonHachaPiedra.png")
@@ -54,5 +56,9 @@ public class InventarioHerramientas extends GridPane {
             this.add(botonVacio, i, 0, 1, 1);
         }
     }
-
+        public void actualizar(){
+            for (Node child : this.getChildren()){
+                ((BotonInventarioHerramienta)child).actualizarCantidad();
+            }
+        }
 }

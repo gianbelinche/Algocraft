@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 
 public class InventarioLayout extends GridPane {
     Stage stage;
+    InventarioMateriales inventarioMateriales;
+    InventarioHerramientas inventarioHerramientas;
 
     public InventarioLayout(Stage stage, Juego juego){
 
@@ -32,23 +34,30 @@ public class InventarioLayout extends GridPane {
         Constructor constructor = new Constructor();
 
         //Creo de mesa de crafteo
-        MesaCrafteo mesaCrafteo = new MesaCrafteo(stage, jugador, receta, materialSeleccionado);
+        MesaCrafteo mesaCrafteo = new MesaCrafteo(stage, jugador, receta, materialSeleccionado, this);
 
         //Creo parte superior de Inventario
-        InventarioMateriales materiales = new InventarioMateriales(materialSeleccionado, this, jugador);
+        inventarioMateriales = new InventarioMateriales(materialSeleccionado, this, jugador);
 
         //Creo parte inferior de inventario
-        InventarioHerramientas herramientas = new InventarioHerramientas(constructor,this, jugador);
+        inventarioHerramientas = new InventarioHerramientas(constructor,this, jugador);
 
         //Creo inventario completo
-        VBox inventario = new VBox(materiales, herramientas);
+        VBox inventario = new VBox(inventarioMateriales, inventarioHerramientas);
         inventario.setAlignment(Pos.CENTER);
 
         this.add(mesaCrafteo, 0, 0, 1, 1);
         this.add(inventario,0,1,1,1);
+
     }
 
     public void cambiarVisibilidad() {
         setVisible(!isVisible());
+    }
+    public void actualizarHerramientas(){
+        inventarioHerramientas.actualizar();
+    }
+    public void actualizarMateriales(){
+        inventarioMateriales.actualizar();
     }
 }

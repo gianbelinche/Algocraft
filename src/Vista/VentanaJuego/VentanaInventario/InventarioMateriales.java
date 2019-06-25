@@ -8,6 +8,7 @@ import Modelo.Materiales.Piedra;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioMaterial;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
@@ -43,4 +44,9 @@ public class InventarioMateriales extends GridPane {
         this.add(botonInventarioMaterial, 3, 0, 1, 1);
     }
 
+    public void actualizar(){
+        for (Node child : this.getChildren()){
+            ((BotonInventarioMaterial)child).actualizarCantidad();
+        }
+    }
 }

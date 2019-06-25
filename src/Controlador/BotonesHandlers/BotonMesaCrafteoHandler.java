@@ -1,9 +1,9 @@
 package Controlador.BotonesHandlers;
 
 import Modelo.Construccion.Receta;
-import Modelo.Almacenable;
 import Modelo.Jugador;
 import Modelo.Materiales.Material;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,14 +12,16 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     Receta receta;
     MaterialSeleccionado materialSeleccionado;
     Jugador jugador;
+    InventarioLayout inventarioLayout;
     int x;
     int y;
-    public BotonMesaCrafteoHandler(Jugador jugador, Receta receta, MaterialSeleccionado material, int x_pasado, int y_pasado){
+    public BotonMesaCrafteoHandler(Jugador jugador, Receta receta, MaterialSeleccionado material, InventarioLayout inventarioLayout, int x_pasado, int y_pasado){
         this.receta = receta;
         materialSeleccionado = material;
         x = x_pasado;
         y = y_pasado;
         this.jugador = jugador;
+        this.inventarioLayout = inventarioLayout;
 
     }
     @Override
@@ -30,6 +32,7 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
             Material materialInventario = (Material) jugador.obtenerDeInventario(material);
             this.receta.posicionar(x,y, materialInventario);
         }
+        inventarioLayout.actualizarMateriales();
         
         //Probar cambiar el tercer parametro de receta de "Material" a "Almacenable" o simplemente cambiar de Almacenable a Material en estos botones.
         //receta.posicionar(x,y, materialSeleccionado);
