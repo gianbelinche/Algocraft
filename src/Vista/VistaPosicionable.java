@@ -26,13 +26,16 @@ public class VistaPosicionable {
 
     private void inicializarImagenes(){
 
-        imagenes.put(Jugador.class      ,new Image("file:src/Vista/Imagenes/JugadorAbajo.png"));
-        imagenes.put(PosicionVacia.class,new Image("file:src/Vista/Imagenes/CasillaVacia.png"));
-        imagenes.put(Tierra.class       ,new Image("file:src/Vista/Imagenes/CasillaTierra.png"));
-        imagenes.put(Madera.class       ,new Image("file:src/Vista/Imagenes/CasillaMadera.png"));
-        imagenes.put(Piedra.class       ,new Image("file:src/Vista/Imagenes/CasillaPiedra.png"));
-        imagenes.put(Metal.class        ,new Image("file:src/Vista/Imagenes/CasillaMetal.png"));
-        imagenes.put(Diamante.class     ,new Image("file:src/Vista/Imagenes/CasillaDiamante.png"));
+        imagenes.put(Jugador.class        ,new Image("file:src/Vista/Imagenes/JugadorAbajo.png"));
+        imagenes.put(PosicionVacia.class  ,new Image("file:src/Vista/Imagenes/CasillaVacia.png"));
+        imagenes.put(PosicionOcupada.class,new Image("file:src/Vista/Imagenes/CasillaOcupada.png"));
+        imagenes.put(Tierra.class         ,new Image("file:src/Vista/Imagenes/CasillaTierra.png"));
+        imagenes.put(Agua.class           ,new Image("file:src/Vista/Imagenes/CasillaAgua.png"));
+        imagenes.put(Bote.class           ,new Image("file:src/Vista/Imagenes/CasillaBote.png"));
+        imagenes.put(Madera.class         ,new Image("file:src/Vista/Imagenes/CasillaMadera.png"));
+        imagenes.put(Piedra.class         ,new Image("file:src/Vista/Imagenes/CasillaPiedra.png"));
+        imagenes.put(Metal.class          ,new Image("file:src/Vista/Imagenes/CasillaMetal.png"));
+        imagenes.put(Diamante.class       ,new Image("file:src/Vista/Imagenes/CasillaDiamante.png"));
 
     }
 
