@@ -6,6 +6,7 @@ import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,18 +14,19 @@ import static org.junit.Assert.*;
 public class InventarioTest {
 
     private Inventario inventario;
-    private int ancho = 9;
-    private int alto = 3;
+
+    @Before
+    public void setUp(){
+        inventario = new Inventario();
+    }
 
     @Test
     public void obtenerMaterialDeInventarioVacioDevuelveCero(){
-        inventario = new Inventario();
         assertEquals(0, inventario.obtenerCantidad(new Madera()));
     }
 
     @Test
     public void guardarHerramientaEnInventarioSeGuardaCorrectamente(){
-        inventario = new Inventario();
         Constructor constructor = new Constructor();
         Herramienta herramienta = constructor.crearPicoDeMetal();
         inventario.almacenar(herramienta);
@@ -42,7 +44,6 @@ public class InventarioTest {
 
     @Test
     public void guardarMaterialEnInventarioSeGuardaCorrectamente(){
-        inventario = new Inventario();
         Piedra piedra = new Piedra();
         Piedra otraPiedra = new Piedra();
         inventario.almacenar(piedra);
@@ -52,7 +53,6 @@ public class InventarioTest {
 
     @Test
     public void guardarVariosMaterialesSeGuardanCorrectamente(){
-        inventario = new Inventario();
         Piedra piedra = new Piedra();
         Madera madera = new Madera();
         Diamante diamante = new Diamante();
@@ -73,7 +73,6 @@ public class InventarioTest {
 
     @Test
     public void guardarVariasHerramientasSeGuardanCorrectamente(){
-        inventario = new Inventario();
         Constructor constructor = new Constructor();
         Herramienta picoMetal = constructor.crearPicoDeMetal();
         Herramienta picoPiedra = constructor.crearPicoDePiedra();
