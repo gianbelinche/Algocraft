@@ -46,7 +46,9 @@ public class InventarioMateriales extends GridPane {
 
     public void actualizar(){
         for (Node child : this.getChildren()){
-            ((BotonInventarioMaterial)child).actualizarCantidad();
+            if(child instanceof BotonInventarioMaterial) {
+                ((BotonInventarioMaterial) child).actualizarCantidad();
+            }
         }
     }
 }

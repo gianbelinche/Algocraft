@@ -40,7 +40,7 @@ public class BotonInventarioMaterial extends Button {
     }
 
     public void actualizarCantidad(){
-        this.cantidad = this.cantidad = jugador.obtenerCantidadDeInventario(material);
+        this.cantidad = jugador.obtenerCantidadDeInventario(material);
         this.setText(Integer.toString(cantidad));
     }
 }

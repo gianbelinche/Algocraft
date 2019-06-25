@@ -16,6 +16,13 @@ public class InventarioTest {
     private int alto = 3;
 
 
+
+
+    @Test
+    public void obtenerMaterialDeInventarioVacioDevuelveCero(){
+        inventario = new Inventario();
+        assertEquals(0, inventario.obtenerCantidad(new Madera()));
+    }
     @Test
     public void guardarHerramientaEnInventarioSeGuardaCorrectamente(){
         inventario = new Inventario();

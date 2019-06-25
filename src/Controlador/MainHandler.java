@@ -42,6 +42,8 @@ public class MainHandler implements EventHandler<KeyEvent>{
         }
         else if (key.getCode() == KeyCode.E) {
             inventario.cambiarVisibilidad();
+            inventario.actualizarHerramientas();
+            inventario.actualizarMateriales();
         }
         ventana.actualizarImagen();
     }
