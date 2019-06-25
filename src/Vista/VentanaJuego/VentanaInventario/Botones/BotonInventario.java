@@ -10,9 +10,9 @@ import javafx.scene.layout.*;
 public class BotonInventario extends Button {
     BotonInventarioHandler botonInventarioHandler;
 
-    public BotonInventario(MaterialSeleccionado materialSeleccionado){
+    public BotonInventario(MaterialSeleccionado materialSeleccionado, Image imagen){
 
-        Image image = new Image("file:src/Vista/Imagenes/BotonVacio.png");
+        Image image = imagen;
 
         BackgroundImage backgroundImage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
@@ -21,8 +21,10 @@ public class BotonInventario extends Button {
         this.setBackground(new Background(backgroundImage));
 
         botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado);
+        this.setPrefSize(56,56);
         this.setOnAction(botonInventarioHandler);
     }
+
     public void setMaterial(Material miMaterial){
         botonInventarioHandler.setMaterial(miMaterial);
     }
