@@ -26,20 +26,20 @@ public class InventarioMateriales extends GridPane {
             }
         }
         BotonInventarioMaterial botonInventarioMaterial;
-        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMadera.png"));
-        botonInventarioMaterial.setCantidadyMaterial(0, new Madera());
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMadera.png")
+                , new Madera());
         this.add(botonInventarioMaterial, 0, 0, 1, 1);
 
-        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonPiedra.png"));
-        botonInventarioMaterial.setCantidadyMaterial(0, new Piedra());
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonPiedra.png")
+                , new Piedra());
         this.add(botonInventarioMaterial, 1, 0, 1, 1);
 
-        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMetal.png"));
-        botonInventarioMaterial.setCantidadyMaterial(0, new Metal());
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMetal.png")
+                , new Metal());
         this.add(botonInventarioMaterial, 2, 0, 1, 1);
 
-        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonDiamante.png"));
-        botonInventarioMaterial.setCantidadyMaterial(0, new Diamante());
+        botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonDiamante.png")
+                , new Diamante());
         this.add(botonInventarioMaterial, 3, 0, 1, 1);
     }
 
