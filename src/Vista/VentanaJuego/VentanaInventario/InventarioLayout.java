@@ -61,7 +61,7 @@ public class InventarioLayout extends GridPane {
         botonCraftear.setPrefHeight(80);
         mesaCrafteo.add(botonCraftear, 5,0,3,3);
 
-        //Armo el inventario con un GridPane
+        //Creo parte superior de Inventario
         GridPane materiales = new GridPane();
 
         BotonInventario botonesInventario;
@@ -72,9 +72,14 @@ public class InventarioLayout extends GridPane {
             for(int j=0; j<9; j++){
                 botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
                 materiales.add(botonesInventario, j, i, 1, 1);
-                botonesInventario.setPrefSize(56,56);
             }
         }
+        /*botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
+        materiales.add(botonesInventario, 0, 0, 1, 1);
+        botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
+        materiales.add(botonesInventario, 1, 0, 1, 1);
+        botonesInventario = new BotonInventario(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonVacio.png"));
+        materiales.add(botonesInventario, 2, 0, 1, 1);*/ //Cambiar por imagenes correspondientes y su material
 
         //Creo parte inferior de inventario
         GridPane herramientas = new GridPane();
