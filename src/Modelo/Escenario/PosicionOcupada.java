@@ -13,7 +13,7 @@ public class PosicionOcupada implements Posicionable, Almacenable {
     public void establecerPosicion(Posicion nuevaPosicion){ }
 
     public boolean esIgual(Posicionable otraPosicion){
-        return otraPosicion instanceof PosicionVacia;
+        return otraPosicion instanceof PosicionOcupada;
     }
 
     public boolean almacenar(Almacenable objeto){ return true;}

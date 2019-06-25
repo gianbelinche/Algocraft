@@ -2,9 +2,9 @@ package Modelo.Materiales;
 
 import Modelo.Almacenable;
 import Modelo.Escenario.Posicion;
-import Modelo.Escenario.Posicionable;
+import Modelo.Escenario.PosicionOcupada;
 
-public abstract class Material implements Posicionable, Almacenable {
+public abstract class Material extends PosicionOcupada {
 
     Posicion posicion;
     int durabilidad;
@@ -35,10 +35,6 @@ public abstract class Material implements Posicionable, Almacenable {
     abstract Material serRecogido(Diamante material, int desgaste);
 
     abstract boolean esIgual(Material material);
-
-    public Posicion actualizarPosicion(int viejaX, int viejaY, int viejaZ, int nuevaX, int nuevaY, int nuevaZ) {
-        return new Posicion(viejaX, viejaY, viejaZ);
-    }
 
     @Override
     public void establecerPosicion(Posicion nuevaPosicion) {
