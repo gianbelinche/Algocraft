@@ -4,6 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.Posicionable;
 import Modelo.Escenario.Tablero;
+import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Material;
@@ -30,7 +31,11 @@ public class Jugador implements Posicionable {
     }
 
     public void equipar(Herramienta herramienta){
-        herramientaEquipada = herramienta;
+        try {
+            herramientaEquipada = (Herramienta) inventario.obtener(herramienta);
+        } catch (AlmacenableNoDisponibleException e){
+            //Imprimir algo o hacer nada?
+        }
     }
 
     @Override

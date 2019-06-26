@@ -2,6 +2,7 @@ package Modelo;
 
 
 import Modelo.Construccion.Constructor;
+import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.*;
@@ -41,6 +42,8 @@ public class Inventario {
     }
 
     public Almacenable obtener(Almacenable objeto){
+
+        if (this.obtenerCantidad(objeto) == 0) throw new AlmacenableNoDisponibleException();
 
         return (Almacenable) inventario.get(objeto).remove(0);
 

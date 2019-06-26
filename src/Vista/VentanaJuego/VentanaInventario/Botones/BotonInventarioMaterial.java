@@ -1,6 +1,6 @@
 package Vista.VentanaJuego.VentanaInventario.Botones;
 
-import Controlador.BotonesHandlers.BotonInventarioHandler;
+import Controlador.BotonesHandlers.BotonInventarioMaterialHandler;
 import Modelo.Jugador;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
@@ -12,7 +12,7 @@ import javafx.scene.layout.*;
 public class BotonInventarioMaterial extends Button {
 
     private int cantidad;
-    private BotonInventarioHandler botonInventarioHandler;
+    private BotonInventarioMaterialHandler botonInventarioMaterialHandler;
     private Jugador jugador;
     private Material material;
 
@@ -27,16 +27,16 @@ public class BotonInventarioMaterial extends Button {
 
         this.setBackground(new Background(backgroundImage));
 
-        this.botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado,backgroundImage);
+        this.botonInventarioMaterialHandler = new BotonInventarioMaterialHandler(materialSeleccionado,backgroundImage);
         this.setPrefSize(56,56);
-        this.setOnAction(botonInventarioHandler);
+        this.setOnAction(botonInventarioMaterialHandler);
 
         this.cantidad = 0;
         this.setText(Integer.toString(cantidad));
         this.setStyle("-fx-text-fill: rgb(252,246,255)");
         this.setAlignment(Pos.BOTTOM_RIGHT);
 
-        botonInventarioHandler.setMaterial(miMaterial);
+        botonInventarioMaterialHandler.setMaterial(miMaterial);
         this.material = miMaterial;
         this.jugador = unJugador;
     }

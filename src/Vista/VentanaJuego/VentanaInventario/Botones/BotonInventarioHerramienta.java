@@ -17,13 +17,16 @@ public class BotonInventarioHerramienta extends Button {
 
     public BotonInventarioHerramienta(Image imagen, Herramienta unaHerramienta, Jugador unJugador){
 
+        this.miHerramienta = unaHerramienta;
+        this.jugador = unJugador;
+
         BackgroundImage backgroundImage = new BackgroundImage(imagen,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
         this.setBackground(new Background(backgroundImage));
 
-        botonInventarioHerramientaHandler = new BotonInventarioHerramientaHandler(miHerramienta);
+        botonInventarioHerramientaHandler = new BotonInventarioHerramientaHandler(miHerramienta, jugador);
         this.setOnAction(botonInventarioHerramientaHandler);
 
         this.setPrefSize(56,56);
@@ -33,9 +36,6 @@ public class BotonInventarioHerramienta extends Button {
         this.setText(Integer.toString(cantidad));
         this.setStyle("-fx-text-fill: rgb(252,246,255)");
         this.setAlignment(Pos.BOTTOM_RIGHT);
-
-        this.miHerramienta = unaHerramienta;
-        this.jugador = unJugador;
     }
 
     public void actualizarCantidad(){

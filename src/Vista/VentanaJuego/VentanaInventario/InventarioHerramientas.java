@@ -1,6 +1,5 @@
 package Vista.VentanaJuego.VentanaInventario;
 
-import Controlador.BotonesHandlers.BotonInventarioHandler;
 import Modelo.Construccion.Constructor;
 import Modelo.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioHerramienta;

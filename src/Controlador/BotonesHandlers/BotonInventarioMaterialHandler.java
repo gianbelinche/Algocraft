@@ -7,12 +7,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.BackgroundImage;
 
-public class BotonInventarioHandler implements EventHandler<ActionEvent> {
+public class BotonInventarioMaterialHandler implements EventHandler<ActionEvent> {
     MaterialSeleccionado materialSeleccionado;
     Material miMaterial;
     BackgroundImage backgroundImage;
 
-    public BotonInventarioHandler(MaterialSeleccionado materialSelec,BackgroundImage backgroundImage) {
+    public BotonInventarioMaterialHandler(MaterialSeleccionado materialSelec, BackgroundImage backgroundImage) {
         this.backgroundImage = backgroundImage;
         materialSeleccionado = materialSelec;
     }
