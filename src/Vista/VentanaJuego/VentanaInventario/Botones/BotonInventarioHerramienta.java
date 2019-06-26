@@ -39,7 +39,6 @@ public class BotonInventarioHerramienta extends Button {
     }
 
     public void actualizarCantidad(){
-        System.out.println(jugador.obtenerCantidadDeInventario(miHerramienta));
         this.cantidad = jugador.obtenerCantidadDeInventario(miHerramienta);
         this.setText(Integer.toString(cantidad));
     }
