@@ -7,12 +7,13 @@ import Modelo.Construccion.Recetario;
 import Modelo.Inventario;
 import Modelo.Jugador;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
+import Vista.VentanaJuego.VentanaInventario.MesaCrafteo;
 import javafx.scene.control.Button;
 
 public class BotonCraftear extends Button {
-    public BotonCraftear(Receta receta, Jugador jugador, InventarioLayout inventarioLayout){
+    public BotonCraftear(Receta receta, Jugador jugador, InventarioLayout inventarioLayout, MesaCrafteo mesa){
         this.setText("Craftear");
-        BotonCraftearHandler handler = new BotonCraftearHandler(receta,jugador, inventarioLayout);
+        BotonCraftearHandler handler = new BotonCraftearHandler(receta,jugador, inventarioLayout,mesa);
         this.setTranslateX(30);
         this.setOnAction(handler);
     }

@@ -5,6 +5,7 @@ import Modelo.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonCraftear;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -27,10 +28,17 @@ public class MesaCrafteo extends GridPane {
         }
 
         //Creo boton de craftear
-        BotonCraftear botonCraftear = new BotonCraftear(receta,jugador, inventarioLayout);
+        BotonCraftear botonCraftear = new BotonCraftear(receta,jugador, inventarioLayout,this);
         botonCraftear.setPrefWidth(80);
         botonCraftear.setPrefHeight(80);
         this.add(botonCraftear, 5,0,3,3);
     }
 
+    public void vaciar(){
+        for (Node child : this.getChildren()){
+            if (child instanceof BotonMesaCrafteo){
+                ((BotonMesaCrafteo) child).ponerFondoVacio();
+            }
+        }
+    }
 }

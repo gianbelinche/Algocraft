@@ -5,12 +5,15 @@ import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.layout.BackgroundImage;
 
 public class BotonInventarioHandler implements EventHandler<ActionEvent> {
     MaterialSeleccionado materialSeleccionado;
     Material miMaterial;
+    BackgroundImage backgroundImage;
 
-    public BotonInventarioHandler(MaterialSeleccionado materialSelec) {
+    public BotonInventarioHandler(MaterialSeleccionado materialSelec,BackgroundImage backgroundImage) {
+        this.backgroundImage = backgroundImage;
         materialSeleccionado = materialSelec;
     }
 
@@ -19,6 +22,8 @@ public class BotonInventarioHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent event) {
+
         materialSeleccionado.seleccionarMaterial(miMaterial);
+        materialSeleccionado.definirFondo(backgroundImage);;
     }
 }

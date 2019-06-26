@@ -24,9 +24,10 @@ public class BotonInventarioMaterial extends Button {
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
+
         this.setBackground(new Background(backgroundImage));
 
-        this.botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado);
+        this.botonInventarioHandler = new BotonInventarioHandler(materialSeleccionado,backgroundImage);
         this.setPrefSize(56,56);
         this.setOnAction(botonInventarioHandler);
 
