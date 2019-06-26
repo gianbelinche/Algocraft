@@ -28,19 +28,19 @@ public class InventarioMateriales extends GridPane {
         }
         BotonInventarioMaterial botonInventarioMaterial;
         botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMadera.png")
-                , new Madera());
+                , new Madera(), jugador);
         this.add(botonInventarioMaterial, 0, 0, 1, 1);
 
         botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonPiedra.png")
-                , new Piedra());
+                , new Piedra(), jugador);
         this.add(botonInventarioMaterial, 1, 0, 1, 1);
 
         botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonMetal.png")
-                , new Metal());
+                , new Metal(), jugador);
         this.add(botonInventarioMaterial, 2, 0, 1, 1);
 
         botonInventarioMaterial = new BotonInventarioMaterial(materialSeleccionado, new Image("file:src/Vista/Imagenes/BotonDiamante.png")
-                , new Diamante());
+                , new Diamante(), jugador);
         this.add(botonInventarioMaterial, 3, 0, 1, 1);
     }
 

@@ -16,7 +16,7 @@ public class BotonInventarioMaterial extends Button {
     private Jugador jugador;
     private Material material;
 
-    public BotonInventarioMaterial(MaterialSeleccionado materialSeleccionado, Image imagen, Material miMaterial){
+    public BotonInventarioMaterial(MaterialSeleccionado materialSeleccionado, Image imagen, Material miMaterial, Jugador unJugador){
 
         Image image = imagen;
 
@@ -36,7 +36,8 @@ public class BotonInventarioMaterial extends Button {
         this.setAlignment(Pos.BOTTOM_RIGHT);
 
         botonInventarioHandler.setMaterial(miMaterial);
-        this.material = material;
+        this.material = miMaterial;
+        this.jugador = unJugador;
     }
 
     public void actualizarCantidad(){
