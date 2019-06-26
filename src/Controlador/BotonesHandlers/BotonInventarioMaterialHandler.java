@@ -24,6 +24,6 @@ public class BotonInventarioMaterialHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent event) {
 
         materialSeleccionado.seleccionarMaterial(miMaterial);
-        materialSeleccionado.definirFondo(backgroundImage);;
+        materialSeleccionado.definirFondo(backgroundImage);
     }
 }

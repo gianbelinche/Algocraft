@@ -31,8 +31,11 @@ public class Jugador implements Posicionable {
     }
 
     public void equipar(Herramienta herramienta){
+        Herramienta herramientaAEquipar;
         try {
-            herramientaEquipada = (Herramienta) inventario.obtener(herramienta);
+            herramientaAEquipar = (Herramienta) inventario.obtener(herramienta);
+            inventario.almacenar(herramientaEquipada);
+            herramientaEquipada = herramientaAEquipar;
         } catch (AlmacenableNoDisponibleException e){
             //Imprimir algo o hacer nada?
         }

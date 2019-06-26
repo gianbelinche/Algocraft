@@ -20,32 +20,32 @@ public class InventarioHerramientas extends GridPane {
         BotonInventarioHerramienta botonHerramienta;
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonHachaMadera.png")
-                , constructor.crearHachaDeMadera(), jugador);
+                , constructor.crearHachaDeMadera(), jugador, inventarioLayout);
         botonHerramienta.actualizarCantidad();
         this.add(botonHerramienta, 0, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonHachaPiedra.png")
-                ,constructor.crearHachaDePiedra(), jugador);
+                ,constructor.crearHachaDePiedra(), jugador, inventarioLayout);
         this.add(botonHerramienta, 1, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonHachaMetal.png")
-                ,constructor.crearHachaDeMetal(),jugador);
+                ,constructor.crearHachaDeMetal(), jugador, inventarioLayout);
         this.add(botonHerramienta, 2, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonPicoMadera.png")
-                ,constructor.crearPicoDeMadera(),jugador);
+                ,constructor.crearPicoDeMadera(), jugador, inventarioLayout);
         this.add(botonHerramienta, 3, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonPicoPiedra.png")
-                ,constructor.crearPicoDePiedra(),jugador);
+                ,constructor.crearPicoDePiedra(), jugador, inventarioLayout);
         this.add(botonHerramienta, 4, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonPicoMetal.png")
-                ,constructor.crearPicoDeMetal(),jugador);
+                ,constructor.crearPicoDeMetal(), jugador, inventarioLayout);
         this.add(botonHerramienta, 5, 0, 1, 1);
 
         botonHerramienta = new BotonInventarioHerramienta(new Image("file:src/Vista/Imagenes/BotonPicoFino.png")
-                ,constructor.crearPicoDePiedraRefinada(),jugador);
+                ,constructor.crearPicoDePiedraRefinada(), jugador, inventarioLayout);
         this.add(botonHerramienta, 6, 0, 1, 1);
 
         //Relleno con botones vacios

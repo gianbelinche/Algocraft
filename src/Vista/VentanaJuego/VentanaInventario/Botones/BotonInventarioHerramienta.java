@@ -3,6 +3,7 @@ package Vista.VentanaJuego.VentanaInventario.Botones;
 import Controlador.BotonesHandlers.BotonInventarioHerramientaHandler;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Jugador;
+import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -15,7 +16,7 @@ public class BotonInventarioHerramienta extends Button {
     private int cantidad;
     private Jugador jugador;
 
-    public BotonInventarioHerramienta(Image imagen, Herramienta unaHerramienta, Jugador unJugador){
+    public BotonInventarioHerramienta(Image imagen, Herramienta unaHerramienta, Jugador unJugador, InventarioLayout inventarioLayout){
 
         this.miHerramienta = unaHerramienta;
         this.jugador = unJugador;
@@ -26,7 +27,7 @@ public class BotonInventarioHerramienta extends Button {
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
         this.setBackground(new Background(backgroundImage));
 
-        botonInventarioHerramientaHandler = new BotonInventarioHerramientaHandler(miHerramienta, jugador);
+        botonInventarioHerramientaHandler = new BotonInventarioHerramientaHandler(miHerramienta, jugador, inventarioLayout);
         this.setOnAction(botonInventarioHerramientaHandler);
 
         this.setPrefSize(56,56);

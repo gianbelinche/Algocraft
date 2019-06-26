@@ -18,7 +18,6 @@ public class Juego {
         inventario = new Inventario();
         jugador = new Jugador(inventario);
         receta = new Receta(inventario);
-        jugador.guardarEnInventario(jugador.herramientaEquipada());
         inicializarTablero();
     }
 
