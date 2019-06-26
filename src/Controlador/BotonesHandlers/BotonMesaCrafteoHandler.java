@@ -17,7 +17,7 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     int y;
     public BotonMesaCrafteoHandler(Jugador jugador, Receta receta, MaterialSeleccionado material, InventarioLayout inventarioLayout, int x_pasado, int y_pasado){
         this.receta = receta;
-        materialSeleccionado = material;
+        this.materialSeleccionado = material;
         x = x_pasado;
         y = y_pasado;
         this.jugador = jugador;
@@ -29,8 +29,7 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
         //Ojo, hay que pedirle al inventario el material, no usar directamente el materialSeleccionado
         Material material = materialSeleccionado.obtenerSeleccionado();
         if (material != null) {
-            Material materialInventario = (Material) jugador.obtenerDeInventario(material);
-            this.receta.posicionar(x,y, materialInventario);
+            this.receta.posicionar(x,y, material);
         }
         inventarioLayout.actualizarMateriales();
         

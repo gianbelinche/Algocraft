@@ -4,6 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.Posicionable;
 import Modelo.Escenario.Tablero;
+import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Materiales.Material;
 
@@ -83,7 +84,10 @@ public class Jugador implements Posicionable {
 
         try {
             materialRecogido = (Almacenable) herramientaEquipada.getClass().getDeclaredMethod("recoger",unMaterial.getClass()).invoke(herramientaEquipada,unMaterial);
-        } catch (Exception e) {}
+        } catch (HerramientaRotaException e) {
+            this.obtenerDeInventario(herramientaEquipada);
+            herramientaEquipada = null;
+        } catch (Exception e){}
 
         if(materialRecogido != null){
             inventario.almacenar(materialRecogido);

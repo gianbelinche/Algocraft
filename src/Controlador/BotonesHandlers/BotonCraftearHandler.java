@@ -14,13 +14,11 @@ import javafx.event.EventHandler;
 public class BotonCraftearHandler implements EventHandler<javafx.event.ActionEvent> {
     Receta receta;
     Jugador jugador;
-    Recetario recetario;
     InventarioLayout inventarioLayout;
 
     public BotonCraftearHandler(Receta receta, Jugador jugador, InventarioLayout inventarioLayout){
         this.receta = receta;
         this.jugador = jugador;
-        this.recetario = recetario;
         this.inventarioLayout = inventarioLayout;
 
     }

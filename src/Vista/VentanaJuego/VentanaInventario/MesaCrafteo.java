@@ -20,7 +20,7 @@ public class MesaCrafteo extends GridPane {
 
         for(int i=0; i < 3; i++){
             for(int j=0; j<3; j++){
-                botonesMesa = new BotonMesaCrafteo(jugador, receta, materialSeleccionado, inventarioLayout);
+                botonesMesa = new BotonMesaCrafteo(jugador, receta, materialSeleccionado, inventarioLayout,i,j);
                 this.add(botonesMesa, j, i, 1, 1);
                 botonesMesa.setPrefSize(56,56);
             }

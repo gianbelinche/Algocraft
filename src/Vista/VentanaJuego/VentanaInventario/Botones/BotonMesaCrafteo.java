@@ -12,9 +12,7 @@ import javafx.scene.layout.*;
 public class BotonMesaCrafteo extends Button {
     Receta receta;
     MaterialSeleccionado material;
-    int x;
-    int y;
-    public BotonMesaCrafteo(Jugador jugador, Receta receta, MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout){
+    public BotonMesaCrafteo(Jugador jugador, Receta receta, MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout, int x, int y){
 
         Image image = new Image("file:src/Vista/Imagenes/BotonVacio.png");
 
