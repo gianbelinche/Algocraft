@@ -35,11 +35,7 @@ public class Ventana extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Title");
 
-        String musicFile = "src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";     // For example
-
-        Media sound = new Media(new File(musicFile).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();
+        CajaMusical.reproducirMusicaDeFondo();
 
         TitleLayout titleLayout = new TitleLayout(primaryStage);
 
