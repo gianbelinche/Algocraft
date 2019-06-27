@@ -20,7 +20,8 @@ public class InventarioLayout extends GridPane {
         //Seteo el layout
         this.setVisible(false);
         this.stage = stage;
-        this.setPrefSize(stage.getWidth()*0.3, stage.getHeight()*0.55);
+        this.setPrefSize(stage.getWidth()*0.38, stage.getHeight()*0.6);
+        //this.setPrefSize(stage.getWidth()*0.4, stage.getHeight()*0.68);
         this.setTranslateX(stage.getWidth()*0.35);
         this.setTranslateY(stage.getHeight()*0.25);
         this.setAlignment(Pos.CENTER);
@@ -43,10 +44,15 @@ public class InventarioLayout extends GridPane {
 
         //Creo inventario completo
         VBox inventario = new VBox(inventarioMateriales, inventarioHerramientas);
+        //inventario.setPrefSize(this.getPrefWidth()*0.5, this.getPrefHeight()*0.5);
+        //inventario.setTranslateX(this.getPrefWidth()*0.02);
+        //inventario.setTranslateY(-1*this.getPrefHeight()*0.2);
         inventario.setAlignment(Pos.CENTER);
 
         this.add(mesaCrafteo, 0, 0, 1, 1);
-        this.add(inventario,0,1,1,1);
+        //this.add(inventario,0,1,1,1);
+        this.add(inventarioHerramientas, 0, 1, 2, 2);
+        this.add(inventarioMateriales, 0, 2, 1, 1);
 
     }
 
