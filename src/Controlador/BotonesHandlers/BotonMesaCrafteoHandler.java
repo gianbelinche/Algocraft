@@ -2,6 +2,7 @@ package Controlador.BotonesHandlers;
 
 import Modelo.Construccion.Receta;
 import Jugador.Jugador;
+import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
@@ -33,8 +34,12 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
         //Ojo, hay que pedirle al inventario el material, no usar directamente el materialSeleccionado
         Material material = materialSeleccionado.obtenerSeleccionado();
         if (material != null) {
-            this.receta.posicionar(x,y, material);
-            this.botonMesa.setBackground(new Background(materialSeleccionado.obtenerFondo()));
+            try{
+                this.receta.posicionar(x,y, material);
+                this.botonMesa.setBackground(new Background(materialSeleccionado.obtenerFondo()));
+            }catch (AlmacenableNoDisponibleException e) {}
+
+
         }
         inventarioLayout.actualizarMateriales();
         
