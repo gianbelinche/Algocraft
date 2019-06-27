@@ -1,4 +1,4 @@
-package Jugador;
+package Modelo.Jugador;
 
 public interface Direccion{
 

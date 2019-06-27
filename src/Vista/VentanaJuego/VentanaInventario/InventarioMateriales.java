@@ -1,6 +1,6 @@
 package Vista.VentanaJuego.VentanaInventario;
 
-import Jugador.Jugador;
+import Modelo.Jugador.Jugador;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;

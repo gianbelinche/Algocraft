@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaInventario.Botones;
 
 import Controlador.BotonesHandlers.BotonInventarioMaterialHandler;
-import Jugador.Jugador;
+import Modelo.Jugador.Jugador;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.geometry.Pos;
@@ -18,9 +18,7 @@ public class BotonInventarioMaterial extends Button {
 
     public BotonInventarioMaterial(MaterialSeleccionado materialSeleccionado, Image imagen, Material miMaterial, Jugador unJugador){
 
-        Image image = imagen;
-
-        BackgroundImage backgroundImage = new BackgroundImage(image,
+        BackgroundImage backgroundImage = new BackgroundImage(imagen,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
                 new BackgroundSize(1.0, 1.0, true, true, false, false));

@@ -1,7 +1,7 @@
 package Controlador;
 
-import Jugador.Jugador;
 import Vista.CajaMusical;
+import Modelo.Jugador.Jugador;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.EventHandler;
