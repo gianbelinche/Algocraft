@@ -5,7 +5,7 @@ import Modelo.Inventario.Almacenable;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.PosicionOcupada;
 
-public abstract class Material extends PosicionVacia {
+public abstract class Material extends PosicionOcupada {
 
     Posicion posicion;
     int durabilidad;
