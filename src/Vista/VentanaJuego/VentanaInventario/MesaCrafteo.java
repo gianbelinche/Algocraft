@@ -23,14 +23,14 @@ public class MesaCrafteo extends GridPane {
             for(int j=0; j<3; j++){
                 botonesMesa = new BotonMesaCrafteo(jugador, receta, materialSeleccionado, inventarioLayout,i,j);
                 this.add(botonesMesa, j, i, 1, 1);
-                botonesMesa.setPrefSize(56,56);
+                botonesMesa.setPrefSize(inventarioLayout.getPrefWidth()*0.105,inventarioLayout.getPrefHeight()*0.105);
             }
         }
 
         //Creo boton de craftear
         BotonCraftear botonCraftear = new BotonCraftear(receta,jugador, inventarioLayout,this);
-        botonCraftear.setPrefWidth(80);
-        botonCraftear.setPrefHeight(80);
+        botonCraftear.setPrefWidth(inventarioLayout.getPrefWidth()*0.18);
+        botonCraftear.setPrefHeight(inventarioLayout.getPrefHeight()*0.16);
         this.add(botonCraftear, 5,0,3,3);
     }
 

@@ -4,6 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.Madera;
+import javafx.scene.image.Image;
 import org.junit.Before;
 import org.junit.Test;
 
