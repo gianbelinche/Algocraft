@@ -1,5 +1,6 @@
 package Modelo.Materiales;
 
+import Modelo.Escenario.PosicionVacia;
 import Modelo.Inventario.Almacenable;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.PosicionOcupada;

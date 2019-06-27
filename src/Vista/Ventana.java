@@ -1,7 +1,7 @@
 package Vista;
 
 import Controlador.MainHandler;
-import Jugador.Juego;
+import Modelo.Juego;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaTablero.MainLayout;
 import Vista.VentanaPrincipal.TitleLayout;
@@ -51,7 +51,7 @@ public class Ventana extends Application {
 
     public void mainStart(Stage mainStage){
 
-        juego = new Juego();
+        juego = new Juego(this);
 
         Group root = new Group();
         Scene mainScene = new Scene( root, anchoPantalla, altoPantalla);
@@ -84,4 +84,7 @@ public class Ventana extends Application {
         dibujante.cambiarImagenJugador(imagen);
     }
 
+    public void mostrarVictoria(){
+        System.out.println("Gano");
+    }
 }

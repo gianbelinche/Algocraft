@@ -2,7 +2,7 @@ package Vista.VentanaJuego.VentanaInventario.Botones;
 
 import Controlador.BotonesHandlers.BotonInventarioHerramientaHandler;
 import Modelo.Herramientas.Herramienta;
-import Jugador.Jugador;
+import Modelo.Jugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

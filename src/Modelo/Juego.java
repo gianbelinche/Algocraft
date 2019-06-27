@@ -1,27 +1,30 @@
-package Jugador;
+package Modelo;
 
 import Modelo.Construccion.Receta;
+import Modelo.Escenario.Bote;
 import Modelo.Escenario.Tablero;
 import Modelo.Inventario.Inventario;
+import Modelo.Jugador.Jugador;
+import Vista.Ventana;
 
 public class Juego {
+    private Bote bote;
     private Jugador jugador;
     private Tablero tablero;
     private Receta receta;
     private Inventario inventario;
 
-    public Juego(){
+    public Juego(Ventana ventana){
         int ancho = 18;
         int largo = 20;
         int alto  = 5;
         tablero = Tablero.crearTablero(ancho,largo,alto);
         inventario = new Inventario();
         jugador = new Jugador(inventario);
+        bote = new Bote(ventana);
         receta = new Receta(inventario);
         inicializarTablero();
     }
-
-
 
     public Jugador obtenerJugador(){
         return jugador;
@@ -555,7 +558,7 @@ public class Juego {
         tablero.colocarEnPosicion(12,18,3, new Modelo.Escenario.Tierra());
         tablero.colocarEnPosicion(13,18,3, new Modelo.Escenario.PosicionOcupada());
         tablero.colocarEnPosicion(14,18,3, new Modelo.Escenario.PosicionOcupada());
-        tablero.colocarEnPosicion(15,18,3, new Modelo.Escenario.Bote());
+        tablero.colocarEnPosicion(15,18,3, bote);
         tablero.colocarEnPosicion(0,19,4, new Modelo.Escenario.Tierra());
         tablero.colocarEnPosicion(1,19,4, new Modelo.Escenario.Tierra());
         tablero.colocarEnPosicion(2,19,4, new Modelo.Escenario.Tierra());

@@ -1,4 +1,4 @@
-package Jugador;
+package Modelo.Jugador;
 
 import Modelo.Inventario.Almacenable;
 import Modelo.Construccion.Constructor;

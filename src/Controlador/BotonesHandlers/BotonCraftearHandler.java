@@ -4,7 +4,7 @@ import Modelo.Inventario.Almacenable;
 import Modelo.Construccion.Receta;
 import Modelo.Construccion.Recetario;
 import Modelo.Herramientas.Herramienta;
-import Jugador.Jugador;
+import Modelo.Jugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaInventario.MesaCrafteo;
 import javafx.event.ActionEvent;
