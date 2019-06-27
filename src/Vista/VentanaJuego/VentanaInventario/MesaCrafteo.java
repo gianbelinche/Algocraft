@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class MesaCrafteo extends GridPane {
 
     public MesaCrafteo(Stage stage, Jugador jugador, Receta receta, MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout) {
-        this.setPrefSize(530, 480);
+        this.setPrefSize(inventarioLayout.getPrefWidth()*0.85, inventarioLayout.getPrefHeight()*0.8);
         BotonMesaCrafteo botonesMesa;
         this.setAlignment(Pos.TOP_CENTER);
         this.setTranslateY(stage.getHeight()*0.02);
