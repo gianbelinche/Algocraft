@@ -592,5 +592,7 @@ public class Juego {
         tablero.colocarEnPosicion(0,9,0, new Modelo.Escenario.Tierra());
         tablero.colocarEnPosicion(0,10,0, new Modelo.Materiales.Madera());
         tablero.colocarEnPosicion(0,12,0, new Modelo.Materiales.Madera());
+        tablero.colocarEnPosicion(16,18,3, new Modelo.Escenario.PosicionOcupada());
+        tablero.colocarEnPosicion(15,19,3, new Modelo.Escenario.PosicionOcupada());
     }
 }
