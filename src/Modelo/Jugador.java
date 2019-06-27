@@ -7,7 +7,10 @@ import Modelo.Escenario.Tablero;
 import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Herramienta;
+import Modelo.Herramientas.Mano;
 import Modelo.Materiales.Material;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class Jugador implements Posicionable {
 
@@ -92,10 +95,15 @@ public class Jugador implements Posicionable {
 
         try {
             materialRecogido = (Almacenable) herramientaEquipada.getClass().getDeclaredMethod("recoger",unMaterial.getClass()).invoke(herramientaEquipada,unMaterial);
-        } catch (HerramientaRotaException e) {
-            this.obtenerDeInventario(herramientaEquipada);
-            herramientaEquipada = null;
-        } catch (Exception e){}
+        } catch (InvocationTargetException e) {
+            if(e.getTargetException() instanceof  HerramientaRotaException){
+                herramientaEquipada = new Mano();
+            }
+        } catch (NoSuchMethodException e) {
+
+        }catch(IllegalAccessException e){
+
+        }
 
         if(materialRecogido != null){
             inventario.almacenar(materialRecogido);
