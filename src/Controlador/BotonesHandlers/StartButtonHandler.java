@@ -7,15 +7,16 @@ import javafx.stage.Stage;
 
 public class StartButtonHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    Ventana ventana = new Ventana();
+    Stage escenario;
+    Ventana ventana;
 
-    public StartButtonHandler(Stage stage){
-        this.stage = stage;
+    public StartButtonHandler(Stage nuevoEscenario, Ventana nuevaVentana){
+       escenario = nuevoEscenario;
+       ventana = nuevaVentana;
     }
 
     public void handle(ActionEvent event){
-        this.ventana.mainStart(stage);
+        ventana.mainStart(escenario);
     }
 
 }

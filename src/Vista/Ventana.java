@@ -26,41 +26,35 @@ public class Ventana extends Application {
         launch(args);
     }
 
+    public void ajustarEscenario(Stage escenario){
+        Rectangle2D bordesPantalla = Screen.getPrimary().getVisualBounds();
+
+        anchoPantalla = bordesPantalla.getWidth();
+        altoPantalla = bordesPantalla.getHeight();
+        escenario.setX(bordesPantalla.getMinX());
+        escenario.setY(bordesPantalla.getMinY());
+        escenario.setWidth(anchoPantalla);
+        escenario.setHeight(altoPantalla);
+        escenario.setResizable(false);
+    }
+
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Title");
 
         CajaMusical.reproducirMusicaDeFondo();
-
-        TitleLayout titleLayout = new TitleLayout(primaryStage);
-
+        TitleLayout titleLayout = new TitleLayout(primaryStage,this);
         Scene titleScene = new Scene(titleLayout);
         primaryStage.setScene(titleScene);
-
-        Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-
-        //set Stage boundaries to visible bounds of the main screen
-        primaryStage.setX(primaryScreenBounds.getMinX());
-        primaryStage.setY(primaryScreenBounds.getMinY());
-        primaryStage.setWidth(primaryScreenBounds.getWidth());
-        primaryStage.setHeight(primaryScreenBounds.getHeight());
-        primaryStage.setResizable(false);
-
+        ajustarEscenario(primaryStage);
         primaryStage.show();
     }
 
     public void mainStart(Stage mainStage){
-        //Inicializacion de juego
+
         juego = new Juego();
 
-        mainStage.setTitle("Main");
         Group root = new Group();
-
-        Rectangle2D bordesPantalla = Screen.getPrimary().getVisualBounds();
-        anchoPantalla = bordesPantalla.getWidth();
-        altoPantalla = bordesPantalla.getHeight();
         Scene mainScene = new Scene( root, anchoPantalla, altoPantalla);
-
         mainStage.setScene(mainScene);
 
         //Creo el layout del inventario
@@ -78,7 +72,6 @@ public class Ventana extends Application {
         root.getChildren().add(inventarioLayout);
 
         mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this, inventarioLayout));
-
         actualizarImagen();
 
     }

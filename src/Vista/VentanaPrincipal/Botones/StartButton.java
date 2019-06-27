@@ -1,6 +1,7 @@
 package Vista.VentanaPrincipal.Botones;
 
 import Controlador.BotonesHandlers.StartButtonHandler;
+import Vista.Ventana;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -10,8 +11,8 @@ import javafx.stage.Stage;
 
 public class StartButton extends Button {
 
-    public StartButton(Stage stage){
-        StartButtonHandler startButtonHandler = new StartButtonHandler(stage);
+    public StartButton(Stage stage, Ventana ventana){
+        StartButtonHandler startButtonHandler = new StartButtonHandler(stage,ventana);
         this.setOnAction(startButtonHandler);
 
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
@@ -28,7 +29,6 @@ public class StartButton extends Button {
 
         Background background = new Background(backgroundImage);
         this.setBackground(background);
-
     }
 
 }
