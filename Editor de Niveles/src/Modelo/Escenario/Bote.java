@@ -1,4 +1,4 @@
 package Modelo.Escenario;
 
-public class Bote extends PosicionVacia {
+public class Bote extends PosicionOcupada {
 }

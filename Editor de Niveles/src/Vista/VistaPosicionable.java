@@ -1,8 +1,6 @@
 package Vista;
 
 import Modelo.Escenario.*;
-import Modelo.Escenario.Tierra;
-import Modelo.Jugador;
 import Modelo.Materiales.*;
 import Modelo.Escenario.Posicionable;
 import javafx.scene.canvas.GraphicsContext;
@@ -24,7 +22,7 @@ public class VistaPosicionable {
 
     private void inicializarImagenes(){
 
-        imagenes.put(Jugador.class        ,new Image("file:src/Vista/Imagenes/CasillaJugador.png"));
+        imagenes.put(Jugador.class        ,new Image("file:src/Vista/Imagenes/JugadorAbajo.png"));
         imagenes.put(PosicionVacia.class  ,new Image("file:src/Vista/Imagenes/CasillaVacia.png"));
         imagenes.put(PosicionOcupada.class,new Image("file:src/Vista/Imagenes/CasillaOcupada.png"));
         imagenes.put(Tierra.class         ,new Image("file:src/Vista/Imagenes/CasillaTierra.png"));
