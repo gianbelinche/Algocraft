@@ -1,6 +1,7 @@
 package Controlador.BotonesHandlers;
 
 import Jugador.Jugador;
+import Vista.CajaMusical;
 import Vista.Ventana;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,6 +18,7 @@ public class BotonPicarTalarHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
+        CajaMusical.reproducirMusicaDeHacha();
         jugador.recoger();
         ventana.actualizarImagen();
     }

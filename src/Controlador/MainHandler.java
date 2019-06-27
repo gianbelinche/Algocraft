@@ -1,6 +1,7 @@
 package Controlador;
 
 import Jugador.Jugador;
+import Vista.CajaMusical;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.EventHandler;
@@ -38,6 +39,7 @@ public class MainHandler implements EventHandler<KeyEvent>{
             ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorArriba.png"));
         }
         else if (key.getCode() == KeyCode.P) {
+            CajaMusical.reproducirMusicaDeHacha();
             jugador.recoger();
         }
         else if (key.getCode() == KeyCode.E) {

@@ -13,4 +13,12 @@ public class CajaMusical {
         MediaPlayer mediaPlayer = new MediaPlayer(melodia);
         mediaPlayer.play();
     }
+
+    public static void reproducirMusicaDeHacha(){
+        String musicaHacha = "src/Vista/Sonidos/Sonido hacha.wav";
+        Media melodia = new Media(new File(musicaHacha).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(melodia);
+        mediaPlayer.setVolume(0.5);
+        mediaPlayer.play();
+    }
 }
