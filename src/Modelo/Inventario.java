@@ -4,6 +4,7 @@ package Modelo;
 import Modelo.Construccion.Constructor;
 import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Herramientas.Hacha;
+import Modelo.Herramientas.Mano;
 import Modelo.Herramientas.Pico;
 import Modelo.Materiales.*;
 
@@ -18,6 +19,8 @@ public class Inventario {
 
     public Inventario(){
         Constructor constructor = new Constructor();
+        //Mano
+        inventario.put(new Mano(),new LinkedList());
         //Materiales
         inventario.put(new Madera(), new LinkedList<Madera>());
         inventario.put(new Piedra(), new LinkedList<Piedra>());

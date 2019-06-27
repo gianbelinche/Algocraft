@@ -98,6 +98,7 @@ public class Jugador implements Posicionable {
         } catch (InvocationTargetException e) {
             if(e.getTargetException() instanceof  HerramientaRotaException){
                 herramientaEquipada = new Mano();
+                return;
             }
         } catch (NoSuchMethodException e) {
 
