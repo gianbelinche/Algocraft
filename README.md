@@ -17,7 +17,7 @@
 **Entrega 1:** Jueves 6 de Junio
 
 Tests de Herramienta:
-- [X] Se crea hacha de madera con con su durabilidad y fuerza correspondiente
+- [X] Se crea hacha de madera con con su durabilidad y fuerza correspondiente 
 - [X] Se crea pico de madera con con su durabilidad y fuerza correspondiente
 - [X] Se crea hacha de metal con con su durabilidad y fuerza correspondiente
 - [X] Se crea Pico de metal con con su durabilidad y fuerza correspondiente
