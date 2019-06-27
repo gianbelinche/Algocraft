@@ -7,6 +7,8 @@ import java.io.File;
 
 public class CajaMusical {
 
+
+
     public static void reproducirMusicaDeFondo(){
         String musicaFondo = "src/Vista/Sonidos/C418  - Sweden - Minecraft Volume Alpha.mp3";
         Media melodia = new Media(new File(musicaFondo).toURI().toString());
@@ -16,8 +18,8 @@ public class CajaMusical {
 
     public static void reproducirMusicaDeHacha(){
         String musicaHacha = "src/Vista/Sonidos/Sonido hacha.wav";
-        Media melodia = new Media(new File(musicaHacha).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(melodia);
+        Media melodiaHacha = new Media(new File(musicaHacha).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(melodiaHacha);
         mediaPlayer.setVolume(0.5);
         mediaPlayer.play();
     }

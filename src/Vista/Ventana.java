@@ -73,7 +73,7 @@ public class Ventana extends Application {
         root.getChildren().add(mainLayout);
         root.getChildren().add(inventarioLayout);
 
-        mainScene.setOnKeyPressed(new MainHandler(juego.obtenerJugador(),this, inventarioLayout));
+        mainScene.setOnKeyReleased(new MainHandler(juego.obtenerJugador(),this, inventarioLayout));
         actualizarImagen();
 
     }

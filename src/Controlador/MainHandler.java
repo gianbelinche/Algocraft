@@ -22,30 +22,37 @@ public class MainHandler implements EventHandler<KeyEvent>{
     }
 
     public void handle(KeyEvent key){
-        if (key.getCode() == KeyCode.A ) {
-            jugador.moverIzquierda();
-            ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorIzquierda.png"));
-        }
-        else if (key.getCode() == KeyCode.S ){
-            jugador.moverAbajo();
-            ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorAbajo.png"));
-        }
-        else if (key.getCode() == KeyCode.D ){
-            jugador.moverDerecha();
-            ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorDerecha.png"));
-        }
-        else if (key.getCode() == KeyCode.W ){
-            jugador.moverArriba();
-            ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorArriba.png"));
-        }
-        else if (key.getCode() == KeyCode.P) {
-            CajaMusical.reproducirMusicaDeHacha();
-            jugador.recoger();
-        }
-        else if (key.getCode() == KeyCode.E) {
-            inventario.cambiarVisibilidad();
-            inventario.actualizarHerramientas();
-            inventario.actualizarMateriales();
+
+            switch (key.getCode()){
+                case A:
+                    jugador.moverIzquierda();
+                    ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorIzquierda.png"));
+                    break;
+                case S:
+                    jugador.moverAbajo();
+                    ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorAbajo.png"));
+                    break;
+
+                case D:
+                    jugador.moverDerecha();
+                    ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorDerecha.png"));
+                    break;
+
+                case W:
+                    jugador.moverArriba();
+                    ventana.cambiarImagenJugador(new Image("file:src/Vista/Imagenes/JugadorArriba.png"));
+                    break;
+
+                case P:
+                    CajaMusical.reproducirMusicaDeHacha();
+                    jugador.recoger();
+                    break;
+
+                case E:
+                    inventario.cambiarVisibilidad();
+                    inventario.actualizarHerramientas();
+                    inventario.actualizarMateriales();
+                    break;
         }
         ventana.actualizarImagen();
     }
