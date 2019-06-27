@@ -85,6 +85,7 @@ public class Ventana extends Application {
     }
 
     public void mostrarVictoria(){
+        CajaMusical.reproducirMusicaGanar();
         System.out.println("Gano");
     }
 }

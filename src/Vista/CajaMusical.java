@@ -21,4 +21,12 @@ public class CajaMusical {
         mediaPlayer.setVolume(0.5);
         mediaPlayer.play();
     }
+
+    public static void reproducirMusicaGanar(){
+        String musicaGanar = "src/Vista/Sonidos/Sonido ganar.wav";
+        Media melodia = new Media(new File(musicaGanar).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(melodia);
+        mediaPlayer.setVolume(0.5);
+        mediaPlayer.play();
+    }
 }
