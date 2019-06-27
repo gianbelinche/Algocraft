@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaTablero;
 
 
-import Modelo.Juego;
+import Jugador.Juego;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaTablero.Botones.*;

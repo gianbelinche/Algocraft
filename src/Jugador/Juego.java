@@ -1,8 +1,8 @@
-package Modelo;
+package Jugador;
 
 import Modelo.Construccion.Receta;
 import Modelo.Escenario.Tablero;
-import Modelo.Escenario.Tierra;
+import Modelo.Inventario.Inventario;
 
 public class Juego {
     private Jugador jugador;

@@ -1,7 +1,7 @@
 package Modelo.Construccion;
 
 import Modelo.Herramientas.Herramienta;
-import Modelo.Inventario;
+import Modelo.Inventario.Inventario;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;

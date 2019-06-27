@@ -1,6 +1,6 @@
 package Modelo.Herramientas;
 
-import Modelo.Almacenable;
+import Modelo.Inventario.Almacenable;
 import Modelo.Desgastes.Desgaste;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Materiales.Material;

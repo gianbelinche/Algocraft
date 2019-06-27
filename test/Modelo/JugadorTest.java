@@ -1,10 +1,13 @@
 package Modelo;
 
+import Jugador.*;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
 import Modelo.Escenario.TableroIterador;
 import Modelo.Herramientas.Hacha;
 import Modelo.Herramientas.Herramienta;
+import Modelo.Inventario.Almacenable;
+import Modelo.Inventario.Inventario;
 import Modelo.Materiales.Madera;
 import org.junit.Before;
 import org.junit.Test;

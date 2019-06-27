@@ -1,6 +1,7 @@
 package Modelo;
 
 import Modelo.Construccion.Receta;
+import Modelo.Inventario.Inventario;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;

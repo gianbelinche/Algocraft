@@ -1,8 +1,10 @@
 package Modelo;
 
+import Jugador.Jugador;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.*;
 import Modelo.Herramientas.Pico;
+import Modelo.Inventario.Inventario;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Piedra;
 import org.junit.Before;

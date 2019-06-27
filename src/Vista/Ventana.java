@@ -1,23 +1,18 @@
 package Vista;
 
 import Controlador.MainHandler;
-import Modelo.Juego;
+import Jugador.Juego;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaTablero.MainLayout;
 import Vista.VentanaPrincipal.TitleLayout;
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-
-import java.io.File;
 
 public class Ventana extends Application {
 

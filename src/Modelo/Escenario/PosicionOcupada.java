@@ -1,6 +1,6 @@
 package Modelo.Escenario;
 
-import Modelo.Almacenable;
+import Modelo.Inventario.Almacenable;
 
 public class PosicionOcupada implements Posicionable, Almacenable {
 

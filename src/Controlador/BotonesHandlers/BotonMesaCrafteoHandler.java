@@ -1,7 +1,7 @@
 package Controlador.BotonesHandlers;
 
 import Modelo.Construccion.Receta;
-import Modelo.Jugador;
+import Jugador.Jugador;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
@@ -9,7 +9,6 @@ import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
 
 public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     Receta receta;

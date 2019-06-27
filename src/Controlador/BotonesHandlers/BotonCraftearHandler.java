@@ -1,11 +1,10 @@
 package Controlador.BotonesHandlers;
 
-import Modelo.Almacenable;
+import Modelo.Inventario.Almacenable;
 import Modelo.Construccion.Receta;
 import Modelo.Construccion.Recetario;
 import Modelo.Herramientas.Herramienta;
-import Modelo.Inventario;
-import Modelo.Jugador;
+import Jugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaInventario.MesaCrafteo;
 import javafx.event.ActionEvent;

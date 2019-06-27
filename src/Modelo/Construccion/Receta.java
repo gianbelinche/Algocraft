@@ -1,6 +1,6 @@
 package Modelo.Construccion;
 
-import Modelo.Inventario;
+import Modelo.Inventario.Inventario;
 import Modelo.Materiales.Material;
 
 public class Receta {

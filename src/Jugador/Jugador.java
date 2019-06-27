@@ -1,5 +1,6 @@
-package Modelo;
+package Jugador;
 
+import Modelo.Inventario.Almacenable;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Posicion;
 import Modelo.Escenario.Posicionable;
@@ -8,7 +9,7 @@ import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Herramientas.Mano;
-import Modelo.Materiales.Material;
+import Modelo.Inventario.Inventario;
 
 import java.lang.reflect.InvocationTargetException;
 

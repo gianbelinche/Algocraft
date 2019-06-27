@@ -1,4 +1,4 @@
-package Modelo;
+package Modelo.Inventario;
 
 
 import Modelo.Construccion.Constructor;
@@ -9,7 +9,6 @@ import Modelo.Herramientas.Pico;
 import Modelo.Materiales.*;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Map;
 

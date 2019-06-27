@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaInventario;
 
 import Modelo.Construccion.Receta;
-import Modelo.Jugador;
+import Jugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonCraftear;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
 import javafx.geometry.Pos;

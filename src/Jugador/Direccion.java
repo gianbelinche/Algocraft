@@ -1,4 +1,4 @@
-package Modelo;
+package Jugador;
 
 public interface Direccion{
 

@@ -1,4 +1,4 @@
-package Modelo;
+package Jugador;
 
 public class Abajo implements Direccion {
 

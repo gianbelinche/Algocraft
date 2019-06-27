@@ -3,9 +3,7 @@ package Vista.VentanaJuego.VentanaInventario.Botones;
 
 import Controlador.BotonesHandlers.BotonCraftearHandler;
 import Modelo.Construccion.Receta;
-import Modelo.Construccion.Recetario;
-import Modelo.Inventario;
-import Modelo.Jugador;
+import Jugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import Vista.VentanaJuego.VentanaInventario.MesaCrafteo;
 import javafx.scene.control.Button;

@@ -1,6 +1,6 @@
 package Controlador;
 
-import Modelo.Jugador;
+import Jugador.Jugador;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.EventHandler;

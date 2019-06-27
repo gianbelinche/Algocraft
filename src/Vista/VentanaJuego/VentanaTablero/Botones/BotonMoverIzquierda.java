@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaTablero.Botones;
 
 import Controlador.BotonesHandlers.BotonMoverIzquierdaHandler;
-import Modelo.Jugador;
+import Jugador.Jugador;
 import Vista.Ventana;
 import javafx.scene.control.Button;
 
