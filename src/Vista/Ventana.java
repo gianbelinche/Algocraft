@@ -88,7 +88,7 @@ public class Ventana extends Application {
 
     public void mostrarVictoria(){
 
-        Image image = new Image("file:src/Vista/Imagenes/Ganaste.jpeg");
+        Image image = new Image("file:src/Vista/Imagenes/ganaste.png");
         this.canvas.getGraphicsContext2D().drawImage(image,100,100);
 
         CajaMusical.reproducirMusicaGanar();
