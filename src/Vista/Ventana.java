@@ -20,6 +20,7 @@ public class Ventana extends Application {
     private Dibujante dibujante;
     private double anchoPantalla;
     private double altoPantalla;
+    private Canvas canvas;
 
 
     public static void main(String[] args) {
@@ -62,6 +63,7 @@ public class Ventana extends Application {
 
         //Creo tablero de juego
         Canvas canvas = new Canvas(anchoPantalla,altoPantalla);
+        this.canvas = canvas;
         dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla,altoPantalla);
 
         //Creo fondo principal
@@ -85,6 +87,10 @@ public class Ventana extends Application {
     }
 
     public void mostrarVictoria(){
+
+        Image image = new Image("file:src/Vista/Imagenes/Ganaste.jpeg");
+        this.canvas.getGraphicsContext2D().drawImage(image,100,100);
+
         CajaMusical.reproducirMusicaGanar();
         System.out.println("Gano");
     }
