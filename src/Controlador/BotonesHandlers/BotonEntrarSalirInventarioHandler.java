@@ -1,6 +1,7 @@
 package Controlador.BotonesHandlers;
 
 
+import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -8,16 +9,20 @@ import javafx.scene.layout.VBox;
 
 public class BotonEntrarSalirInventarioHandler implements EventHandler<ActionEvent> {
 
-        private InventarioLayout inventario;
+    private Ventana ventana;
+    private InventarioLayout inventario;
 
-        public BotonEntrarSalirInventarioHandler(InventarioLayout unInventario){
+        public BotonEntrarSalirInventarioHandler(InventarioLayout unInventario, Ventana ventana){
             this.inventario = unInventario;
+            this.ventana = ventana;
         }
+
         @Override
         public void handle(ActionEvent event){
             inventario.setVisible(!inventario.isVisible());
             inventario.actualizarHerramientas();
             inventario.actualizarMateriales();
+            ventana.actualizarImagen();
         }
 
 

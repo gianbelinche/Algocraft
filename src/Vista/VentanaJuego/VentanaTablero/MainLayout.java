@@ -36,7 +36,7 @@ public class MainLayout extends Pane {
         BotonAyuda botonAyuda = new BotonAyuda(ventana);
 
         //Creo boton inventario
-        BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout);
+        BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout, ventana);
 
         //Creo boton reiniciar
         BotonReiniciarJuego botonReiniciarJuego = new BotonReiniciarJuego(ventana, mainStage);

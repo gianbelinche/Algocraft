@@ -4,6 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Herramientas.Mano;
 import Modelo.Jugador.Jugador;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
@@ -27,6 +28,8 @@ public class BotonHerramientaEquipada extends Button {
 
         this.inicializarImagenes();
         this.actualizarImagen();
+        this.setStyle("-fx-text-fill: rgb(252,246,255)");
+        this.setAlignment(Pos.BOTTOM_RIGHT);
     }
 
     private void inicializarImagenes() {
@@ -51,6 +54,9 @@ public class BotonHerramientaEquipada extends Button {
                 BackgroundPosition.DEFAULT,
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
         this.setBackground(new Background(backgroundImage));
+
+        int durabilidadHerramienta = herramienta.durabilidad();
+        this.setText(Integer.toString(durabilidadHerramienta));
     }
 
 }
