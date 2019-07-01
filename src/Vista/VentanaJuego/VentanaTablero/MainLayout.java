@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 public class MainLayout extends Pane {
 
-    public MainLayout(Stage mainStage, Juego juego, Ventana ventana, InventarioLayout inventarioLayout) {
+    public MainLayout(Stage mainStage, Juego juego, Ventana ventana, InventarioLayout inventarioLayout, BotonHerramientaEquipada botonHerramientaEquipada) {
 
         //Creo botones de movimiento
         BotonMoverAbajo botonMoverAbajo = new BotonMoverAbajo(ventana,juego.obtenerJugador());
@@ -24,24 +24,31 @@ public class MainLayout extends Pane {
         HBox botonesMovimientoAbajo = new HBox(botonMoverIzquierda, botonMoverAbajo, botonMoverDerecha);
 
         BotonMoverArriba botonMoverArriba = new BotonMoverArriba(ventana,juego.obtenerJugador());
-        botonMoverArriba.setTranslateX(28); //Lo acomodo
 
         VBox botonesMovimientoCompleto = new VBox(botonMoverArriba, botonesMovimientoAbajo);
         botonesMovimientoCompleto.setSpacing(10);
+        botonesMovimientoCompleto.setAlignment(Pos.CENTER);
 
         //Creo boton para picar/talar
         BotonPicarTalar botonPicarTalar = new BotonPicarTalar(ventana, juego.obtenerJugador());
-        VBox contenedorBotones = new VBox(botonPicarTalar);
-        contenedorBotones.setSpacing(20);
 
         //Creo boton inventario
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout);
-        contenedorBotones.getChildren().addAll(botonEntrarInventario);
 
-        VBox columnaBotones = new VBox(botonesMovimientoCompleto, contenedorBotones);
+        //Creo boton reiniciar
+        BotonReiniciarJuego botonReiniciarJuego = new BotonReiniciarJuego(ventana, mainStage);
+
+        //Creo contenedor de botones principal
+        VBox contenedorBotones = new VBox(botonPicarTalar, botonEntrarInventario, botonReiniciarJuego);
+        contenedorBotones.setSpacing(20);
+        contenedorBotones.setAlignment(Pos.CENTER);
+
+        //Columna de Botones
+        VBox columnaBotones = new VBox(botonHerramientaEquipada, botonesMovimientoCompleto, contenedorBotones);
         columnaBotones.setSpacing(100);
         columnaBotones.setAlignment(Pos.CENTER);
 
+        //Caja Completa y Centrada
         HBox cajaCompleta = new HBox(columnaBotones);
         cajaCompleta.setPrefSize(150, Screen.getPrimary().getVisualBounds().getHeight());
         cajaCompleta.setSpacing(40);

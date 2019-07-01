@@ -3,6 +3,7 @@ package Vista;
 import Controlador.MainHandler;
 import Modelo.Juego;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
+import Vista.VentanaJuego.VentanaTablero.BotonHerramientaEquipada;
 import Vista.VentanaJuego.VentanaTablero.MainLayout;
 import Vista.VentanaPrincipal.TitleLayout;
 import javafx.application.Application;
@@ -21,6 +22,7 @@ public class Ventana extends Application {
     private double anchoPantalla;
     private double altoPantalla;
     private Group root;
+    private BotonHerramientaEquipada botonHerramientaEquipada;
 
 
     public static void main(String[] args) {
@@ -59,6 +61,9 @@ public class Ventana extends Application {
         Scene mainScene = new Scene( root, anchoPantalla, altoPantalla);
         mainStage.setScene(mainScene);
 
+        //Creo boton para ver herramienta equipada
+        this.botonHerramientaEquipada = new BotonHerramientaEquipada(juego.obtenerJugador());
+
         //Creo el layout del inventario
         InventarioLayout inventarioLayout = new InventarioLayout(mainStage,juego);
 
@@ -67,7 +72,7 @@ public class Ventana extends Application {
         dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla,altoPantalla);
 
         //Creo fondo principal
-        MainLayout mainLayout = new MainLayout(mainStage,juego,this, inventarioLayout);
+        MainLayout mainLayout = new MainLayout(mainStage,juego,this, inventarioLayout, botonHerramientaEquipada);
 
         root.getChildren().add(canvas);
         root.getChildren().add(mainLayout);
@@ -80,6 +85,7 @@ public class Ventana extends Application {
 
     public void actualizarImagen(){
         dibujante.dibujar();
+        botonHerramientaEquipada.actualizarImagen();
     }
 
     public void cambiarImagenJugador(Image imagen){
@@ -95,6 +101,6 @@ public class Ventana extends Application {
         root.getChildren().add(canvas);
 
         CajaMusical.reproducirMusicaGanar();
-        System.out.println("Gano");
+
     }
 }

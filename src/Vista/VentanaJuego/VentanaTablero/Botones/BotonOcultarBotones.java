@@ -3,6 +3,7 @@ package Vista.VentanaJuego.VentanaTablero.Botones;
 import Controlador.BotonesHandlers.BotonOcultarBotonesHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class BotonOcultarBotones extends Button {
 
