@@ -23,6 +23,8 @@ public class Ventana extends Application {
     private double altoPantalla;
     private Group root;
     private BotonHerramientaEquipada botonHerramientaEquipada;
+    private Canvas atrilAyuda;
+    private Canvas atrilVictoria;
 
 
     public static void main(String[] args) {
@@ -71,15 +73,29 @@ public class Ventana extends Application {
         Canvas canvas = new Canvas(anchoPantalla,altoPantalla);
         dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla,altoPantalla);
 
+        //Creo atrilAyuda
+        Image imagenAyuda = new Image("file:src/Vista/Imagenes/ayuda.png");
+        atrilAyuda = new Canvas(anchoPantalla,altoPantalla);
+        atrilAyuda.getGraphicsContext2D().drawImage(imagenAyuda,anchoPantalla/2 - imagenAyuda.getWidth()/2,altoPantalla/2 - imagenAyuda.getHeight()/2);
+
+        //Creo atrilVictoria
+        Image imagenVictoria = new Image("file:src/Vista/Imagenes/ganaste.png");
+        atrilVictoria = new Canvas(anchoPantalla,altoPantalla);
+        atrilVictoria.getGraphicsContext2D().drawImage(imagenVictoria,anchoPantalla/2 - imagenVictoria.getWidth()/2,altoPantalla/2 - imagenVictoria.getHeight()/2);
+        atrilVictoria.setVisible(false);
+
         //Creo fondo principal
         MainLayout mainLayout = new MainLayout(mainStage,juego,this, inventarioLayout, botonHerramientaEquipada);
 
         root.getChildren().add(canvas);
+        root.getChildren().add(atrilVictoria);
+        root.getChildren().add(atrilAyuda);
         root.getChildren().add(mainLayout);
         root.getChildren().add(inventarioLayout);
 
         mainScene.setOnKeyReleased(new MainHandler(juego.obtenerJugador(),this, inventarioLayout));
         actualizarImagen();
+
 
     }
 
@@ -92,15 +108,13 @@ public class Ventana extends Application {
         dibujante.cambiarImagenJugador(imagen);
     }
 
+    public void mostrarAyuda(){
+        atrilAyuda.setVisible(!atrilAyuda.isVisible());
+    }
+
     public void mostrarVictoria(){
 
-        Image image = new Image("file:src/Vista/Imagenes/ganaste.png");
-        Canvas canvas = new Canvas(anchoPantalla,altoPantalla);
-        canvas.getGraphicsContext2D().drawImage(image,anchoPantalla/100 + 720,altoPantalla/100 +100);
-
-        root.getChildren().add(canvas);
-
+        atrilVictoria.setVisible(!atrilVictoria.isVisible());
         CajaMusical.reproducirMusicaGanar();
-
     }
 }

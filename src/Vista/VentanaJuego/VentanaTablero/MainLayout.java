@@ -32,6 +32,9 @@ public class MainLayout extends Pane {
         //Creo boton para picar/talar
         BotonPicarTalar botonPicarTalar = new BotonPicarTalar(ventana, juego.obtenerJugador());
 
+        //Creo boton ayuda
+        BotonAyuda botonAyuda = new BotonAyuda(ventana);
+
         //Creo boton inventario
         BotonEntrarInventario botonEntrarInventario = new BotonEntrarInventario(inventarioLayout);
 
@@ -39,7 +42,7 @@ public class MainLayout extends Pane {
         BotonReiniciarJuego botonReiniciarJuego = new BotonReiniciarJuego(ventana, mainStage);
 
         //Creo contenedor de botones principal
-        VBox contenedorBotones = new VBox(botonPicarTalar, botonEntrarInventario, botonReiniciarJuego);
+        VBox contenedorBotones = new VBox(botonPicarTalar, botonEntrarInventario, botonAyuda,botonReiniciarJuego);
         contenedorBotones.setSpacing(20);
         contenedorBotones.setAlignment(Pos.CENTER);
 
