@@ -74,10 +74,9 @@ public class Ventana extends Application {
         dibujante = new Dibujante(canvas.getGraphicsContext2D(),anchoPantalla,altoPantalla);
 
         //Creo atrilAyuda
-        Image imagenAyuda = new Image("file:src/Vista/Imagenes/ayuda.png");
+        Image imagenAyuda = new Image("file:src/Vista/Imagenes/ayuda.png",anchoPantalla/2, altoPantalla/2, true, false);
         atrilAyuda = new Canvas(anchoPantalla,altoPantalla);
         atrilAyuda.getGraphicsContext2D().drawImage(imagenAyuda,anchoPantalla/2 - imagenAyuda.getWidth()/2,altoPantalla/2 - imagenAyuda.getHeight()/2);
-
         //Creo atrilVictoria
         Image imagenVictoria = new Image("file:src/Vista/Imagenes/ganaste.png");
         atrilVictoria = new Canvas(anchoPantalla,altoPantalla);

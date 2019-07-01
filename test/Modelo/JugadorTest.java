@@ -1,6 +1,7 @@
 package Modelo;
 
-import Modelo.Jugador.*;
+import Modelo.Jugador_.*;
+import Modelo.Jugador_.Jugador;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
 import Modelo.Escenario.TableroIterador;

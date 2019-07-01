@@ -1,13 +1,12 @@
 package Vista.VentanaJuego.VentanaInventario;
 
-import Modelo.Jugador.Jugador;
+import Modelo.Jugador_.Jugador;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioMaterial;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;

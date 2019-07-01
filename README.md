@@ -27,7 +27,7 @@ Tests de Herramienta:
 - [X] Pico Fino se usa contra Diamante y se reduce su durabilidad correspondiente
 - [X] Pico Fino se usa contra los demás materiales y no se reduce su durabilidad
 
-Tests de Modelo.Jugador:
+Tests de Modelo.Jugador_:
 - [X] Correcta creación e inicialización del jugador
 
 Test de Material:
@@ -41,7 +41,7 @@ Test de Material:
 Construcción de herramienta:
 - [X] Se verifica la correcta construcción de cada herramienta con su correspondiente forma de creación y materiales.
 
-Modelo.Jugador:
+Modelo.Jugador_:
 - [X] Se verifica la correcta inicialización del jugador en el mapa.
 - [X] Se verifica que puede moverse para todas las direcciones vacías.
 

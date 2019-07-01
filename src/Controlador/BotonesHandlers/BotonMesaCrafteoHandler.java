@@ -1,7 +1,7 @@
 package Controlador.BotonesHandlers;
 
 import Modelo.Construccion.Receta;
-import Modelo.Jugador.Jugador;
+import Modelo.Jugador_.Jugador;
 import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;

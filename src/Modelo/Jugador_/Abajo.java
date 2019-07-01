@@ -1,15 +1,15 @@
-package Modelo.Jugador;
+package Modelo.Jugador_;
 
-public class Derecha implements Direccion {
+public class Abajo implements Direccion {
 
     @Override
     public int getIncrementoX() {
-        return 1;
+        return 0;
     }
 
     @Override
     public int getIncrementoY() {
-        return 0;
+        return 1;
     }
 
 }

@@ -3,7 +3,7 @@ package Vista.VentanaJuego.VentanaInventario;
 import Modelo.Construccion.Constructor;
 import Modelo.Construccion.Receta;
 import Modelo.Juego;
-import Modelo.Jugador.*;
+import Modelo.Jugador_.*;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
