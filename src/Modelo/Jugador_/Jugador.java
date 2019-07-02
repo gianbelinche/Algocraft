@@ -10,6 +10,7 @@ import Modelo.Excepciones.HerramientaRotaException;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Herramientas.Mano;
 import Modelo.Inventario.Inventario;
+import Modelo.Materiales.Material;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -40,9 +41,7 @@ public class Jugador implements Posicionable {
             herramientaAEquipar = (Herramienta) inventario.obtener(herramienta);
             inventario.almacenar(herramientaEquipada);
             herramientaEquipada = herramientaAEquipar;
-        } catch (AlmacenableNoDisponibleException e){
-            //Imprimir algo o hacer nada?
-        }
+        } catch (AlmacenableNoDisponibleException e){ }
     }
 
     @Override
@@ -91,7 +90,7 @@ public class Jugador implements Posicionable {
         int xMaterial = posicion.getX() + direccion.getIncrementoX();
         int yMaterial = posicion.getY() + direccion.getIncrementoY();
         int zMaterial = posicion.getZ();
-        Posicionable unMaterial = tablero.obtenerDePosicion(xMaterial, yMaterial, zMaterial);
+        Material unMaterial = (Material) tablero.obtenerDePosicion(xMaterial, yMaterial, zMaterial);
         Almacenable materialRecogido = null;
 
         try {
@@ -102,7 +101,7 @@ public class Jugador implements Posicionable {
                 return;
             }
         } catch (NoSuchMethodException e) {
-
+                herramientaEquipada.recoger(unMaterial);
         }catch(IllegalAccessException e){
 
         }

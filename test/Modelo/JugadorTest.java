@@ -1,5 +1,6 @@
 package Modelo;
 
+import Modelo.Herramientas.Pico;
 import Modelo.Jugador_.*;
 import Modelo.Jugador_.Jugador;
 import Modelo.Construccion.Constructor;
@@ -10,6 +11,7 @@ import Modelo.Herramientas.Herramienta;
 import Modelo.Inventario.Almacenable;
 import Modelo.Inventario.Inventario;
 import Modelo.Materiales.Madera;
+import Modelo.Materiales.Piedra;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -159,8 +161,7 @@ public class JugadorTest {
 
     @Test
     public void testJugadorRecogeMaderaConHachaYSeGuardaEnInventario(){
-        Constructor constructor = new Constructor();
-        jugador.equipar(constructor.crearHachaDeMadera()); //ES NECESARIO??
+        jugador.equipar(constructor.crearHachaDeMadera());
         Madera madera = new Madera();
         int xMaterial = x;
         int yMaterial = y+1; //Direccion de jugador: Abajo
@@ -176,6 +177,40 @@ public class JugadorTest {
         maderaRecogida = jugador.obtenerDeInventario(otraMadera);
 
         assertEquals(madera, maderaRecogida);
+    }
+
+    @Test
+    public void testJugadorUsaHachaContraPiedraYSeDesgastaElHacha(){
+        Hacha hacha = constructor.crearHachaDePiedra();
+        int durabilidadInicial = hacha.durabilidad();
+        jugador.guardarEnInventario(hacha);
+        jugador.equipar(hacha);
+        Piedra piedra = new Piedra();
+        int xMaterial = x;
+        int yMaterial = y+1; //Direccion de jugador: Abajo
+        int zMaterial = z;
+        tablero.colocarEnPosicion(xMaterial,yMaterial,zMaterial,piedra);
+        jugador.recoger();
+        jugador.recoger();
+        jugador.recoger();
+        assert(hacha.durabilidad() < durabilidadInicial);
+    }
+
+    @Test
+    public void testJugadorUsaPicoContraMaderaYSeDesgastaElPico(){
+        Pico pico = constructor.crearPicoDePiedra();
+        int durabilidadInicial = pico.durabilidad();
+        jugador.guardarEnInventario(pico);
+        jugador.equipar(pico);
+        Madera madera = new Madera();
+        int xMaterial = x;
+        int yMaterial = y+1; //Direccion de jugador: Abajo
+        int zMaterial = z;
+        tablero.colocarEnPosicion(xMaterial,yMaterial,zMaterial,madera);
+        jugador.recoger();
+        jugador.recoger();
+        jugador.recoger();
+        assert(pico.durabilidad() < durabilidadInicial);
     }
 
     @Test
