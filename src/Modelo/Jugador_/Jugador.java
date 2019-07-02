@@ -90,21 +90,32 @@ public class Jugador implements Posicionable {
         int xMaterial = posicion.getX() + direccion.getIncrementoX();
         int yMaterial = posicion.getY() + direccion.getIncrementoY();
         int zMaterial = posicion.getZ();
-        Material unMaterial = (Material) tablero.obtenerDePosicion(xMaterial, yMaterial, zMaterial);
+        Posicionable unMaterial = tablero.obtenerDePosicion(xMaterial, yMaterial, zMaterial);
         Almacenable materialRecogido = null;
+
+
+        // Jugador guarda las herramientas en una variable del tipo Herramienta.
+        // Se utiliza reflexion para que el método se busque primero en la clase que hereda.
 
         try {
             materialRecogido = (Almacenable) herramientaEquipada.getClass().getDeclaredMethod("recoger",unMaterial.getClass()).invoke(herramientaEquipada,unMaterial);
         } catch (InvocationTargetException e) {
-            if(e.getTargetException() instanceof  HerramientaRotaException){
                 herramientaEquipada = new Mano();
-                return;
-            }
         } catch (NoSuchMethodException e) {
-                herramientaEquipada.recoger(unMaterial);
-        }catch(IllegalAccessException e){
 
-        }
+            // Si el método no se encuentra, se busca en la clase madre.
+            // A partir de aquí la herencia funciona con normalidad.
+
+                try {
+                    materialRecogido = (Almacenable) herramientaEquipada.recoger((Material) unMaterial);
+                }
+                catch (HerramientaRotaException ex){
+                    herramientaEquipada = new Mano();
+                    return;
+                }
+                catch (Exception ex){}
+
+        }catch(IllegalAccessException e){}
 
         if(materialRecogido != null){
             inventario.almacenar(materialRecogido);
