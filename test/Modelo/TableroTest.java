@@ -299,8 +299,7 @@ public class TableroTest {
 
         assertEquals(objetoAcolocar,iterador.verActual());
     }
-
-    /*
+    
     @Test
     public void testTableroIteradorRetornaObjetoActualCorrectamenteVolumen(){
 
@@ -329,5 +328,5 @@ public class TableroTest {
             }
         }
     }
-    */
+
 }
