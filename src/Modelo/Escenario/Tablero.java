@@ -13,6 +13,7 @@ public class Tablero {
     private int alto;
 
     private PosicionVacia posicionVacia;
+    private PosicionOcupada posicionOcupada;
 
     public static Tablero crearTablero(int anchoPasado, int largoPasado,int altoPasado){
         elTablero = new Tablero(anchoPasado,largoPasado,altoPasado);
@@ -36,6 +37,7 @@ public class Tablero {
 
         mapa = new Posicionable[ancho][largo][alto];
         posicionVacia = new PosicionVacia();
+        posicionOcupada = new PosicionOcupada();
 
         TableroIterador iterador = obtenerIterador();
 
@@ -45,33 +47,35 @@ public class Tablero {
         }
     }
 
-    private boolean validarPosicion(int x, int y,int z){
-        if(x >= ancho || x < 0) return false;
-        if(y >= largo || y < 0) return false;
-        if(z >= alto  || z < 0) return false;
-        return true;
-    }
 
     public void colocarEnPosicion(int x, int y,int z, Posicionable objetoColocado){
-        if(!validarPosicion(x,y,z)) return;
-        mapa[x][y][z] = objetoColocado;
-        Posicion nuevaPosicion = new Posicion(x,y,z,this);
-        objetoColocado.establecerPosicion(nuevaPosicion);
+        try{
+            mapa[x][y][z] = objetoColocado;
+            Posicion nuevaPosicion = new Posicion(x,y,z,this);
+            objetoColocado.establecerPosicion(nuevaPosicion);
+        }catch(ArrayIndexOutOfBoundsException e){}
+
     }
 
     public void borrarEnPosicion(int x, int y,int z){
-        mapa[x][y][z] = posicionVacia;
+        try{
+            mapa[x][y][z] = posicionVacia;
+        }
+        catch (ArrayIndexOutOfBoundsException e){}
     }
 
     public Posicionable obtenerDePosicion(int x, int y,int z){
-        if(!validarPosicion(x,y,z)) return posicionVacia;
-        return mapa[x][y][z];
+        try{
+            return mapa[x][y][z];
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            return posicionOcupada;
+        }
+
     }
 
     public void mover(int viejaX,int viejaY,int viejaZ,int nuevaX, int nuevaY,int nuevaZ)
     {
-        if(!validarPosicion(nuevaX,nuevaY,viejaZ)) return;
-
         Posicionable objetoMoviendose = obtenerDePosicion(viejaX,viejaY,viejaZ);
         Posicionable casillaDestino = obtenerDePosicion(nuevaX,nuevaY,nuevaZ);
 
