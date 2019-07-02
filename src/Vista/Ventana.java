@@ -112,6 +112,6 @@ public class Ventana extends Application {
     public void mostrarVictoria(){
 
         atrilVictoria.setVisible(!atrilVictoria.isVisible());
-        CajaMusical.reproducirMusicaGanar();
+        CajaMusical.reproducirMusicaVictoria();
     }
 }
