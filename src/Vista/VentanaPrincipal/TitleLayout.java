@@ -15,12 +15,8 @@ public class TitleLayout extends StackPane {
 
         //Creo Botones
         BotonJugar botonJugar = new BotonJugar(stage,ventana);
-        BotonJugarHandler botonJugarHandler = new BotonJugarHandler(stage,ventana);
-        botonJugar.setOnAction(botonJugarHandler);
 
         BotonSalir botonSalir = new BotonSalir(stage);
-        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage);
-        botonSalir.setOnAction(botonSalirHandler);
 
         VBox contenedorBotones = new VBox(botonJugar, botonSalir);
         contenedorBotones.setSpacing(25);
