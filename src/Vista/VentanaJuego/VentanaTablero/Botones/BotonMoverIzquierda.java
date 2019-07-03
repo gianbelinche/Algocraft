@@ -7,9 +7,8 @@ import javafx.scene.control.Button;
 
 public class BotonMoverIzquierda extends Button {
 
-
-    Jugador jugador;
-    Ventana ventana;
+    private Jugador jugador;
+    private Ventana ventana;
 
     public BotonMoverIzquierda(Ventana ventana, Jugador jugador){
 
@@ -26,6 +25,5 @@ public class BotonMoverIzquierda extends Button {
     public Ventana obtenerVentana(){
         return ventana;
     }
-
 
 }

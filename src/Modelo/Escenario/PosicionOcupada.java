@@ -17,6 +17,4 @@ public class PosicionOcupada implements Posicionable, Almacenable {
     }
 
     public boolean almacenar(Almacenable objeto){ return true;}
-
-    public Almacenable obtener(){return null;}
 }

@@ -6,8 +6,10 @@ import Vista.Ventana;
 import javafx.scene.control.Button;
 
 public class BotonMoverAbajo extends Button {
-    Jugador jugador;
-    Ventana ventana;
+
+    private Jugador jugador;
+    private Ventana ventana;
+
     public BotonMoverAbajo(Ventana ventana, Jugador jugador){
         this.jugador = jugador;
         this.setText("↓");

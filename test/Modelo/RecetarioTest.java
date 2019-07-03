@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 public class RecetarioTest {
 
-    Receta receta;
+    private Receta receta;
 
     private Inventario inicializarInventario(){
             int numeroCadaMaterial = 30;

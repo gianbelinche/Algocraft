@@ -47,11 +47,6 @@ public abstract class Material extends PosicionOcupada{
     }
 
     @Override
-    public Almacenable obtener() {
-        return this;
-    }
-
-    @Override
     public int hashCode(){
         return 0;
     }

@@ -30,7 +30,7 @@ public class JugadorTest {
     private Direccion direccion;
 
 
-    private void resetearTablero(Tablero elTablero){
+    private void resetearTablero(){
 
         TableroIterador iterador = tablero.obtenerIterador();
         while(!iterador.haFinalizado()){
@@ -47,7 +47,7 @@ public class JugadorTest {
         herramienta = jugador.herramientaEquipada();
         direccion = jugador.getDireccion();
         tablero = Tablero.obtenerTablero();
-        resetearTablero(tablero);
+        resetearTablero();
         x = 6;
         y = 6;
         z = 0;

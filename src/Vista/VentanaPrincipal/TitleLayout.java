@@ -1,10 +1,9 @@
 package Vista.VentanaPrincipal;
 
-import Controlador.BotonesHandlers.BotonSalirHandler;
-import Controlador.BotonesHandlers.BotonJugarHandler;
 import Vista.Ventana;
+import Vista.VentanaPrincipal.Botones.BotonJugar;
+import Vista.VentanaPrincipal.Botones.BotonSalir;
 import javafx.geometry.Pos;
-import Vista.VentanaPrincipal.Botones.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;

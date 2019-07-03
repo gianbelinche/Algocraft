@@ -7,8 +7,8 @@ import javafx.scene.control.Button;
 
 public class BotonMoverDerecha extends Button {
 
-    Jugador jugador;
-    Ventana ventana;
+    private Jugador jugador;
+    private Ventana ventana;
 
     public BotonMoverDerecha(Ventana ventana, Jugador jugador) {
         this.setText("→");

@@ -6,8 +6,9 @@ import Vista.Ventana;
 import javafx.scene.control.Button;
 
 public class BotonMoverArriba extends Button {
-    Jugador jugador;
-    Ventana ventana;
+
+    private Jugador jugador;
+    private Ventana ventana;
 
     public BotonMoverArriba(Ventana ventana, Jugador jugador) {
         this.setText("↑");
@@ -26,6 +27,5 @@ public class BotonMoverArriba extends Button {
     public Ventana obtenerVentana(){
         return ventana;
     }
-
 
 }

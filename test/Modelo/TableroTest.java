@@ -19,7 +19,7 @@ public class TableroTest {
     private int ancho;
     private int alto;
 
-    private void resetearTablero(Tablero elTablero){
+    private void resetearTablero(){
 
         TableroIterador iterador = tablero.obtenerIterador();
         while(!iterador.haFinalizado()){
@@ -34,7 +34,7 @@ public class TableroTest {
         ancho = 10;
         alto  = 10;
         tablero = Tablero.crearTablero(ancho, largo,alto);
-        resetearTablero(tablero);
+        resetearTablero();
         iterador = tablero.obtenerIterador();
     }
 

@@ -40,11 +40,6 @@ public class Herramienta implements Almacenable {
         return false;
     }
 
-    public Almacenable obtener() {
-        return this;
-    }
-
-
     public boolean mismoMaterial(Material material) {
         return material.esIgual(this.miMaterial);
     }
