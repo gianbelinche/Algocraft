@@ -21,7 +21,6 @@ public class Ventana extends Application {
     private Dibujante dibujante;
     private double anchoPantalla;
     private double altoPantalla;
-    private Group root;
     private BotonHerramientaEquipada botonHerramientaEquipada;
     private Canvas atrilAyuda;
     private Canvas atrilVictoria;
@@ -59,7 +58,6 @@ public class Ventana extends Application {
         juego = new Juego(this);
 
         Group root = new Group();
-        this.root = root;
         Scene mainScene = new Scene( root, anchoPantalla, altoPantalla);
         mainStage.setScene(mainScene);
 
