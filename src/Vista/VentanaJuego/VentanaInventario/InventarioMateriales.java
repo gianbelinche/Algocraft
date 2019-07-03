@@ -7,6 +7,7 @@ import Modelo.Materiales.Metal;
 import Modelo.Materiales.Piedra;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioMaterial;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
@@ -17,6 +18,7 @@ public class InventarioMateriales extends GridPane {
 
         this.setPrefSize(inventarioLayout.getPrefWidth()*0.5, inventarioLayout.getPrefHeight()*0.45);
         this.setTranslateY(-1*inventarioLayout.getPrefHeight()*0.25);//-90
+        this.setAlignment(Pos.CENTER);
         BotonVacio botonVacio;
         for(int i=0; i < 3; i++){
             for(int j=0; j<9; j++){

@@ -4,6 +4,7 @@ import Modelo.Construccion.Constructor;
 import Modelo.ElementosJugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioHerramienta;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
@@ -13,8 +14,7 @@ public class InventarioHerramientas extends GridPane {
     public InventarioHerramientas(Constructor constructor, InventarioLayout inventarioLayout, Jugador jugador) {
 
         this.setPrefSize(inventarioLayout.getPrefWidth()*0.5, inventarioLayout.getPrefHeight()*0.20);
-        //this.setAlignment(Pos.CENTER);
-        this.setTranslateY(inventarioLayout.getPrefHeight()*0.15);
+        this.setAlignment(Pos.CENTER);
 
         //Creo botones de herramientas
         BotonInventarioHerramienta botonHerramienta;
