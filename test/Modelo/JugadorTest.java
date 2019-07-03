@@ -1,8 +1,8 @@
 package Modelo;
 
 import Modelo.Herramientas.Pico;
-import Modelo.Jugador_.*;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.*;
+import Modelo.ElementosJugador.Jugador;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.Tablero;
 import Modelo.Escenario.TableroIterador;

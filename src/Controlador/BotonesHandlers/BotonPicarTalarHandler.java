@@ -2,7 +2,7 @@ package Controlador.BotonesHandlers;
 
 
 import Vista.CajaMusical;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Vista.Ventana;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

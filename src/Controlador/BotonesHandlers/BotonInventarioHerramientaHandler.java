@@ -1,7 +1,7 @@
 package Controlador.BotonesHandlers;
 
 import Modelo.Herramientas.Herramienta;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

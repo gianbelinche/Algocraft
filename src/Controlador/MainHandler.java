@@ -1,12 +1,11 @@
 package Controlador;
 
 import Vista.CajaMusical;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class MainHandler implements EventHandler<KeyEvent>{
@@ -53,6 +52,9 @@ public class MainHandler implements EventHandler<KeyEvent>{
                     inventario.actualizarHerramientas();
                     inventario.actualizarMateriales();
                     break;
+
+                case H:
+                    ventana.mostrarAyuda();
         }
         ventana.actualizarImagen();
     }

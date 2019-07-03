@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaInventario;
 
 import Modelo.Construccion.Receta;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonCraftear;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonLimpiarMesaCrafteo;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;

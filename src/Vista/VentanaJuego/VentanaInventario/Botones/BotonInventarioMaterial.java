@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaInventario.Botones;
 
 import Controlador.BotonesHandlers.BotonInventarioMaterialHandler;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.MaterialSeleccionado;
 import javafx.geometry.Pos;

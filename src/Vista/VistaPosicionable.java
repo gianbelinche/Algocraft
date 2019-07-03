@@ -1,7 +1,7 @@
 package Vista;
 
 import Modelo.Escenario.*;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Modelo.Materiales.*;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;

@@ -1,7 +1,7 @@
 package Vista.VentanaPrincipal;
 
-import Controlador.BotonesHandlers.ExitButtonHandler;
-import Controlador.BotonesHandlers.StartButtonHandler;
+import Controlador.BotonesHandlers.BotonSalirHandler;
+import Controlador.BotonesHandlers.BotonJugarHandler;
 import Vista.Ventana;
 import javafx.geometry.Pos;
 import Vista.VentanaPrincipal.Botones.*;
@@ -14,15 +14,15 @@ public class TitleLayout extends StackPane {
     public TitleLayout(Stage stage, Ventana ventana) {
 
         //Creo Botones
-        StartButton startButton = new StartButton(stage,ventana);
-        StartButtonHandler startButtonHandler = new StartButtonHandler(stage,ventana);
-        startButton.setOnAction(startButtonHandler);
+        BotonJugar botonJugar = new BotonJugar(stage,ventana);
+        BotonJugarHandler botonJugarHandler = new BotonJugarHandler(stage,ventana);
+        botonJugar.setOnAction(botonJugarHandler);
 
-        ExitButton exitButton = new ExitButton(stage);
-        ExitButtonHandler exitButtonHandler = new ExitButtonHandler(stage,exitButton);
-        exitButton.setOnAction(exitButtonHandler);
+        BotonSalir botonSalir = new BotonSalir(stage);
+        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage, botonSalir);
+        botonSalir.setOnAction(botonSalirHandler);
 
-        VBox contenedorBotones = new VBox(startButton, exitButton);
+        VBox contenedorBotones = new VBox(botonJugar, botonSalir);
         contenedorBotones.setSpacing(25);
         contenedorBotones.setAlignment(Pos.CENTER);
 

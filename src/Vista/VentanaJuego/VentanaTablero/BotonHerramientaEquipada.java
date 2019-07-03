@@ -3,7 +3,7 @@ package Vista.VentanaJuego.VentanaTablero;
 import Modelo.Construccion.Constructor;
 import Modelo.Herramientas.Herramienta;
 import Modelo.Herramientas.Mano;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;

@@ -4,7 +4,7 @@ import Modelo.Construccion.Receta;
 import Modelo.Escenario.Bote;
 import Modelo.Escenario.Tablero;
 import Modelo.Inventario.Inventario;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Vista.Ventana;
 
 public class Juego {

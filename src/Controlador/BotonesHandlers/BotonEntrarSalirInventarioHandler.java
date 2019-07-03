@@ -5,7 +5,6 @@ import Vista.Ventana;
 import Vista.VentanaJuego.VentanaInventario.InventarioLayout;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.layout.VBox;
 
 public class BotonEntrarSalirInventarioHandler implements EventHandler<ActionEvent> {
 

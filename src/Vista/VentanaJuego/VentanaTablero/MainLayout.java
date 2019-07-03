@@ -59,7 +59,6 @@ public class MainLayout extends Pane {
         cajaCompleta.setAlignment(Pos.CENTER);
 
         BotonOcultarBotones botonOcultarBotones = new BotonOcultarBotones(cajaCompleta);
-        //ExitButton botonSalir = new ExitButton(mainStage);
 
         this.getChildren().addAll(cajaCompleta, botonOcultarBotones);
     }

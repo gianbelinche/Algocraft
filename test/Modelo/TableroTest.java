@@ -1,6 +1,6 @@
 package Modelo;
 
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Modelo.Construccion.Constructor;
 import Modelo.Escenario.*;
 import Modelo.Herramientas.Pico;

@@ -1,7 +1,6 @@
 package Vista.VentanaPrincipal.Botones;
 
-import Controlador.BotonesHandlers.StartButtonHandler;
-import Vista.Ventana;
+import Controlador.BotonesHandlers.BotonSalirHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -9,15 +8,15 @@ import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-public class StartButton extends Button {
+public class BotonSalir extends Button {
 
-    public StartButton(Stage stage, Ventana ventana){
-        StartButtonHandler startButtonHandler = new StartButtonHandler(stage,ventana);
-        this.setOnAction(startButtonHandler);
+    public BotonSalir(Stage stage){
+        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage,this);
+        this.setOnAction(botonSalirHandler);
 
+        //Seteo tamaño a 5% de pantalla
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
-
-        Image image = new Image("file:src/Vista/Imagenes/BotonPlay.png");
+        Image image = new Image("file:src/Vista/Imagenes/Exit.png");
         this.setPrefWidth(primaryScreenBounds.getWidth()*0.15);
         this.setPrefHeight(primaryScreenBounds.getHeight()*0.08);
 
@@ -26,7 +25,6 @@ public class StartButton extends Button {
                 BackgroundPosition.DEFAULT,
                 new BackgroundSize(1.0, 1.0, true, true, false, false));
         //Adapto tamaño de imagen a tamaño de pantalla
-
         Background background = new Background(backgroundImage);
         this.setBackground(background);
     }

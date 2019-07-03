@@ -1,6 +1,6 @@
 package Vista.VentanaJuego.VentanaInventario;
 
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Modelo.Materiales.Diamante;
 import Modelo.Materiales.Madera;
 import Modelo.Materiales.Metal;
@@ -16,7 +16,6 @@ public class InventarioMateriales extends GridPane {
     public InventarioMateriales(MaterialSeleccionado materialSeleccionado, InventarioLayout inventarioLayout, Jugador jugador) {
 
         this.setPrefSize(inventarioLayout.getPrefWidth()*0.5, inventarioLayout.getPrefHeight()*0.45);
-        //this.setAlignment(Pos.BOTTOM_CENTER);
         this.setTranslateY(-1*inventarioLayout.getPrefHeight()*0.25);//-90
         BotonVacio botonVacio;
         for(int i=0; i < 3; i++){

@@ -1,7 +1,7 @@
 package Controlador.BotonesHandlers;
 
 import Modelo.Construccion.Receta;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Modelo.Excepciones.AlmacenableNoDisponibleException;
 import Modelo.Materiales.Material;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonMesaCrafteo;
@@ -31,7 +31,6 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent event){
-        //Ojo, hay que pedirle al inventario el material, no usar directamente el materialSeleccionado
         Material material = materialSeleccionado.obtenerSeleccionado();
         if (material != null) {
             try{
@@ -42,8 +41,5 @@ public class BotonMesaCrafteoHandler implements EventHandler<ActionEvent> {
 
         }
         inventarioLayout.actualizarMateriales();
-        
-        //Probar cambiar el tercer parametro de receta de "Material" a "Almacenable" o simplemente cambiar de Almacenable a Material en estos botones.
-        //receta.posicionar(x,y, materialSeleccionado);
     }
 }

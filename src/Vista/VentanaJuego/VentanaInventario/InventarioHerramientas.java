@@ -1,7 +1,7 @@
 package Vista.VentanaJuego.VentanaInventario;
 
 import Modelo.Construccion.Constructor;
-import Modelo.Jugador_.Jugador;
+import Modelo.ElementosJugador.Jugador;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonInventarioHerramienta;
 import Vista.VentanaJuego.VentanaInventario.Botones.BotonVacio;
 import javafx.scene.Node;

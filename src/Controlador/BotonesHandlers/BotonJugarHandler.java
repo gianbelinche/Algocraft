@@ -5,12 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-public class StartButtonHandler implements EventHandler<ActionEvent> {
+public class BotonJugarHandler implements EventHandler<ActionEvent> {
 
     Stage escenario;
     Ventana ventana;
 
-    public StartButtonHandler(Stage nuevoEscenario, Ventana nuevaVentana){
+    public BotonJugarHandler(Stage nuevoEscenario, Ventana nuevaVentana){
        escenario = nuevoEscenario;
        ventana = nuevaVentana;
     }
