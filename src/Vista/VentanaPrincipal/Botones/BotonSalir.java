@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class BotonSalir extends Button {
 
     public BotonSalir(Stage stage){
-        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage,this);
+        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage);
         this.setOnAction(botonSalirHandler);
 
         //Seteo tamaño a 5% de pantalla

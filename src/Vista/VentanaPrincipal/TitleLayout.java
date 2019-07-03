@@ -19,7 +19,7 @@ public class TitleLayout extends StackPane {
         botonJugar.setOnAction(botonJugarHandler);
 
         BotonSalir botonSalir = new BotonSalir(stage);
-        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage, botonSalir);
+        BotonSalirHandler botonSalirHandler = new BotonSalirHandler(stage);
         botonSalir.setOnAction(botonSalirHandler);
 
         VBox contenedorBotones = new VBox(botonJugar, botonSalir);
